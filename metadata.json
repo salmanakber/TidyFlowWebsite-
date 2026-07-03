@@ -1,0 +1,6 @@
+{
+  "name": "TidyFlow Operations Hub",
+  "description": "Marketing website and interactive user documentation for TidyFlow, the ultimate operating system for cleaning companies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
