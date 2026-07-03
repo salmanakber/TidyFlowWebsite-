@@ -1,6 +1,7 @@
 // Unified translation strings for Marketing Site, Header, Footer, and Interactive Mockups across all 11 supported languages.
 
 import { marketingLocaleOverrides } from "./marketingLocaleOverrides";
+import { marketingPageLocales } from "./marketingPageLocales";
 
 export const marketingTranslations: Record<string, any> = {
   en: {
@@ -20,7 +21,7 @@ export const marketingTranslations: Record<string, any> = {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -28,6 +29,21 @@ export const marketingTranslations: Record<string, any> = {
     cleanersLabel: "Professional Cleaners",
     docPortalLink: "Documentation Portal",
     minimumOS: "Works fully offline on iOS & Android devices. Minimum iOS 14 / Android 10.",
+
+    // Home — offline & GPS showcase
+    offlineBadge: "Offline-First Field App",
+    offlineTitle: "Your app works without internet — syncs when signal returns",
+    offlineDesc: "Basements, commercial towers, and low-signal neighborhoods won't stop your team. Cleaners run timers, tick checklists, and capture photos offline. TidyFlow queues everything locally and pushes to the cloud automatically.",
+    offlineCheck1: "Full timer & checklist operation with zero connectivity",
+    offlineCheck2: "Photos and job notes cached locally until sync",
+    offlineCheck3: "Automatic background upload when Wi‑Fi or LTE returns",
+    gpsBadge: "Live GPS Verification",
+    gpsTitle: "Geofenced proof that your team is on-site",
+    gpsDesc: "Every clock-in is GPS-verified against the property boundary. Managers see live breadcrumbs, geofence status, and route history — no more disputed hours or mystery locations.",
+    gpsCheck1: "Geofence lock on start and complete",
+    gpsCheck2: "Live location breadcrumbs during active jobs",
+    gpsCheck3: "Audit-ready GPS logs attached to each task",
+    downloadHeroNote: "Free on iOS & Android · works offline in the field",
     
     // HomePage
     trustedBy: "Trusted by modern facility and residential cleaning companies",
@@ -265,7 +281,191 @@ export const marketingTranslations: Record<string, any> = {
     reviewTrustpilot: "Trustpilot",
     reviewG2: "G2",
     reviewCapterra: "Capterra",
-    reviewGoogle: "Google Reviews"
+    reviewGoogle: "Google Reviews",
+
+    // Pricing page UI
+    pricingBadge: "Flat Tiered Subscriptions",
+    pricingLiveRates: "Live rates from TidyFlow management · synced automatically",
+    pricingBilledMonthly: "Billed Monthly",
+    pricingBilledAnnually: "Billed Annually",
+    pricingSave20: "Save 20%",
+    pricingAdvisorBadge: "DYNAMIC PLAN ADVISOR",
+    pricingAdvisorTitle: "Plan Advisor & Team Size Estimator",
+    pricingAdvisorDesc: "Drag the sliders below to enter your estimated properties count and cleaner workforce count. We will automatically highlight the best plan tier for your operations:",
+    pricingEstProperties: "Estimated Properties",
+    pricingEstCleaners: "Workforce Cleaners",
+    pricingUnits: "{num} Units",
+    pricingStaff: "{num} Staff",
+    pricing1Property: "1 Property",
+    pricing75Properties: "75 Properties",
+    pricing150PlusProperties: "150+ Properties",
+    pricing1Cleaner: "1 Cleaner",
+    pricing50Cleaners: "50 Cleaners",
+    pricing100PlusCleaners: "100+ Cleaners",
+    pricingRecommendText: "Based on your selection of {properties} properties and {cleaners} cleaners, we recommend:",
+    pricingTierLabel: "{code} TIER",
+    pricingLoading: "Loading current plan rates from management…",
+    pricingRecommendedBadge: "⭐ RECOMMENDED FOR YOU",
+    pricingPopularBadge: "Most popular",
+    pricingPerMonth: "/ month",
+    pricingPropertiesLbl: "Properties:",
+    pricingCleanersLbl: "Cleaners:",
+    pricingManagersLbl: "Managers:",
+    pricingAiOpsLbl: "AI Operations:",
+    pricingInvoicesLbl: "Invoices / mo:",
+    pricingPhotoVerifLbl: "Photo verifications:",
+    pricingPdfLbl: "PDF reports / mo:",
+    pricingIncludedCaps: "Included capabilities",
+    pricingStartTrialDays: "Start {days}-Day Free Trial",
+    pricingNoCard: "Requires zero credit card details to start. Cancel anytime.",
+
+    // How it works dedicated page
+    howPageBadge: "Seamless Onboarding Flow",
+    howPageTitle: "How TidyFlow Operates",
+    howPageSub: "A transparent, step-by-step breakdown explaining how TidyFlow simplifies your daily workflow.",
+    howPageStep1Title: "Properties & Spreadsheet Integration",
+    howPageStep1Desc: "Create property registers inside the manager dashboard, or connect your company's master Google Sheet. If you choose sheet synchronization, TidyFlow automatically populates your properties and schedules from the spreadsheet tabs.",
+    howPageStep2Title: "Schedule Rota Timelines",
+    howPageStep2Desc: "Dispatch assigned tasks to cleaners via the Rota Builder. Cleaners who are on approved annual leave are greyed out automatically to prevent scheduling mistakes, and TidyFlow AI stands ready to recommend optimal staff assignments based on location.",
+    howPageStep3Title: "Checklist & GPS Timer Logs",
+    howPageStep3Desc: "Cleaners log into the mobile app, viewing only their assigned schedule for the day. They clock in utilizing geofenced GPS locks and execute room duties utilizing offline checklists. Photos are snapped and queued locally.",
+    howPageStep4Title: "Review & Professional Billing",
+    howPageStep4Desc: "Once submitted, managers inspect visual before/after proof and approve logged hours. Formatted payroll wage logs are computed automatically. White-labeled client PDF reports are compiled in a single click, ready for direct email dispatch.",
+
+    // Personas dedicated page
+    personasPageTitle: "Designed For Every Role",
+    personasPageSub: "A modular, multi-faceted platform custom engineered to accommodate owners, coordinators, cleaners, and facility clients.",
+    personaTabOwner: "Company Owners",
+    personaTabManager: "Operations Managers",
+    personaTabCleaner: "Field Cleaners",
+    personaTabClient: "Property Clients",
+    personaTabOwnerMeta: "Business Overview",
+    personaTabManagerMeta: "Roster Controls",
+    personaTabCleanerMeta: "Mobile Offline Tool",
+    personaTabClientMeta: "Visual Proof & QA",
+    personaOwnerBadge: "OWNER FOCUS",
+    personaOwnerTitle: "Complete Business Visibility",
+    personaOwnerDesc: "TidyFlow helps cleaning business owners run professional, profitable enterprises without constant micromanaging. Keep your historical client properties cataloged, connect Google Sheet data flows, track invoices automatically, and monitor performance analytics on a centralized master dashboard.",
+    personaOwnerCheck1: "Financial Oversight: Track invoice billings and contractor payroll expenses.",
+    personaOwnerCheck2: "Secure Tenant Data: Data is sandboxed with strict compliance protocols.",
+    personaOwnerCheck3: "Unlimited Scalability: Base pricing scale adapts dynamically to property units.",
+    personaManagerBadge: "COORDINATOR FOCUS",
+    personaManagerTitle: "Stop chasing cleaners on WhatsApp",
+    personaManagerDesc: "Operations managers spend half their days coordinating team rosters, validating timestamps, and confirming clean conditions. TidyFlow saves time by aggregating GPS verified timestamps, highlighting uncompleted checklists, and raising safety SOS notifications in a dedicated portal.",
+    personaManagerCheck1: "Rota Conflict Alarms: Leave records automatically grey out cleaners from dispatch.",
+    personaManagerCheck2: "Unified Issue Logs: Track reported property maintenance faults in real time.",
+    personaManagerCheck3: "Smart AI Recommendations: Easily determine the optimal cleaner based on location.",
+    personaCleanerBadge: "FIELD FORCES FOCUS",
+    personaCleanerTitle: "A streamlined app that works offline",
+    personaCleanerDesc: "Remote janitorial forces and residential cleaners operate inside large basement spaces, commercial offices, and low-signal neighborhoods. TidyFlow has been engineered to run completely offline. Start timers, tick checklist milestones, and upload before/after photos with automatic cache queue syncing.",
+    personaCleanerCheck1: "Clear Daily Roster: Cleaners only see their assigned properties for the day.",
+    personaCleanerCheck2: "One-Tap SOS Button: Triggers immediate dispatcher alerts with GPS tracking.",
+    personaCleanerCheck3: "Automatic Cache Syncing: Data uploads automatically when signal returns.",
+    personaClientBadge: "CLIENT EXPERIENCE FOCUS",
+    personaClientTitle: "Branded proof-of-work portals",
+    personaClientDesc: "Earn client trust through consistent, verifiable cleaning proof. Dispatch professional, white-labeled PDF timesheet reports, or provide shareable client portal links where facility leads can inspect completion logs and review high-resolution pictures directly.",
+    personaClientCheck1: "White-Labeled PDF Reports: Customize invoice reports with company logos and colors.",
+    personaClientCheck2: "Real-time Portals: Clients verify work completion timestamps instantly.",
+    personaClientCheck3: "Two-way review logs: Gather feedback easily to improve services.",
+
+    // Home showcase modules
+    homeSheetsBadge: "Google Sheets Integration",
+    homeSheetsTitle: "Manage schedules in spreadsheets, sync in real-time.",
+    homeSheetsDesc: "Keep your existing sheet layouts and connected tools. Link your master Google Sheet to TidyFlow: dispatcher updates propagate directly to active workforce terminals inside seconds.",
+    homeSheetsCheck1: "Two-Way Operations: Cleaners upload hours, properties auto-populate.",
+    homeSheetsCheck2: "No lock-in limits: Retain simple, absolute ownership of your company rosters.",
+    homeAiBadge: "Private Gemini Model AI",
+    homeAiTitle: "Roster assignments backed by proactive intelligence.",
+    homeAiDesc: "TidyFlow scans staff calendars, unassigned tasks, and proximity logs, signaling unstaffed positions or schedule risks. Assist team dispatchers with automatic recommended fits inside a single click.",
+    homeAiCheck1: "Conflict Spotlights: Spot overlaps and staff availability issues instantly.",
+    homeAiCheck2: "Intelligent Proximity Routing: Suggest nearby operators to lower logistics overheads.",
+    homePhotoBadge: "Verifiable Work Captures",
+    homePhotoTitle: "Before/After proof, delivered directly to client feeds.",
+    homePhotoDesc: "Exceed SLA standards on every clean. Field operators register high-resolution images that post instantly to client reports. Prove visual quality and protect your workforce against false claims.",
+    homePhotoCheck1: "Automatic Watermarking: Timestamps are locked via network data frames to ensure validity.",
+    homePhotoCheck2: "Shareable public portal links: Facility leads verify service quality without password hurdles.",
+    homeSosBadge: "Lone-Worker Protection",
+    homeSosTitle: "Immediate safety alarms with precise location maps.",
+    homeSosDesc: "Protect field teams working in basement utility grids or vacant properties. Continuous GPS breadcrumbs map location coordinates history, while a fast SOS switch sounds immediate dispatcher visual alarms.",
+    homeSosCheck1: "Immediate alerts: Dispatch dashboards flash visual alarms and trigger SMS manager updates.",
+    homeSosCheck2: "Safety tracking: GPS logs coordinates history to coordinate assistance quickly.",
+
+    // Contact page extras
+    contactTrialBadge: "START TRIAL TODAY",
+    contactTrialTitle: "14-Day Free Evaluation",
+    contactTrialDesc: "Explore the complete platform. Base corporate fees and property add-on charges are suspended during trial evaluation.",
+    contactSheetsTitle: "Guided Spreadsheet Setup",
+    contactSheetsDesc: "Our technical support leads stand ready to assist you in connecting your company's master Google Sheet rosters safely.",
+    contactNoCardTitle: "No Credit Cards Needed",
+    contactNoCardDesc: "Trial evaluation accounts are activated instantly. Provide billing details only when you decide to proceed with active rosters.",
+    contactBrevoSuccess: "✅ Success! Brevo relay accepted the message (250 OK).",
+    contactEmailNotConfigured: "Email not configured — add BREVO_SMTP_USER, BREVO_SMTP_KEY, and CONTACT_TO_EMAIL in your .env (from app.brevo.com).",
+    contactFormPlaceholder: "Tell us about your active property count or specific integration requests...",
+    contactBrevoRelay: "Brevo Mail Relay",
+
+    // Footer nav
+    footerHome: "Home",
+    footerFeatures: "Full Features",
+    footerPricing: "Plans & Pricing",
+    footerHowItWorks: "How It Works",
+    footerContactDemo: "Request Demo",
+    footerCloudOps: "Cloud-First Global Operations",
+
+    // Home billing preview section
+    billingBadge: "FINANCIAL COMPLIANCE",
+    billingTitle: "Automated Payroll, Transparent Timesheets",
+    billingDesc: "Consolidate contractor and field cleaner work hours automatically. Avoid hours of transcription from manual paper trails: approve background-validated timestamps, compute gross salary payouts dynamically, and export branded customer invoice records.",
+    billingCheck1: "Custom wage configurations mapped per operator contract.",
+    billingCheck2: "One-click exports to standard accounting portals.",
+
+    // Home SOS phone mockup
+    homeSosMockBadge: "Background Safety system",
+    homeSosMockTitle: "Lone-Worker SOS Terminal",
+    homeSosMockActive: "Emergency SOS Switch Active",
+    homeSosMockDesc: "Holding this button transmits live GPS logs to active operators and sounds visual warning alarms.",
+    homeSosMockBroadcast: "ALARM SYSTEM BROADCAST",
+    homeSosMockActive2: "Active●",
+    homeSosMockQueued: "Payload: Dispatcher alert logs queued",
+    homeSosMockTarget: "Target: Facilities security center",
+
+    // Features page tab bodies
+    featuresSchedTitle: "Scheduling & Rota Dispatch",
+    featuresSchedDesc: "Empower your managers to handle rosters easily. Build recurring visit profiles for commercial properties, view rosters in dynamic calendars, and coordinate route schedules to decrease staff travel times.",
+    featuresSchedCard1Title: "Rota Grid Builder",
+    featuresSchedCard1Desc: "Drag and drop staffers into active property slots based on custom qualifications.",
+    featuresSchedCard2Title: "2-Way Google Sheet",
+    featuresSchedCard2Desc: "Direct integration connects property and task registers to a cloud spreadsheet.",
+    featuresFieldTitle: "Cleaner App & Field Work Tracker",
+    featuresFieldDesc: "Give your remote workforce a modern, lightning-fast smartphone tool. Cleaners access checklists, run tracking timers, capture photos, and access details—all operational without internet access.",
+    featuresFieldCard1Title: "Work Timer & Breaks",
+    featuresFieldCard1Desc: "Clock logs, break holds, and complete submission records with background GPS timestamps.",
+    featuresFieldCard2Title: "SOS Emergency Alert",
+    featuresFieldCard2Desc: "One-tap emergency alarm logs dispatcher incidents and notifies manager contacts.",
+    featuresQualityTitle: "Quality Assurance & Client Proof",
+    featuresQualityDesc: "Provide crystal clear cleaning proof to corporate facilities leads and property clients. Generate professional PDFs featuring before/after pictures, checklists, and QA reviews.",
+    featuresQualityCard1Title: "AI Photo Scoring",
+    featuresQualityCard1Desc: "Scans departed conditions automatically to score cleanliness ratings instantly.",
+    featuresQualityCard2Title: "Shareable Portals",
+    featuresQualityCard2Desc: "Client leads view job checklists and photo captures via secure public landing links.",
+    featuresPayrollTitle: "Roster HR & Payroll Automation",
+    featuresPayrollDesc: "Consolidate staff wage administration. Review completed timer logs, approve hourly sheets, track cleaner holiday leave schedules, and export payslip documents automatically.",
+    featuresPayrollCard1Title: "Custom Wage Rules",
+    featuresPayrollCard1Desc: "Define flat-rate and hourly salaries individually per workforce listing.",
+    featuresPayrollCard2Title: "Leave Block Protection",
+    featuresPayrollCard2Desc: "Approved holiday blocks prevent dispatchers from assigning cleaners to shifts.",
+    featuresPayrollPlaceholder: "Comprehensive payroll tools available in the web portal.",
+    featuresFinanceTitle: "Client Billing & Finances",
+    featuresFinanceDesc: "Connect your business finances seamlessly. Track operational service invoices, automate client billing structures from completed job registers, and export branded PDFs.",
+    featuresFinanceCard1Title: "SaaS Company Rota Billing",
+    featuresFinanceCard1Desc: "Stripe billing handles your company base subscription and property unit counts.",
+    featuresFinanceCard2Title: "Branded PDFs",
+    featuresFinanceCard2Desc: "Deliver personalized invoices and timesheets matching your exact brand colors.",
+    featuresAiTitle: "TidyFlow AI Capabilities",
+    featuresAiDesc: "Improve operational decisions using secure, private Gemini model suggestions. Auto-highlight cleaning checklists, receive dispatch recommendations, and analyze picture scans automatically.",
+    featuresAiCard1Title: "Smart Assignments",
+    featuresAiCard1Desc: "Recommends dispatch fits based on location proximity, shift calendars, and histories.",
+    featuresAiCard2Title: "Risk Diagnostics",
+    featuresAiCard2Desc: "Highlighted notifications warn managers of unassigned tasks and schedule conflicts."
   },
   pt: {
     selectLanguage: "Selecionar Idioma",
@@ -1049,7 +1249,7 @@ fr: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -1281,7 +1481,7 @@ de: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -1513,7 +1713,7 @@ pl: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -1745,7 +1945,7 @@ no: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -1977,7 +2177,7 @@ sv: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -2209,7 +2409,7 @@ it: {
     playStore: "Google Play Store",
     downloadOn: "Download on the",
     getItOn: "Get it on",
-    copyright: "TidyFlow Operations Ltd. All rights reserved. Registered UK Company.",
+    copyright: "TidyFlow Operations Ltd. All rights reserved. ",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     ownersLabel: "Company Owners",
@@ -2669,18 +2869,41 @@ extraLangs.forEach((code) => {
   if (code !== "cn") {
     marketingTranslations[code] = {
       ...marketingTranslations.en,
-      // We will override with specific localized strings for essential navigation and CTAs
+      ...(langData[code] || {}),
+      ...(marketingPageLocales[code] || {}),
+      ...(marketingLocaleOverrides[code] || {})
     };
   }
 });
 
-// Specifically map other languages to avoid any untranslated lines
-marketingTranslations.cn = langData.cn;
+marketingTranslations.cn = {
+  ...marketingTranslations.en,
+  ...langData.cn,
+  ...(marketingPageLocales.cn || {}),
+  ...(marketingLocaleOverrides.cn || {})
+};
 
 export const getMarketingTranslation = (key: string, lang: string): string => {
   if (marketingLocaleOverrides[lang]?.[key]) {
     return marketingLocaleOverrides[lang][key];
   }
+  if (marketingPageLocales[lang]?.[key]) {
+    return marketingPageLocales[lang][key];
+  }
   const dictionary = marketingTranslations[lang] || marketingTranslations["en"];
   return dictionary[key] || marketingTranslations["en"][key] || key;
+};
+
+export const formatMarketingTranslation = (
+  key: string,
+  lang: string,
+  vars?: Record<string, string | number>
+): string => {
+  let text = getMarketingTranslation(key, lang);
+  if (vars) {
+    for (const [k, v] of Object.entries(vars)) {
+      text = text.replace(new RegExp(`\\{${k}\\}`, "g"), String(v));
+    }
+  }
+  return text;
 };

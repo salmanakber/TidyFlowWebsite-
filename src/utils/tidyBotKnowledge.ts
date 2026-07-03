@@ -41,7 +41,7 @@ AI recommends — managers always approve. TidyBot helps users learn the product
 const TIDYBOT_PRICING_KNOWLEDGE = `
 ## Pricing & trials (official)
 - **14-day free trial** on all plans — no credit card required to explore.
-- **Startup:** $29/month — up to 10 properties, up to 5 active cleaners.
+- **Startup:** $9/month — up to 10 properties, up to 5 active cleaners.
 - **Standard:** $79/month — up to 50 properties, up to 25 active cleaners (most popular).
 - **Premium:** $149/month — unlimited properties & cleaners, priority support.
 - Billed monthly via **Stripe**; upgrade or downgrade anytime.
@@ -167,7 +167,7 @@ const whatIsReplies: Record<string, string> = {
 };
 
 const pricingReplies: Record<string, string> = {
-  en: "💰 **TidyFlow pricing** — simple flat tiers via Stripe:\n\n• **Startup** — $29/mo (10 properties, 5 cleaners)\n• **Standard** — $79/mo (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — $149/mo (unlimited + priority support)\n\nAll plans include a **14-day free trial** with Google Sheets sync, offline timers, SOS, and payroll. Want help picking a tier?",
+  en: "💰 **TidyFlow pricing** — live plans via Stripe:\n\n• **Startup** — from $9/mo (10 properties, 5 cleaners)\n• **Standard** — $79/mo (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — $149/mo (unlimited + priority support)\n\nAll plans include a **14-day free trial**. Prices sync from management — visit the Pricing page for current rates!",
   pt: "💰 **Preços TidyFlow** — planos fixos via Stripe:\n\n• **Startup** — $29/mês (10 imóveis, 5 profissionais)\n• **Standard** — $79/mês (50 imóveis, 25 profissionais)\n• **Premium** — $149/mês (ilimitado + suporte prioritário)\n\n**Teste grátis de 14 dias** em todos os planos!",
   es: "💰 **Precios TidyFlow** — planes fijos vía Stripe:\n\n• **Startup** — $29/mes (10 propiedades, 5 limpiadores)\n• **Standard** — $79/mes (50 propiedades, 25 limpiadores)\n• **Premium** — $149/mes (ilimitado + soporte prioritario)\n\n¡**Prueba gratis de 14 días** en todos los planes!",
   ar: "💰 **أسعار TidyFlow** — باقات شهرية عبر Stripe:\n\n• **Startup** — ٢٩$/شهر\n• **Standard** — ٧٩$/شهر\n• **Premium** — ١٤٩$/شهر\n\n**تجربة مجانية ١٤ يوماً** على جميع الباقات!",

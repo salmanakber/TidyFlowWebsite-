@@ -1,7 +1,9 @@
+
 import React from "react";
 import Logo from "./Logo";
-import { Mail, Phone, MapPin, Globe, Shield, Scale, ChevronRight } from "lucide-react";
+import { Mail, Phone, Globe, Shield, Scale, ChevronRight, Smartphone } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
+import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
 
 interface FooterProps {
   setMarketingPage: (page: string) => void;
@@ -24,83 +26,104 @@ export default function Footer({ setMarketingPage, setActiveTab, language }: Foo
   const getT = (key: string) => getMarketingTranslation(key, language);
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-16 pb-8 text-left">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 border-b border-slate-900 pb-12 mb-10">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-20 pb-10 text-left relative overflow-hidden">
+      {/* Soft background glow */}
+      <div className="absolute bottom-0 left-1/4 w-[500px] h-[250px] bg-brand-amber/[0.01] rounded-full blur-[120px] pointer-events-none -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 border-b border-slate-900 pb-16 mb-12">
           
           {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="cursor-pointer inline-block" onClick={() => navigateTo("home")}>
-              <Logo size={42} />
+          <div className="lg:col-span-2 space-y-5">
+            <div className="cursor-pointer inline-block transition-transform hover:scale-[1.01]" onClick={() => navigateTo("home")}>
+              <Logo size={44} />
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
               {getT("footerDesc")}
             </p>
-            <div className="space-y-2.5 pt-2 text-xs">
+            <div className="space-y-3 pt-2 text-xs">
+              {/* Replaced Physical HQ with Cloud-First Operations */}
               <div className="flex items-center gap-2.5">
-                <MapPin size={13} className="text-brand-amber" />
-                <span>{getT("hqLocation")}</span>
+                <Globe size={13} className="text-brand-amber animate-pulse" />
+                <span>{getT("footerCloudOps")}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail size={13} className="text-brand-amber" />
-                <span>support@tidyflowapp.com</span>
+                <a href="mailto:tidyflaw@gmail.com" className="hover:text-white transition-colors">
+                  tidyflaw@gmail.com
+                </a>
               </div>
             </div>
           </div>
 
           {/* Product Links */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest">
+            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest border-l-2 border-brand-amber pl-2.5">
               {getT("sitemapPages")}
             </h4>
-            <div className="flex flex-col gap-2.5 text-xs">
-              <button onClick={() => navigateTo("home")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{language === "ar" ? "الرئيسية" : "Home"}</button>
-              <button onClick={() => navigateTo("features")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{language === "ar" ? "الميزات الكاملة" : "Full Features"}</button>
-              <button onClick={() => navigateTo("pricing")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{language === "ar" ? "الأسعار والخطط" : "Plans & Pricing"}</button>
-              <button onClick={() => navigateTo("how-it-works")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{language === "ar" ? "آلية العمل" : "How It Works"}</button>
-              <button onClick={() => navigateTo("contact")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{language === "ar" ? "طلب نسخة تجريبية" : "Request Demo"}</button>
+            <div className="flex flex-col gap-3 text-xs sm:text-sm">
+              <button onClick={() => navigateTo("home")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerHome")}</button>
+              <button onClick={() => navigateTo("features")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerFeatures")}</button>
+              <button onClick={() => navigateTo("pricing")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerPricing")}</button>
+              <button onClick={() => navigateTo("how-it-works")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerHowItWorks")}</button>
+              <button onClick={() => navigateTo("contact")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerContactDemo")}</button>
             </div>
           </div>
 
           {/* Persona Pages */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest">
+            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest border-l-2 border-brand-amber pl-2.5">
               {getT("whoItsFor")}
             </h4>
-            <div className="flex flex-col gap-2.5 text-xs">
+            <div className="flex flex-col gap-3 text-xs sm:text-sm">
               <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("ownersLabel")}</button>
               <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("managersLabel")}</button>
               <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("cleanersLabel")}</button>
-              <button onClick={openDoc} className="text-brand-amber hover:underline cursor-pointer transition-all text-left flex items-center gap-1">
+              <button onClick={openDoc} className="text-brand-amber hover:text-white cursor-pointer transition-colors text-left flex items-center gap-1 font-semibold">
                 {getT("docPortalLink")} <ChevronRight size={11} />
               </button>
             </div>
           </div>
 
-          {/* App Download Stores */}
+          {/* App Download Stores (Improved high-fidelity UI) */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest">
+            <h4 className="font-display font-bold text-xs text-slate-100 uppercase tracking-widest border-l-2 border-brand-amber pl-2.5">
               {getT("downloadApp")}
             </h4>
             <p className="text-[11px] text-slate-400">
               {getT("minimumOS")}
             </p>
-            <div className="space-y-2.5 pt-2">
+            <div className="space-y-3 pt-2">
+              {/* Apple Store Button */}
               <a
-                href="#appstore"
-                className="block p-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-lg text-center transition-colors"
-                onClick={(e) => e.preventDefault()}
+                href={IOS_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-2.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl transition-all hover:border-slate-700 hover:translate-y-[-1px] group shadow-sm"
               >
-                <span className="block text-[8px] uppercase tracking-widest font-mono text-slate-400">{getT("downloadOn")}</span>
-                <span className="font-bold text-xs text-white">{getT("appleStore")}</span>
+                <svg className="w-5 h-5 text-white fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42.14-.61.32M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .05-2.2.68-2.92 1.5-.63.73-1.18 1.87-1.03 2.98 1.12.09 2.26-.56 2.96-1.42z" />
+                </svg>
+                <div className="text-left font-sans">
+                  <span className="block text-[8px] uppercase tracking-wider font-mono text-slate-450 leading-none">{getT("downloadOn")}</span>
+                  <span className="font-bold text-xs sm:text-sm text-white group-hover:text-brand-amber transition-colors">{getT("appleStore")}</span>
+                </div>
               </a>
+
+              {/* Google Play Store Button */}
               <a
-                href="#playstore"
-                className="block p-2 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-lg text-center transition-colors"
-                onClick={(e) => e.preventDefault()}
+                href={ANDROID_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-2.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 rounded-xl transition-all hover:border-slate-700 hover:translate-y-[-1px] group shadow-sm"
               >
-                <span className="block text-[8px] uppercase tracking-widest font-mono text-slate-400">{getT("getItOn")}</span>
-                <span className="font-bold text-xs text-white">{getT("playStore")}</span>
+                <svg className="w-5 h-5 text-white fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M3 5.27v13.46c0 .87.8 1.43 1.57 1.05l14.22-7.06c.64-.32.64-1.24 0-1.55L4.57 4.22C3.8 3.84 3 4.4 3 5.27zm1.5 2l11.11 4.73-11.11 4.73V7.27z" />
+                </svg>
+                <div className="text-left font-sans">
+                  <span className="block text-[8px] uppercase tracking-wider font-mono text-slate-450 leading-none">{getT("getItOn")}</span>
+                  <span className="font-bold text-xs sm:text-sm text-white group-hover:text-brand-amber transition-colors">{getT("playStore")}</span>
+                </div>
               </a>
             </div>
           </div>
@@ -113,8 +136,12 @@ export default function Footer({ setMarketingPage, setActiveTab, language }: Foo
             &copy; {new Date().getFullYear()} {getT("copyright")}
           </div>
           <div className="flex items-center gap-6">
-            <button className="hover:text-slate-300 flex items-center gap-1 cursor-pointer"><Shield size={12} /> {getT("privacyPolicy")}</button>
-            <button className="hover:text-slate-300 flex items-center gap-1 cursor-pointer"><Scale size={12} /> {getT("termsOfService")}</button>
+            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none">
+              <Shield size={12} /> {getT("privacyPolicy")}
+            </button>
+            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none">
+              <Scale size={12} /> {getT("termsOfService")}
+            </button>
           </div>
         </div>
       </div>

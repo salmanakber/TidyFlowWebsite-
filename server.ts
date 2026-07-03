@@ -20,13 +20,13 @@ const ai = new GoogleGenAI({
 
 function getSmtpConfig() {
   return {
-    host: process.env.SMTP_HOST || "",
+    host: process.env.SMTP_HOST || "smtp-relay.brevo.com",
     port: Number(process.env.SMTP_PORT || 587),
     secure: process.env.SMTP_SECURE === "true",
-    user: process.env.SMTP_USER || "",
-    pass: process.env.SMTP_PASS || "",
-    from: process.env.SMTP_FROM || process.env.SMTP_USER || "noreply@tidyflow.app",
-    to: process.env.CONTACT_TO_EMAIL || process.env.SMTP_TO || ""
+    user: process.env.BREVO_SMTP_USER || process.env.SMTP_USER || "",
+    pass: process.env.BREVO_SMTP_KEY || process.env.SMTP_PASS || "",
+    from: process.env.SMTP_FROM || process.env.BREVO_SMTP_USER || "noreply@tidyflow.app",
+    to: process.env.CONTACT_TO_EMAIL || process.env.BREVO_CONTACT_TO || ""
   };
 }
 
@@ -46,6 +46,7 @@ async function startServer() {
     const cfg = getSmtpConfig();
     res.json({
       configured: isSmtpConfigured(),
+      provider: "brevo",
       smtpHost: cfg.host || null,
       toEmail: cfg.to || null
     });
@@ -63,7 +64,7 @@ async function startServer() {
 
       if (!isSmtpConfigured()) {
         res.status(503).json({
-          error: "SMTP is not configured. Set SMTP_HOST, SMTP_USER, SMTP_PASS, and CONTACT_TO_EMAIL in your .env file."
+          error: "Email is not configured. Add BREVO_SMTP_USER, BREVO_SMTP_KEY, and CONTACT_TO_EMAIL to your .env (from app.brevo.com → SMTP & API)."
         });
         return;
       }
@@ -103,6 +104,52 @@ async function startServer() {
     } catch (error: any) {
       console.error("SMTP contact error:", error);
       res.status(500).json({ error: error.message || "Failed to send contact email." });
+    }
+  });
+
+  const TIDYFLOW_API_URL = (process.env.TIDYFLOW_API_URL || "https://api.tidyflowapp.com").replace(/\/$/, "");
+
+  // Proxy: public pricing plans from management API (read-only)
+  app.get("/api/plans", async (_req, res) => {
+    try {
+      const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans`, {
+        headers: { Accept: "application/json" }
+      });
+      if (!upstream.ok) {
+        const text = await upstream.text().catch(() => "");
+        res.status(upstream.status).json({
+          error: `Failed to load plans (${upstream.status})`,
+          detail: text.slice(0, 200) || undefined
+        });
+        return;
+      }
+      const data = await upstream.json();
+      res.json(data);
+    } catch (error: any) {
+      console.error("Plans list proxy error:", error);
+      res.status(502).json({ error: error.message || "Could not reach TidyFlow plans API." });
+    }
+  });
+
+  app.get("/api/plans/:code", async (req, res) => {
+    try {
+      const code = String(req.params.code || "").toUpperCase();
+      const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans/${encodeURIComponent(code)}`, {
+        headers: { Accept: "application/json" }
+      });
+      if (!upstream.ok) {
+        const text = await upstream.text().catch(() => "");
+        res.status(upstream.status).json({
+          error: `Failed to load plan ${code} (${upstream.status})`,
+          detail: text.slice(0, 200) || undefined
+        });
+        return;
+      }
+      const data = await upstream.json();
+      res.json(data);
+    } catch (error: any) {
+      console.error("Plan detail proxy error:", error);
+      res.status(502).json({ error: error.message || "Could not reach TidyFlow plans API." });
     }
   });
 

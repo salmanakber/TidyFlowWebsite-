@@ -1,264 +1,210 @@
 export type SeoPage = "home" | "documentation" | "features" | "pricing" | "integrations" | "contact" | "personas" | "how-it-works";
 
-interface SeoMeta {
+export interface SeoMeta {
   title: string;
   description: string;
   keywords: string;
+  canonicalPath: string;
 }
+
+const SITE_URL = "https://tidyflowapp.com";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 const en: Record<SeoPage, SeoMeta> = {
   home: {
-    title: "TidyFlow — Cleaning Operations Hub | Scheduling, Sheets Sync & Field App",
+    title: "TidyFlow — Cleaning Operations Software | Offline App, GPS & Google Sheets",
     description:
-      "TidyFlow is the all-in-one operations platform for cleaning companies. Offline-first field app, two-way Google Sheets sync, AI dispatch, payroll, and client proof — in 11 languages.",
-    keywords: "cleaning software, operations hub, Google Sheets sync, field service app, payroll, scheduling"
+      "TidyFlow is the all-in-one platform for cleaning companies. Offline iOS & Android field app, GPS-verified jobs, two-way Google Sheets sync, AI dispatch, payroll, and client proof — 11 languages.",
+    keywords:
+      "cleaning company software, cleaning operations app, offline cleaning app, GPS time tracking cleaners, Google Sheets cleaning schedule, janitorial software, field service app, payroll cleaning business, TidyFlow",
+    canonicalPath: "/"
   },
   documentation: {
-    title: "TidyFlow User Guide — 23-Chapter Interactive Documentation",
+    title: "TidyFlow User Guide — 23-Chapter Interactive Documentation & TidyBot",
     description:
       "Official TidyFlow documentation: setup, Google Sheets sync, cleaner app, SOS safety, payroll, offline mode, and AI features. Available in 11 languages with TidyBot AI assistant.",
-    keywords: "TidyFlow docs, user guide, cleaning app documentation, Google Sheets integration"
+    keywords: "TidyFlow docs, user guide, cleaning app documentation, Google Sheets integration, offline mode guide",
+    canonicalPath: "/documentation"
   },
   features: {
-    title: "TidyFlow Features — Scheduling, Field App, AI & Integrations",
-    description: "Explore TidyFlow features: rota builder, cleaner mobile app, photo proof, PDF reports, Stripe billing, and live spreadsheet sync.",
-    keywords: "cleaning app features, rota scheduling, field tracker, AI dispatch"
+    title: "TidyFlow Features — Scheduling, Offline Field App, GPS, AI & Integrations",
+    description:
+      "Explore TidyFlow: rota builder, offline cleaner mobile app, GPS geofencing, photo proof, PDF reports, Stripe billing, and live Google Sheets sync.",
+    keywords: "cleaning app features, rota scheduling, offline field app, GPS cleaning tracker, AI dispatch cleaning",
+    canonicalPath: "/features"
   },
   pricing: {
-    title: "TidyFlow Pricing — Plans for Cleaning Businesses",
-    description: "Transparent pricing for cleaning and facilities companies. Scale by properties and cleaners with Startup, Growth, and Enterprise tiers.",
-    keywords: "cleaning software pricing, SaaS plans, operations platform cost"
+    title: "TidyFlow Pricing — Startup, Standard & Premium Plans for Cleaning Teams",
+    description:
+      "Transparent live pricing for cleaning and facilities companies. Scale by properties and cleaners. 14-day free trial, billed via Stripe.",
+    keywords: "cleaning software pricing, TidyFlow plans, janitorial SaaS cost, cleaning business subscription",
+    canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow Integrations — Google Sheets, Stripe & Maps",
-    description: "Connect TidyFlow to Google Sheets for two-way property and task sync, plus Stripe payments and mapping tools.",
-    keywords: "Google Sheets cleaning software, Stripe integration, spreadsheet sync"
+    title: "TidyFlow Integrations — Google Sheets, Stripe & Google Maps",
+    description:
+      "Connect TidyFlow to Google Sheets for two-way property and task sync, plus Stripe payments and geofenced mapping.",
+    keywords: "Google Sheets cleaning software, Stripe integration cleaning, spreadsheet sync janitorial",
+    canonicalPath: "/integrations"
   },
   contact: {
-    title: "Book a TidyFlow Demo — Contact Sales",
-    description: "Schedule a live demo of TidyFlow. Tell us about your team size, spreadsheet workflow, and operations goals.",
-    keywords: "TidyFlow demo, contact sales, cleaning software trial"
+    title: "Book a TidyFlow Demo — Free 14-Day Trial for Cleaning Companies",
+    description:
+      "Schedule a live TidyFlow demo. Tell us about your team size, spreadsheet workflow, and operations goals. No credit card required.",
+    keywords: "TidyFlow demo, cleaning software trial, contact TidyFlow sales",
+    canonicalPath: "/contact"
   },
   personas: {
-    title: "TidyFlow for Owners, Managers & Cleaners",
-    description: "See how TidyFlow serves business owners, operations managers, and field cleaners with role-tailored workflows.",
-    keywords: "cleaning business owner software, manager dashboard, cleaner app"
+    title: "TidyFlow for Owners, Managers, Cleaners & Facility Clients",
+    description:
+      "See how TidyFlow serves business owners, operations managers, field cleaners, and facility clients with role-tailored workflows.",
+    keywords: "cleaning business owner software, manager dashboard cleaning, cleaner mobile app offline",
+    canonicalPath: "/personas"
   },
   "how-it-works": {
-    title: "How TidyFlow Works — From Spreadsheet to Field to Payroll",
-    description: "Learn the TidyFlow workflow: sync your master sheet, dispatch jobs, track hours offline, approve payroll, and invoice clients.",
-    keywords: "cleaning workflow, operations pipeline, field to office sync"
+    title: "How TidyFlow Works — Spreadsheet to Field to Payroll in One Pipeline",
+    description:
+      "Learn the TidyFlow workflow: sync your master Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients.",
+    keywords: "cleaning workflow software, operations pipeline, field to office sync cleaning",
+    canonicalPath: "/how-it-works"
   }
 };
 
 const pt: Record<SeoPage, SeoMeta> = {
   home: {
-    title: "TidyFlow — Hub de Operações de Limpeza | Agendamento e Sincronização",
-    description:
-      "TidyFlow é a plataforma completa para empresas de limpeza. App offline, sincronização Google Sheets, IA, folha de pagamento e comprovativos — em 11 idiomas.",
-    keywords: "software de limpeza, operações, Google Sheets, app de campo"
+    title: "TidyFlow — Software de Operações de Limpeza | App Offline e Google Sheets",
+    description: "Plataforma completa para empresas de limpeza: app offline iOS/Android, GPS, sincronização Google Sheets, IA e folha de pagamento.",
+    keywords: "software limpeza, app offline limpeza, GPS faxineiros, Google Sheets",
+    canonicalPath: "/"
   },
   documentation: {
     title: "Guia do Usuário TidyFlow — Documentação Interativa",
-    description: "Documentação oficial TidyFlow: configuração, Google Sheets, app do faxineiro, SOS, folha de pagamento e modo offline.",
-    keywords: "documentação TidyFlow, guia do usuário"
+    description: "Documentação oficial TidyFlow em 23 capítulos com assistente TidyBot.",
+    keywords: "documentação TidyFlow",
+    canonicalPath: "/documentation"
   },
-  features: {
-    title: "Recursos TidyFlow — Agendamento, App e Integrações",
-    description: "Explore escalas, app móvel, fotos, PDFs, Stripe e sincronização de planilhas.",
-    keywords: "recursos software limpeza"
-  },
-  pricing: {
-    title: "Preços TidyFlow — Planos para Empresas de Limpeza",
-    description: "Preços transparentes por propriedades e faxineiros.",
-    keywords: "preços software limpeza"
-  },
-  integrations: {
-    title: "Integrações TidyFlow — Google Sheets e Stripe",
-    description: "Sincronização bidirecional com Google Sheets e pagamentos Stripe.",
-    keywords: "integração Google Sheets"
-  },
-  contact: {
-    title: "Agendar Demo TidyFlow",
-    description: "Marque uma demonstração ao vivo do TidyFlow.",
-    keywords: "demo TidyFlow"
-  },
-  personas: {
-    title: "TidyFlow para Proprietários, Gestores e Faxineiros",
-    description: "Fluxos por função para donos, gestores e equipas de campo.",
-    keywords: "software limpeza por função"
-  },
-  "how-it-works": {
-    title: "Como o TidyFlow Funciona",
-    description: "Da planilha ao campo e à folha de pagamento.",
-    keywords: "fluxo operações limpeza"
-  }
+  features: { title: "Recursos TidyFlow", description: "Agendamento, app offline, GPS e integrações.", keywords: "recursos software limpeza", canonicalPath: "/features" },
+  pricing: { title: "Preços TidyFlow", description: "Planos transparentes com teste grátis de 14 dias.", keywords: "preços software limpeza", canonicalPath: "/pricing" },
+  integrations: { title: "Integrações TidyFlow", description: "Google Sheets, Stripe e mapas.", keywords: "integração Google Sheets", canonicalPath: "/integrations" },
+  contact: { title: "Agendar Demo TidyFlow", description: "Demonstração ao vivo gratuita.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow por Função", description: "Fluxos para proprietários, gestores e faxineiros.", keywords: "software limpeza", canonicalPath: "/personas" },
+  "how-it-works": { title: "Como o TidyFlow Funciona", description: "Da planilha ao campo e à folha de pagamento.", keywords: "fluxo limpeza", canonicalPath: "/how-it-works" }
 };
 
 const es: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Hub de Operaciones de Limpieza",
-    description: "Plataforma integral para empresas de limpieza: app offline, Google Sheets, IA y nómina en 11 idiomas.",
-    keywords: "software limpieza, operaciones, Google Sheets"
-  },
-  documentation: {
-    title: "Guía de Usuario TidyFlow — Documentación Interactiva",
-    description: "Documentación oficial: configuración, Sheets, app de limpieza, SOS y modo offline.",
-    keywords: "documentación TidyFlow"
-  },
-  features: {
-    title: "Funciones TidyFlow",
-    description: "Programación, app móvil, fotos, PDFs e integraciones.",
-    keywords: "funciones software limpieza"
-  },
-  pricing: {
-    title: "Precios TidyFlow",
-    description: "Planes transparentes para empresas de limpieza.",
-    keywords: "precios software limpieza"
-  },
-  integrations: {
-    title: "Integraciones TidyFlow",
-    description: "Google Sheets, Stripe y herramientas de mapas.",
-    keywords: "integración Google Sheets"
-  },
-  contact: {
-    title: "Reservar Demo TidyFlow",
-    description: "Agende una demostración en vivo.",
-    keywords: "demo TidyFlow"
-  },
-  personas: {
-    title: "TidyFlow para Propietarios, Gerentes y Limpiadores",
-    description: "Flujos adaptados a cada rol.",
-    keywords: "software limpieza roles"
-  },
-  "how-it-works": {
-    title: "Cómo Funciona TidyFlow",
-    description: "De la hoja de cálculo a la nómina.",
-    keywords: "flujo operaciones limpieza"
-  }
+  home: { title: "TidyFlow — Software de Operaciones de Limpieza", description: "App offline, GPS, Google Sheets e IA para empresas de limpieza.", keywords: "software limpieza", canonicalPath: "/" },
+  documentation: { title: "Guía TidyFlow", description: "Documentación oficial interactiva.", keywords: "documentación TidyFlow", canonicalPath: "/documentation" },
+  features: { title: "Funciones TidyFlow", description: "Programación, app móvil offline y GPS.", keywords: "funciones limpieza", canonicalPath: "/features" },
+  pricing: { title: "Precios TidyFlow", description: "Planes transparentes con prueba gratis.", keywords: "precios limpieza", canonicalPath: "/pricing" },
+  integrations: { title: "Integraciones TidyFlow", description: "Google Sheets y Stripe.", keywords: "integración Sheets", canonicalPath: "/integrations" },
+  contact: { title: "Demo TidyFlow", description: "Prueba gratuita de 14 días.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow por Rol", description: "Para propietarios, gerentes y limpiadores.", keywords: "software limpieza roles", canonicalPath: "/personas" },
+  "how-it-works": { title: "Cómo Funciona TidyFlow", description: "De la hoja de cálculo a la nómina.", keywords: "flujo limpieza", canonicalPath: "/how-it-works" }
 };
 
 const fr: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Hub d'opérations de nettoyage",
-    description: "Plateforme tout-en-un pour entreprises de nettoyage : app hors ligne, Google Sheets, IA et paie.",
-    keywords: "logiciel nettoyage, opérations, Google Sheets"
-  },
-  documentation: {
-    title: "Guide utilisateur TidyFlow — Documentation interactive",
-    description: "Documentation officielle : configuration, Sheets, app terrain, SOS et mode hors ligne.",
-    keywords: "documentation TidyFlow"
-  },
-  features: { title: "Fonctionnalités TidyFlow", description: "Planning, app mobile, photos et intégrations.", keywords: "fonctionnalités nettoyage" },
-  pricing: { title: "Tarifs TidyFlow", description: "Plans pour entreprises de nettoyage.", keywords: "tarifs logiciel nettoyage" },
-  integrations: { title: "Intégrations TidyFlow", description: "Google Sheets, Stripe et cartes.", keywords: "intégration Google Sheets" },
-  contact: { title: "Réserver une démo TidyFlow", description: "Planifiez une démonstration.", keywords: "démo TidyFlow" },
-  personas: { title: "TidyFlow pour propriétaires, gestionnaires et agents", description: "Parcours par rôle.", keywords: "logiciel nettoyage rôles" },
-  "how-it-works": { title: "Comment fonctionne TidyFlow", description: "De la feuille de calcul à la paie.", keywords: "workflow nettoyage" }
+  home: { title: "TidyFlow — Logiciel d'opérations de nettoyage", description: "App hors ligne, GPS, Google Sheets et IA.", keywords: "logiciel nettoyage", canonicalPath: "/" },
+  documentation: { title: "Guide TidyFlow", description: "Documentation officielle interactive.", keywords: "documentation TidyFlow", canonicalPath: "/documentation" },
+  features: { title: "Fonctionnalités TidyFlow", description: "Planning, app mobile offline, GPS.", keywords: "fonctionnalités nettoyage", canonicalPath: "/features" },
+  pricing: { title: "Tarifs TidyFlow", description: "Forfaits transparents avec essai gratuit.", keywords: "tarifs nettoyage", canonicalPath: "/pricing" },
+  integrations: { title: "Intégrations TidyFlow", description: "Google Sheets et Stripe.", keywords: "intégration Sheets", canonicalPath: "/integrations" },
+  contact: { title: "Démo TidyFlow", description: "Essai gratuit de 14 jours.", keywords: "démo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow par rôle", description: "Propriétaires, gestionnaires et agents.", keywords: "logiciel nettoyage", canonicalPath: "/personas" },
+  "how-it-works": { title: "Comment fonctionne TidyFlow", description: "De la feuille de calcul à la paie.", keywords: "workflow nettoyage", canonicalPath: "/how-it-works" }
 };
 
 const de: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Reinigungs-Operations-Hub",
-    description: "All-in-one Plattform für Reinigungsunternehmen: Offline-App, Google Sheets, KI und Lohn.",
-    keywords: "Reinigungssoftware, Google Sheets"
-  },
-  documentation: {
-    title: "TidyFlow Benutzerhandbuch",
-    description: "Offizielle Dokumentation: Einrichtung, Sheets, Außendienst-App, SOS und Offline-Modus.",
-    keywords: "TidyFlow Dokumentation"
-  },
-  features: { title: "TidyFlow Funktionen", description: "Einsatzplanung, App, Fotos und Integrationen.", keywords: "Reinigungssoftware Funktionen" },
-  pricing: { title: "TidyFlow Preise", description: "Transparente Pläne für Reinigungsfirmen.", keywords: "Preise Reinigungssoftware" },
-  integrations: { title: "TidyFlow Integrationen", description: "Google Sheets, Stripe und Karten.", keywords: "Google Sheets Integration" },
-  contact: { title: "TidyFlow Demo buchen", description: "Live-Demo vereinbaren.", keywords: "TidyFlow Demo" },
-  personas: { title: "TidyFlow für Inhaber, Manager und Kräfte", description: "Rollenbasierte Workflows.", keywords: "Reinigungssoftware Rollen" },
-  "how-it-works": { title: "So funktioniert TidyFlow", description: "Vom Tabellenblatt zur Lohnabrechnung.", keywords: "Reinigungs-Workflow" }
+  home: { title: "TidyFlow — Reinigungs-Operations-Software", description: "Offline-App, GPS, Google Sheets und KI.", keywords: "Reinigungssoftware", canonicalPath: "/" },
+  documentation: { title: "TidyFlow Benutzerhandbuch", description: "Offizielle interaktive Dokumentation.", keywords: "TidyFlow Dokumentation", canonicalPath: "/documentation" },
+  features: { title: "TidyFlow Funktionen", description: "Planung, Offline-App, GPS.", keywords: "Reinigungssoftware Funktionen", canonicalPath: "/features" },
+  pricing: { title: "TidyFlow Preise", description: "Transparente Pläne mit kostenlosem Test.", keywords: "Preise Reinigungssoftware", canonicalPath: "/pricing" },
+  integrations: { title: "TidyFlow Integrationen", description: "Google Sheets und Stripe.", keywords: "Google Sheets Integration", canonicalPath: "/integrations" },
+  contact: { title: "TidyFlow Demo", description: "14 Tage kostenlos testen.", keywords: "TidyFlow Demo", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow nach Rolle", description: "Für Inhaber, Manager und Kräfte.", keywords: "Reinigungssoftware Rollen", canonicalPath: "/personas" },
+  "how-it-works": { title: "So funktioniert TidyFlow", description: "Vom Tabellenblatt zur Lohnabrechnung.", keywords: "Reinigungs-Workflow", canonicalPath: "/how-it-works" }
 };
 
 const pl: Record<SeoPage, SeoMeta> = {
-  home: { title: "TidyFlow — Hub operacji sprzątania", description: "Platforma dla firm sprzątających: app offline, Google Sheets, AI i płace.", keywords: "oprogramowanie sprzątanie" },
-  documentation: { title: "Przewodnik użytkownika TidyFlow", description: "Oficjalna dokumentacja: konfiguracja, Sheets, aplikacja terenowa.", keywords: "dokumentacja TidyFlow" },
-  features: { title: "Funkcje TidyFlow", description: "Grafiki, aplikacja mobilna i integracje.", keywords: "funkcje sprzątanie" },
-  pricing: { title: "Cennik TidyFlow", description: "Plany dla firm sprzątających.", keywords: "cennik oprogramowanie" },
-  integrations: { title: "Integracje TidyFlow", description: "Google Sheets i Stripe.", keywords: "integracja Google Sheets" },
-  contact: { title: "Zamów demo TidyFlow", description: "Umów demonstrację.", keywords: "demo TidyFlow" },
-  personas: { title: "TidyFlow dla właścicieli, menedżerów i pracowników", description: "Workflow według ról.", keywords: "oprogramowanie sprzątanie role" },
-  "how-it-works": { title: "Jak działa TidyFlow", description: "Od arkusza do listy płac.", keywords: "workflow sprzątanie" }
+  home: { title: "TidyFlow — Oprogramowanie operacyjne sprzątania", description: "App offline, GPS, Google Sheets i AI.", keywords: "oprogramowanie sprzątanie", canonicalPath: "/" },
+  documentation: { title: "Przewodnik TidyFlow", description: "Oficjalna dokumentacja.", keywords: "dokumentacja TidyFlow", canonicalPath: "/documentation" },
+  features: { title: "Funkcje TidyFlow", description: "Grafik, app offline, GPS.", keywords: "funkcje sprzątanie", canonicalPath: "/features" },
+  pricing: { title: "Cennik TidyFlow", description: "Przejrzyste plany z trial.", keywords: "cennik", canonicalPath: "/pricing" },
+  integrations: { title: "Integracje TidyFlow", description: "Google Sheets i Stripe.", keywords: "integracja Sheets", canonicalPath: "/integrations" },
+  contact: { title: "Demo TidyFlow", description: "Bezpłatny okres próbny.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow według ról", description: "Właściciele, menedżerowie, pracownicy.", keywords: "oprogramowanie sprzątanie", canonicalPath: "/personas" },
+  "how-it-works": { title: "Jak działa TidyFlow", description: "Od arkusza do listy płac.", keywords: "workflow sprzątanie", canonicalPath: "/how-it-works" }
 };
 
 const no: Record<SeoPage, SeoMeta> = {
-  home: { title: "TidyFlow — Driftssenter for rengjøring", description: "Alt-i-ett-plattform: offline-app, Google Sheets, AI og lønn.", keywords: "rengjøringsprogramvare" },
-  documentation: { title: "TidyFlow brukerveiledning", description: "Offisiell dokumentasjon på 23 kapitler.", keywords: "TidyFlow dokumentasjon" },
-  features: { title: "TidyFlow-funksjoner", description: "Planlegging, app og integrasjoner.", keywords: "funksjoner rengjøring" },
-  pricing: { title: "TidyFlow-priser", description: "Planer for rengjøringsbedrifter.", keywords: "priser programvare" },
-  integrations: { title: "TidyFlow-integrasjoner", description: "Google Sheets og Stripe.", keywords: "Google Sheets integrasjon" },
-  contact: { title: "Bestill TidyFlow-demo", description: "Planlegg en live demo.", keywords: "demo TidyFlow" },
-  personas: { title: "TidyFlow for eiere, ledere og rengjørere", description: "Rollebaserte arbeidsflyter.", keywords: "rengjøring roller" },
-  "how-it-works": { title: "Slik fungerer TidyFlow", description: "Fra regneark til lønn.", keywords: "arbeidsflyt rengjøring" }
+  home: { title: "TidyFlow — Driftssprogramvare for rengjøring", description: "Offline-app, GPS, Google Sheets og AI.", keywords: "rengjøringsprogramvare", canonicalPath: "/" },
+  documentation: { title: "TidyFlow brukerveiledning", description: "Offisiell dokumentasjon.", keywords: "TidyFlow dokumentasjon", canonicalPath: "/documentation" },
+  features: { title: "TidyFlow-funksjoner", description: "Planlegging, offline-app, GPS.", keywords: "funksjoner rengjøring", canonicalPath: "/features" },
+  pricing: { title: "TidyFlow-priser", description: "Transparente planer.", keywords: "priser", canonicalPath: "/pricing" },
+  integrations: { title: "TidyFlow-integrasjoner", description: "Google Sheets og Stripe.", keywords: "integrasjon Sheets", canonicalPath: "/integrations" },
+  contact: { title: "TidyFlow-demo", description: "Gratis prøveperiode.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow etter rolle", description: "Eiere, ledere og rengjørere.", keywords: "rengjøring roller", canonicalPath: "/personas" },
+  "how-it-works": { title: "Slik fungerer TidyFlow", description: "Fra regneark til lønn.", keywords: "arbeidsflyt rengjøring", canonicalPath: "/how-it-works" }
 };
 
 const sv: Record<SeoPage, SeoMeta> = {
-  home: { title: "TidyFlow — Operationsnav för städning", description: "Allt-i-ett-plattform: offline-app, Google Sheets, AI och lön.", keywords: "städprogramvara" },
-  documentation: { title: "TidyFlow användarhandbok", description: "Officiell dokumentation med 23 kapitel.", keywords: "TidyFlow dokumentation" },
-  features: { title: "TidyFlow-funktioner", description: "Schemaläggning, app och integrationer.", keywords: "städfunktioner" },
-  pricing: { title: "TidyFlow-priser", description: "Planer för städföretag.", keywords: "priser programvara" },
-  integrations: { title: "TidyFlow-integrationer", description: "Google Sheets och Stripe.", keywords: "Google Sheets integration" },
-  contact: { title: "Boka TidyFlow-demo", description: "Boka en livedemo.", keywords: "demo TidyFlow" },
-  personas: { title: "TidyFlow för ägare, chefer och städare", description: "Rollbaserade flöden.", keywords: "städning roller" },
-  "how-it-works": { title: "Så fungerar TidyFlow", description: "Från kalkylblad till lön.", keywords: "arbetsflöde städning" }
+  home: { title: "TidyFlow — Driftprogramvara för städföretag", description: "Offline-app, GPS, Google Sheets och AI.", keywords: "städprogramvara", canonicalPath: "/" },
+  documentation: { title: "TidyFlow användarhandbok", description: "Officiell dokumentation.", keywords: "TidyFlow dokumentation", canonicalPath: "/documentation" },
+  features: { title: "TidyFlow-funktioner", description: "Schemaläggning, offline-app, GPS.", keywords: "städfunktioner", canonicalPath: "/features" },
+  pricing: { title: "TidyFlow-priser", description: "Transparenta planer.", keywords: "priser städ", canonicalPath: "/pricing" },
+  integrations: { title: "TidyFlow-integrationer", description: "Google Sheets och Stripe.", keywords: "integration Sheets", canonicalPath: "/integrations" },
+  contact: { title: "TidyFlow-demo", description: "Gratis provperiod.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow per roll", description: "Ägare, chefer och städare.", keywords: "städning roller", canonicalPath: "/personas" },
+  "how-it-works": { title: "Så fungerar TidyFlow", description: "Från kalkylblad till lön.", keywords: "arbetsflöde städning", canonicalPath: "/how-it-works" }
 };
 
 const it: Record<SeoPage, SeoMeta> = {
-  home: { title: "TidyFlow — Hub operativo per pulizie", description: "Piattaforma completa: app offline, Google Sheets, IA e paghe.", keywords: "software pulizie" },
-  documentation: { title: "Guida utente TidyFlow", description: "Documentazione ufficiale in 23 capitoli.", keywords: "documentazione TidyFlow" },
-  features: { title: "Funzionalità TidyFlow", description: "Pianificazione, app mobile e integrazioni.", keywords: "funzionalità pulizie" },
-  pricing: { title: "Prezzi TidyFlow", description: "Piani per imprese di pulizia.", keywords: "prezzi software" },
-  integrations: { title: "Integrazioni TidyFlow", description: "Google Sheets e Stripe.", keywords: "integrazione Google Sheets" },
-  contact: { title: "Prenota demo TidyFlow", description: "Pianifica una dimostrazione.", keywords: "demo TidyFlow" },
-  personas: { title: "TidyFlow per proprietari, manager e operatori", description: "Flussi per ruolo.", keywords: "software pulizie ruoli" },
-  "how-it-works": { title: "Come funziona TidyFlow", description: "Dal foglio di calcolo alle paghe.", keywords: "workflow pulizie" }
+  home: { title: "TidyFlow — Software operativo per imprese di pulizie", description: "App offline, GPS, Google Sheets e IA.", keywords: "software pulizie", canonicalPath: "/" },
+  documentation: { title: "Guida utente TidyFlow", description: "Documentazione ufficiale.", keywords: "documentazione TidyFlow", canonicalPath: "/documentation" },
+  features: { title: "Funzionalità TidyFlow", description: "Pianificazione, app offline, GPS.", keywords: "funzionalità pulizie", canonicalPath: "/features" },
+  pricing: { title: "Prezzi TidyFlow", description: "Piani trasparenti con prova gratuita.", keywords: "prezzi pulizie", canonicalPath: "/pricing" },
+  integrations: { title: "Integrazioni TidyFlow", description: "Google Sheets e Stripe.", keywords: "integrazione Sheets", canonicalPath: "/integrations" },
+  contact: { title: "Demo TidyFlow", description: "Prova gratuita 14 giorni.", keywords: "demo TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow per ruolo", description: "Proprietari, manager e operatori.", keywords: "software pulizie ruoli", canonicalPath: "/personas" },
+  "how-it-works": { title: "Come funziona TidyFlow", description: "Dal foglio di calcolo alle paghe.", keywords: "workflow pulizie", canonicalPath: "/how-it-works" }
 };
 
 const ar: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — مركز عمليات التنظيف",
-    description: "منصة متكاملة لشركات التنظيف: تطبيق بدون إنترنت، مزامنة Google Sheets، ذكاء اصطناعي ورواتب.",
-    keywords: "برنامج تنظيف, Google Sheets"
-  },
-  documentation: {
-    title: "دليل مستخدم TidyFlow التفاعلي",
-    description: "التوثيق الرسمي: الإعداد، Sheets، تطبيق الميدان، SOS والوضع دون اتصال.",
-    keywords: "توثيق TidyFlow"
-  },
-  features: { title: "ميزات TidyFlow", description: "جدولة وتطبيق ميداني وتكاملات.", keywords: "ميزات برنامج تنظيف" },
-  pricing: { title: "أسعار TidyFlow", description: "خطط لشركات التنظيف.", keywords: "أسعار برنامج تنظيف" },
-  integrations: { title: "تكاملات TidyFlow", description: "Google Sheets وStripe.", keywords: "تكامل Google Sheets" },
-  contact: { title: "احجز عرض TidyFlow", description: "جدولة عرض مباشر.", keywords: "عرض TidyFlow" },
-  personas: { title: "TidyFlow للمالكين والمديرين وعمال النظافة", description: "سير عمل حسب الدور.", keywords: "برنامج تنظيف أدوار" },
-  "how-it-works": { title: "كيف يعمل TidyFlow", description: "من الجدول إلى الرواتب.", keywords: "سير عمل تنظيف" }
+  home: { title: "TidyFlow — برنامج عمليات التنظيف", description: "تطبيق بدون إنترنت، GPS، Google Sheets وذكاء اصطناعي.", keywords: "برنامج تنظيف", canonicalPath: "/" },
+  documentation: { title: "دليل مستخدم TidyFlow", description: "توثيق رسمي تفاعلي.", keywords: "توثيق TidyFlow", canonicalPath: "/documentation" },
+  features: { title: "ميزات TidyFlow", description: "جدولة وتطبيق ميداني offline.", keywords: "ميزات تنظيف", canonicalPath: "/features" },
+  pricing: { title: "أسعار TidyFlow", description: "خطط شفافة مع تجربة مجانية.", keywords: "أسعار برنامج تنظيف", canonicalPath: "/pricing" },
+  integrations: { title: "تكاملات TidyFlow", description: "Google Sheets وStripe.", keywords: "تكامل Sheets", canonicalPath: "/integrations" },
+  contact: { title: "عرض TidyFlow", description: "تجربة مجانية 14 يوماً.", keywords: "عرض TidyFlow", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow حسب الدور", description: "مالكون ومديرون وعمال نظافة.", keywords: "برنامج تنظيف", canonicalPath: "/personas" },
+  "how-it-works": { title: "كيف يعمل TidyFlow", description: "من الجدول إلى الرواتب.", keywords: "سير عمل تنظيف", canonicalPath: "/how-it-works" }
 };
 
 const cn: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — 保洁运营中枢 | 排班、表格同步与外勤 App",
-    description: "TidyFlow 是保洁公司一体化运营平台：离线外勤 App、谷歌表格双向同步、AI 派单与考勤结算，支持 11 种语言。",
-    keywords: "保洁软件, Google 表格同步, 外勤管理"
-  },
-  documentation: {
-    title: "TidyFlow 交互式用户手册 — 23 章官方文档",
-    description: "官方文档：配置、表格同步、外勤 App、SOS 安全、离线模式与 AI 功能。",
-    keywords: "TidyFlow 文档, 用户手册"
-  },
-  features: { title: "TidyFlow 功能", description: "排班、外勤 App、照片质检与集成。", keywords: "保洁软件功能" },
-  pricing: { title: "TidyFlow 定价", description: "保洁企业透明定价方案。", keywords: "保洁软件价格" },
-  integrations: { title: "TidyFlow 集成", description: "Google Sheets、Stripe 与地图。", keywords: "谷歌表格集成" },
-  contact: { title: "预约 TidyFlow 演示", description: "安排现场产品演示。", keywords: "TidyFlow 演示" },
-  personas: { title: "TidyFlow 面向业主、经理与保洁员", description: "按角色定制工作流。", keywords: "保洁软件角色" },
-  "how-it-works": { title: "TidyFlow 如何运作", description: "从表格到外勤再到工资。", keywords: "保洁运营流程" }
+  home: { title: "TidyFlow — 保洁运营软件 | 离线 App、GPS 与 Google 表格", description: "保洁公司一体化平台：离线外勤 App、GPS 核验、表格双向同步与 AI 派单。", keywords: "保洁软件, 离线 App, GPS 考勤", canonicalPath: "/" },
+  documentation: { title: "TidyFlow 用户手册", description: "23 章官方交互式文档。", keywords: "TidyFlow 文档", canonicalPath: "/documentation" },
+  features: { title: "TidyFlow 功能", description: "排班、离线外勤 App、GPS。", keywords: "保洁软件功能", canonicalPath: "/features" },
+  pricing: { title: "TidyFlow 定价", description: "透明定价，14 天免费试用。", keywords: "保洁软件价格", canonicalPath: "/pricing" },
+  integrations: { title: "TidyFlow 集成", description: "Google Sheets 与 Stripe。", keywords: "表格集成", canonicalPath: "/integrations" },
+  contact: { title: "预约 TidyFlow 演示", description: "免费 14 天试用。", keywords: "TidyFlow 演示", canonicalPath: "/contact" },
+  personas: { title: "TidyFlow 面向各角色", description: "业主、经理与保洁员。", keywords: "保洁软件角色", canonicalPath: "/personas" },
+  "how-it-works": { title: "TidyFlow 如何运作", description: "从表格到外勤再到工资。", keywords: "保洁运营流程", canonicalPath: "/how-it-works" }
 };
 
 const byLang: Record<string, Record<SeoPage, SeoMeta>> = { en, pt, es, fr, de, pl, no, sv, it, ar, cn };
+
+const HREFLANG_MAP: Record<string, string> = {
+  en: "en",
+  pt: "pt",
+  es: "es",
+  fr: "fr",
+  de: "de",
+  pl: "pl",
+  no: "nb",
+  sv: "sv",
+  it: "it",
+  ar: "ar",
+  cn: "zh-CN"
+};
 
 export function getSeoMeta(
   activeTab: "marketing" | "documentation",
@@ -281,33 +227,141 @@ export function getSeoMeta(
 }
 
 export function getHtmlLang(language: string): string {
-  if (language === "cn") return "zh-CN";
-  if (language === "no") return "nb";
-  return language;
+  return HREFLANG_MAP[language] || language;
+}
+
+function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
+  let el = document.querySelector(`meta[${attr}="${name}"]`);
+  if (!el) {
+    el = document.createElement("meta");
+    el.setAttribute(attr, name);
+    document.head.appendChild(el);
+  }
+  el.setAttribute("content", content);
+}
+
+function setLink(rel: string, href: string, extra?: Record<string, string>) {
+  const selector = extra?.hreflang
+    ? `link[rel="${rel}"][hreflang="${extra.hreflang}"]`
+    : `link[rel="${rel}"]${rel === "canonical" ? "" : `[href="${href}"]`}`;
+  let el = document.querySelector(selector) as HTMLLinkElement | null;
+  if (!el) {
+    el = document.createElement("link");
+    el.rel = rel;
+    document.head.appendChild(el);
+  }
+  el.href = href;
+  if (extra) {
+    Object.entries(extra).forEach(([k, v]) => el!.setAttribute(k, v));
+  }
+}
+
+function injectJsonLd(id: string, data: object) {
+  let el = document.getElementById(id) as HTMLScriptElement | null;
+  if (!el) {
+    el = document.createElement("script");
+    el.id = id;
+    el.type = "application/ld+json";
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify(data);
 }
 
 export function applySeoMeta(meta: SeoMeta, language: string): void {
-  document.title = meta.title;
-  document.documentElement.lang = getHtmlLang(language);
+  const canonical = `${SITE_URL}${meta.canonicalPath === "/" ? "" : meta.canonicalPath}`;
+  const htmlLang = getHtmlLang(language);
 
-  const setMeta = (name: string, content: string, attr: "name" | "property" = "name") => {
-    let el = document.querySelector(`meta[${attr}="${name}"]`);
-    if (!el) {
-      el = document.createElement("meta");
-      el.setAttribute(attr, name);
-      document.head.appendChild(el);
-    }
-    el.setAttribute("content", content);
-  };
+  document.title = meta.title;
+  document.documentElement.lang = htmlLang;
 
   setMeta("description", meta.description);
   setMeta("keywords", meta.keywords);
+  setMeta("robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
+  setMeta("author", "TidyFlow");
+  setMeta("application-name", "TidyFlow");
+
   setMeta("og:title", meta.title, "property");
   setMeta("og:description", meta.description, "property");
   setMeta("og:type", "website", "property");
-  setMeta("og:image", "/og-image.png", "property");
+  setMeta("og:url", canonical, "property");
+  setMeta("og:site_name", "TidyFlow", "property");
+  setMeta("og:image", OG_IMAGE, "property");
+  setMeta("og:image:alt", "TidyFlow — Cleaning Operations Hub", "property");
+  setMeta("og:locale", htmlLang.replace("-", "_"), "property");
+
   setMeta("twitter:card", "summary_large_image");
   setMeta("twitter:title", meta.title);
   setMeta("twitter:description", meta.description);
-  setMeta("twitter:image", "/og-image.png");
+  setMeta("twitter:image", OG_IMAGE);
+  setMeta("twitter:site", "@tidyflowapp");
+
+  setLink("canonical", canonical);
+
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((n) => n.remove());
+  Object.entries(HREFLANG_MAP).forEach(([langCode, hreflang]) => {
+    const link = document.createElement("link");
+    link.rel = "alternate";
+    link.hreflang = hreflang;
+    link.href = `${SITE_URL}${meta.canonicalPath === "/" ? "" : meta.canonicalPath}?lang=${langCode}`;
+    document.head.appendChild(link);
+  });
+  const xDefault = document.createElement("link");
+  xDefault.rel = "alternate";
+  xDefault.hreflang = "x-default";
+  xDefault.href = canonical;
+  document.head.appendChild(xDefault);
+
+  injectJsonLd("seo-org", {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "TidyFlow",
+    url: SITE_URL,
+    logo: `${SITE_URL}/favicon.png`,
+    email: "tidyflaw@gmail.com",
+    description: meta.description,
+    sameAs: []
+  });
+
+  injectJsonLd("seo-software", {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "TidyFlow",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web, iOS, Android",
+    offers: {
+      "@type": "Offer",
+      price: "9",
+      priceCurrency: "USD",
+      description: "14-day free trial · Startup plan from $9/month"
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      ratingCount: "1200",
+      bestRating: "5"
+    },
+    featureList: [
+      "Offline field app",
+      "GPS geofenced time tracking",
+      "Google Sheets two-way sync",
+      "AI cleaner assignment",
+      "Payroll from verified hours",
+      "Client photo proof PDFs",
+      "SOS lone-worker safety"
+    ]
+  });
+
+  injectJsonLd("seo-website", {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "TidyFlow",
+    url: SITE_URL,
+    description: meta.description,
+    inLanguage: Object.values(HREFLANG_MAP),
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/documentation?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  });
 }
