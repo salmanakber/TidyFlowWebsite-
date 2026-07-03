@@ -336,14 +336,14 @@ const langBlocks = {};
 
 for (const lang of langs) {
   const entries = frEntries.map(([key, frVal]) => {
+    if (extra[key]?.[lang]) {
+      return [key, extra[key][lang]];
+    }
     if (sectionTranslations[key]?.[lang]) {
       return [key, sectionTranslations[key][lang]];
     }
-    return [key, frVal]; // fallback - should not happen
+    return [key, frVal];
   });
-  for (const [key, vals] of Object.entries(extra)) {
-    entries.push([key, vals[lang]]);
-  }
   langBlocks[lang] = entries;
 }
 

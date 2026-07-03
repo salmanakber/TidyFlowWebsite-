@@ -37,7 +37,7 @@ function isSmtpConfigured() {
 
 async function startServer() {
   const app = express();
-  const PORT = 3005;
+  const PORT = 3050;
 
   app.use(express.json());
 

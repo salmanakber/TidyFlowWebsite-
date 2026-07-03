@@ -2,6 +2,7 @@
 
 import { marketingLocaleOverrides } from "./marketingLocaleOverrides";
 import { marketingPageLocales } from "./marketingPageLocales";
+import { marketingPageLocalesExtended } from "./marketingPageLocalesExtended";
 
 export const marketingTranslations: Record<string, any> = {
   en: {
@@ -2871,6 +2872,7 @@ extraLangs.forEach((code) => {
       ...marketingTranslations.en,
       ...(langData[code] || {}),
       ...(marketingPageLocales[code] || {}),
+      ...(marketingPageLocalesExtended[code] || {}),
       ...(marketingLocaleOverrides[code] || {})
     };
   }
@@ -2880,8 +2882,17 @@ marketingTranslations.cn = {
   ...marketingTranslations.en,
   ...langData.cn,
   ...(marketingPageLocales.cn || {}),
-  ...(marketingLocaleOverrides.cn || {})
+  ...(marketingLocaleOverrides.cn || {}),
+  ...(marketingPageLocalesExtended.cn || {}),
 };
+
+(["pt", "es", "ar"] as const).forEach((code) => {
+  marketingTranslations[code] = {
+    ...marketingTranslations.en,
+    ...marketingTranslations[code],
+    ...(marketingPageLocalesExtended[code] || {}),
+  };
+});
 
 export const getMarketingTranslation = (key: string, lang: string): string => {
   if (marketingLocaleOverrides[lang]?.[key]) {
@@ -2889,6 +2900,9 @@ export const getMarketingTranslation = (key: string, lang: string): string => {
   }
   if (marketingPageLocales[lang]?.[key]) {
     return marketingPageLocales[lang][key];
+  }
+  if (marketingPageLocalesExtended[lang]?.[key]) {
+    return marketingPageLocalesExtended[lang][key];
   }
   const dictionary = marketingTranslations[lang] || marketingTranslations["en"];
   return dictionary[key] || marketingTranslations["en"][key] || key;

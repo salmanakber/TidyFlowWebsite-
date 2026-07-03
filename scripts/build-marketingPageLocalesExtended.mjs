@@ -68,13 +68,13 @@ const existing = {
   cn: cnExisting,
 };
 
+import ptData from "./locale-data/pt.mjs";
+import esData from "./locale-data/es.mjs";
+import arData from "./locale-data/ar.mjs";
+import cnData from "./locale-data/cn.mjs";
+
 // Native page-level translations (246 keys each). Existing langData values reused where present.
-const native = JSON.parse(
-  fs.readFileSync(
-    path.join(__dirname, "marketingPageLocalesExtended.data.json"),
-    "utf8"
-  )
-);
+const native = { pt: ptData, es: esData, ar: arData, cn: cnData };
 
 function esc(s) {
   return s.replace(/\\/g, "\\\\").replace(/"/g, '\\"').replace(/\n/g, "\\n");
