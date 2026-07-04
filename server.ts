@@ -1,22 +1,34 @@
 import "dotenv/config";
 import express from "express";
 import path from "path";
+import fs from "fs";
 import nodemailer from "nodemailer";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { rawChapters } from "./src/utils/chaptersData";
 import { buildTidyBotSystemKnowledge, LANGUAGE_NAMES } from "./src/utils/tidyBotKnowledge";
 
+// Keep the process alive on unexpected async errors (log only — do not exit).
+// Without this, a single unhandled rejection can kill tidyflowapp.com until restart.
+process.on("unhandledRejection", (reason) => {
+  console.error("[unhandledRejection]", reason);
+});
+process.on("uncaughtException", (err) => {
+  console.error("[uncaughtException]", err);
+});
+
 // Initialize Gemini SDK with server-side safety checks
 const apiKey = process.env.GEMINI_API_KEY;
-const ai = new GoogleGenAI({
-  apiKey: apiKey,
-  httpOptions: {
-    headers: {
-      'User-Agent': 'aistudio-build',
-    }
-  }
-});
+const ai = apiKey
+  ? new GoogleGenAI({
+      apiKey,
+      httpOptions: {
+        headers: {
+          "User-Agent": "aistudio-build",
+        },
+      },
+    })
+  : null;
 
 function getSmtpConfig() {
   return {
@@ -37,9 +49,23 @@ function isSmtpConfigured() {
 
 async function startServer() {
   const app = express();
-  const PORT = 3050;
+  const PORT = Number(process.env.PORT || 3050);
+  const isProd = process.env.NODE_ENV === "production";
 
-  app.use(express.json());
+  // Behind nginx / Cloudflare on tidyflowapp.com
+  app.set("trust proxy", 1);
+  app.disable("x-powered-by");
+  app.use(express.json({ limit: "256kb" }));
+
+  // Liveness probe — use this from nginx/uptime monitors
+  app.get("/api/health", (_req, res) => {
+    res.status(200).json({
+      ok: true,
+      port: PORT,
+      env: isProd ? "production" : "development",
+      uptime: Math.floor(process.uptime()),
+    });
+  });
 
   // Contact form: public SMTP status (no secrets)
   app.get("/api/contact/config", (_req, res) => {
@@ -113,7 +139,8 @@ async function startServer() {
   app.get("/api/plans", async (_req, res) => {
     try {
       const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans`, {
-        headers: { Accept: "application/json" }
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(8000),
       });
       if (!upstream.ok) {
         const text = await upstream.text().catch(() => "");
@@ -135,7 +162,8 @@ async function startServer() {
     try {
       const code = String(req.params.code || "").toUpperCase();
       const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans/${encodeURIComponent(code)}`, {
-        headers: { Accept: "application/json" }
+        headers: { Accept: "application/json" },
+        signal: AbortSignal.timeout(8000),
       });
       if (!upstream.ok) {
         const text = await upstream.text().catch(() => "");
@@ -163,7 +191,7 @@ async function startServer() {
         return;
       }
 
-      if (!apiKey) {
+      if (!apiKey || !ai) {
         // Fallback if API key is not configured yet (prevents crashes and guides setup)
         res.status(500).json({
           error: "GEMINI_API_KEY is not configured on the server. Please add it to your environment variables."
@@ -272,7 +300,7 @@ Return JSON only:
         return;
       }
 
-      if (!apiKey) {
+      if (!apiKey || !ai) {
         res.json({ title, content }); // Fallback directly to English if no API key
         return;
       }
@@ -339,7 +367,7 @@ You MUST return your response as a JSON object matching this schema:
         return;
       }
 
-      if (!apiKey || language === "en") {
+      if (!apiKey || !ai || language === "en") {
         res.json({ translated: text });
         return;
       }
@@ -384,23 +412,68 @@ Return ONLY the translated plain text.`;
   });
 
   // Vite middleware for development vs static build files for production
-  if (process.env.NODE_ENV !== "production") {
+  if (!isProd) {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        allowedHosts: ["tidyflowapp.com", "www.tidyflowapp.com", "localhost"],
+      },
       appType: "spa",
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
+    const distPath = path.join(process.cwd(), "dist");
+    const indexHtml = path.join(distPath, "index.html");
+    if (!fs.existsSync(indexHtml)) {
+      throw new Error(
+        `Production build missing: ${indexHtml}. Run "npm run build" before "npm start".`
+      );
+    }
+    app.use(express.static(distPath, { maxAge: "1h", index: false }));
+    // SPA fallback — only for non-API GET routes
+    app.get("*", (req, res, next) => {
+      if (req.path.startsWith("/api/")) {
+        res.status(404).json({ error: "Not found" });
+        return;
+      }
+      res.sendFile(indexHtml, (err) => {
+        if (err) next(err);
+      });
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  // Central error handler — never let Express default crash the process
+  app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
+    console.error("[express error]", err);
+    if (!res.headersSent) {
+      res.status(500).json({ error: "Internal server error" });
+    }
   });
+
+  const server = app.listen(PORT, "0.0.0.0", () => {
+    console.log(`Server running on http://0.0.0.0:${PORT} (${isProd ? "production" : "development"})`);
+  });
+
+  server.on("error", (err: NodeJS.ErrnoException) => {
+    if (err.code === "EADDRINUSE") {
+      console.error(`Port ${PORT} is already in use. Stop the other process or set PORT=...`);
+    } else {
+      console.error("[listen error]", err);
+    }
+    process.exit(1);
+  });
+
+  // Graceful shutdown (PM2 / systemd / docker stop)
+  const shutdown = (signal: string) => {
+    console.log(`${signal} received — closing server`);
+    server.close(() => process.exit(0));
+    setTimeout(() => process.exit(1), 10_000).unref();
+  };
+  process.on("SIGTERM", () => shutdown("SIGTERM"));
+  process.on("SIGINT", () => shutdown("SIGINT"));
 }
 
-startServer();
+startServer().catch((err) => {
+  console.error("Failed to start server:", err);
+  process.exit(1);
+});

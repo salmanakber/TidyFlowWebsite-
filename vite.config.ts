@@ -12,11 +12,14 @@ export default defineConfig(() => {
       },
     },
     server: {
+      // Hosts that may hit this app (direct or via reverse proxy)
       allowedHosts: [
         'tidyflowapp.com',
-        'www.tidyflowapp.com'
+        'www.tidyflowapp.com',
+        'localhost',
+        '.tidyflowapp.com',
       ],
-
+      // On the live server, set DISABLE_HMR=true to avoid websocket/file-watch crashes
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
