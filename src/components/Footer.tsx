@@ -1,28 +1,19 @@
 
+"use client";
+
 import React from "react";
+import Link from "next/link";
 import Logo from "./Logo";
-import { Mail, Phone, Globe, Shield, Scale, ChevronRight, Smartphone } from "lucide-react";
+import { Mail, Globe, Shield, Scale, ChevronRight } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
 import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
+import { pathForPage } from "../utils/seo";
 
 interface FooterProps {
-  setMarketingPage: (page: string) => void;
-  setActiveTab: (tab: "marketing" | "documentation") => void;
   language: string;
 }
 
-export default function Footer({ setMarketingPage, setActiveTab, language }: FooterProps) {
-  const navigateTo = (pageId: string) => {
-    setActiveTab("marketing");
-    setMarketingPage(pageId);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const openDoc = () => {
-    setActiveTab("documentation");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
+export default function Footer({ language }: FooterProps) {
   const getT = (key: string) => getMarketingTranslation(key, language);
 
   return (
@@ -35,9 +26,9 @@ export default function Footer({ setMarketingPage, setActiveTab, language }: Foo
           
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-5">
-            <div className="cursor-pointer inline-block transition-transform hover:scale-[1.01]" onClick={() => navigateTo("home")}>
+            <Link href="/" className="cursor-pointer inline-block transition-transform hover:scale-[1.01]">
               <Logo size={44} />
-            </div>
+            </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
               {getT("footerDesc")}
             </p>
@@ -62,11 +53,11 @@ export default function Footer({ setMarketingPage, setActiveTab, language }: Foo
               {getT("sitemapPages")}
             </h4>
             <div className="flex flex-col gap-3 text-xs sm:text-sm">
-              <button onClick={() => navigateTo("home")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerHome")}</button>
-              <button onClick={() => navigateTo("features")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerFeatures")}</button>
-              <button onClick={() => navigateTo("pricing")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerPricing")}</button>
-              <button onClick={() => navigateTo("how-it-works")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerHowItWorks")}</button>
-              <button onClick={() => navigateTo("contact")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("footerContactDemo")}</button>
+              <Link href="/" className="hover:text-brand-amber transition-colors">{getT("footerHome")}</Link>
+              <Link href="/features" className="hover:text-brand-amber transition-colors">{getT("footerFeatures")}</Link>
+              <Link href="/pricing" className="hover:text-brand-amber transition-colors">{getT("footerPricing")}</Link>
+              <Link href="/how-it-works" className="hover:text-brand-amber transition-colors">{getT("footerHowItWorks")}</Link>
+              <Link href="/contact" className="hover:text-brand-amber transition-colors">{getT("footerContactDemo")}</Link>
             </div>
           </div>
 
@@ -76,12 +67,12 @@ export default function Footer({ setMarketingPage, setActiveTab, language }: Foo
               {getT("whoItsFor")}
             </h4>
             <div className="flex flex-col gap-3 text-xs sm:text-sm">
-              <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("ownersLabel")}</button>
-              <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("managersLabel")}</button>
-              <button onClick={() => navigateTo("personas")} className="hover:text-brand-amber cursor-pointer transition-colors text-left">{getT("cleanersLabel")}</button>
-              <button onClick={openDoc} className="text-brand-amber hover:text-white cursor-pointer transition-colors text-left flex items-center gap-1 font-semibold">
+              <Link href="/personas" className="hover:text-brand-amber transition-colors">{getT("ownersLabel")}</Link>
+              <Link href="/personas" className="hover:text-brand-amber transition-colors">{getT("managersLabel")}</Link>
+              <Link href="/personas" className="hover:text-brand-amber transition-colors">{getT("cleanersLabel")}</Link>
+              <Link href="/documentation" className="text-brand-amber hover:text-white transition-colors flex items-center gap-1 font-semibold">
                 {getT("docPortalLink")} <ChevronRight size={11} />
-              </button>
+              </Link>
             </div>
           </div>
 

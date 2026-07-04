@@ -1,7 +1,12 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Logo from "./Logo";
 import { Menu, X, BookOpen, ChevronRight, HelpCircle, Globe, ChevronDown, Check, Sun, Moon, Monitor } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
+import { pathForPage } from "../utils/seo";
 
 export const SUPPORTED_LANGUAGES = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -19,9 +24,7 @@ export const SUPPORTED_LANGUAGES = [
 
 interface HeaderProps {
   activeTab: "marketing" | "documentation";
-  setActiveTab: (tab: "marketing" | "documentation") => void;
   marketingPage: string;
-  setMarketingPage: (page: string) => void;
   language: string;
   setLanguage: (lang: string) => void;
   theme: "light" | "dark" | "system";
@@ -30,14 +33,13 @@ interface HeaderProps {
 
 export default function Header({
   activeTab,
-  setActiveTab,
   marketingPage,
-  setMarketingPage,
   language,
   setLanguage,
   theme,
   setTheme
 }: HeaderProps) {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
@@ -125,16 +127,13 @@ export default function Header({
   ];
 
   const handleNavClick = (pageId: string) => {
-    setActiveTab("marketing");
-    setMarketingPage(pageId);
     setIsOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push(pathForPage(pageId));
   };
 
   const handleDocClick = () => {
-    setActiveTab("documentation");
     setIsOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    router.push("/documentation");
   };
 
   return (
@@ -148,9 +147,9 @@ export default function Header({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Brand Logo Clickable to Home */}
-          <div className="cursor-pointer" onClick={() => handleNavClick("home")}>
+          <Link href="/" className="cursor-pointer" onClick={() => setIsOpen(false)}>
             <Logo size={36} />
-          </div>
+          </Link>
 
           {/* Desktop Nav links */}
           <nav className="hidden lg:flex items-center gap-5">

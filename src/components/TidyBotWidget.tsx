@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
 import { Sparkles, X, MessageSquare, Send, Book } from "lucide-react";
 import { portalTranslations } from "../utils/docTranslations";

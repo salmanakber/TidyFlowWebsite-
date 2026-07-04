@@ -230,6 +230,76 @@ export function getHtmlLang(language: string): string {
   return HREFLANG_MAP[language] || language;
 }
 
+/** Next.js Metadata API (server-safe — no document access). */
+export function buildPageMetadata(page: SeoPage, language = "en") {
+  const langDict = byLang[language] || byLang.en;
+  const meta = langDict[page] || langDict.home;
+  const path = meta.canonicalPath === "/" ? "" : meta.canonicalPath;
+  const canonical = `${SITE_URL}${path}`;
+  const htmlLang = getHtmlLang(language);
+
+  const languages: Record<string, string> = { "x-default": canonical || SITE_URL };
+  Object.entries(HREFLANG_MAP).forEach(([code, hreflang]) => {
+    languages[hreflang] = path ? `${SITE_URL}${path}?lang=${code}` : `${SITE_URL}/?lang=${code}`;
+  });
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    keywords: meta.keywords,
+    authors: [{ name: "TidyFlow" }],
+    applicationName: "TidyFlow",
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true, "max-image-preview": "large" as const, "max-snippet": -1, "max-video-preview": -1 },
+    },
+    alternates: {
+      canonical: canonical || SITE_URL,
+      languages,
+    },
+    openGraph: {
+      type: "website" as const,
+      url: canonical || SITE_URL,
+      siteName: "TidyFlow",
+      title: meta.title,
+      description: meta.description,
+      locale: htmlLang.replace("-", "_"),
+      images: [{ url: OG_IMAGE, alt: "TidyFlow — Cleaning Operations Hub" }],
+    },
+    twitter: {
+      card: "summary_large_image" as const,
+      site: "@tidyflowapp",
+      title: meta.title,
+      description: meta.description,
+      images: [OG_IMAGE],
+    },
+  };
+}
+
+export function pageFromPath(pathname: string): SeoPage {
+  const clean = pathname.replace(/\/$/, "") || "/";
+  const map: Record<string, SeoPage> = {
+    "/": "home",
+    "/features": "features",
+    "/pricing": "pricing",
+    "/how-it-works": "how-it-works",
+    "/personas": "personas",
+    "/integrations": "integrations",
+    "/contact": "contact",
+    "/documentation": "documentation",
+  };
+  return map[clean] || "home";
+}
+
+export function pathForPage(pageId: string): string {
+  if (pageId === "home" || pageId === "") return "/";
+  if (pageId === "documentation") return "/documentation";
+  return `/${pageId}`;
+}
+
+export { SITE_URL, OG_IMAGE, HREFLANG_MAP };
+
 function setMeta(name: string, content: string, attr: "name" | "property" = "name") {
   let el = document.querySelector(`meta[${attr}="${name}"]`);
   if (!el) {

@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Noto Sans Arabic", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-brand-navy: #0D1B2A;
+  --color-brand-navy-mid: #1A2E44;
+  --color-brand-navy-light: #2A435E;
+  --color-brand-amber: #F59E0B;
+  --color-brand-amber-dark: #D97706;
+  --color-canvas: #F7F8FA;
+  --color-surface: #FFFFFF;
+}
+
+/* Custom fine-tuning and animations */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-canvas);
+  color: #1E293B;
+  overflow-x: hidden;
+}
+
+.glow-effect {
+  position: relative;
+}
+.glow-effect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.glow-effect:hover::after {
+  opacity: 1;
+}
+
+/* Custom scrollbar for doc reader */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Ensure Noto Sans Arabic is prioritized for RTL/Arabic languages */
+[dir="rtl"], [lang="ar"], .rtl {
+  font-family: "Noto Sans Arabic", system-ui, -apple-system, sans-serif !important;
+}
+
+/* ==========================================================================
+   THEME SWITCHER SYSTEM (LIGHT, DARK, AND SYSTEM PREFERENCES)
+   ========================================================================== */
+
+:root {
+  --theme-canvas: #0f172a; /* Slate 900 */
+  --theme-surface: #1e293b; /* Slate 800 */
+  --theme-surface-dark: #0f172a; /* Slate 900 */
+  --theme-surface-deep: #020617; /* Slate 950 */
+  --theme-text-primary: #f8fafc; /* Slate 50 */
+  --theme-text-secondary: #cbd5e1; /* Slate 300 */
+  --theme-text-muted: #94a3b8; /* Slate 400 */
+  --theme-border: #1e293b; /* Slate 800 */
+  --theme-border-light: #334155; /* Slate 700 */
+  --theme-shadow: 0 10px 30px -15px rgba(2, 6, 23, 0.7);
+}
+
+.light-mode {
+  --theme-canvas: #f8fafc; /* Slate 50 */
+  --theme-surface: #ffffff; /* White */
+  --theme-surface-dark: #f1f5f9; /* Slate 100 */
+  --theme-surface-deep: #e2e8f0; /* Slate 200 */
+  --theme-text-primary: #0f172a; /* Slate 900 */
+  --theme-text-secondary: #334155; /* Slate 700 */
+  --theme-text-muted: #64748b; /* Slate 500 */
+  --theme-border: #cbd5e1; /* Slate 300 */
+  --theme-border-light: #e2e8f0; /* Slate 200 */
+  --theme-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.08);
+}
+
+.dark-mode {
+  --theme-canvas: #0f172a;
+  --theme-surface: #1e293b;
+  --theme-surface-dark: #0f172a;
+  --theme-surface-deep: #020617;
+  --theme-text-primary: #f8fafc;
+  --theme-text-secondary: #cbd5e1;
+  --theme-text-muted: #94a3b8;
+  --theme-border: #1e293b;
+  --theme-border-light: #334155;
+  --theme-shadow: 0 10px 30px -15px rgba(2, 6, 23, 0.7);
+}
+
+/* System default theme based on OS setting */
+@media (prefers-color-scheme: light) {
+  .system-mode {
+    --theme-canvas: #f8fafc;
+    --theme-surface: #ffffff;
+    --theme-surface-dark: #f1f5f9;
+    --theme-surface-deep: #e2e8f0;
+    --theme-text-primary: #0f172a;
+    --theme-text-secondary: #334155;
+    --theme-text-muted: #64748b;
+    --theme-border: #cbd5e1;
+    --theme-border-light: #e2e8f0;
+    --theme-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.08);
+  }
+}
+
+/* Apply background and base color variables globally to the active mode container */
+.light-mode, .dark-mode, .system-mode {
+  background-color: var(--theme-canvas);
+  color: var(--theme-text-secondary);
+}
+
+/* Helper theme utility overrides for light-mode */
+.light-mode [class*="from-slate-"],
+.light-mode [class*="from-brand-navy"],
+.light-mode [class*="from-black"],
+.light-mode [class*="to-slate-"],
+.light-mode [class*="to-brand-navy"],
+.light-mode [class*="to-black"] {
+  background-image: none !important;
+}
+
+.light-mode .bg-slate-900,
+.light-mode .bg-slate-900\/95,
+.light-mode .bg-slate-900\/90,
+.light-mode .bg-slate-900\/80,
+.light-mode .bg-slate-950,
+.light-mode .bg-slate-950\/40,
+.light-mode .bg-slate-950\/20,
+.light-mode .bg-slate-950\/70,
+.light-mode .bg-brand-navy {
+  background-color: var(--theme-canvas) !important;
+}
+
+.light-mode .bg-slate-800,
+.light-mode .bg-slate-800\/40,
+.light-mode .bg-slate-800\/60,
+.light-mode .bg-slate-800\/80,
+.light-mode .bg-slate-850,
+.light-mode .bg-brand-navy-mid {
+  background-color: var(--theme-surface) !important;
+}
+
+.light-mode .bg-slate-950\/60,
+.light-mode .bg-slate-950\/80 {
+  background-color: var(--theme-surface-dark) !important;
+}
+
+.light-mode .text-slate-100,
+.light-mode .text-white,
+.light-mode .text-slate-50,
+.light-mode .text-slate-200,
+.light-mode .text-slate-100\/90,
+.light-mode .text-brand-amber-light {
+  color: var(--theme-text-primary) !important;
+}
+
+.light-mode .text-slate-300,
+.light-mode .text-slate-400,
+.light-mode .text-slate-300\/80 {
+  color: var(--theme-text-secondary) !important;
+}
+
+.light-mode .text-slate-500 {
+  color: var(--theme-text-muted) !important;
+}
+
+.light-mode .border-slate-800,
+.light-mode .border-slate-800\/80,
+.light-mode .border-slate-900,
+.light-mode .border-slate-900\/60,
+.light-mode .border-slate-850,
+.light-mode .border-slate-700 {
+  border-color: var(--theme-border) !important;
+}
+
+.light-mode .shadow-xl, .light-mode .shadow-2xl {
+  box-shadow: var(--theme-shadow) !important;
+}
+
+/* System mode overrides when user prefers light */
+@media (prefers-color-scheme: light) {
+  .system-mode [class*="from-slate-"],
+  .system-mode [class*="from-brand-navy"],
+  .system-mode [class*="from-black"],
+  .system-mode [class*="to-slate-"],
+  .system-mode [class*="to-brand-navy"],
+  .system-mode [class*="to-black"] {
+    background-image: none !important;
+  }
+
+  .system-mode .bg-slate-900,
+  .system-mode .bg-slate-900\/95,
+  .system-mode .bg-slate-900\/90,
+  .system-mode .bg-slate-900\/80,
+  .system-mode .bg-slate-950,
+  .system-mode .bg-slate-950\/40,
+  .system-mode .bg-slate-950\/20,
+  .system-mode .bg-slate-950\/70,
+  .system-mode .bg-brand-navy {
+    background-color: var(--theme-canvas) !important;
+  }
+
+  .system-mode .bg-slate-800,
+  .system-mode .bg-slate-800\/40,
+  .system-mode .bg-slate-800\/60,
+  .system-mode .bg-slate-800\/80,
+  .system-mode .bg-slate-850,
+  .system-mode .bg-brand-navy-mid {
+    background-color: var(--theme-surface) !important;
+  }
+
+  .system-mode .bg-slate-950\/60,
+  .system-mode .bg-slate-950\/80 {
+    background-color: var(--theme-surface-dark) !important;
+  }
+
+  .system-mode .text-slate-100,
+  .system-mode .text-white,
+  .system-mode .text-slate-50,
+  .system-mode .text-slate-200,
+  .system-mode .text-slate-100\/90,
+  .system-mode .text-brand-amber-light {
+    color: var(--theme-text-primary) !important;
+  }
+
+  .system-mode .text-slate-300,
+  .system-mode .text-slate-400,
+  .system-mode .text-slate-300\/80 {
+    color: var(--theme-text-secondary) !important;
+  }
+
+  .system-mode .text-slate-500 {
+    color: var(--theme-text-muted) !important;
+  }
+
+  .system-mode .border-slate-800,
+  .system-mode .border-slate-800\/80,
+  .system-mode .border-slate-900,
+  .system-mode .border-slate-900\/60,
+  .system-mode .border-slate-850,
+  .system-mode .border-slate-700 {
+    border-color: var(--theme-border) !important;
+  }
+
+  .system-mode .shadow-xl, .system-mode .shadow-2xl {
+    box-shadow: var(--theme-shadow) !important;
+  }
+}
+
+/* ==========================================================================
+   SPREADSHEET SYNC LIVE ANIMATIONS
+   ========================================================================== */
+@keyframes flow-x {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes laser-sweep {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+.animate-flow-x-fast {
+  animation: flow-x 0.7s linear infinite;
+}
+
+.animate-flow-x-normal {
+  animation: flow-x 2s linear infinite;
+}
+
+@keyframes flow-y {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-flow-y-fast {
+  animation: flow-y 0.7s linear infinite;
+}
+
+.animate-flow-y-normal {
+  animation: flow-y 2s linear infinite;
+}
+
+.animate-laser-sweep {
+  animation: laser-sweep 2s ease-in-out infinite;
+}
+
+@keyframes trust-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-marquee-track {
+  animation: trust-marquee 45s linear infinite;
+}
+
+.trust-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+.animate-scan {
+  animation: scan 2.5s ease-in-out infinite;
+}
+
+

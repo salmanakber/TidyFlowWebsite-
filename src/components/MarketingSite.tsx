@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import InteractiveMockup from "./InteractiveMockup";
 import { getTranslation } from "../utils/translations";
 import { getSheetTranslation } from "../utils/sheetMockupTranslations";
@@ -12,6 +15,7 @@ import {
   type PlanCode
 } from "../utils/plansApi";
 import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
+import { useSite } from "../context/SiteContext";
 import {
   Calendar,
   CheckSquare,
@@ -48,50 +52,35 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-interface MarketingSiteProps {
-  page: string;
-  setPage: (page: string) => void;
-  setActiveTab: (tab: "marketing" | "documentation") => void;
-  language: string;
-}
-
-export default function MarketingSite({ page, setPage, setActiveTab, language }: MarketingSiteProps) {
+export function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="pt-24 min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-brand-amber/30 selection:text-white relative overflow-hidden">
-      
-      {/* Background vectors & ambient light */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-amber/[0.04] rounded-full blur-[160px] pointer-events-none -z-10" />
       <div className="absolute top-[800px] left-[-300px] w-[900px] h-[900px] bg-blue-500/[0.03] rounded-full blur-[200px] pointer-events-none -z-10" />
       <div className="absolute bottom-0 right-[-200px] w-[800px] h-[800px] bg-emerald-500/[0.03] rounded-full blur-[160px] pointer-events-none -z-10" />
-
-      {/* Grid background mesh overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_80%,transparent_100%)] opacity-25 pointer-events-none -z-10" />
-
-      {/* Aesthetic corner lines */}
       <div className="absolute top-6 left-6 w-16 h-16 border-l border-t border-slate-800/80 pointer-events-none hidden lg:block" />
       <div className="absolute top-6 right-6 w-16 h-16 border-r border-t border-slate-800/80 pointer-events-none hidden lg:block" />
       <div className="absolute bottom-6 left-6 w-16 h-16 border-l border-b border-slate-800/80 pointer-events-none hidden lg:block" />
       <div className="absolute bottom-6 right-6 w-16 h-16 border-r border-b border-slate-800/80 pointer-events-none hidden lg:block" />
-
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={page}
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -16 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="flex-1 z-10"
-        >
-          {page === "home" && <HomePage setPage={setPage} setActiveTab={setActiveTab} language={language} />}
-          {page === "features" && <FeaturesPage language={language} />}
-          {page === "pricing" && <PricingPage language={language} />}
-          {page === "how-it-works" && <HowItWorksPage language={language} />}
-          {page === "personas" && <PersonasPage language={language} />}
-          {page === "integrations" && <IntegrationsPage language={language} />}
-          {page === "contact" && <ContactPage language={language} />}
-        </motion.div>
-      </AnimatePresence>
+      <div className="flex-1 z-10">{children}</div>
     </div>
+  );
+}
+
+/** Route-level marketing page renderer (uses SiteContext language). */
+export function MarketingPageView({ page }: { page: string }) {
+  const { language } = useSite();
+  return (
+    <MarketingShell>
+      {page === "home" && <HomePage language={language} />}
+      {page === "features" && <FeaturesPage language={language} />}
+      {page === "pricing" && <PricingPage language={language} />}
+      {page === "how-it-works" && <HowItWorksPage language={language} />}
+      {page === "personas" && <PersonasPage language={language} />}
+      {page === "integrations" && <IntegrationsPage language={language} />}
+      {page === "contact" && <ContactPage language={language} />}
+    </MarketingShell>
   );
 }
 
@@ -941,14 +930,11 @@ function FaqAccordion({ language }: { language: string }) {
 // 1. HOME PAGE VIEW (LONG-FORM LANDING)
 // ==========================================
 function HomePage({
-  setPage,
-  setActiveTab,
   language
 }: {
-  setPage: (p: string) => void;
-  setActiveTab: (tab: "marketing" | "documentation") => void;
   language: string;
 }) {
+  const router = useRouter();
   const mt = (key: string) => getMarketingTranslation(key, language);
 
   return (
@@ -978,7 +964,7 @@ function HomePage({
 
             <div className="flex flex-wrap gap-4 pt-2">
               <button
-                onClick={() => setPage("contact")}
+                onClick={() => router.push("/contact")}
                 className="px-8 py-4.5 bg-brand-amber hover:bg-brand-amber/90 active:scale-[0.98] text-slate-950 font-bold rounded-xl text-sm transition-all shadow-lg shadow-brand-amber/15 hover:shadow-brand-amber/25 cursor-pointer flex items-center gap-2 group"
               >
                 {getTranslation("startTrial", language)} 
@@ -986,10 +972,7 @@ function HomePage({
               </button>
 
               <button
-                onClick={() => {
-                  setActiveTab("documentation");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
+                onClick={() => router.push("/documentation")}
                 className="px-8 py-4.5 bg-slate-900 border border-slate-800 hover:border-slate-700 hover:bg-slate-850 active:scale-[0.98] text-slate-200 font-semibold rounded-xl text-sm transition-all cursor-pointer flex items-center gap-2"
               >
                 {getTranslation("userDocs", language)}
@@ -1471,16 +1454,13 @@ function HomePage({
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-6">
             <button
-              onClick={() => setPage("contact")}
+              onClick={() => router.push("/contact")}
               className="w-full sm:w-auto px-8 py-4.5 bg-slate-950 text-brand-amber hover:text-white hover:bg-slate-900 text-sm font-bold rounded-xl transition-all shadow-lg active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
             >
               {mt("ctaTrialBtn")}
             </button>
             <button
-              onClick={() => {
-                setActiveTab("documentation");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+              onClick={() => router.push("/documentation")}
               className="w-full sm:w-auto px-8 py-4.5 bg-transparent border border-slate-950 text-slate-950 hover:bg-slate-950 hover:text-white text-sm font-bold rounded-xl transition-all active:scale-[0.98] cursor-pointer"
             >
               {mt("ctaGuideBtn")}

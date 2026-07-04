@@ -1,5 +1,4 @@
 import React from "react";
-import logoSrc from "../../assets/logo.png";
 
 interface LogoProps {
   className?: string;
@@ -11,7 +10,7 @@ export default function Logo({ className = "", size = 40, showText = true }: Log
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       <img
-        src={logoSrc}
+        src="/favicon.png"
         alt="TidyFlow"
         width={size}
         height={size}

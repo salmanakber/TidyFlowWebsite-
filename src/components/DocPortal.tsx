@@ -1,5 +1,9 @@
+"use client";
+
 import React, { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import InteractiveMockup from "./InteractiveMockup";
+import { useSite } from "../context/SiteContext";
 import { rawChapters } from "../utils/chaptersData";
 import {
   portalTranslations,
@@ -43,38 +47,47 @@ interface Chapter {
 }
 
 export default function DocPortal({
-  language = "en",
+  language: languageProp,
   jumpToChapterId = null,
   onJumpHandled
 }: {
   language?: string;
   jumpToChapterId?: string | null;
   onJumpHandled?: () => void;
-}) {
+} = {}) {
+  const { language: ctxLanguage, docJumpChapter, setDocJumpChapter } = useSite();
+  const language = languageProp || ctxLanguage;
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedChapterId, setSelectedChapterId] = useState("ch-1");
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [copiedChapterId, setCopiedChapterId] = useState<string | null>(null);
 
+  const chapterFromUrl = searchParams.get("chapter");
+  const effectiveJump = jumpToChapterId || docJumpChapter || chapterFromUrl;
+
   // Dynamic Translations for Missing Languages in chapterTranslations
-  const [dynChapters, setDynChapters] = useState<Record<string, { title: string; content: string }>>(() => {
-    try {
-      const cached = localStorage.getItem("tidyflow_dyn_chapters");
-      return cached ? JSON.parse(cached) : {};
-    } catch {
-      return {};
-    }
-  });
+  const [dynChapters, setDynChapters] = useState<Record<string, { title: string; content: string }>>({});
   const [loadingTranslation, setLoadingTranslation] = useState<boolean>(false);
 
   useEffect(() => {
-    if (jumpToChapterId) {
-      setSelectedChapterId(jumpToChapterId);
+    try {
+      const cached = localStorage.getItem("tidyflow_dyn_chapters");
+      if (cached) setDynChapters(JSON.parse(cached));
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  useEffect(() => {
+    if (effectiveJump) {
+      setSelectedChapterId(effectiveJump);
       setMobileSidebarOpen(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
       onJumpHandled?.();
+      setDocJumpChapter(null);
     }
-  }, [jumpToChapterId, onJumpHandled]);
+  }, [effectiveJump, onJumpHandled, setDocJumpChapter]);
 
   // Dynamically translate active chapter on-the-fly when switching to any missing language
   useEffect(() => {
