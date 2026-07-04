@@ -2308,45 +2308,23 @@ function ContactPage({ language }: { language: string }) {
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
-  const [sendLogs, setSendLogs] = useState<string[]>([]);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [mailConfig, setMailConfig] = useState<{
     configured: boolean;
     provider?: string;
-    smtpHost: string | null;
-    toEmail: string | null;
   } | null>(null);
 
   useEffect(() => {
     fetch("/api/contact/config")
       .then((res) => res.json())
       .then(setMailConfig)
-      .catch(() => setMailConfig({ configured: false, smtpHost: null, toEmail: null }));
+      .catch(() => setMailConfig({ configured: false }));
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
-    setSendLogs([]);
     setSubmitError(null);
-
-    const smtpHost = mailConfig?.smtpHost || "smtp-relay.brevo.com";
-    const toEmail = mailConfig?.toEmail || "admin";
-
-    const logSteps = [
-      `📡 DNS Lookup: resolving ${smtpHost}...`,
-      "🔐 Establishing secure TLS 1.3 handshake...",
-      `🔑 Routing application for "${formData.company}" to master registration registry...`,
-      "📬 Authenticating secure envelope forwarding...",
-      `📤 Packaging operational metadata payload (Cleaners: ${formData.size}, Sheets: ${formData.sheetUse})...`,
-      `📨 Relaying metadata packet to: ${toEmail}...`,
-      "✨ Triggering automatic evaluation calendar slots..."
-    ];
-
-    for (let i = 0; i < logSteps.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 300));
-      setSendLogs((prev) => [...prev, logSteps[i]]);
-    }
 
     try {
       const res = await fetch("/api/contact", {
@@ -2358,10 +2336,8 @@ function ContactPage({ language }: { language: string }) {
       if (!res.ok) {
         throw new Error(data.error || `Server error ${res.status}`);
       }
-      setSendLogs((prev) => [...prev, mt("contactBrevoSuccess")]);
       setSubmitted(true);
     } catch (err: any) {
-      setSendLogs((prev) => [...prev, `❌ Delivery failed: ${err.message}`]);
       setSubmitError(err.message || "Failed to send message.");
     } finally {
       setIsSending(false);
@@ -2423,32 +2399,7 @@ function ContactPage({ language }: { language: string }) {
 
         {/* Form Column */}
         <div className="lg:col-span-6 bg-slate-950 p-6 sm:p-12 rounded-3xl border border-slate-900 shadow-2xl relative">
-          {isSending ? (
-            <div className="space-y-5 font-mono text-left">
-              <div className="flex items-center gap-2 pb-4 border-b border-slate-900">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500 inline-block"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
-                <span className="text-[9px] text-slate-500 uppercase tracking-widest ml-1.5 font-bold">{mt("contactBrevoRelay")}</span>
-              </div>
-              <div className="bg-slate-900/50 p-5 rounded-2xl border border-slate-850 text-[11px] sm:text-xs leading-relaxed space-y-2.5 h-72 overflow-y-auto text-emerald-400">
-                {sendLogs.map((log, i) => (
-                  <div key={i} className="flex items-start gap-1.5 animate-fadeIn">
-                    <span className="text-slate-650 select-none">❯</span>
-                    <span>{log}</span>
-                  </div>
-                ))}
-                <div className="inline-block w-1.5 h-3.5 bg-emerald-400 animate-pulse align-middle ml-1"></div>
-              </div>
-              <div className="text-[10px] text-slate-500 text-center">
-                Securely relaying payload to:{" "}
-                <span className="text-brand-amber font-bold">{mailConfig?.toEmail || "configure CONTACT_TO_EMAIL in .env"}</span>
-                {mailConfig?.smtpHost && (
-                  <span className="block mt-1.5 text-slate-600">via {mailConfig.smtpHost}</span>
-                )}
-              </div>
-            </div>
-          ) : !submitted ? (
+          {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5 text-xs sm:text-sm">
               {submitError && (
                 <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-900/50 text-rose-300 text-[11px] leading-relaxed">
@@ -2537,26 +2488,40 @@ function ContactPage({ language }: { language: string }) {
 
               <button
                 type="submit"
-                className="w-full py-4.5 px-6 bg-brand-amber hover:bg-brand-amber/90 active:scale-[0.98] text-slate-950 font-bold rounded-xl text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
+                disabled={isSending}
+                className="w-full py-4.5 px-6 bg-brand-amber hover:bg-brand-amber/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold rounded-xl text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
-                <Send size={14} /> {getTranslation("formSubmit", language)}
+                {isSending ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-slate-950/30 border-t-slate-950 rounded-full animate-spin" />
+                    {mt("contactBtnSubmitting")}
+                  </>
+                ) : (
+                  <>
+                    <Send size={14} /> {getTranslation("formSubmit", language)}
+                  </>
+                )}
               </button>
             </form>
           ) : (
             <div className="text-center py-20 space-y-6">
-              <span className="text-6xl inline-block animate-bounce">🎉</span>
-              <h3 className="font-display font-bold text-2xl text-white">Onboarding request received!</h3>
+              <span className="text-6xl inline-block">✓</span>
+              <h3 className="font-display font-bold text-2xl text-white">{mt("contactSuccessTitle")}</h3>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-sm mx-auto">
-                Thank you for reaching out, <span className="text-brand-amber font-bold">{formData.name}</span>. 
-                Our operations team has registered your business record for <span className="text-brand-amber font-bold">{formData.company}</span>. 
-                A direct secure copy was routed to <span className="text-brand-amber font-bold">bawaritech@gmail.com</span>.
-                Check your inbox at <span className="text-slate-200 font-bold">{formData.email}</span> within the hour for your scheduling calendar link and secure starter invitation.
+                {mt("contactSuccessDesc")}
+              </p>
+              <p className="text-xs text-slate-400 leading-relaxed max-w-sm mx-auto">
+                {mt("contactDemoDetails")}
               </p>
               <button
-                onClick={() => setSubmitted(false)}
+                type="button"
+                onClick={() => {
+                  setSubmitted(false);
+                  setSubmitError(null);
+                }}
                 className="px-6 py-3 bg-slate-900 text-xs sm:text-sm font-semibold rounded-xl text-slate-300 border border-slate-800 hover:bg-slate-850 cursor-pointer"
               >
-                Submit another request
+                {mt("contactBackBtn")}
               </button>
             </div>
           )}
