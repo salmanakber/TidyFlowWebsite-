@@ -127,10 +127,18 @@ export default function Footer({ language }: FooterProps) {
             &copy; {new Date().getFullYear()} {getT("copyright")}
           </div>
           <div className="flex items-center gap-6">
-            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none">
+            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none"
+            onClick={() => {
+              window.open('https://app.tidyflowapp.com/privacy', '_blank');
+            }}
+            >
               <Shield size={12} /> {getT("privacyPolicy")}
             </button>
-            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none">
+            <button className="hover:text-slate-350 flex items-center gap-1.5 cursor-pointer transition-colors focus:outline-none"
+            onClick={() => {
+              window.open('https://app.tidyflowapp.com/terms', '_blank');
+            }}
+            >
               <Scale size={12} /> {getT("termsOfService")}
             </button>
           </div>
