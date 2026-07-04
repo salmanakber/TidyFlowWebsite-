@@ -23,7 +23,7 @@ export const TIDYBOT_COMPANY_KNOWLEDGE = `
 
 ## Core capabilities (marketing summary)
 **Scheduling:** Tasks, calendar, rota builder, recurring jobs, route optimization, Google Sheets two-way sync, real-time status.
-**Field app:** Work timer, GPS verify on start/complete, live GPS during jobs, checklists, before/after photos, offline mode, SOS button, job notes.
+**Field app:** Work timer, GPS geofence verify on start/complete, live on-site status during jobs (off-site alerts for managers), checklists, before/after photos, offline mode, SOS button, job notes. No speed or route tracking — presence at the property only.
 **Quality & proof:** AI photo scoring, branded PDF reports, client portal links, client reviews (negative routed privately), QA workflow, issue tracking.
 **Team & HR:** Role-based access, leave management, working hours, payroll from verified hours, pay rules per user, team invites.
 **Finance:** Stripe subscriptions, usage-based pricing (base + per property), client invoicing, expense claims with receipts, multi-currency, revenue reports.

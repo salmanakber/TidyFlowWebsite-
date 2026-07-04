@@ -50,7 +50,7 @@ const en = {
   featuresIntegDesc:
     "Never restrict your data. TidyFlow connects with the foundational cloud tools your janitorial operations already run on, ensuring reliable data portability.",
   featuresIntegMaps: "Google Maps Platform",
-  featuresIntegMapsDesc: "Powers address coordinate geofencing, route planning, and active GPS tracker coordinates.",
+  featuresIntegMapsDesc: "Powers property-boundary geofencing so clock-in and live on-site status are verified at the job address.",
   featuresIntegStripe: "Stripe Billing Portal",
   featuresIntegStripeDesc: "Manages secure customer billing methods and recurring SaaS plan subscriptions.",
 };
@@ -105,7 +105,7 @@ const pt: typeof en = {
   featuresIntegDesc:
     "Nunca restrinja seus dados. O TidyFlow conecta-se às ferramentas em nuvem que suas operações de limpeza já utilizam, garantindo portabilidade confiável.",
   featuresIntegMaps: "Plataforma Google Maps",
-  featuresIntegMapsDesc: "Geocercas de endereços, planejamento de rotas e coordenadas GPS ativas.",
+  featuresIntegMapsDesc: "Geofencing no perímetro da propriedade para verificar ponto e status no local durante o serviço.",
   featuresIntegStripe: "Portal de Cobrança Stripe",
   featuresIntegStripeDesc: "Gerencia métodos de pagamento seguros e assinaturas SaaS recorrentes.",
 };
@@ -160,7 +160,7 @@ const es: typeof en = {
   featuresIntegDesc:
     "Nunca restrinja sus datos. TidyFlow se conecta con las herramientas en la nube que sus operaciones de limpieza ya utilizan, garantizando portabilidad confiable.",
   featuresIntegMaps: "Plataforma Google Maps",
-  featuresIntegMapsDesc: "Geocercas de direcciones, planificación de rutas y coordenadas GPS activas.",
+  featuresIntegMapsDesc: "Geocerca en el perímetro de la propiedad para verificar entrada y estado en el sitio durante el servicio.",
   featuresIntegStripe: "Portal de Facturación Stripe",
   featuresIntegStripeDesc: "Gestiona métodos de pago seguros y suscripciones SaaS recurrentes.",
 };
@@ -215,7 +215,7 @@ const ar: typeof en = {
   featuresIntegDesc:
     "لا تقيد بياناتك أبدًا. يتصل TidyFlow بالأدوات السحابية الأساسية التي تعتمد عليها عمليات التنظيف، مما يضمن نقل بيانات موثوقًا.",
   featuresIntegMaps: "منصة Google Maps",
-  featuresIntegMapsDesc: "جدران جغرافية للعناوين وتخطيط المسارات وإحداثيات GPS النشطة.",
+  featuresIntegMapsDesc: "سياج جغرافي لحدود العقار للتحقق من الحضور وحالة التواجد في الموقع أثناء المهمة.",
   featuresIntegStripe: "بوابة فوترة Stripe",
   featuresIntegStripeDesc: "يدير طرق الدفع الآمنة واشتراكات SaaS المتكررة.",
 };
@@ -269,7 +269,7 @@ const cn: typeof en = {
   featuresIntegTitle: "企业级 API 集成",
   featuresIntegDesc: "永不限制您的数据。TidyFlow 连接保洁运营所依赖的核心云工具，确保可靠的数据可移植性。",
   featuresIntegMaps: "Google Maps 平台",
-  featuresIntegMapsDesc: "支持地址地理围栏、路线规划和实时 GPS 坐标追踪。",
+  featuresIntegMapsDesc: "物业边界地理围栏，用于核验打卡与任务期间的在场状态。",
   featuresIntegStripe: "Stripe 计费门户",
   featuresIntegStripeDesc: "安全管理客户付款方式和 recurring SaaS 订阅计划。",
 };
@@ -324,7 +324,7 @@ const fr: typeof en = {
   featuresIntegDesc:
     "Ne limitez jamais vos données. TidyFlow se connecte aux outils cloud essentiels de vos opérations de nettoyage.",
   featuresIntegMaps: "Plateforme Google Maps",
-  featuresIntegMapsDesc: "Géorepérage d'adresses, planification d'itinéraires et coordonnées GPS actives.",
+  featuresIntegMapsDesc: "Géorepérage du périmètre de la propriété pour vérifier le pointage et le statut sur site pendant la mission.",
   featuresIntegStripe: "Portail de facturation Stripe",
   featuresIntegStripeDesc: "Gère les moyens de paiement sécurisés et les abonnements SaaS récurrents.",
 };
@@ -379,7 +379,7 @@ const de: typeof en = {
   featuresIntegDesc:
     "Beschränken Sie Ihre Daten nie. TidyFlow verbindet sich mit den Cloud-Tools Ihrer Reinigungsoperationen.",
   featuresIntegMaps: "Google Maps Plattform",
-  featuresIntegMapsDesc: "Adress-Geofencing, Routenplanung und aktive GPS-Koordinaten.",
+  featuresIntegMapsDesc: "Objektgrenzen-Geofencing zur Prüfung von Stempelung und Vor-Ort-Status während des Auftrags.",
   featuresIntegStripe: "Stripe-Abrechnungsportal",
   featuresIntegStripeDesc: "Verwaltet sichere Zahlungsmethoden und wiederkehrende SaaS-Abonnements.",
 };
@@ -434,7 +434,7 @@ const pl: typeof en = {
   featuresIntegDesc:
     "Nigdy nie ograniczaj swoich danych. TidyFlow łączy się z podstawowymi narzędziami chmurowymi operacji sprzątania.",
   featuresIntegMaps: "Platforma Google Maps",
-  featuresIntegMapsDesc: "Geofencing adresów, planowanie tras i aktywne współrzędne GPS.",
+  featuresIntegMapsDesc: "Geofencing granicy obiektu do weryfikacji obecności i statusu na miejscu podczas zlecenia.",
   featuresIntegStripe: "Portal rozliczeń Stripe",
   featuresIntegStripeDesc: "Zarządza bezpiecznymi metodami płatności i cyklicznymi subskrypcjami SaaS.",
 };
@@ -489,7 +489,7 @@ const no: typeof en = {
   featuresIntegDesc:
     "Begrens aldri dataene dine. TidyFlow kobler til grunnleggende skyt verktøy rengjøringsoperasjonen din allerede bruker.",
   featuresIntegMaps: "Google Maps-plattform",
-  featuresIntegMapsDesc: "Adressegeofencing, ruteplanlegging og aktive GPS-koordinater.",
+  featuresIntegMapsDesc: "Eiendomsgrense-geofencing for å verifisere stempling og status på stedet under jobben.",
   featuresIntegStripe: "Stripe-faktureringsportal",
   featuresIntegStripeDesc: "Administrerer sikre betalingsmetoder og gjentakende SaaS-abonnementer.",
 };
@@ -544,7 +544,7 @@ const sv: typeof en = {
   featuresIntegDesc:
     "Begränsa aldrig din data. TidyFlow ansluter till grundläggande molnverktyg som din städverksamhet redan använder.",
   featuresIntegMaps: "Google Maps-plattform",
-  featuresIntegMapsDesc: "Adressgeofencing, ruttplanering och aktiva GPS-koordinater.",
+  featuresIntegMapsDesc: "Fastighetsgräns-geofencing för att verifiera stämpling och status på plats under jobbet.",
   featuresIntegStripe: "Stripe-faktureringsportal",
   featuresIntegStripeDesc: "Hanterar säkra betalningsmetoder och återkommande SaaS-prenumerationer.",
 };
@@ -599,7 +599,7 @@ const it: typeof en = {
   featuresIntegDesc:
     "Non limitare mai i tuoi dati. TidyFlow si connette agli strumenti cloud fondamentali delle tue operazioni di pulizia.",
   featuresIntegMaps: "Piattaforma Google Maps",
-  featuresIntegMapsDesc: "Geofencing indirizzi, pianificazione percorsi e coordinate GPS attive.",
+  featuresIntegMapsDesc: "Geofencing del perimetro proprietà per verificare timbratura e stato in sede durante il lavoro.",
   featuresIntegStripe: "Portale fatturazione Stripe",
   featuresIntegStripeDesc: "Gestisce metodi di pagamento sicuri e abbonamenti SaaS ricorrenti.",
 };

@@ -27,7 +27,7 @@ export default function BotMessageContent({ text, variant = "bot" }: BotMessageC
   const boldClass = variant === "user" ? "font-bold text-slate-950" : "font-semibold text-white";
 
   return (
-    <div className="space-y-1.5 text-xs leading-relaxed">
+    <div className="space-y-1.5 text-sm sm:text-xs leading-relaxed">
       {lines.map((line, index) => {
         const trimmed = line.trimEnd();
         if (!trimmed) {

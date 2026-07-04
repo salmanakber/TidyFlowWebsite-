@@ -608,18 +608,22 @@ function GpsTrackerSimulator() {
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => setTick((t) => t + 1), 2000);
+    const interval = setInterval(() => setTick((t) => t + 1), 2800);
     return () => clearInterval(interval);
   }, []);
 
-  const verified = tick % 4 >= 2;
+  // Cycle: on-site (verified) → brief off-site alert → back on-site
+  const phase = tick % 5;
+  const onSite = phase !== 3;
 
   return (
     <div className="flex flex-col h-full p-4 justify-between bg-slate-950 text-left">
       <div className="space-y-1">
         <div className="flex items-center gap-1.5">
-          <MapPin size={14} className="text-emerald-400 animate-pulse" />
-          <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider">GPS Live Tracker</span>
+          <MapPin size={14} className={onSite ? "text-emerald-400 animate-pulse" : "text-amber-400 animate-pulse"} />
+          <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${onSite ? "text-emerald-400" : "text-amber-400"}`}>
+            On-site Geofence
+          </span>
         </div>
         <h4 className="text-sm font-bold text-white">Vanguard Corporate Hub</h4>
       </div>
@@ -628,64 +632,69 @@ function GpsTrackerSimulator() {
         <div className="absolute inset-0 opacity-30">
           <svg className="w-full h-full" viewBox="0 0 200 200" preserveAspectRatio="none">
             <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+              <pattern id="gps-grid" width="20" height="20" patternUnits="userSpaceOnUse">
                 <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#334155" strokeWidth="0.5" />
               </pattern>
             </defs>
-            <rect width="200" height="200" fill="url(#grid)" />
+            <rect width="200" height="200" fill="url(#gps-grid)" />
           </svg>
         </div>
 
+        {/* Property geofence boundary */}
         <motion.div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full border-2 border-emerald-500/40 bg-emerald-500/5"
-          animate={{ scale: [1, 1.08, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border-2 ${
+            onSite ? "border-emerald-500/50 bg-emerald-500/10" : "border-amber-500/50 bg-amber-500/10"
+          }`}
+          animate={{ scale: [1, 1.06, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 2.2, repeat: Infinity }}
         />
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full border border-dashed border-slate-600/60 pointer-events-none" />
 
+        {/* Cleaner pin — stays on property when on-site, drifts outside when off-site */}
         <motion.div
-          className="absolute w-3 h-3 rounded-full bg-brand-amber shadow-lg shadow-brand-amber/50 z-10"
-          animate={{
-            left: ["35%", "55%", "45%", "50%"],
-            top: ["40%", "35%", "50%", "45%"]
-          }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          className={`absolute w-3.5 h-3.5 rounded-full shadow-lg z-10 ${
+            onSite ? "bg-emerald-400 shadow-emerald-400/40" : "bg-amber-400 shadow-amber-400/40"
+          }`}
+          animate={
+            onSite
+              ? { left: "48%", top: "47%" }
+              : { left: "78%", top: "22%" }
+          }
+          transition={{ duration: 0.9, ease: "easeInOut" }}
         >
-          <span className="absolute inset-0 rounded-full bg-brand-amber/40 animate-ping" />
+          <span className={`absolute inset-0 rounded-full animate-ping ${onSite ? "bg-emerald-400/40" : "bg-amber-400/40"}`} />
         </motion.div>
 
-        <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 200 200">
-          <motion.path
-            d="M 70 80 Q 100 60 110 90 T 100 100"
-            fill="none"
-            stroke="#f59e0b"
-            strokeWidth="2"
-            strokeDasharray="4 4"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 3, repeat: Infinity }}
-          />
-        </svg>
+        <div className="absolute top-2 left-2 px-2 py-0.5 rounded-md bg-slate-950/80 border border-slate-800 text-[8px] font-mono text-slate-400">
+          Property boundary
+        </div>
 
         <div className="absolute bottom-2 left-2 right-2 bg-slate-950/90 border border-slate-800 rounded-lg p-2 text-[9px] font-mono space-y-0.5">
           <div className="flex justify-between text-slate-400">
             <span>Lat 51.5074° N</span>
             <span>Lng 0.1278° W</span>
           </div>
-          <div className={`font-bold ${verified ? "text-emerald-400" : "text-amber-400"}`}>
-            {verified ? "✓ Inside geofence · clock-in verified" : "→ Approaching property boundary…"}
+          <div className={`font-bold ${onSite ? "text-emerald-400" : "text-amber-400"}`}>
+            {onSite
+              ? "✓ Inside geofence · on-site verified"
+              : "⚠ Outside geofence · manager alerted"}
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-3 gap-2 text-center">
         {[
-          { label: "Accuracy", val: "±4m" },
-          { label: "Speed", val: "0 km/h" },
-          { label: "Breadcrumbs", val: "12 pts" }
+          { label: "Status", val: onSite ? "On-site" : "Off-site" },
+          { label: "Geofence", val: "Active" },
+          { label: "Clock-in", val: onSite ? "Verified" : "Flagged" }
         ].map((stat) => (
           <div key={stat.label} className="bg-slate-900 border border-slate-850 rounded-lg py-2 px-1">
             <span className="block text-[8px] font-mono text-slate-500 uppercase">{stat.label}</span>
-            <span className="block text-xs font-bold text-white font-mono">{stat.val}</span>
+            <span className={`block text-xs font-bold font-mono ${
+              stat.label === "Status" || stat.label === "Clock-in"
+                ? onSite ? "text-emerald-400" : "text-amber-400"
+                : "text-white"
+            }`}>{stat.val}</span>
           </div>
         ))}
       </div>

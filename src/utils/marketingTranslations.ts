@@ -38,12 +38,12 @@ export const marketingTranslations: Record<string, any> = {
     offlineCheck1: "Full timer & checklist operation with zero connectivity",
     offlineCheck2: "Photos and job notes cached locally until sync",
     offlineCheck3: "Automatic background upload when Wi‑Fi or LTE returns",
-    gpsBadge: "Live GPS Verification",
+    gpsBadge: "On-site Geofencing",
     gpsTitle: "Geofenced proof that your team is on-site",
-    gpsDesc: "Every clock-in is GPS-verified against the property boundary. Managers see live breadcrumbs, geofence status, and route history — no more disputed hours or mystery locations.",
+    gpsDesc: "GPS verifies cleaners against the property boundary on clock-in and completion. Managers see live on-site status during active jobs and get alerts if a cleaner is off-site — no speed tracking, no route history, just presence where it matters.",
     gpsCheck1: "Geofence lock on start and complete",
-    gpsCheck2: "Live location breadcrumbs during active jobs",
-    gpsCheck3: "Audit-ready GPS logs attached to each task",
+    gpsCheck2: "Live on-site status during active jobs",
+    gpsCheck3: "Manager alerts when a cleaner is off-site",
     downloadHeroNote: "Free on iOS & Android · works offline in the field",
     
     // HomePage
