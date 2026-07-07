@@ -402,6 +402,9 @@ export const marketingTranslations: Record<string, any> = {
     contactBrevoSuccess: "✅ Success! Brevo relay accepted the message (250 OK).",
     contactEmailNotConfigured: "Email is not configured on the server. Add BREVO_API_KEY, BREVO_SENDER_EMAIL, and CONTACT_TO_EMAIL to .env.",
     contactFormPlaceholder: "Tell us about your active property count or specific integration requests...",
+    contactSpamRequired: "Please complete the security check before submitting.",
+    contactSpamFailed: "Security verification failed. Please refresh the page and try again.",
+    contactSpamProtectedBy: "Protected by Cloudflare Turnstile",
     contactBrevoRelay: "Brevo Mail Relay",
 
     // Footer nav

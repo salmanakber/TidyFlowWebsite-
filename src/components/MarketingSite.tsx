@@ -15,6 +15,7 @@ import {
   type PlanCode
 } from "../utils/plansApi";
 import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
+import TurnstileWidget from "./TurnstileWidget";
 import { useSite } from "../context/SiteContext";
 import {
   Calendar,
@@ -2288,14 +2289,19 @@ function ContactPage({ language }: { language: string }) {
     company: "",
     size: "1-10",
     sheetUse: "yes",
-    message: ""
+    message: "",
+    website: ""
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileKey, setTurnstileKey] = useState(0);
   const [mailConfig, setMailConfig] = useState<{
     configured: boolean;
     provider?: string;
+    spamProtection?: string | null;
+    turnstileSiteKey?: string | null;
   } | null>(null);
 
   useEffect(() => {
@@ -2310,19 +2316,30 @@ function ContactPage({ language }: { language: string }) {
     setIsSending(true);
     setSubmitError(null);
 
+    const needsCaptcha = Boolean(mailConfig?.turnstileSiteKey);
+    if (needsCaptcha && !turnstileToken) {
+      setSubmitError(mt("contactSpamRequired"));
+      setIsSending(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, turnstileToken })
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        throw new Error(data.error || `Server error ${res.status}`);
+        const msg =
+          res.status === 403 ? mt("contactSpamFailed") : data.error || `Server error ${res.status}`;
+        throw new Error(msg);
       }
       setSubmitted(true);
     } catch (err: any) {
       setSubmitError(err.message || "Failed to send message.");
+      setTurnstileToken(null);
+      setTurnstileKey((k) => k + 1);
     } finally {
       setIsSending(false);
     }
@@ -2385,6 +2402,21 @@ function ContactPage({ language }: { language: string }) {
         <div className="lg:col-span-6 bg-slate-950 p-6 sm:p-12 rounded-3xl border border-slate-900 shadow-2xl relative">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="space-y-5 text-xs sm:text-sm">
+              <div
+                className="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden opacity-0"
+                aria-hidden="true"
+              >
+                <label htmlFor="contact-website">Website</label>
+                <input
+                  id="contact-website"
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                />
+              </div>
               {submitError && (
                 <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-900/50 text-rose-300 text-[11px] leading-relaxed">
                   {submitError}
@@ -2470,9 +2502,20 @@ function ContactPage({ language }: { language: string }) {
                 />
               </div>
 
+              {mailConfig?.turnstileSiteKey && (
+                <div className="space-y-2">
+                  <TurnstileWidget
+                    key={turnstileKey}
+                    siteKey={mailConfig.turnstileSiteKey}
+                    onToken={setTurnstileToken}
+                  />
+                  <p className="text-[10px] text-slate-500 text-center">{mt("contactSpamProtectedBy")}</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                disabled={isSending}
+                disabled={isSending || (Boolean(mailConfig?.turnstileSiteKey) && !turnstileToken)}
                 className="w-full py-4.5 px-6 bg-brand-amber hover:bg-brand-amber/90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold rounded-xl text-xs sm:text-sm transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer"
               >
                 {isSending ? (

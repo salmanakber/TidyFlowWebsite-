@@ -1,10 +1,32 @@
 import { NextResponse } from "next/server";
 import { escapeHtml, getBrevoConfig, parseSender } from "@/src/lib/brevo";
+import { getClientIp, isTurnstileEnabled, verifyTurnstileToken } from "@/src/lib/turnstile";
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, company, size, sheetUse, message } = body || {};
+    const { name, email, company, size, sheetUse, message, website, turnstileToken } = body || {};
+
+    // Honeypot — bots that fill hidden fields get a fake success response
+    if (website) {
+      return NextResponse.json({ success: true });
+    }
+
+    if (isTurnstileEnabled()) {
+      if (!turnstileToken) {
+        return NextResponse.json(
+          { error: "Please complete the security check before submitting." },
+          { status: 400 }
+        );
+      }
+      const valid = await verifyTurnstileToken(turnstileToken, getClientIp(req));
+      if (!valid) {
+        return NextResponse.json(
+          { error: "Security verification failed. Please refresh and try again." },
+          { status: 403 }
+        );
+      }
+    }
 
     if (!name || !email || !company) {
       return NextResponse.json(
