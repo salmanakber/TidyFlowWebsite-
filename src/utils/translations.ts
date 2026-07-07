@@ -3,6 +3,7 @@ export interface LanguageTranslation {
   heroBadge: string;
   heroTitle: string;
   heroSub: string;
+  heroTrialNote: string;
   startTrial: string;
   userDocs: string;
   badgeOffline: string;
@@ -33,9 +34,10 @@ export interface LanguageTranslation {
 
 export const translations: Record<string, LanguageTranslation> = {
   en: {
-    heroBadge: "🌐 Operating System for Cleaning Companies • 11 Languages Supported",
-    heroTitle: "Run your entire cleaning operation from one platform",
-    heroSub: "TidyFlow connects owners, managers, and cleaners in the field. Schedule jobs, verify work with offline-capable timers, log before/after photos, automate payroll, and deliver beautiful proof-of-work directly to clients.",
+    heroBadge: "Cleaning Company Software · Offline Field App · GPS Geofencing · 11 Languages",
+    heroTitle: "Cleaning company software that runs your field team, payroll & client proof",
+    heroSub: "Replace WhatsApp chaos and spreadsheet rotas with one platform built for janitorial and facilities teams. Schedule jobs, verify on-site GPS clock-ins, sync Google Sheets two-way, run offline mobile checklists, automate payroll, and send branded before/after reports to clients.",
+    heroTrialNote: "14-day free trial · no credit card · plans from $9/mo",
     startTrial: "Start Free Trial",
     userDocs: "See User Documentation",
     badgeOffline: "Works offline in cellars",
@@ -67,6 +69,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Sistema Operativo para Empresas de Limpeza • 11 Idiomas Suportados",
     heroTitle: "Gerencie toda a sua operação de limpeza em uma única plataforma",
     heroSub: "O TidyFlow conecta proprietários, gestores e faxineiros em campo. Agende trabalhos, verifique horas com temporizadores offline, registre fotos antes/depois, automatize a folha de pagamento e envie relatórios aos clientes.",
+    heroTrialNote: "Teste gratuito de 14 dias · sem cartão · planos a partir de $9/mês",
     startTrial: "Iniciar Avaliação Gratuita",
     userDocs: "Ver Documentação do Usuário",
     badgeOffline: "Funciona offline em subsolos",
@@ -98,6 +101,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Sistema Operativo para Empresas de Limpieza • 11 Idiomas Soportados",
     heroTitle: "Gestione toda su operación de limpieza desde una sola plataforma",
     heroSub: "TidyFlow conecta a propietarios, gerentes y limpiadores en el campo. Programe trabajos, verifique tareas con cronómetros offline, registre fotos antes/después, automatice nóminas y entregue pruebas de trabajo impecables.",
+    heroTrialNote: "Prueba gratis de 14 días · sin tarjeta · planes desde $9/mes",
     startTrial: "Comenzar Prueba Gratuita",
     userDocs: "Ver Guía del Usuario",
     badgeOffline: "Funciona sin conexión en sótanos",
@@ -129,6 +133,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 نظام تشغيل شركات التنظيف • يدعم ١١ لغة بالكامل",
     heroTitle: "أدر عمليات التنظيف بالكامل من منصة واحدة ذكية",
     heroSub: "يربط TidyFlow بين الملاك والمديرين والمنظفين في الميدان. يمكنك جدولة المهام، والتحقق من العمل عبر مؤقتات غير متصلة بالإنترنت، وتسجيل صور ما قبل وما بعد العمل، وأتمتة الرواتب، وتقديم أدلة احترافية للعملاء.",
+    heroTrialNote: "تجربة مجانية 14 يومًا · بدون بطاقة · خطط من 9$ شهريًا",
     startTrial: "ابدأ التجربة المجانية",
     userDocs: "تصفح دليل الاستخدام",
     badgeOffline: "يعمل دون إنترنت في الطوابق السفلية",
@@ -160,6 +165,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 清洁服务公司专属操作系统 • 完美支持11国语言",
     heroTitle: "一站式统一管理您所有的清洁业务和外勤人员",
     heroSub: "TidyFlow 将企业主、运营经理和一线清洁人员无缝连接。轻松排班调度、支持无信号离线工时打卡、上传前后对比照片、一键自动结算工资并发放专业账单。",
+    heroTrialNote: "14 天免费试用 · 无需信用卡 · 套餐低至 $9/月",
     startTrial: "立即免费试用",
     userDocs: "查看用户操作手册",
     badgeOffline: "支持无信号地下室离线打卡",
@@ -191,6 +197,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Système d'exploitation pour Entreprises de Nettoyage • 11 Langues Supportées",
     heroTitle: "Gérez l'ensemble de vos opérations de nettoyage sur une seule plateforme",
     heroSub: "TidyFlow connecte les propriétaires, les gestionnaires et les agents sur le terrain. Planifiez les interventions, validez les heures avec des minuteurs hors ligne, prenez des photos avant/après, automatisez la paie et envoyez des preuves de travail à vos clients.",
+    heroTrialNote: "Essai gratuit 14 jours · sans carte · forfaits dès 9 $/mois",
     startTrial: "Essayer Gratuitement",
     userDocs: "Consulter la Documentation",
     badgeOffline: "Fonctionne hors ligne dans les sous-sols",
@@ -222,6 +229,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Betriebssystem für Reinigungsunternehmen • 11 Sprachen Unterstützt",
     heroTitle: "Steuern Sie Ihre gesamte Gebäudereinigung auf einer Plattform",
     heroSub: "TidyFlow verbindet Inhaber, Objektleiter und Reinigungskräfte. Planen Sie Aufträge, erfassen Sie Zeiten mit Offline-Schnittstellen, dokumentieren Sie Vorher-Nachher-Fotos und exportieren Sie fertige Lohnabrechnungen direkt.",
+    heroTrialNote: "14 Tage kostenlos · keine Kreditkarte · ab 9 $/Monat",
     startTrial: "Kostenlos Testen",
     userDocs: "Benutzerhandbuch Lesen",
     badgeOffline: "Funktioniert offline in Kellern",
@@ -253,6 +261,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 System Operacyjny dla Firm Sprzątających • 11 Obsługiwanych Języków",
     heroTitle: "Zarządzaj całym biznesem sprzątającym z jednej platformy",
     heroSub: "TidyFlow łączy właścicieli, menedżerów i pracowników w terenie. Planuj zlecenia, weryfikuj czas pracy offline, rejestruj zdjęcia przed/po, automatyzuj płace i dostarczaj klientom profesjonalne raporty.",
+    heroTrialNote: "14 dni za darmo · bez karty · plany od 9 $/mies.",
     startTrial: "Rozpocznij Darmowy Okres Próbny",
     userDocs: "Instrukcja Użytkownika",
     badgeOffline: "Działa offline w piwnicach",
@@ -284,6 +293,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Operativt System for Rengjøringsbyråer • 11 Språk Støttet",
     heroTitle: "Styr hele rengjøringsvirksomheten fra én plattform",
     heroSub: "TidyFlow kobler eiere, ledere og renholdere sammen. Planlegg vask, verifiser timer offline, ta før-/etterbilder, automatiser lønnskjøring og send profesjonell dokumentasjon til kundene.",
+    heroTrialNote: "14 dagers gratis prøve · uten kort · fra $9/mnd",
     startTrial: "Start Gratis Prøveperiode",
     userDocs: "Se Brukerveiledning",
     badgeOffline: "Fungerer offline i kjellere",
@@ -315,6 +325,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Operativsystem för Städfirmor • Stödjer 11 Språk",
     heroTitle: "Hantera hela din städfirma från en enda plattform",
     heroSub: "TidyFlow samlar ägare, arbetsledare och städare i fältet. Schemalägg pass, tidrapportera offline, spara före-/efterbilder, automatisera löner och skicka snygga bevis till kunder.",
+    heroTrialNote: "14 dagars gratis test · inget kort · från $9/mån",
     startTrial: "Starta Gratis Prövotid",
     userDocs: "Se Användarhandbok",
     badgeOffline: "Fungerar offline i källarplan",
@@ -346,6 +357,7 @@ export const translations: Record<string, LanguageTranslation> = {
     heroBadge: "🌐 Sistema Operativo per Imprese di Pulizia • 11 Lingue Supportate",
     heroTitle: "Gestisci l'intera impresa di pulizia da un'unica piattaforma",
     heroSub: "TidyFlow connette titolari, manager e addetti alle pulizie. Pianifica i turni, certifica le ore con timer offline, carica foto prima/dopo, calcola la busta paga e invia rapporti professionali ai clienti.",
+    heroTrialNote: "Prova gratuita 14 giorni · senza carta · piani da $9/mese",
     startTrial: "Inizia la Prova Gratuita",
     userDocs: "Leggi la Guida Utente",
     badgeOffline: "Funziona offline nei seminterrati",

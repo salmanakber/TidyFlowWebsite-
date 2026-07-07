@@ -10,7 +10,7 @@ export default function Logo({ className = "", size = 40, showText = true }: Log
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>
       <img
-        src="/favicon.png"
+        src="/logo.png"
         alt="TidyFlow"
         width={size}
         height={size}

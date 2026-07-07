@@ -10,13 +10,16 @@ export interface SeoMeta {
 const SITE_URL = "https://tidyflowapp.com";
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
+/** Google Search Console HTML tag verification token */
+export const GOOGLE_SITE_VERIFICATION = "XkJtk16LIKzsYV3q7_pAVbgnD8nTbHt6mzeaXGbbWRQ";
+
 const en: Record<SeoPage, SeoMeta> = {
   home: {
-    title: "TidyFlow — Cleaning Operations Software | Offline App, GPS & Google Sheets",
+    title: "TidyFlow | Cleaning Company Software — Offline App, GPS Geofencing & Google Sheets",
     description:
-      "TidyFlow is the all-in-one platform for cleaning companies. Offline iOS & Android field app, GPS-verified jobs, two-way Google Sheets sync, AI dispatch, payroll, and client proof — 11 languages.",
+      "All-in-one janitorial & facilities cleaning software. Offline iOS/Android field app, GPS on-site verification, two-way Google Sheets sync, AI dispatch, payroll automation & client proof. Start your 14-day free trial.",
     keywords:
-      "cleaning company software, cleaning operations app, offline cleaning app, GPS time tracking cleaners, Google Sheets cleaning schedule, janitorial software, field service app, payroll cleaning business, TidyFlow",
+      "cleaning company software, janitorial software, commercial cleaning software, cleaning business management software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning schedule, rota scheduling software, cleaning payroll software, facilities cleaning app, maid service software, field service cleaning app, TidyFlow",
     canonicalPath: "/"
   },
   documentation: {
@@ -231,7 +234,11 @@ export function getHtmlLang(language: string): string {
 }
 
 /** Next.js Metadata API (server-safe — no document access). */
-export function buildPageMetadata(page: SeoPage, language = "en") {
+export function buildPageMetadata(
+  page: SeoPage,
+  language = "en",
+  options?: { includeSiteVerification?: boolean }
+) {
   const langDict = byLang[language] || byLang.en;
   const meta = langDict[page] || langDict.home;
   const path = meta.canonicalPath === "/" ? "" : meta.canonicalPath;
@@ -244,15 +251,30 @@ export function buildPageMetadata(page: SeoPage, language = "en") {
   });
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: meta.title,
     description: meta.description,
-    keywords: meta.keywords,
-    authors: [{ name: "TidyFlow" }],
+    keywords: meta.keywords.split(",").map((k) => k.trim()),
+    authors: [{ name: "TidyFlow", url: SITE_URL }],
+    creator: "TidyFlow",
+    publisher: "TidyFlow",
     applicationName: "TidyFlow",
+    category: "business",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
     robots: {
       index: true,
       follow: true,
-      googleBot: { index: true, follow: true, "max-image-preview": "large" as const, "max-snippet": -1, "max-video-preview": -1 },
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large" as const,
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
     },
     alternates: {
       canonical: canonical || SITE_URL,
@@ -265,15 +287,30 @@ export function buildPageMetadata(page: SeoPage, language = "en") {
       title: meta.title,
       description: meta.description,
       locale: htmlLang.replace("-", "_"),
-      images: [{ url: OG_IMAGE, alt: "TidyFlow — Cleaning Operations Hub" }],
+      images: [
+        {
+          url: OG_IMAGE,
+          width: 1200,
+          height: 630,
+          alt: "TidyFlow — Cleaning company software for field teams",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image" as const,
       site: "@tidyflowapp",
+      creator: "@tidyflowapp",
       title: meta.title,
       description: meta.description,
       images: [OG_IMAGE],
     },
+    ...(options?.includeSiteVerification
+      ? {
+          verification: {
+            google: GOOGLE_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   };
 }
 

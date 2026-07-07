@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/chat/route": "/api/chat",
+  "/api/contact/config/route": "/api/contact/config",
+  "/api/contact/route": "/api/contact",
+  "/api/health/route": "/api/health",
+  "/api/plans/[code]/route": "/api/plans/[code]",
+  "/api/plans/route": "/api/plans",
+  "/api/translate-chapter/route": "/api/translate-chapter",
+  "/api/translate-text/route": "/api/translate-text",
+  "/contact/page": "/contact",
+  "/features/page": "/features",
+  "/documentation/page": "/documentation",
+  "/how-it-works/page": "/how-it-works",
+  "/integrations/page": "/integrations",
+  "/page": "/",
+  "/personas/page": "/personas",
+  "/pricing/page": "/pricing"
+}

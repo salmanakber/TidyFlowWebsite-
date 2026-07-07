@@ -979,6 +979,10 @@ function HomePage({
               </button>
             </div>
 
+            <p className="text-xs text-slate-500 font-medium">
+              {getTranslation("heroTrialNote", language)}
+            </p>
+
             <AppDownloadButtons language={language} />
 
             <div className="grid grid-cols-2 gap-x-6 gap-y-4 border-t border-slate-900 pt-8 text-xs text-slate-400">

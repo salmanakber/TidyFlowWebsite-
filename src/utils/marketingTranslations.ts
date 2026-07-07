@@ -13,7 +13,7 @@ export const marketingTranslations: Record<string, any> = {
     userGuide: "User Guide",
     getStarted: "Get Started",
     // Footer
-    footerDesc: "The operating system for modern cleaning companies. Connect your entire field operations, rota sheets, verified hours, payroll templates, and client evidence on one seamless cloud platform.",
+    footerDesc: "Cleaning company software for modern janitorial teams. Connect field operations, rota sheets, GPS-verified hours, payroll exports, and client proof on one offline-first cloud platform.",
     hqLocation: "London Headquarters • United Kingdom",
     sitemapPages: "Sitemap Pages",
     whoItsFor: "Who It's For",
@@ -47,7 +47,7 @@ export const marketingTranslations: Record<string, any> = {
     downloadHeroNote: "Free on iOS & Android · works offline in the field",
     
     // HomePage
-    trustedBy: "Trusted by modern facility and residential cleaning companies",
+    trustedBy: "Trusted by commercial, residential & facilities cleaning companies worldwide",
     chaosTitle: "The chaos of spreadsheets and chat groups ends today",
     chaosDesc: "Managing cleanings via fragmented checklists on WhatsApp, spreadsheets, and manual payroll math leaks revenue and frustrates team members.",
     whatsappTitle: "WhatsApp Chaos",
