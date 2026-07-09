@@ -91,6 +91,14 @@ export default function Header({
       en: "Integrations", pt: "Integrações", es: "Integraciones", ar: "التكاملات", cn: "集成",
       fr: "Intégrations", de: "Integrationen", pl: "Integracje", no: "Integrasjoner", sv: "Integrationer", it: "Integrazioni"
     },
+    careers: {
+      en: "Careers", pt: "Carreiras", es: "Carreras", ar: "الوظائف", cn: "招聘",
+      fr: "Carrières", de: "Karriere", pl: "Kariera", no: "Karriere", sv: "Karriar", it: "Carriere"
+    },
+    blog: {
+      en: "Blog", pt: "Blog", es: "Blog", ar: "المدونة", cn: "博客",
+      fr: "Blog", de: "Blog", pl: "Blog", no: "Blogg", sv: "Blogg", it: "Blog"
+    },
     userGuide: {
       en: "User Guide", pt: "Guia de Uso", es: "Guía de Uso", ar: "دليل المستخدم", cn: "用户指南",
       fr: "Guide de l'utilisateur", de: "Handbuch", pl: "Instrukcja", no: "Brukerveiledning", sv: "Användarguide", it: "Guida d'uso"
@@ -123,7 +131,9 @@ export default function Header({
     { id: "pricing", label: getTranslated("pricing") },
     { id: "how-it-works", label: getTranslated("how-it-works") },
     { id: "personas", label: getTranslated("personas") },
-    { id: "integrations", label: getTranslated("integrations") }
+    { id: "integrations", label: getTranslated("integrations") },
+    { id: "careers", label: getTranslated("careers") },
+    { id: "blog", label: getTranslated("blog") }
   ];
 
   const handleNavClick = (pageId: string) => {

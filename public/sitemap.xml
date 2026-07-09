@@ -36,6 +36,46 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tidyflowapp.com/careers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/rss.xml</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://tidyflowapp.com/documentation</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

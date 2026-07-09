@@ -58,6 +58,8 @@ export default function Footer({ language }: FooterProps) {
               <Link href="/pricing" className="hover:text-brand-amber transition-colors">{getT("footerPricing")}</Link>
               <Link href="/how-it-works" className="hover:text-brand-amber transition-colors">{getT("footerHowItWorks")}</Link>
               <Link href="/contact" className="hover:text-brand-amber transition-colors">{getT("footerContactDemo")}</Link>
+              <Link href="/careers" className="hover:text-brand-amber transition-colors">Careers</Link>
+              <Link href="/blog" className="hover:text-brand-amber transition-colors">Blog</Link>
             </div>
           </div>
 

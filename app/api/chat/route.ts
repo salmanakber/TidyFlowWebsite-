@@ -2,12 +2,92 @@ import { NextResponse } from "next/server";
 import { Type } from "@google/genai";
 import { ai, geminiApiKey } from "@/src/lib/gemini";
 import { rawChapters } from "@/src/utils/chaptersData";
-import { buildTidyBotSystemKnowledge, LANGUAGE_NAMES } from "@/src/utils/tidyBotKnowledge";
+import {
+  buildTidyBotSystemKnowledge,
+  getTidyBotOfflineReply,
+  LANGUAGE_NAMES,
+} from "@/src/utils/tidyBotKnowledge";
+
+type ChatApiResponse = {
+  answer: string;
+  chapterLink: string | null;
+};
+
+const fallbackPhrases: Record<string, { intro: string; guidance: string; noMatch: string }> = {
+  en: {
+    intro: "I could not reach AI right now, but I found the closest guide section for you.",
+    guidance: "Open the chapter button below for step-by-step instructions.",
+    noMatch: "I could not match an exact chapter yet. Try asking with words like timer, sheets sync, payroll, SOS, or pricing.",
+  },
+  pt: {
+    intro: "Não consegui acessar a IA agora, mas encontrei a seção mais próxima do guia.",
+    guidance: "Abra o capítulo abaixo para ver o passo a passo.",
+    noMatch: "Ainda não encontrei um capítulo exato. Tente palavras como timer, sync de planilhas, folha de pagamento, SOS ou preços.",
+  },
+  es: {
+    intro: "No pude conectar con la IA ahora, pero encontré la sección más cercana del manual.",
+    guidance: "Abra el capítulo de abajo para ver los pasos.",
+    noMatch: "Aún no encontré un capítulo exacto. Pruebe con palabras como temporizador, sincronización de hojas, nómina, SOS o precios.",
+  },
+};
+
+function tokenize(input: string): string[] {
+  return input
+    .toLowerCase()
+    .replace(/[^a-z0-9\u00c0-\u024f\u0600-\u06ff\u4e00-\u9fff\s-]/g, " ")
+    .split(/\s+/)
+    .filter((t) => t.length > 2);
+}
+
+function keywordMatchChapter(query: string) {
+  const tokens = tokenize(query);
+  if (tokens.length === 0) return null;
+
+  let best: { id: string; title: string; num: number; score: number } | null = null;
+
+  for (const ch of rawChapters) {
+    const haystack = `${ch.title} ${ch.category} ${ch.content.slice(0, 900)}`.toLowerCase();
+    let score = 0;
+    for (const token of tokens) {
+      if (ch.title.toLowerCase().includes(token)) score += 6;
+      else if (ch.category.toLowerCase().includes(token)) score += 4;
+      else if (haystack.includes(token)) score += 2;
+    }
+    if (!best || score > best.score) {
+      best = { id: ch.id, title: ch.title, num: ch.num, score };
+    }
+  }
+
+  return best && best.score >= 4 ? best : null;
+}
+
+function buildFallbackResponse(message: string, language: string): ChatApiResponse {
+  const offline = getTidyBotOfflineReply(message, language);
+  if (offline) return { answer: offline, chapterLink: null };
+
+  const matched = keywordMatchChapter(message);
+  const phrases = fallbackPhrases[language] || fallbackPhrases.en;
+  if (matched) {
+    return {
+      answer: `💡 ${phrases.intro}\n\n• **Chapter ${matched.num}: ${matched.title}**\n• ${phrases.guidance}`,
+      chapterLink: matched.id,
+    };
+  }
+
+  return {
+    answer: `🤝 ${phrases.noMatch}`,
+    chapterLink: null,
+  };
+}
 
 export async function POST(req: Request) {
+  let fallbackMessage = "";
+  let fallbackLanguage = "en";
   try {
     const body = await req.json();
     const { message, history = [], language = "en", pageContext = "website" } = body || {};
+    fallbackMessage = message || "";
+    fallbackLanguage = language || "en";
 
     if (!message || typeof message !== "string") {
       return NextResponse.json(
@@ -17,13 +97,7 @@ export async function POST(req: Request) {
     }
 
     if (!geminiApiKey || !ai) {
-      return NextResponse.json(
-        {
-          error:
-            "GEMINI_API_KEY is not configured on the server. Please add it to your environment variables.",
-        },
-        { status: 500 }
-      );
+      return NextResponse.json(buildFallbackResponse(message, language));
     }
 
     const chaptersText = rawChapters
@@ -114,9 +188,6 @@ Return JSON only:
     return NextResponse.json(JSON.parse(replyText));
   } catch (error: any) {
     console.error("Gemini API server-side error:", error);
-    return NextResponse.json(
-      { error: error.message || "An error occurred while generating AI response." },
-      { status: 500 }
-    );
+    return NextResponse.json(buildFallbackResponse(fallbackMessage, fallbackLanguage));
   }
 }

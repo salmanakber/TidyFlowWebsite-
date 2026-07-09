@@ -223,7 +223,12 @@ export default function TidyBotWidget({ language, pageContext, onChapterLink }: 
                     {msg.chapterLink && onChapterLink && (
                       <button
                         type="button"
-                        onClick={() => onChapterLink(msg.chapterLink!)}
+                        onClick={() => {
+                          onChapterLink(msg.chapterLink!);
+                          if (window.matchMedia("(max-width: 639px)").matches) {
+                            setChatOpen(false);
+                          }
+                        }}
                         className="mt-2.5 w-full py-2 sm:py-1.5 px-2.5 bg-brand-amber/15 border border-brand-amber/20 hover:bg-brand-amber text-brand-amber hover:text-slate-950 font-bold text-[11px] sm:text-[10px] rounded-lg transition-all flex items-center justify-center gap-1 cursor-pointer"
                       >
                         <Book size={12} /> {t("openRefChapter")}

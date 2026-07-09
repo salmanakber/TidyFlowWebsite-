@@ -15,7 +15,15 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
 
   const seoPage = pageFromPath(pathname);
   const activeTab = seoPage === "documentation" ? "documentation" : "marketing";
-  const marketingPage = seoPage === "documentation" ? "home" : seoPage === "home" ? "home" : seoPage;
+  const pathPageId = pathname.replace(/^\/+|\/+$/g, "").split("/")[0] || "home";
+  const marketingPage =
+    seoPage === "documentation"
+      ? "home"
+      : ["blog", "careers"].includes(pathPageId)
+        ? pathPageId
+        : seoPage === "home"
+          ? "home"
+          : seoPage;
 
   const isRTL = language === "ar";
   const themeClass = theme === "light" ? "light-mode" : theme === "dark" ? "dark-mode" : "system-mode";
