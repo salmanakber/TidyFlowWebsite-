@@ -4,6 +4,10 @@ node_modules/
 dist/
 build/
 .next/
+.next/**
+.next/cache/
+.next/server/
+.next/static/
 .expo/
 .expo-shared/
 coverage/

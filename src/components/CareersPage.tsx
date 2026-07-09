@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Briefcase, Send } from "lucide-react";
 import TurnstileWidget from "./TurnstileWidget";
 import { SITE_URL } from "@/src/utils/seo";
+import { useSite } from "../context/SiteContext";
+import { getMarketingTranslation } from "../utils/marketingTranslations";
 
 type CareerForm = {
   fullName: string;
@@ -68,6 +70,8 @@ const CAREERS_FAQS = [
 ];
 
 export default function CareersPage() {
+  const { language } = useSite();
+  const mt = (key: string) => getMarketingTranslation(key, language);
   const [formData, setFormData] = useState<CareerForm>({
     fullName: "",
     email: "",
@@ -100,7 +104,7 @@ export default function CareersPage() {
 
     const needsCaptcha = Boolean(config?.turnstileSiteKey);
     if (needsCaptcha && !turnstileToken) {
-      setError("Please complete the security check before submitting.");
+      setError(mt("careersSpamRequired"));
       setIsSending(false);
       return;
     }
@@ -115,7 +119,7 @@ export default function CareersPage() {
       if (!res.ok) throw new Error(data.error || `Server error ${res.status}`);
       setSubmitted(true);
     } catch (err: any) {
-      setError(err.message || "Failed to submit application.");
+      setError(err.message || mt("careersSubmitFailed"));
       setTurnstileToken(null);
       setTurnstileKey((k) => k + 1);
     } finally {
@@ -168,20 +172,18 @@ export default function CareersPage() {
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/15 border border-brand-amber/25 text-brand-amber text-xs font-semibold">
               <Briefcase size={14} />
-              Careers at TidyFlow
+              {mt("careersBadge")}
             </span>
             <h1 className="font-display text-4xl sm:text-5xl font-extrabold leading-tight">
-              Help us build the operating system for cleaning companies
+              {mt("careersTitle")}
             </h1>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              We are hiring across operations, customer success, engineering, and growth.
-              If you care about field teams, reliability, and real business outcomes, we would
-              love to hear from you.
+              {mt("careersSubtitle")}
             </p>
             <ul className="text-slate-300 text-sm space-y-3">
-              <li>- Remote-first collaboration with global teams</li>
-              <li>- Product built for real frontline workers</li>
-              <li>- Strong ownership and fast learning environment</li>
+              <li>- {mt("careersPoint1")}</li>
+              <li>- {mt("careersPoint2")}</li>
+              <li>- {mt("careersPoint3")}</li>
             </ul>
           </div>
 
@@ -209,7 +211,7 @@ export default function CareersPage() {
 
                 {!config?.configured && config !== null && (
                   <div className="p-3 rounded-xl bg-amber-950/30 border border-amber-900/40 text-amber-200 text-sm">
-                    Email relay is not configured on this environment yet.
+                    {mt("careersEmailNotConfigured")}
                   </div>
                 )}
 
@@ -217,7 +219,7 @@ export default function CareersPage() {
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData((p) => ({ ...p, fullName: e.target.value }))}
-                  placeholder="Full name"
+                  placeholder={mt("careersFullName")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <input
@@ -225,13 +227,13 @@ export default function CareersPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData((p) => ({ ...p, email: e.target.value }))}
-                  placeholder="Work email"
+                  placeholder={mt("careersWorkEmail")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <input
                   value={formData.phone}
                   onChange={(e) => setFormData((p) => ({ ...p, phone: e.target.value }))}
-                  placeholder="Phone (optional)"
+                  placeholder={mt("careersPhone")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <select
@@ -249,25 +251,25 @@ export default function CareersPage() {
                 <input
                   value={formData.location}
                   onChange={(e) => setFormData((p) => ({ ...p, location: e.target.value }))}
-                  placeholder="Current location / timezone"
+                  placeholder={mt("careersLocation")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <input
                   value={formData.experience}
                   onChange={(e) => setFormData((p) => ({ ...p, experience: e.target.value }))}
-                  placeholder="Years of relevant experience"
+                  placeholder={mt("careersExperience")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <input
                   value={formData.cvLink}
                   onChange={(e) => setFormData((p) => ({ ...p, cvLink: e.target.value }))}
-                  placeholder="CV or LinkedIn URL"
+                  placeholder={mt("careersCv")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData((p) => ({ ...p, message: e.target.value }))}
-                  placeholder="Tell us why you are a strong fit"
+                  placeholder={mt("careersMessage")}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none h-28"
                 />
 
@@ -278,7 +280,7 @@ export default function CareersPage() {
                       siteKey={config.turnstileSiteKey}
                       onToken={setTurnstileToken}
                     />
-                    <p className="text-[10px] text-slate-500 text-center">Protected by Cloudflare Turnstile</p>
+                    <p className="text-[10px] text-slate-500 text-center">{mt("careersSpamProtectedBy")}</p>
                   </div>
                 )}
 
@@ -288,14 +290,14 @@ export default function CareersPage() {
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl bg-brand-amber text-slate-950 font-bold disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <Send size={14} />
-                  {isSending ? "Submitting Application..." : "Submit Application"}
+                  {isSending ? mt("careersSubmitting") : mt("careersSubmit")}
                 </button>
               </form>
             ) : (
               <div className="text-center py-12 space-y-4">
-                <h2 className="text-2xl font-bold text-white">Application received</h2>
+                <h2 className="text-2xl font-bold text-white">{mt("careersSuccessTitle")}</h2>
                 <p className="text-slate-300">
-                  Thanks for applying. Our team will review your profile and contact you soon.
+                  {mt("careersSuccessDesc")}
                 </p>
                 <button
                   type="button"
@@ -305,7 +307,7 @@ export default function CareersPage() {
                     setError(null);
                   }}
                 >
-                  Submit another application
+                  {mt("careersSubmitAnother")}
                 </button>
               </div>
             )}
