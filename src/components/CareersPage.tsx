@@ -241,12 +241,12 @@ export default function CareersPage() {
                   onChange={(e) => setFormData((p) => ({ ...p, role: e.target.value }))}
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 >
-                  <option>Operations Manager</option>
-                  <option>Customer Success Specialist</option>
-                  <option>Sales / Partnerships</option>
-                  <option>Frontend Engineer</option>
-                  <option>Backend Engineer</option>
-                  <option>Other</option>
+                  <option value="Operations Manager">{mt("careersRoleOps")}</option>
+                  <option value="Customer Success Specialist">{mt("careersRoleCs")}</option>
+                  <option value="Sales / Partnerships">{mt("careersRoleSales")}</option>
+                  <option value="Frontend Engineer">{mt("careersRoleFrontend")}</option>
+                  <option value="Backend Engineer">{mt("careersRoleBackend")}</option>
+                  <option value="Other">{mt("careersRoleOther")}</option>
                 </select>
                 <input
                   value={formData.location}

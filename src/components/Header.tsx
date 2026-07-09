@@ -131,9 +131,7 @@ export default function Header({
     { id: "pricing", label: getTranslated("pricing") },
     { id: "how-it-works", label: getTranslated("how-it-works") },
     { id: "personas", label: getTranslated("personas") },
-    { id: "integrations", label: getTranslated("integrations") },
-    { id: "careers", label: getTranslated("careers") },
-    { id: "blog", label: getTranslated("blog") }
+    { id: "integrations", label: getTranslated("integrations") }
   ];
 
   const handleNavClick = (pageId: string) => {
