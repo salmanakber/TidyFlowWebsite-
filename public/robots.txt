@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Prefer canonical marketing + docs paths
+Disallow: /api/
+
 Sitemap: https://tidyflowapp.com/sitemap.xml
+Sitemap: https://tidyflowapp.com/blog/rss.xml

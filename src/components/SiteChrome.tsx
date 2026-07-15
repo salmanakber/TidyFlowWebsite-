@@ -19,7 +19,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
   const marketingPage =
     seoPage === "documentation"
       ? "home"
-      : ["blog", "careers"].includes(pathPageId)
+      : ["blog", "careers", "whats-new"].includes(pathPageId)
         ? pathPageId
         : seoPage === "home"
           ? "home"

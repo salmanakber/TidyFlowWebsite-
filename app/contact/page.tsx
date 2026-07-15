@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
 import { MarketingPageView } from "@/src/components/MarketingSite";
-import { buildPageMetadata } from "@/src/utils/seo";
+import { buildPageMetadata, resolveSeoLanguage } from "@/src/utils/seo";
 
-export const metadata: Metadata = buildPageMetadata("contact");
+type PageProps = {
+  searchParams: Promise<{ lang?: string }>;
+};
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const { lang } = await searchParams;
+  return buildPageMetadata("contact", resolveSeoLanguage(lang));
+}
 
 export default function ContactRoute() {
   return <MarketingPageView page="contact" />;

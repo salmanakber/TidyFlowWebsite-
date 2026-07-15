@@ -1,82 +1,479 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tidyflowapp.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/features" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/features?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/features?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/features?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/features?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/features?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/features?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/features?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/features?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/features?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/features?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/features" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://tidyflowapp.com/whats-new</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/task-chat</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/task-chat" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/task-chat?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/task-chat?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/task-chat?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/task-chat?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/task-chat?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/task-chat?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/task-chat?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/task-chat?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/task-chat?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/task-chat?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/task-chat" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/quickbooks</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/quickbooks" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/quickbooks?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/quickbooks?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/quickbooks?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/quickbooks?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/quickbooks?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/quickbooks?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/quickbooks?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/quickbooks?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/quickbooks?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/quickbooks?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/quickbooks" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/integrations-hub</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/integrations-hub" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/integrations-hub?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/integrations-hub" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/self-serve-billing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/self-serve-billing" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/self-serve-billing?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/self-serve-billing" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/plan-limits</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/plan-limits" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/plan-limits?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/plan-limits?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/plan-limits?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/plan-limits?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/plan-limits?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/plan-limits?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/plan-limits?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/plan-limits?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/plan-limits?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/plan-limits?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/plan-limits" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/revenue-ai</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/revenue-ai" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/revenue-ai?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/revenue-ai" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/smart-addresses</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/smart-addresses" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/smart-addresses?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/smart-addresses" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/offline-gps</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/offline-gps" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/offline-gps?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/offline-gps?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/offline-gps?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/offline-gps?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/offline-gps?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/offline-gps?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/offline-gps?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/offline-gps?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/offline-gps?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/offline-gps?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/offline-gps" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/ai-setup</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/ai-setup" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/ai-setup?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/ai-setup?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/ai-setup?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/ai-setup?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/ai-setup?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/ai-setup?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/ai-setup?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/ai-setup?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/ai-setup?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/ai-setup?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/ai-setup" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/announcements</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/announcements" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/announcements?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/announcements?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/announcements?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/announcements?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/announcements?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/announcements?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/announcements?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/announcements?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/announcements?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/announcements?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/announcements" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/whats-new/supplies</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/whats-new/supplies" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/whats-new/supplies?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/whats-new/supplies?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/whats-new/supplies?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/whats-new/supplies?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/whats-new/supplies?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/whats-new/supplies?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/whats-new/supplies?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/whats-new/supplies?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/whats-new/supplies?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/whats-new/supplies?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/whats-new/supplies" />
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://tidyflowapp.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/pricing?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/pricing?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/pricing?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/pricing?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/pricing?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/pricing?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/pricing?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/pricing?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/pricing?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/pricing?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/pricing" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/integrations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/integrations" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/integrations?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/integrations?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/integrations?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/integrations?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/integrations?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/integrations?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/integrations?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/integrations?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/integrations?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/integrations?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/integrations" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/how-it-works</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/how-it-works" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/how-it-works?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/how-it-works?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/how-it-works?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/how-it-works?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/how-it-works?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/how-it-works?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/how-it-works?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/how-it-works?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/how-it-works?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/how-it-works?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/how-it-works" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/personas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/personas" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/personas?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/personas?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/personas?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/personas?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/personas?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/personas?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/personas?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/personas?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/personas?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/personas?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/personas" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/contact" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/contact?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/contact?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/contact?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/contact?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/contact?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/contact?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/contact?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/contact?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/contact?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/contact?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/careers</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/careers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/careers?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/careers?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/careers?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/careers?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/careers?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/careers?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/careers?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/careers?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/careers?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/careers?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/careers" />
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog" />
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/rss.xml</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/rss.xml" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/rss.xml?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/rss.xml?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/rss.xml?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/rss.xml?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/rss.xml?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/rss.xml?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/rss.xml?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/rss.xml?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/rss.xml?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/rss.xml?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/rss.xml" />
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/cleaning-company-software-buying-guide-2026" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/reduce-no-shows-with-geofenced-clock-ins" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/google-sheets-to-cleaning-operations-system" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/cleaning-company-kpis-that-actually-matter" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/blog/how-to-scale-commercial-cleaning-company" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://tidyflowapp.com/documentation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tidyflowapp.com/documentation" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://tidyflowapp.com/documentation?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://tidyflowapp.com/documentation?lang=es" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://tidyflowapp.com/documentation?lang=fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://tidyflowapp.com/documentation?lang=de" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://tidyflowapp.com/documentation?lang=pl" />
+    <xhtml:link rel="alternate" hreflang="nb" href="https://tidyflowapp.com/documentation?lang=no" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://tidyflowapp.com/documentation?lang=sv" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://tidyflowapp.com/documentation?lang=it" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://tidyflowapp.com/documentation?lang=ar" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://tidyflowapp.com/documentation?lang=cn" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tidyflowapp.com/documentation" />
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

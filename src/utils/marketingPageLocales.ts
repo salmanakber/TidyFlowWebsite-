@@ -123,6 +123,8 @@ const fr: Record<string, string> = {
   // Footer nav
   footerHome: "Accueil",
   footerFeatures: "Fonctionnalités complètes",
+  footerWhatsNew: "Nouveautés",
+  learnMore: "En savoir plus",
   footerPricing: "Plans et tarifs",
   footerHowItWorks: "Comment ça marche",
   footerContactDemo: "Demander une démo",
@@ -392,6 +394,8 @@ const de: Record<string, string> = {
 
   footerHome: "Startseite",
   footerFeatures: "Alle Funktionen",
+  footerWhatsNew: "Neuigkeiten",
+  learnMore: "Mehr erfahren",
   footerPricing: "Pläne und Preise",
   footerHowItWorks: "So funktioniert's",
   footerContactDemo: "Demo anfragen",
@@ -654,6 +658,8 @@ const pl: Record<string, string> = {
 
   footerHome: "Strona główna",
   footerFeatures: "Pełne funkcje",
+  footerWhatsNew: "Nowości",
+  learnMore: "Dowiedz się więcej",
   footerPricing: "Plany i cennik",
   footerHowItWorks: "Jak to działa",
   footerContactDemo: "Zamów demo",
@@ -916,6 +922,8 @@ const no: Record<string, string> = {
 
   footerHome: "Hjem",
   footerFeatures: "Alle funksjoner",
+  footerWhatsNew: "Nyheter",
+  learnMore: "Les mer",
   footerPricing: "Planer og priser",
   footerHowItWorks: "Slik fungerer det",
   footerContactDemo: "Be om demo",
@@ -1178,6 +1186,8 @@ const sv: Record<string, string> = {
 
   footerHome: "Hem",
   footerFeatures: "Alla funktioner",
+  footerWhatsNew: "Nyheter",
+  learnMore: "Läs mer",
   footerPricing: "Planer och priser",
   footerHowItWorks: "Så fungerar det",
   footerContactDemo: "Begär demo",
@@ -1440,6 +1450,8 @@ const it: Record<string, string> = {
 
   footerHome: "Home",
   footerFeatures: "Funzionalità complete",
+  footerWhatsNew: "Novità",
+  learnMore: "Scopri di più",
   footerPricing: "Piani e prezzi",
   footerHowItWorks: "Come funziona",
   footerContactDemo: "Richiedi demo",

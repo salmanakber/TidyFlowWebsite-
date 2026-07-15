@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import DocPortal from "@/src/components/DocPortal";
-import { buildPageMetadata } from "@/src/utils/seo";
+import { buildPageMetadata, resolveSeoLanguage } from "@/src/utils/seo";
 
-export const metadata: Metadata = buildPageMetadata("documentation");
+type PageProps = {
+  searchParams: Promise<{ lang?: string }>;
+};
+
+export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+  const { lang } = await searchParams;
+  return buildPageMetadata("documentation", resolveSeoLanguage(lang));
+}
 
 export default function DocumentationRoute() {
   return (

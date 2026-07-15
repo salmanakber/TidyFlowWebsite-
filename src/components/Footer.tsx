@@ -55,6 +55,7 @@ export default function Footer({ language }: FooterProps) {
             <div className="flex flex-col gap-3 text-xs sm:text-sm">
               <Link href="/" className="hover:text-brand-amber transition-colors">{getT("footerHome")}</Link>
               <Link href="/features" className="hover:text-brand-amber transition-colors">{getT("footerFeatures")}</Link>
+              <Link href="/whats-new" className="hover:text-brand-amber transition-colors">{getT("footerWhatsNew")}</Link>
               <Link href="/pricing" className="hover:text-brand-amber transition-colors">{getT("footerPricing")}</Link>
               <Link href="/how-it-works" className="hover:text-brand-amber transition-colors">{getT("footerHowItWorks")}</Link>
               <Link href="/contact" className="hover:text-brand-amber transition-colors">{getT("footerContactDemo")}</Link>

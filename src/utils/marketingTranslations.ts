@@ -435,6 +435,8 @@ export const marketingTranslations: Record<string, any> = {
     // Footer nav
     footerHome: "Home",
     footerFeatures: "Full Features",
+    footerWhatsNew: "What’s New",
+    learnMore: "Learn more",
     footerPricing: "Plans & Pricing",
     footerHowItWorks: "How It Works",
     footerContactDemo: "Request Demo",

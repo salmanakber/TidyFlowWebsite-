@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import InteractiveMockup from "./InteractiveMockup";
 import { getTranslation } from "../utils/translations";
@@ -52,6 +53,7 @@ import {
   CloudOff
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { WhatsNewHomeStrip } from "./WhatsNewHomeStrip";
 
 export function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
@@ -881,6 +883,32 @@ function SheetIntegrationSimulator() {
   );
 }
 
+function LearnMoreLink({
+  href,
+  language,
+  tone = "amber",
+}: {
+  href: string;
+  language: string;
+  tone?: "amber" | "violet" | "emerald" | "rose";
+}) {
+  const tones = {
+    amber: "text-brand-amber hover:text-amber-300",
+    violet: "text-violet-300 hover:text-violet-200",
+    emerald: "text-emerald-400 hover:text-emerald-300",
+    rose: "text-rose-400 hover:text-rose-300",
+  };
+  return (
+    <Link
+      href={href}
+      className={`inline-flex items-center gap-1.5 text-sm font-semibold pt-1 transition-colors ${tones[tone]}`}
+    >
+      {getMarketingTranslation("learnMore", language)}
+      <ArrowRight size={14} />
+    </Link>
+  );
+}
+
 // FAQ Accordion Helper Component
 function FaqAccordion({ language }: { language: string }) {
   const mt = (key: string) => getMarketingTranslation(key, language);
@@ -1022,6 +1050,8 @@ function HomePage({
 
       <LocalTrustedByStrip />
 
+      <WhatsNewHomeStrip language={language} />
+
       {/* SECTION 2: LANDING SHOWCASE - FEATURE STEPS */}
       <section className="space-y-48">
 
@@ -1051,6 +1081,7 @@ function HomePage({
                   </li>
                 ))}
               </ul>
+              <LearnMoreLink href="/whats-new/offline-gps" language={language} tone="violet" />
             </div>
           </div>
         </div>
@@ -1075,6 +1106,7 @@ function HomePage({
                   </li>
                 ))}
               </ul>
+              <LearnMoreLink href="/whats-new/smart-addresses" language={language} tone="emerald" />
             </div>
             <div className="lg:col-span-6 flex justify-center relative">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500/5 via-transparent to-transparent opacity-40 blur-2xl pointer-events-none" />
@@ -1110,6 +1142,7 @@ function HomePage({
                   <span>{mt("homeSheetsCheck2")}</span>
                 </li>
               </ul>
+              <LearnMoreLink href="/whats-new/integrations-hub" language={language} tone="emerald" />
             </div>
 
             <div className="lg:col-span-7 bg-slate-900/30 p-4 rounded-2xl border border-slate-900/80 max-w-full overflow-hidden shadow-2xl relative">
@@ -1156,6 +1189,7 @@ function HomePage({
                   <span>{mt("homeAiCheck2")}</span>
                 </li>
               </ul>
+              <LearnMoreLink href="/whats-new/ai-setup" language={language} />
             </div>
 
           </div>
@@ -1186,6 +1220,7 @@ function HomePage({
                   <span>{mt("homePhotoCheck2")}</span>
                 </li>
               </ul>
+              <LearnMoreLink href="/features" language={language} tone="emerald" />
             </div>
 
             <div className="lg:col-span-6 flex justify-center relative">
@@ -1259,6 +1294,7 @@ function HomePage({
                   <span>{mt("homeSosCheck2")}</span>
                 </li>
               </ul>
+              <LearnMoreLink href="/features" language={language} tone="rose" />
             </div>
 
           </div>
@@ -1280,6 +1316,7 @@ function HomePage({
             </div>
             <h4 className="font-display font-bold text-white text-lg">{mt("whatsappTitle")}</h4>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{mt("whatsappDesc")}</p>
+            <LearnMoreLink href="/whats-new/task-chat" language={language} tone="rose" />
           </div>
           <div className="bg-slate-900/10 backdrop-blur-sm border border-slate-900 p-8 rounded-2xl text-left space-y-4 hover:border-slate-800 hover:-translate-y-1 transition-all duration-300 shadow-sm">
             <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 border border-rose-500/20 font-bold">
@@ -1366,12 +1403,12 @@ function HomePage({
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
           {[
-            { icon: Calendar, title: mt("pillar1Title"), desc: mt("pillar1Desc") },
-            { icon: Clock, title: mt("pillar2Title"), desc: mt("pillar2Desc") },
-            { icon: CameraIcon, title: mt("pillar3Title"), desc: mt("pillar3Desc") },
-            { icon: Database, title: mt("pillar4Title"), desc: mt("pillar4Desc") },
-            { icon: Users, title: mt("pillar5Title"), desc: mt("pillar5Desc") },
-            { icon: Sparkles, title: mt("pillar6Title"), desc: mt("pillar6Desc") },
+            { icon: Calendar, title: mt("pillar1Title"), desc: mt("pillar1Desc"), href: "/features" },
+            { icon: Clock, title: mt("pillar2Title"), desc: mt("pillar2Desc"), href: "/whats-new/offline-gps" },
+            { icon: CameraIcon, title: mt("pillar3Title"), desc: mt("pillar3Desc"), href: "/features" },
+            { icon: Database, title: mt("pillar4Title"), desc: mt("pillar4Desc"), href: "/whats-new/integrations-hub" },
+            { icon: Users, title: mt("pillar5Title"), desc: mt("pillar5Desc"), href: "/whats-new/task-chat" },
+            { icon: Sparkles, title: mt("pillar6Title"), desc: mt("pillar6Desc"), href: "/whats-new/ai-setup" },
           ].map((pillar, i) => {
             const Icon = pillar.icon;
             return (
@@ -1381,6 +1418,7 @@ function HomePage({
                 </div>
                 <h4 className="font-display font-bold text-white text-base group-hover:text-brand-amber transition-colors duration-200">{pillar.title}</h4>
                 <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">{pillar.desc}</p>
+                <LearnMoreLink href={pillar.href} language={language} />
               </div>
             );
           })}
@@ -1435,6 +1473,10 @@ function HomePage({
               <li className="flex gap-3 items-center"><span className="text-brand-amber text-lg">✓</span><span>{mt("billingCheck1")}</span></li>
               <li className="flex gap-3 items-center"><span className="text-brand-amber text-lg">✓</span><span>{mt("billingCheck2")}</span></li>
             </ul>
+            <div className="flex flex-wrap gap-4 pt-1">
+              <LearnMoreLink href="/whats-new/self-serve-billing" language={language} />
+              <LearnMoreLink href="/whats-new/revenue-ai" language={language} />
+            </div>
           </div>
 
           <div className="lg:col-span-6 relative z-10 flex justify-center">
