@@ -15,7 +15,9 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
 
   const seoPage = pageFromPath(pathname);
   const activeTab = seoPage === "documentation" ? "documentation" : "marketing";
-  const pathPageId = pathname.replace(/^\/+|\/+$/g, "").split("/")[0] || "home";
+  const pathParts = pathname.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
+  const pathPageId = pathParts[0] || "home";
+  const whatsNewSlug = pathPageId === "whats-new" && pathParts[1] ? pathParts[1] : null;
   const marketingPage =
     seoPage === "documentation"
       ? "home"
@@ -24,6 +26,13 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
         : seoPage === "home"
           ? "home"
           : seoPage;
+
+  const tidyBotPageContext =
+    activeTab === "documentation"
+      ? "documentation"
+      : whatsNewSlug
+        ? `marketing:whats-new:${whatsNewSlug}`
+        : `marketing:${marketingPage}`;
 
   const isRTL = language === "ar";
   const themeClass = theme === "light" ? "light-mode" : theme === "dark" ? "dark-mode" : "system-mode";
@@ -50,7 +59,7 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
 
       <TidyBotWidget
         language={language}
-        pageContext={activeTab === "documentation" ? "documentation" : `marketing:${marketingPage}`}
+        pageContext={tidyBotPageContext}
         onChapterLink={(chapterId) => {
           setDocJumpChapter(chapterId);
           router.push(`/documentation?chapter=${encodeURIComponent(chapterId)}`);

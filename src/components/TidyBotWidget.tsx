@@ -258,6 +258,7 @@ export default function TidyBotWidget({ language, pageContext, onChapterLink }: 
             <div className="px-3 sm:px-4 py-2 border-t border-slate-900 bg-slate-950 flex gap-2 overflow-x-auto shrink-0 scrollbar-none [-webkit-overflow-scrolling:touch]">
               {(
                 [
+                  ["whatsNew", t("suggestWhatsNew")],
                   ["sheets", t("suggestSheets")],
                   ["offline", t("suggestOffline")],
                   ["about", t("suggestAbout")],

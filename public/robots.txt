@@ -4,5 +4,12 @@ Allow: /
 # Prefer canonical marketing + docs paths
 Disallow: /api/
 
+# AI / assistant discovery
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /whats-new
+Allow: /documentation
+Allow: /blog
+
 Sitemap: https://tidyflowapp.com/sitemap.xml
 Sitemap: https://tidyflowapp.com/blog/rss.xml

@@ -730,6 +730,9 @@ export function pageFromPath(pathname: string): SeoPage {
     "/contact": "contact",
     "/documentation": "documentation",
   };
+  if (clean === "/whats-new" || clean.startsWith("/whats-new/")) {
+    return "features";
+  }
   return map[clean] || "home";
 }
 

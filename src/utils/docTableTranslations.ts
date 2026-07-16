@@ -84,7 +84,10 @@ export function getDocTableRow(row: keyof TableDict, lang: string): TableRow {
   return dict[row];
 }
 
-export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payroll" | "about" | "pricing" | "demo", lang: string): string {
+export function getDocSuggestQuestion(
+  key: "sheets" | "offline" | "sos" | "payroll" | "about" | "pricing" | "demo" | "whatsNew",
+  lang: string
+): string {
   const questions: Record<string, Record<string, string>> = {
     en: {
       sheets: "How do I connect Google Sheets?",
@@ -93,7 +96,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "How do I approve hours for payroll?",
       about: "What is TidyFlow and who founded it?",
       pricing: "What are TidyFlow pricing plans?",
-      demo: "How do I get a free demo or trial?"
+      demo: "How do I get a free demo or trial?",
+      whatsNew: "What is new in TidyFlow? Tell me about the latest features.",
     },
     pt: {
       sheets: "Como posso ligar o Google Sheets?",
@@ -102,7 +106,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Como posso aprovar as horas da folha de pagamento?",
       about: "O que é o TidyFlow e quem o fundou?",
       pricing: "Quais são os planos e preços do TidyFlow?",
-      demo: "Como obter uma demonstração ou avaliação gratuita?"
+      demo: "Como obter uma demonstração ou avaliação gratuita?",
+      whatsNew: "Quais são as novidades do TidyFlow? Conte-me sobre os recursos novos.",
     },
     es: {
       sheets: "¿Cómo conectar Google Sheets?",
@@ -111,7 +116,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "¿Cómo aprobar las horas de la nómina?",
       about: "¿Qué es TidyFlow y quién lo fundó?",
       pricing: "¿Cuáles son los planes y precios de TidyFlow?",
-      demo: "¿Cómo obtener una demo o prueba gratuita?"
+      demo: "¿Cómo obtener una demo o prueba gratuita?",
+      whatsNew: "¿Qué hay de nuevo en TidyFlow? Cuéntame las últimas funciones.",
     },
     ar: {
       sheets: "كيف أربط Google Sheets؟",
@@ -120,7 +126,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "كيف أعتمد ساعات العمل للرواتب؟",
       about: "ما هو تيدي فلو ومن أسسه؟",
       pricing: "ما هي خطط وأسعار تيدي فلو؟",
-      demo: "كيف أحصل على عرض تجريبي أو تقييم مجاني؟"
+      demo: "كيف أحصل على عرض تجريبي أو تقييم مجاني؟",
+      whatsNew: "ما الجديد في TidyFlow؟ أخبرني عن أحدث الميزات.",
     },
     cn: {
       sheets: "如何连接谷歌电子表格同步？",
@@ -129,7 +136,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "如何审核和批准考勤工时工资？",
       about: "TidyFlow 是什么？由谁创立？",
       pricing: "TidyFlow 有哪些定价方案？",
-      demo: "如何申请免费演示或试用？"
+      demo: "如何申请免费演示或试用？",
+      whatsNew: "TidyFlow 有哪些新功能？请介绍最新特性。",
     },
     fr: {
       sheets: "Comment connecter Google Sheets ?",
@@ -138,7 +146,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Comment approuver les heures pour la paie ?",
       about: "Qu'est-ce que TidyFlow et qui l'a fondé ?",
       pricing: "Quels sont les forfaits et tarifs TidyFlow ?",
-      demo: "Comment obtenir une démo ou un essai gratuit ?"
+      demo: "Comment obtenir une démo ou un essai gratuit ?",
+      whatsNew: "Quelles sont les nouveautés TidyFlow ? Parle-moi des dernières fonctionnalités.",
     },
     de: {
       sheets: "Wie verbinde ich Google Sheets?",
@@ -147,7 +156,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Wie genehmige ich Stunden für die Lohnabrechnung?",
       about: "Was ist TidyFlow und wer hat es gegründet?",
       pricing: "Welche TidyFlow-Preispläne gibt es?",
-      demo: "Wie bekomme ich eine kostenlose Demo oder Testversion?"
+      demo: "Wie bekomme ich eine kostenlose Demo oder Testversion?",
+      whatsNew: "Was ist neu bei TidyFlow? Erzähl mir von den neuesten Funktionen.",
     },
     pl: {
       sheets: "Jak połączyć Google Sheets?",
@@ -156,7 +166,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Jak zatwierdzić godziny do listy płac?",
       about: "Czym jest TidyFlow i kto go założył?",
       pricing: "Jakie są plany cenowe TidyFlow?",
-      demo: "Jak uzyskać bezpłatną demonstrację lub okres próbny?"
+      demo: "Jak uzyskać bezpłatną demonstrację lub okres próbny?",
+      whatsNew: "Co nowego w TidyFlow? Opowiedz o najnowszych funkcjach.",
     },
     no: {
       sheets: "Hvordan kobler jeg til Google Sheets?",
@@ -165,7 +176,8 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Hvordan godkjenner jeg timer til lønn?",
       about: "Hva er TidyFlow og hvem grunnla det?",
       pricing: "Hva koster TidyFlow og hvilke planer finnes?",
-      demo: "Hvordan får jeg en gratis demo eller prøveperiode?"
+      demo: "Hvordan får jeg en gratis demo eller prøveperiode?",
+      whatsNew: "Hva er nytt i TidyFlow? Fortell meg om de nyeste funksjonene.",
     },
     sv: {
       sheets: "Hur ansluter jag Google Sheets?",
@@ -174,17 +186,19 @@ export function getDocSuggestQuestion(key: "sheets" | "offline" | "sos" | "payro
       payroll: "Hur godkänner jag timmar för lön?",
       about: "Vad är TidyFlow och vem grundade det?",
       pricing: "Vilka prisplaner har TidyFlow?",
-      demo: "Hur får jag en gratis demo eller provperiod?"
+      demo: "Hur får jag en gratis demo eller provperiod?",
+      whatsNew: "Vad är nytt i TidyFlow? Berätta om de senaste funktionerna.",
     },
     it: {
       sheets: "Come collego Google Sheets?",
       offline: "L'app funziona offline?",
-      sos: "Cosa fa il pulsante SOS rosso?",
+      sos: "A cosa serve il pulsante SOS rosso?",
       payroll: "Come approvo le ore per le paghe?",
       about: "Cos'è TidyFlow e chi l'ha fondato?",
       pricing: "Quali sono i piani e i prezzi di TidyFlow?",
-      demo: "Come ottenere una demo o una prova gratuita?"
-    }
+      demo: "Come ottengo una demo o prova gratuita?",
+      whatsNew: "Cosa c'è di nuovo in TidyFlow? Dimmi le ultime funzionalità.",
+    },
   };
   return (questions[lang] || questions.en)[key];
 }
