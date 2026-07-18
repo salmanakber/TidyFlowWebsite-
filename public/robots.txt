@@ -11,5 +11,8 @@ Allow: /whats-new
 Allow: /documentation
 Allow: /blog
 
+# Language is cookie-based; do not treat query variants as separate pages
+# (middleware 301s ?lang= to the clean canonical URL)
+
 Sitemap: https://tidyflowapp.com/sitemap.xml
 Sitemap: https://tidyflowapp.com/blog/rss.xml

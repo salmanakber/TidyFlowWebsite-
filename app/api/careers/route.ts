@@ -16,6 +16,7 @@ export async function POST(req: Request) {
       role,
       location,
       experience,
+      desiredSalary,
       cvLink,
       message,
       website,
@@ -67,6 +68,7 @@ export async function POST(req: Request) {
       <p><strong>Role:</strong> ${escapeHtml(role)}</p>
       <p><strong>Location:</strong> ${escapeHtml(location || "—")}</p>
       <p><strong>Experience:</strong> ${escapeHtml(experience || "—")}</p>
+      <p><strong>Desired salary / expectations:</strong> ${escapeHtml(desiredSalary || "—")}</p>
       <p><strong>CV/LinkedIn:</strong> ${escapeHtml(cvLink || "—")}</p>
       <p><strong>Message:</strong></p>
       <p>${escapeHtml(message || "").replace(/\n/g, "<br>") || "—"}</p>
@@ -79,6 +81,7 @@ export async function POST(req: Request) {
       `Role: ${role}`,
       `Location: ${location || "—"}`,
       `Experience: ${experience || "—"}`,
+      `Desired salary / expectations: ${desiredSalary || "—"}`,
       `CV/LinkedIn: ${cvLink || "—"}`,
       "",
       message || "",

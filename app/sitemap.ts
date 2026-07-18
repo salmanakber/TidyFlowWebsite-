@@ -1,28 +1,12 @@
 /**
- * Dynamic sitemap for Next.js App Router.
- * Complements public/sitemap.xml with lastModified + language alternates.
+ * Dynamic sitemap — clean canonical URLs only (no ?lang= variants).
+ * Language is handled client-side / via cookie after middleware redirect.
  */
 
 import type { MetadataRoute } from "next";
 import { NEW_FEATURE_SLUGS } from "@/src/content/newFeatures";
 import { getAllPosts } from "@/src/content/blogPosts";
-import { SITE_URL, HREFLANG_MAP } from "@/src/utils/seo";
-
-const LANG_CODES = Object.keys(HREFLANG_MAP);
-
-function languageAlternates(path: string): Record<string, string> {
-  const clean = path === "/" ? "" : path;
-  const languages: Record<string, string> = {
-    "x-default": `${SITE_URL}${clean || "/"}`,
-  };
-  for (const code of LANG_CODES) {
-    const hreflang = HREFLANG_MAP[code];
-    languages[hreflang] = clean
-      ? `${SITE_URL}${clean}?lang=${code}`
-      : `${SITE_URL}/?lang=${code}`;
-  }
-  return languages;
-}
+import { SITE_URL } from "@/src/utils/seo";
 
 function entry(
   path: string,
@@ -34,9 +18,6 @@ function entry(
     lastModified: new Date(),
     changeFrequency,
     priority,
-    alternates: {
-      languages: languageAlternates(path),
-    },
   };
 }
 

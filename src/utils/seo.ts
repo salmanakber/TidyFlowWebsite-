@@ -742,13 +742,15 @@ export function pathForPage(pageId: string): string {
   return `/${pageId}`;
 }
 
-/** Build hreflang map for any marketing path (with ?lang= codes). */
+/** Build hreflang map — clean canonical URLs only (language is cookie/client-side). */
 export function buildAlternateLanguages(canonicalPath: string): Record<string, string> {
   const path = canonicalPath === "/" ? "" : canonicalPath;
-  const canonical = `${SITE_URL}${path}`;
-  const languages: Record<string, string> = { "x-default": canonical || SITE_URL };
-  Object.entries(HREFLANG_MAP).forEach(([code, hreflang]) => {
-    languages[hreflang] = path ? `${SITE_URL}${path}?lang=${code}` : `${SITE_URL}/?lang=${code}`;
+  const canonical = `${SITE_URL}${path}` || SITE_URL;
+  // Point all language tags at the same clean URL. Query ?lang= variants are
+  // redirected by middleware and must not appear as separate indexable URLs.
+  const languages: Record<string, string> = { "x-default": canonical };
+  Object.values(HREFLANG_MAP).forEach((hreflang) => {
+    languages[hreflang] = canonical;
   });
   return languages;
 }
@@ -894,11 +896,11 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
   setLink("canonical", canonical);
 
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((n) => n.remove());
-  Object.entries(HREFLANG_MAP).forEach(([langCode, hreflang]) => {
+  Object.values(HREFLANG_MAP).forEach((hreflang) => {
     const link = document.createElement("link");
     link.rel = "alternate";
     link.hreflang = hreflang;
-    link.href = `${SITE_URL}${meta.canonicalPath === "/" ? "" : meta.canonicalPath}?lang=${langCode}`;
+    link.href = canonical;
     document.head.appendChild(link);
   });
   const xDefault = document.createElement("link");

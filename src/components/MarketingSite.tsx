@@ -15,7 +15,7 @@ import {
   type NormalizedPlan,
   type PlanCode
 } from "../utils/plansApi";
-import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
+import { IOS_APP_URL, ANDROID_APP_URL, subscribeUrlForPlan } from "../config/appLinks";
 import TurnstileWidget from "./TurnstileWidget";
 import { useSite } from "../context/SiteContext";
 import {
@@ -1910,9 +1910,19 @@ function PricingPage({ language }: { language: string }) {
             <span className="w-2.5 h-2.5 rounded-full bg-brand-amber inline-block shrink-0"></span>
             <span>{mt("pricingRecommendText", { properties: estimatedProperties, cleaners: estimatedCleaners })}</span>
           </div>
-          <span className="px-5 py-2 bg-brand-amber text-slate-950 font-black rounded-lg uppercase tracking-wider text-[10px] shadow-sm select-none shrink-0">
-            {mt("pricingTierLabel", { code: recommendedCode })}
-          </span>
+          <div className="flex flex-wrap items-center gap-2 shrink-0">
+            <span className="px-5 py-2 bg-brand-amber text-slate-950 font-black rounded-lg uppercase tracking-wider text-[10px] shadow-sm select-none">
+              {mt("pricingTierLabel", { code: recommendedCode })}
+            </span>
+            <a
+              href={subscribeUrlForPlan(recommendedCode)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 rounded-lg border border-brand-amber/40 text-brand-amber hover:bg-brand-amber/10 font-bold text-[10px] uppercase tracking-wider transition-colors"
+            >
+              {mt("pricingStartTrialDays", { days: 14 })}
+            </a>
+          </div>
         </div>
       </div>
 
@@ -2016,8 +2026,10 @@ function PricingPage({ language }: { language: string }) {
               </div>
 
               <div className="space-y-3 pt-4">
-                <button
-                  onClick={() => alert(`Initiating trial registration for the TidyFlow ${plan.name} plan! Redirecting to Stripe secure checkouts...`)}
+                <a
+                  href={subscribeUrlForPlan(plan.code)}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-full py-4 text-xs sm:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5 active:scale-[0.98] focus:outline-none ${
                     isRecommended
                       ? "bg-brand-amber hover:bg-brand-amber/90 text-slate-950 font-bold shadow-md shadow-brand-amber/10"
@@ -2025,7 +2037,7 @@ function PricingPage({ language }: { language: string }) {
                   }`}
                 >
                   {mt("pricingStartTrialDays", { days: plan.trialDays })}
-                </button>
+                </a>
                 <p className="text-[10px] text-slate-500 text-center leading-normal">
                   {mt("pricingNoCard")}
                 </p>

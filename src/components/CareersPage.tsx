@@ -14,6 +14,7 @@ type CareerForm = {
   role: string;
   location: string;
   experience: string;
+  desiredSalary: string;
   cvLink: string;
   message: string;
   website: string;
@@ -79,6 +80,7 @@ export default function CareersPage() {
     role: "Operations Manager",
     location: "",
     experience: "",
+    desiredSalary: "",
     cvLink: "",
     message: "",
     website: "",
@@ -140,29 +142,32 @@ export default function CareersPage() {
     })),
   };
 
-  const jobPostingSchema = {
+  // Intentionally no JobPosting JSON-LD: salaries are applicant-provided (desired compensation),
+  // not published baseSalary ranges — avoids Search Console "Missing field baseSalary".
+  const careersPageSchema = {
     "@context": "https://schema.org",
-    "@graph": OPEN_ROLES.map((role) => ({
-      "@type": "JobPosting",
-      title: role.title,
-      description: role.description,
-      employmentType: role.employmentType,
-      datePosted: "2026-07-09",
-      validThrough: "2026-12-31T23:59",
-      hiringOrganization: {
-        "@type": "Organization",
-        name: "TidyFlow",
-        sameAs: SITE_URL,
-        logo: `${SITE_URL}/logo.png`,
-      },
-      jobLocationType: role.locationType,
-      applicantLocationRequirements: {
-        "@type": "Country",
-        name: role.country,
-      },
-      directApply: true,
-      url: `${SITE_URL}/careers`,
-    })),
+    "@type": "WebPage",
+    name: "Careers at TidyFlow",
+    url: `${SITE_URL}/careers`,
+    description:
+      "Join TidyFlow — remote-first roles in operations, customer success, engineering, and growth.",
+    isPartOf: { "@type": "WebSite", name: "TidyFlow", url: SITE_URL },
+    about: {
+      "@type": "Organization",
+      name: "TidyFlow",
+      url: SITE_URL,
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Open roles at TidyFlow",
+      itemListElement: OPEN_ROLES.map((role, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: role.title,
+        description: role.description,
+        url: `${SITE_URL}/careers`,
+      })),
+    },
   };
 
   return (
@@ -185,6 +190,20 @@ export default function CareersPage() {
               <li>- {mt("careersPoint2")}</li>
               <li>- {mt("careersPoint3")}</li>
             </ul>
+            <div className="space-y-3 pt-2">
+              <h2 className="font-display font-bold text-lg text-white">{mt("careersOpenRolesTitle")}</h2>
+              <ul className="space-y-3">
+                {OPEN_ROLES.map((role) => (
+                  <li
+                    key={role.title}
+                    className="rounded-xl border border-slate-800 bg-slate-900/30 p-4"
+                  >
+                    <p className="font-semibold text-white text-sm">{role.title}</p>
+                    <p className="text-slate-400 text-xs mt-1 leading-relaxed">{role.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           <div className="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8">
@@ -261,6 +280,12 @@ export default function CareersPage() {
                   className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
                 />
                 <input
+                  value={formData.desiredSalary}
+                  onChange={(e) => setFormData((p) => ({ ...p, desiredSalary: e.target.value }))}
+                  placeholder={mt("careersDesiredSalary")}
+                  className="w-full p-3.5 rounded-xl bg-slate-950 border border-slate-800 focus:border-brand-amber outline-none"
+                />
+                <input
                   value={formData.cvLink}
                   onChange={(e) => setFormData((p) => ({ ...p, cvLink: e.target.value }))}
                   placeholder={mt("careersCv")}
@@ -317,7 +342,7 @@ export default function CareersPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(careersPageSchema) }}
       />
     </div>
   );

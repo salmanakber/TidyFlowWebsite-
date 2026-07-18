@@ -9,6 +9,10 @@
 - [Features](https://tidyflowapp.com/features): Scheduling, field app, quality, payroll, AI, integrations
 - [What's New](https://tidyflowapp.com/whats-new): Latest releases and feature deep-dives
 - [Pricing](https://tidyflowapp.com/pricing): Startup, Standard, Premium · 14-day free trial
+  - Subscribe all plans: https://app.tidyflowapp.com/subscribe
+  - Startup: https://app.tidyflowapp.com/subscribe/startup
+  - Standard: https://app.tidyflowapp.com/subscribe/standard
+  - Premium: https://app.tidyflowapp.com/subscribe/premium
 - [How it works](https://tidyflowapp.com/how-it-works): Sheet → field → payroll pipeline
 - [Personas](https://tidyflowapp.com/personas): Owners, managers, cleaners, clients
 - [Integrations](https://tidyflowapp.com/integrations): Google Sheets, QuickBooks, Stripe, Maps

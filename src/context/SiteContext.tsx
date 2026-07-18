@@ -22,14 +22,19 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const storedLang = localStorage.getItem("tidyflow_language");
     const params = new URLSearchParams(window.location.search);
     const queryLang = params.get("lang");
-    if (queryLang) {
-      setLanguageState(queryLang);
-      localStorage.setItem("tidyflow_language", queryLang);
-    } else if (storedLang) {
-      setLanguageState(storedLang);
+    const cookieLang = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("tidyflow_language="))
+      ?.split("=")[1];
+    const storedLang = localStorage.getItem("tidyflow_language");
+
+    const resolvedRaw = queryLang || cookieLang || storedLang;
+    const resolved = resolvedRaw ? decodeURIComponent(resolvedRaw) : null;
+    if (resolved) {
+      setLanguageState(resolved);
+      localStorage.setItem("tidyflow_language", resolved);
     }
 
     const storedTheme = localStorage.getItem("tidyflow_theme") as Theme | null;
@@ -47,11 +52,13 @@ export function SiteProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (!ready) return;
     document.documentElement.lang = language === "cn" ? "zh-CN" : language === "no" ? "nb" : language;
+    document.cookie = `tidyflow_language=${encodeURIComponent(language)};path=/;max-age=31536000;samesite=lax`;
   }, [language, ready]);
 
   const setLanguage = (lang: string) => {
     setLanguageState(lang);
     localStorage.setItem("tidyflow_language", lang);
+    document.cookie = `tidyflow_language=${encodeURIComponent(lang)};path=/;max-age=31536000;samesite=lax`;
   };
 
   const value = useMemo(
