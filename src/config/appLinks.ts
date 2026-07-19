@@ -9,6 +9,13 @@ export const ANDROID_APP_URL =
 export const SUBSCRIBE_BASE_URL =
   process.env.NEXT_PUBLIC_SUBSCRIBE_URL || "https://app.tidyflowapp.com/subscribe";
 
+/** Official social profiles */
+export const LINKEDIN_URL = "https://www.linkedin.com/company/tidyflowapp";
+export const FACEBOOK_URL = "https://www.facebook.com/tidyflowapp";
+
+/** Organization `sameAs` for schema.org / SEO */
+export const SOCIAL_SAME_AS = [LINKEDIN_URL, FACEBOOK_URL] as const;
+
 export type SubscribePlanSlug = "startup" | "standard" | "premium";
 
 export function subscribeUrlForPlan(planCode?: string | null): string {

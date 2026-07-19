@@ -10,6 +10,35 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com" }],
   },
+  async redirects() {
+    return [
+      {
+        source: "/blog/cleaning-company-software-buying-guide-2026",
+        destination: "/blog/cleaning-software-buying-guide",
+        permanent: true,
+      },
+      {
+        source: "/blog/reduce-no-shows-with-geofenced-clock-ins",
+        destination: "/blog/geofenced-clock-ins",
+        permanent: true,
+      },
+      {
+        source: "/blog/google-sheets-to-cleaning-operations-system",
+        destination: "/blog/sheets-to-operations",
+        permanent: true,
+      },
+      {
+        source: "/blog/cleaning-company-kpis-that-actually-matter",
+        destination: "/blog/cleaning-company-kpis",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-to-scale-commercial-cleaning-company",
+        destination: "/blog/scale-commercial-cleaning",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

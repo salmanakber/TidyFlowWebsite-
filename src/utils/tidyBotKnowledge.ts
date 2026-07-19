@@ -18,6 +18,8 @@ export const TIDYBOT_COMPANY_KNOWLEDGE = `
 - **Founded:** 2024 by **Salman Akber** as professional cleaning operations software for modern teams.
 - **Built for:** Residential & commercial cleaning companies, facilities management, and janitorial teams of any size.
 - **Website:** https://tidyflowapp.com
+- **LinkedIn:** https://www.linkedin.com/company/tidyflowapp
+- **Facebook:** https://www.facebook.com/tidyflowapp (@tidyflowapp)
 
 ## Who it's for (personas)
 - **Owners:** Revenue visibility, Stripe billing, reports, branding, subscription control, Integrations hub, QuickBooks sync, Revenue AI.

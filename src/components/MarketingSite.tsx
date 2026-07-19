@@ -2090,11 +2090,22 @@ function HowItWorksPage({ language }: { language: string }) {
               </div>
             </div>
             <div className="md:col-span-10 space-y-2">
-              <h4 className="font-display font-bold text-white text-lg tracking-tight">{mt(item.titleKey)}</h4>
+              <h2 className="font-display font-bold text-white text-lg tracking-tight">{mt(item.titleKey)}</h2>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{mt(item.descKey)}</p>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section className="rounded-2xl border border-slate-900 bg-slate-950/50 p-6 space-y-3">
+          <h2 className="font-display font-bold text-white text-lg">{mt("howPageOutcomeTitle")}</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">{mt("howPageOutcomeBody")}</p>
+        </section>
+        <section className="rounded-2xl border border-slate-900 bg-slate-950/50 p-6 space-y-3">
+          <h2 className="font-display font-bold text-white text-lg">{mt("howPageNextTitle")}</h2>
+          <p className="text-sm text-slate-400 leading-relaxed">{mt("howPageNextBody")}</p>
+        </section>
       </div>
     </div>
   );
@@ -2169,6 +2180,7 @@ function PersonasPage({ language }: { language: string }) {
                   </p>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed pt-2">{mt("personaOwnerExtra")}</p>
             </div>
             <div className="lg:col-span-5 flex justify-center">
               <InteractiveMockup type="pdf" language={language} />
@@ -2194,6 +2206,7 @@ function PersonasPage({ language }: { language: string }) {
                   </p>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed pt-2">{mt("personaManagerExtra")}</p>
             </div>
             <div className="lg:col-span-5 flex justify-center">
               <PhoneFrame>
@@ -2221,6 +2234,7 @@ function PersonasPage({ language }: { language: string }) {
                   </p>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed pt-2">{mt("personaCleanerExtra")}</p>
             </div>
             <div className="lg:col-span-5 flex justify-center">
               <PhoneFrame>
@@ -2248,6 +2262,7 @@ function PersonasPage({ language }: { language: string }) {
                   </p>
                 ))}
               </div>
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed pt-2">{mt("personaClientExtra")}</p>
             </div>
             <div className="lg:col-span-5 flex justify-center">
               <PhoneFrame>
@@ -2266,6 +2281,7 @@ function PersonasPage({ language }: { language: string }) {
 // ==========================================
 function IntegrationsPage({ language }: { language: string }) {
   const t = (key: Parameters<typeof getSheetTranslation>[0]) => getSheetTranslation(key, language);
+  const mt = (key: string) => getMarketingTranslation(key, language);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16 text-left relative">
@@ -2287,7 +2303,7 @@ function IntegrationsPage({ language }: { language: string }) {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-5 space-y-5">
-            <h3 className="font-display font-bold text-2xl text-white tracking-tight">{t("integPageSheetsTitle")}</h3>
+            <h2 className="font-display font-bold text-2xl text-white tracking-tight">{t("integPageSheetsTitle")}</h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{t("integPageSheetsDesc")}</p>
 
             <div className="pt-2">
@@ -2311,13 +2327,25 @@ function IntegrationsPage({ language }: { language: string }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2">
               <div className="p-4 bg-slate-900/20 backdrop-blur-sm border border-slate-900 rounded-xl">
-                <h5 className="font-bold text-white text-sm">{t("integPageStripeTitle")}</h5>
+                <h3 className="font-bold text-white text-sm">{t("integPageStripeTitle")}</h3>
                 <p className="text-[11px] mt-1.5 text-slate-400 leading-relaxed">{t("integPageStripeDesc")}</p>
               </div>
               <div className="p-4 bg-slate-900/20 backdrop-blur-sm border border-slate-900 rounded-xl">
-                <h5 className="font-bold text-white text-sm">{t("integPageMapsTitle")}</h5>
+                <h3 className="font-bold text-white text-sm">{t("integPageMapsTitle")}</h3>
                 <p className="text-[11px] mt-1.5 text-slate-400 leading-relaxed">{t("integPageMapsDesc")}</p>
               </div>
+            </div>
+
+            <div className="space-y-4 pt-2">
+              <section className="p-4 bg-slate-900/20 border border-slate-900 rounded-xl space-y-2">
+                <h2 className="font-display font-bold text-white text-sm">{mt("integExtraQboTitle")}</h2>
+                <p className="text-xs text-slate-400 leading-relaxed">{mt("integExtraQboDesc")}</p>
+              </section>
+              <section className="p-4 bg-slate-900/20 border border-slate-900 rounded-xl space-y-2">
+                <h2 className="font-display font-bold text-white text-sm">{mt("integExtraHubTitle")}</h2>
+                <p className="text-xs text-slate-400 leading-relaxed">{mt("integExtraHubDesc")}</p>
+              </section>
+              <p className="text-xs text-slate-500 leading-relaxed">{mt("integExtraMapsMore")}</p>
             </div>
           </div>
 

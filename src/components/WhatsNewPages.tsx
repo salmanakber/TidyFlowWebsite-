@@ -27,6 +27,7 @@ import {
   getWhatsNewUi,
   type NewFeatureSlug,
 } from "../content/newFeatures";
+import { getFeaturePageExtra } from "../content/featurePageExtra";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
 
 const ICONS: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -151,6 +152,7 @@ export function WhatsNewFeaturePage({ slug }: { slug: NewFeatureSlug }) {
   const ui = getWhatsNewUi(language);
   const feature = getFeatureBySlug(slug);
   const copy = getFeatureCopy(slug, language);
+  const extra = getFeaturePageExtra(slug);
   const router = useRouter();
 
   if (!feature) return null;
@@ -162,6 +164,8 @@ export function WhatsNewFeaturePage({ slug }: { slug: NewFeatureSlug }) {
       return { def, copy: getFeatureCopy(id, language) };
     })
     .filter(Boolean) as { def: (typeof NEW_FEATURES)[number]; copy: ReturnType<typeof getFeatureCopy> }[];
+
+  const detailSections = [extra.whoFor, extra.howItWorks, extra.whyItMatters];
 
   return (
     <MarketingShell>
@@ -177,7 +181,7 @@ export function WhatsNewFeaturePage({ slug }: { slug: NewFeatureSlug }) {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-10">
             <header className="space-y-5">
               <p className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-amber/25 bg-brand-amber/10 text-brand-amber text-xs font-semibold">
                 <FeatureIcon name={feature.icon} className="text-brand-amber" />
@@ -198,6 +202,39 @@ export function WhatsNewFeaturePage({ slug }: { slug: NewFeatureSlug }) {
                 </li>
               ))}
             </ul>
+
+            <div className="space-y-8">
+              {detailSections.map((section) => (
+                <section key={section.heading} className="space-y-3">
+                  <h2 className="font-display font-bold text-xl text-white tracking-tight">{section.heading}</h2>
+                  {section.paragraphs.map((p) => (
+                    <p key={p.slice(0, 48)} className="text-sm text-slate-400 leading-relaxed">
+                      {p}
+                    </p>
+                  ))}
+                </section>
+              ))}
+            </div>
+
+            <section className="space-y-4">
+              <h2 className="font-display font-bold text-xl text-white tracking-tight">{ui.faqTitle}</h2>
+              <div className="space-y-3">
+                {extra.faqs.map((faq) => (
+                  <details
+                    key={faq.q}
+                    className="rounded-xl border border-slate-800 bg-slate-900/40 px-4 py-3 group"
+                  >
+                    <summary className="cursor-pointer text-sm font-semibold text-slate-100 list-none flex items-center justify-between gap-3">
+                      {faq.q}
+                      <span className="text-slate-500 group-open:rotate-45 transition-transform text-lg leading-none">
+                        +
+                      </span>
+                    </summary>
+                    <p className="text-sm text-slate-400 mt-2 leading-relaxed">{faq.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
 
             <div className="flex flex-wrap gap-3 pt-2">
               <button

@@ -23,14 +23,14 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   }
 
   return {
-    title: `${post.title} | TidyFlow Blog`,
+    title: post.metaTitle,
     description: post.excerpt,
     keywords: post.keywords,
     alternates: { canonical: `${SITE_URL}/blog/${post.slug}` },
     openGraph: {
       type: "article",
       url: `${SITE_URL}/blog/${post.slug}`,
-      title: post.title,
+      title: post.metaTitle,
       description: post.excerpt,
       publishedTime: post.publishedAt,
       authors: [post.author],
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: post.metaTitle,
       description: post.excerpt,
       images: [`${SITE_URL}/og-image.png`],
     },

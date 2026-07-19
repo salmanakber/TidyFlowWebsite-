@@ -1,16 +1,33 @@
-
 "use client";
 
 import React from "react";
 import Link from "next/link";
 import Logo from "./Logo";
-import { Mail, Globe, Shield, Scale, ChevronRight } from "lucide-react";
+import { Mail, Globe, Shield, Scale, ChevronRight, Linkedin } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
-import { IOS_APP_URL, ANDROID_APP_URL } from "../config/appLinks";
-import { pathForPage } from "../utils/seo";
+import {
+  IOS_APP_URL,
+  ANDROID_APP_URL,
+  LINKEDIN_URL,
+  FACEBOOK_URL,
+} from "../config/appLinks";
 
 interface FooterProps {
   language: string;
+}
+
+function FacebookIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M24 12.073C24 5.404 18.627 0 12 0S0 5.404 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.928-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" />
+    </svg>
+  );
 }
 
 export default function Footer({ language }: FooterProps) {
@@ -42,6 +59,31 @@ export default function Footer({ language }: FooterProps) {
                 <Mail size={13} className="text-brand-amber" />
                 <a href="mailto:tidyflaw@gmail.com" className="hover:text-white transition-colors">
                   tidyflaw@gmail.com
+                </a>
+              </div>
+            </div>
+            <div className="pt-1 space-y-2">
+              <p className="text-[10px] font-mono uppercase tracking-widest text-slate-500">
+                {getT("followUs")}
+              </p>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  aria-label="TidyFlow on LinkedIn"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-[#0A66C2] hover:border-slate-700 transition-colors"
+                >
+                  <Linkedin size={15} />
+                </a>
+                <a
+                  href={FACEBOOK_URL}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  aria-label="TidyFlow on Facebook (@tidyflowapp)"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-slate-800 bg-slate-900/60 text-slate-300 hover:text-[#1877F2] hover:border-slate-700 transition-colors"
+                >
+                  <FacebookIcon size={15} />
                 </a>
               </div>
             </div>

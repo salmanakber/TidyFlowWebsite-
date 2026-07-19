@@ -1,3 +1,5 @@
+import { SOCIAL_SAME_AS } from "../config/appLinks";
+
 export type SeoPage = "home" | "documentation" | "features" | "pricing" | "integrations" | "contact" | "personas" | "how-it-works";
 
 export interface SeoMeta {
@@ -15,62 +17,62 @@ export const GOOGLE_SITE_VERIFICATION = "XkJtk16LIKzsYV3q7_pAVbgnD8nTbHt6mzeaXGb
 
 const en: Record<SeoPage, SeoMeta> = {
   home: {
-    title: "TidyFlow | Cleaning Company Software — Offline App, GPS Geofencing & Google Sheets",
+    title: "TidyFlow | Cleaning Company Software",
     description:
-      "All-in-one janitorial & facilities cleaning software. Offline iOS/Android field app, GPS on-site verification, two-way Google Sheets sync, QuickBooks invoices, task chat, Revenue AI, payroll automation & client proof. Start your 14-day free trial.",
+      "Offline field app, GPS proof, Google Sheets sync, QuickBooks, task chat, and payroll for janitorial teams. Start a 14-day free trial.",
     keywords:
-      "cleaning company software, janitorial software, commercial cleaning software, cleaning business management software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning schedule, QuickBooks cleaning invoices, task chat cleaners, Revenue AI cleaning, rota scheduling software, cleaning payroll software, facilities cleaning app, maid service software, field service cleaning app, TidyFlow",
+      "cleaning company software, janitorial software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning, QuickBooks cleaning, TidyFlow",
     canonicalPath: "/"
   },
   documentation: {
-    title: "TidyFlow User Guide — 23-Chapter Interactive Documentation & TidyBot",
+    title: "TidyFlow User Guide & Docs",
     description:
-      "Official TidyFlow documentation: setup, Google Sheets sync, cleaner app, SOS safety, payroll, offline mode, and AI features. Available in 11 languages with TidyBot AI assistant.",
-    keywords: "TidyFlow docs, user guide, cleaning app documentation, Google Sheets integration, offline mode guide",
+      "23-chapter TidyFlow guide: Sheets sync, offline app, GPS, payroll, SOS, and AI. Available in 11 languages with TidyBot.",
+    keywords: "TidyFlow docs, cleaning app user guide, Google Sheets integration guide, offline mode",
     canonicalPath: "/documentation"
   },
   features: {
-    title: "TidyFlow Features — Scheduling, Offline Field App, GPS, AI & Integrations",
+    title: "TidyFlow Features for Field Teams",
     description:
-      "Explore TidyFlow: rota builder, offline cleaner app, GPS geofencing, task chat, QuickBooks sync, Revenue AI, photo proof, PDF reports, Stripe billing, and live Google Sheets sync.",
+      "Rota scheduling, offline timers, GPS geofencing, photo proof, AI dispatch, payroll, and Sheets sync — built for cleaning ops.",
     keywords:
-      "cleaning app features, rota scheduling, offline field app, GPS cleaning tracker, AI dispatch cleaning, QuickBooks cleaning, task chat cleaners",
+      "cleaning app features, rota scheduling, offline field app, GPS cleaning tracker, AI dispatch cleaning",
     canonicalPath: "/features"
   },
   pricing: {
-    title: "TidyFlow Pricing — Startup, Standard & Premium Plans for Cleaning Teams",
+    title: "TidyFlow Pricing & Plans",
     description:
-      "Transparent live pricing for cleaning and facilities companies. Scale by properties and cleaners. 14-day free trial, billed via Stripe.",
-    keywords: "cleaning software pricing, TidyFlow plans, janitorial SaaS cost, cleaning business subscription",
+      "Startup, Standard, and Premium plans for cleaning companies. Live Stripe pricing, usage limits, and a 14-day free trial.",
+    keywords: "cleaning software pricing, TidyFlow plans, janitorial SaaS cost",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow Integrations — Google Sheets, QuickBooks, Stripe & Maps",
+    title: "TidyFlow App Integrations",
     description:
-      "Connect TidyFlow to Google Sheets for two-way sync, QuickBooks Online for invoices, Stripe for billing, and geofenced Google Maps — managed from one Integrations hub.",
+      "Connect Google Sheets two-way sync, QuickBooks Online invoices, Stripe billing, and geofenced Maps for cleaning operations.",
     keywords:
-      "Google Sheets cleaning software, QuickBooks Online cleaning, Stripe integration cleaning, spreadsheet sync janitorial, cleaning software integrations hub",
+      "Google Sheets cleaning software, QuickBooks Online cleaning, Stripe janitorial integration",
     canonicalPath: "/integrations"
   },
   contact: {
-    title: "Book a TidyFlow Demo — Free 14-Day Trial for Cleaning Companies",
+    title: "Book a TidyFlow Demo",
     description:
-      "Schedule a live TidyFlow demo. Tell us about your team size, spreadsheet workflow, and operations goals. No credit card required.",
-    keywords: "TidyFlow demo, cleaning software trial, contact TidyFlow sales",
+      "Request a live demo or 14-day free trial. Tell us your team size and spreadsheet workflow — no credit card required.",
+    keywords: "TidyFlow demo, cleaning software trial, contact TidyFlow",
     canonicalPath: "/contact"
   },
   personas: {
-    title: "TidyFlow for Owners, Managers, Cleaners & Facility Clients",
+    title: "TidyFlow by Role",
     description:
-      "See how TidyFlow serves business owners, operations managers, field cleaners, and facility clients with role-tailored workflows.",
-    keywords: "cleaning business owner software, manager dashboard cleaning, cleaner mobile app offline",
+      "Workflows for cleaning company owners, operations managers, field cleaners, and facility clients — each with the right tools.",
+    keywords: "cleaning owner software, manager dashboard, cleaner mobile app offline",
     canonicalPath: "/personas"
   },
   "how-it-works": {
-    title: "How TidyFlow Works — Spreadsheet to Field to Payroll in One Pipeline",
+    title: "How TidyFlow Works",
     description:
-      "Learn the TidyFlow workflow: sync your master Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients.",
-    keywords: "cleaning workflow software, operations pipeline, field to office sync cleaning",
+      "Sync your Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients in one pipeline.",
+    keywords: "cleaning workflow software, field to office sync, cleaning operations pipeline",
     canonicalPath: "/how-it-works"
   }
 };
@@ -917,7 +919,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     logo: `${SITE_URL}/favicon.png`,
     email: "tidyflaw@gmail.com",
     description: meta.description,
-    sameAs: []
+    sameAs: [...SOCIAL_SAME_AS]
   });
 
   injectJsonLd("seo-software", {

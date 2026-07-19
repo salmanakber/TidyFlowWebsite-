@@ -4,9 +4,9 @@ import { getAllPosts } from "@/src/content/blogPosts";
 import { SITE_URL } from "@/src/utils/seo";
 
 export const metadata: Metadata = {
-  title: "TidyFlow Blog | Cleaning Operations, Scheduling, Payroll, and Growth Guides",
+  title: "TidyFlow Blog | Cleaning Ops Guides",
   description:
-    "Actionable guides for cleaning company owners and managers: operations systems, geofenced attendance, KPI dashboards, payroll accuracy, and growth playbooks.",
+    "Guides for cleaning owners and managers: software buying, geofenced attendance, Sheets migration, KPIs, and scaling commercial ops.",
   keywords: [
     "cleaning operations blog",
     "janitorial management tips",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/blog`,
     title: "TidyFlow Blog",
     description:
-      "Expert articles on scaling cleaning operations with better systems, automation, and field accountability.",
+      "Practical articles on cleaning operations systems, GPS attendance, KPIs, and growth.",
     images: [{ url: `${SITE_URL}/og-image.png` }],
   },
 };

@@ -1,5 +1,6 @@
 import { SITE_URL, OG_IMAGE } from "./seo";
 import { NEW_FEATURE_SLUGS, getFeatureCopy } from "../content/newFeatures";
+import { SOCIAL_SAME_AS } from "../config/appLinks";
 
 export function getSiteJsonLdGraph() {
   const whatsNewList = NEW_FEATURE_SLUGS.map((slug, index) => {
@@ -31,7 +32,7 @@ export function getSiteJsonLdGraph() {
           "@type": "Person",
           name: "Salman Akber",
         },
-        sameAs: [],
+        sameAs: [...SOCIAL_SAME_AS],
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "sales",

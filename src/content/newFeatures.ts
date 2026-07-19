@@ -146,9 +146,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Replace scattered chats with one thread per job.",
     caption: "Chat on the job — text and voice",
-    seoTitle: "Task Team Chat for Cleaning Jobs | Voice Notes | TidyFlow",
+    seoTitle: "Task Chat for Cleaning Jobs | TidyFlow",
     seoDescription:
-      "Per-task team chat for cleaning companies. Keep job instructions, updates, and voice notes in one thread — not lost in WhatsApp groups.",
+      "Per-task team chat for cleaners and managers. Keep instructions, updates, and voice notes on the job — not lost in WhatsApp.",
     keywords:
       "cleaning team chat, task messaging cleaners, replace WhatsApp cleaning, voice notes field cleaners, janitorial communication app",
   },
@@ -166,9 +166,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Operations and accounting finally speak the same language.",
     caption: "Invoices sync to QuickBooks automatically",
-    seoTitle: "QuickBooks Integration for Cleaning Companies | TidyFlow",
+    seoTitle: "QuickBooks Invoice Sync | TidyFlow",
     seoDescription:
-      "Sync TidyFlow client invoices to QuickBooks Online with customers, line items, and totals. OAuth connect, bulk sync, and automation rules for janitorial teams.",
+      "Push TidyFlow client invoices into QuickBooks Online with customers, line items, and totals. OAuth connect, bulk sync, and optional automation rules.",
     keywords:
       "QuickBooks cleaning software, invoice sync QuickBooks Online, janitorial accounting integration, cleaning company QuickBooks",
   },
@@ -184,11 +184,11 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "No more digging through settings to see what’s linked.",
     caption: "All connections in one place",
-    seoTitle: "Integrations Hub — Sheets, QuickBooks & Stripe | TidyFlow",
+    seoTitle: "In-App Integrations Hub | TidyFlow",
     seoDescription:
-      "Manage Google Sheets, QuickBooks, and Stripe connections from one TidyFlow Integrations hub. See sync health, activity, and reconnect in seconds.",
+      "Live control panel for Google Sheets, QuickBooks, and Stripe inside TidyFlow — sync health, activity log, and one-tap reconnect for owners.",
     keywords:
-      "cleaning software integrations, Google Sheets sync, QuickBooks Stripe hub, janitorial integrations dashboard",
+      "cleaning software integrations hub, Sheets QuickBooks Stripe status, janitorial integrations dashboard",
   },
   "self-serve-billing": {
     pill: "Self-serve billing — Change plan or cancel from the app",
@@ -203,10 +203,10 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
       "Email + in-app alerts for payments, trials, and renewals",
     ],
     cta: "Transparent SaaS billing your team controls.",
-    caption: "See plan usage before you hit limits",
-    seoTitle: "Self-Serve Billing & Subscriptions | TidyFlow",
+    caption: "Change plan or cancel without support tickets",
+    seoTitle: "Self-Serve Billing | TidyFlow",
     seoDescription:
-      "Change plan, start a trial, or cancel TidyFlow from the app. Transparent Stripe billing with usage history for cleaning company owners.",
+      "Owners change plan, start a trial, or cancel from the TidyFlow Billing screen. Stripe-powered history, renewals, and clear trial vs paid messaging.",
     keywords:
       "TidyFlow billing, cancel subscription, change plan SaaS cleaning, self-serve Stripe billing",
   },
@@ -223,9 +223,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Scale from Startup to Premium without surprises.",
     caption: "See plan usage before you hit limits",
-    seoTitle: "Plan Limits & Usage Meters for Cleaning SaaS | TidyFlow",
+    seoTitle: "Plan Limits & Usage Meters | TidyFlow",
     seoDescription:
-      "Track properties, cleaners, AI, invoices, and PDF quotas against your TidyFlow plan. Live meters and warnings before you hit limits.",
+      "Live meters for properties, cleaners, AI ops, invoices, photo AI, and PDFs. Warnings before you hit Startup, Standard, or Premium caps.",
     keywords:
       "SaaS usage meters, cleaning software plan limits, AI quota cleaning app, TidyFlow pricing limits",
   },
@@ -242,9 +242,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "CFO-style insight without a finance hire.",
     caption: "AI explains your profit and margins",
-    seoTitle: "Revenue Reports + AI Profit Analysis | TidyFlow",
+    seoTitle: "Revenue AI for Cleaning Owners | TidyFlow",
     seoDescription:
-      "Owner revenue dashboard for cleaning companies: net profit, margins by property, and AI analysis that explains what changed in plain language.",
+      "Owner dashboard with net profit, cash collected, and margins by property — plus AI that explains what moved in plain language.",
     keywords:
       "cleaning company revenue report, profit margins janitorial, AI financial analysis cleaning, owner dashboard cleaning software",
   },
@@ -261,9 +261,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Less typing, fewer wrong addresses, better GPS proof.",
     caption: "Add properties with country-smart search",
-    seoTitle: "Smart Address Autocomplete & Map Pins | TidyFlow",
+    seoTitle: "Smart Property Addresses | TidyFlow",
     seoDescription:
-      "Country-scoped address autocomplete and automatic geocoding for cleaning properties. Better map pins for GPS geofencing and routing.",
+      "Country-scoped address autocomplete and auto-geocoding for cleaning sites — accurate map pins for GPS geofencing and routing.",
     keywords:
       "property address autocomplete, geocode cleaning properties, country address search, GPS map pins janitorial",
   },
@@ -279,9 +279,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Low-signal buildings are no longer a blind spot.",
     caption: "Location proof that syncs when signal returns",
-    seoTitle: "Offline GPS Queue for Low-Signal Sites | TidyFlow",
+    seoTitle: "Offline GPS for Field Cleaners | TidyFlow",
     seoDescription:
-      "Queue GPS location pings offline in basements and towers. TidyFlow syncs proof when cleaners reconnect — without stopping timers or photos.",
+      "Queue GPS pings offline in basements and towers. Proof syncs when cleaners reconnect — timers and photos keep running.",
     keywords:
       "offline GPS cleaning app, basement geofencing, low signal location tracking cleaners, offline location queue",
   },
@@ -298,9 +298,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Less admin time on every new job.",
     caption: "AI helps set up new jobs in seconds",
-    seoTitle: "TidyFlow AI Setup Assistant for New Cleaning Jobs",
+    seoTitle: "AI Job Setup Assistant | TidyFlow",
     seoDescription:
-      "Guided AI setup for new cleaning tasks: checklist suggestions and assign recommendations. Managers confirm — AI never auto-assigns.",
+      "Guided setup for new cleaning tasks: AI checklist and assign suggestions. Managers always confirm — AI never auto-assigns.",
     keywords:
       "AI checklist cleaning, AI job setup janitorial, cleaning task assistant, TidyFlow AI setup",
   },
@@ -316,9 +316,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "One message, entire team, zero WhatsApp forwards.",
     caption: "Broadcast to your entire team",
-    seoTitle: "Company Announcements for Cleaning Teams | TidyFlow",
+    seoTitle: "Team Announcements | TidyFlow",
     seoDescription:
-      "Send company-wide announcements to cleaners inside TidyFlow — policies, weather, holidays — without WhatsApp forwards or email blasts.",
+      "Broadcast policies, weather alerts, and holiday schedules to every cleaner in TidyFlow — no WhatsApp forwards required.",
     keywords:
       "cleaning team announcements, company broadcast cleaners, replace WhatsApp ops messaging, janitorial internal comms",
   },
@@ -334,9 +334,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     ],
     cta: "Stop guessing how much chemical each property uses.",
     caption: "Log supply usage per job from the field",
-    seoTitle: "Cleaning Supplies Tracking per Job | TidyFlow",
+    seoTitle: "Supplies Tracking per Job | TidyFlow",
     seoDescription:
-      "Track cleaning supplies with a company catalog and per-job usage logs from the field. Low-stock awareness tied to real consumption.",
+      "Company supply catalog plus per-job usage logs from the field. Low-stock awareness tied to real chemical and consumable burn.",
     keywords:
       "cleaning supplies tracking, chemical usage per job, janitorial inventory app, field supply logging",
   },

@@ -7,6 +7,7 @@ import {
   getFeatureCopy,
   type NewFeatureSlug,
 } from "@/src/content/newFeatures";
+import { getFeaturePageExtra } from "@/src/content/featurePageExtra";
 import { SITE_URL, buildCustomPageMetadata, resolveSeoLanguage } from "@/src/utils/seo";
 
 type FeaturePageProps = {
@@ -45,6 +46,7 @@ export default async function WhatsNewFeatureRoute({ params, searchParams }: Fea
 
   const language = resolveSeoLanguage(lang);
   const copy = getFeatureCopy(feature.slug, language);
+  const extra = getFeaturePageExtra(feature.slug);
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -83,6 +85,16 @@ export default async function WhatsNewFeatureRoute({ params, searchParams }: Fea
     ],
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: extra.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: { "@type": "Answer", text: faq.a },
+    })),
+  };
+
   return (
     <>
       <WhatsNewFeaturePage slug={feature.slug as NewFeatureSlug} />
@@ -91,6 +103,7 @@ export default async function WhatsNewFeatureRoute({ params, searchParams }: Fea
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   );
 }

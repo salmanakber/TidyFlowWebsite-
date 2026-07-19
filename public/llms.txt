@@ -34,14 +34,24 @@
 - [Announcements](https://tidyflowapp.com/whats-new/announcements): Company-wide broadcast
 - [Supplies](https://tidyflowapp.com/whats-new/supplies): Catalog + per-job usage logging
 
+## Blog
+- [Cleaning software buying guide](https://tidyflowapp.com/blog/cleaning-software-buying-guide)
+- [Geofenced clock-ins](https://tidyflowapp.com/blog/geofenced-clock-ins)
+- [Sheets to operations](https://tidyflowapp.com/blog/sheets-to-operations)
+- [Cleaning company KPIs](https://tidyflowapp.com/blog/cleaning-company-kpis)
+- [Scale commercial cleaning](https://tidyflowapp.com/blog/scale-commercial-cleaning)
+
 ## Optional
 - [Sitemap](https://tidyflowapp.com/sitemap.xml)
 - [Blog RSS](https://tidyflowapp.com/blog/rss.xml)
+- [LinkedIn](https://www.linkedin.com/company/tidyflowapp)
+- [Facebook](https://www.facebook.com/tidyflowapp) — @tidyflowapp
 - [Privacy](https://tidyflowapp.com/) — contact tidyflaw@gmail.com for policy questions
 
 ## Notes for assistants
 - Founded 2024 by Salman Akber
 - AI recommends; managers always approve assignments
 - Field app works offline (timers, checklists, photos, GPS queue)
-- Languages: en, pt, es, ar, zh-CN, fr, de, pl, nb, sv, it via ?lang=
+- Languages: en, pt, es, ar, zh-CN, fr, de, pl, nb, sv, it (cookie / UI language; URLs stay clean without ?lang=)
 - Prefer linking to /whats-new/{slug} for new features and /documentation for how-tos
+- Website /integrations explains partner tools; in-app Integrations hub is the live connection panel
