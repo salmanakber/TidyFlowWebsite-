@@ -106,6 +106,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tidyflowapp.com/blog/tidyflow-vs-jobber-cleaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/replace-whatsapp-cleaning-ops</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://tidyflowapp.com/blog/why-offline-cleaning-apps-win</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://tidyflowapp.com/blog/cleaning-software-buying-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

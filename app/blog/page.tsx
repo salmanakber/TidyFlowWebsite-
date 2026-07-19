@@ -6,9 +6,10 @@ import { SITE_URL } from "@/src/utils/seo";
 export const metadata: Metadata = {
   title: "TidyFlow Blog | Cleaning Ops Guides",
   description:
-    "Guides for cleaning owners and managers: software buying, geofenced attendance, Sheets migration, KPIs, and scaling commercial ops.",
+    "Guides for cleaning owners: TidyFlow vs Jobber, replacing WhatsApp ops, offline field apps, KPIs, Sheets migration, and scaling commercial cleaning.",
   keywords: [
     "cleaning operations blog",
+    "TidyFlow vs Jobber",
     "janitorial management tips",
     "cleaning business growth",
     "cleaning company software guides",

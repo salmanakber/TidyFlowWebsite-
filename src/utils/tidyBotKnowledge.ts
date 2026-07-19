@@ -68,7 +68,7 @@ const TIDYBOT_WEBSITE_KNOWLEDGE = `
 - **/integrations** — Sheets, QuickBooks, Stripe, Maps / Integrations hub.
 - **/contact** — book demo / 14-day free trial (no card required).
 - **/documentation** — 23-chapter interactive user guide + TidyBot.
-- **/blog** (+ individual posts) — cleaning ops education content.
+- **/blog** (+ individual posts) — cleaning ops education; includes TidyFlow vs Jobber comparison, replacing WhatsApp ops, and why offline field apps win for commercial cleaning.
 - **/careers** — open roles at TidyFlow.
 - App stores: iOS App Store + Google Play (offline field app).
 

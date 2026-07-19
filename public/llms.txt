@@ -35,6 +35,9 @@
 - [Supplies](https://tidyflowapp.com/whats-new/supplies): Catalog + per-job usage logging
 
 ## Blog
+- [TidyFlow vs Jobber for cleaning](https://tidyflowapp.com/blog/tidyflow-vs-jobber-cleaning)
+- [Replace WhatsApp for cleaning ops](https://tidyflowapp.com/blog/replace-whatsapp-cleaning-ops)
+- [Why offline cleaning apps win](https://tidyflowapp.com/blog/why-offline-cleaning-apps-win)
 - [Cleaning software buying guide](https://tidyflowapp.com/blog/cleaning-software-buying-guide)
 - [Geofenced clock-ins](https://tidyflowapp.com/blog/geofenced-clock-ins)
 - [Sheets to operations](https://tidyflowapp.com/blog/sheets-to-operations)
