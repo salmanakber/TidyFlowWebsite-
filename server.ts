@@ -6,6 +6,12 @@ import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { rawChapters } from "./src/utils/chaptersData";
 import { buildTidyBotSystemKnowledge, LANGUAGE_NAMES } from "./src/utils/tidyBotKnowledge";
+import {
+  escapeHtml,
+  getEmailConfigStatus,
+  isEmailConfigured,
+  sendTransactionalEmail,
+} from "./src/lib/email";
 
 // Keep the process alive on unexpected async errors (log only — do not exit).
 // Without this, a single unhandled rejection can kill tidyflowapp.com until restart.
@@ -29,48 +35,6 @@ const ai = apiKey
     })
   : null;
 
-/** Brevo Transactional API — only needs an API key (xkeysib-...), not SMTP login. */
-function getBrevoConfig() {
-  const apiKey =
-    process.env.BREVO_API_KEY ||
-    process.env.BREVO_SMTP_KEY || // accept key if user stored it under the old name
-    process.env.SMTP_PASS ||
-    "";
-  const fromRaw =
-    process.env.BREVO_SENDER_EMAIL ||
-    process.env.SMTP_FROM ||
-    process.env.BREVO_SMTP_USER ||
-    "";
-  const to = process.env.CONTACT_TO_EMAIL || process.env.BREVO_CONTACT_TO || "";
-  return { apiKey, fromRaw, to };
-}
-
-function parseSender(fromRaw: string): { name: string; email: string } | null {
-  const raw = (fromRaw || "").trim().replace(/^["']|["']$/g, "");
-  if (!raw) return null;
-  const angled = raw.match(/^([^<]*)<([^>]+)>$/);
-  if (angled) {
-    const email = angled[2].trim();
-    const name = angled[1].trim().replace(/^["']|["']$/g, "") || "TidyFlow";
-    return email.includes("@") ? { name, email } : null;
-  }
-  if (raw.includes("@")) return { name: "TidyFlow", email: raw };
-  return null;
-}
-
-function isBrevoConfigured() {
-  const cfg = getBrevoConfig();
-  return !!(cfg.apiKey && cfg.to && parseSender(cfg.fromRaw));
-}
-
-function escapeHtml(value: string) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
 async function startServer() {
   const app = express();
   const PORT = Number(process.env.PORT || 3050);
@@ -93,13 +57,15 @@ async function startServer() {
 
   // Contact form: public status (no secrets)
   app.get("/api/contact/config", (_req, res) => {
+    const email = getEmailConfigStatus();
     res.json({
-      configured: isBrevoConfigured(),
-      provider: "brevo",
+      configured: email.configured,
+      provider: email.provider,
+      providers: email.providers,
     });
   });
 
-  // Contact form: send demo/trial request via Brevo Transactional API
+  // Contact form: Brevo first, Resend fallback
   app.post("/api/contact", async (req, res) => {
     try {
       const { name, email, company, size, sheetUse, message } = req.body || {};
@@ -109,72 +75,42 @@ async function startServer() {
         return;
       }
 
-      const cfg = getBrevoConfig();
-      const sender = parseSender(cfg.fromRaw);
-
-      if (!cfg.apiKey || !cfg.to || !sender) {
+      if (!isEmailConfigured()) {
         res.status(503).json({
           error:
-            "Email is not configured. Add BREVO_API_KEY, BREVO_SENDER_EMAIL (verified in Brevo), and CONTACT_TO_EMAIL to your .env.",
+            "Email is not configured. Add BREVO_API_KEY + BREVO_SENDER_EMAIL + CONTACT_TO_EMAIL, and/or RESEND_API_KEY + RESEND_FROM_EMAIL.",
         });
         return;
       }
 
-      const safeName = escapeHtml(name);
-      const safeEmail = escapeHtml(email);
-      const safeCompany = escapeHtml(company);
-      const safeSize = escapeHtml(size || "—");
-      const safeSheets = escapeHtml(sheetUse || "—");
-      const safeMessage = escapeHtml(message || "").replace(/\n/g, "<br>");
-
       const htmlContent = `
         <h2>TidyFlow New Demo Lead</h2>
-        <p><strong>Name:</strong> ${safeName}</p>
-        <p><strong>Email:</strong> ${safeEmail}</p>
-        <p><strong>Company:</strong> ${safeCompany}</p>
-        <p><strong>Team size:</strong> ${safeSize}</p>
-        <p><strong>Uses spreadsheets:</strong> ${safeSheets}</p>
+        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+        <p><strong>Company:</strong> ${escapeHtml(company)}</p>
+        <p><strong>Team size:</strong> ${escapeHtml(size || "—")}</p>
+        <p><strong>Uses spreadsheets:</strong> ${escapeHtml(sheetUse || "—")}</p>
         <p><strong>Message:</strong></p>
-        <p>${safeMessage || "—"}</p>
+        <p>${escapeHtml(message || "").replace(/\n/g, "<br>") || "—"}</p>
       `;
 
       const textContent = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nTeam: ${size || "—"}\nSheets: ${sheetUse || "—"}\n\n${message || ""}`;
 
-      const upstream = await fetch("https://api.brevo.com/v3/smtp/email", {
-        method: "POST",
-        headers: {
-          accept: "application/json",
-          "content-type": "application/json",
-          "api-key": cfg.apiKey,
-        },
-        body: JSON.stringify({
-          sender: { name: sender.name, email: sender.email },
-          to: [{ email: cfg.to }],
-          replyTo: { email, name },
-          subject: `TidyFlow New Demo Lead: ${company}`,
-          htmlContent,
-          textContent,
-        }),
-        signal: AbortSignal.timeout(15000),
+      const result = await sendTransactionalEmail({
+        subject: `TidyFlow New Demo Lead: ${company}`,
+        html: htmlContent,
+        text: textContent,
+        replyTo: { email, name },
       });
 
-      if (!upstream.ok) {
-        const detail = await upstream.text().catch(() => "");
-        console.error("Brevo API error:", upstream.status, detail);
-        let message = `Brevo rejected the email (${upstream.status}).`;
-        try {
-          const parsed = JSON.parse(detail);
-          if (parsed?.message) message = parsed.message;
-        } catch {
-          /* keep default */
-        }
-        res.status(502).json({ error: message });
+      if (!result.ok) {
+        res.status(502).json({ error: result.error });
         return;
       }
 
-      res.json({ success: true });
+      res.json({ success: true, provider: result.provider });
     } catch (error: any) {
-      console.error("Brevo contact error:", error);
+      console.error("[contact] error:", error);
       res.status(500).json({ error: error.message || "Failed to send contact email." });
     }
   });

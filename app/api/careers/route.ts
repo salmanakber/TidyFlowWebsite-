@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { escapeHtml, getBrevoConfig, parseSender } from "@/src/lib/brevo";
+import { escapeHtml, isEmailConfigured, sendTransactionalEmail } from "@/src/lib/email";
 import {
   getClientIp,
   isTurnstileEnabled,
@@ -48,19 +48,17 @@ export async function POST(req: Request) {
       );
     }
 
-    const cfg = getBrevoConfig();
-    const sender = parseSender(cfg.fromRaw);
-    if (!cfg.apiKey || !cfg.to || !sender) {
+    if (!isEmailConfigured()) {
       return NextResponse.json(
         {
           error:
-            "Email is not configured. Add BREVO_API_KEY, BREVO_SENDER_EMAIL, and CONTACT_TO_EMAIL to your .env.",
+            "Email is not configured. Add BREVO_API_KEY + BREVO_SENDER_EMAIL + CONTACT_TO_EMAIL, and/or RESEND_API_KEY + RESEND_FROM_EMAIL.",
         },
         { status: 503 }
       );
     }
 
-    const htmlContent = `
+    const html = `
       <h2>TidyFlow Career Application</h2>
       <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
       <p><strong>Email:</strong> ${escapeHtml(email)}</p>
@@ -74,7 +72,7 @@ export async function POST(req: Request) {
       <p>${escapeHtml(message || "").replace(/\n/g, "<br>") || "—"}</p>
     `;
 
-    const textContent = [
+    const text = [
       `Name: ${fullName}`,
       `Email: ${email}`,
       `Phone: ${phone || "—"}`,
@@ -87,43 +85,21 @@ export async function POST(req: Request) {
       message || "",
     ].join("\n");
 
-    const upstream = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        "api-key": cfg.apiKey,
-      },
-      body: JSON.stringify({
-        sender: { name: sender.name, email: sender.email },
-        to: [{ email: cfg.to }],
-        replyTo: { email, name: fullName },
-        subject: `Career Application: ${role} — ${fullName}`,
-        htmlContent,
-        textContent,
-      }),
-      signal: AbortSignal.timeout(15000),
+    const result = await sendTransactionalEmail({
+      subject: `Career Application: ${role} — ${fullName}`,
+      html,
+      text,
+      replyTo: { email, name: fullName },
     });
 
-    if (!upstream.ok) {
-      const detail = await upstream.text().catch(() => "");
-      console.error("Brevo API error (careers):", upstream.status, detail);
-      let errMsg = `Brevo rejected the email (${upstream.status}).`;
-      try {
-        const parsed = JSON.parse(detail);
-        if (parsed?.message) errMsg = parsed.message;
-      } catch {
-        // keep default message
-      }
-      return NextResponse.json({ error: errMsg }, { status: 502 });
+    if (!result.ok) {
+      return NextResponse.json({ error: result.error }, { status: 502 });
     }
 
-    return NextResponse.json({ success: true });
-  } catch (error: any) {
-    console.error("Brevo careers error:", error);
-    return NextResponse.json(
-      { error: error.message || "Failed to send career application." },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: true, provider: result.provider });
+  } catch (error: unknown) {
+    console.error("[careers] error:", error);
+    const msg = error instanceof Error ? error.message : "Failed to send career application.";
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

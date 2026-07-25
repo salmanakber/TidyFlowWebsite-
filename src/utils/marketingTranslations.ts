@@ -444,7 +444,7 @@ export const marketingTranslations: Record<string, any> = {
     contactNoCardTitle: "No Credit Cards Needed",
     contactNoCardDesc: "Trial evaluation accounts are activated instantly. Provide billing details only when you decide to proceed with active rosters.",
     contactBrevoSuccess: "✅ Success! Brevo relay accepted the message (250 OK).",
-    contactEmailNotConfigured: "Email is not configured on the server. Add BREVO_API_KEY, BREVO_SENDER_EMAIL, and CONTACT_TO_EMAIL to .env.",
+    contactEmailNotConfigured: "Email is not configured on the server. Add Brevo (BREVO_API_KEY, BREVO_SENDER_EMAIL, CONTACT_TO_EMAIL) and/or Resend (RESEND_API_KEY, RESEND_FROM_EMAIL) to .env.",
     contactFormPlaceholder: "Tell us about your active property count or specific integration requests...",
     contactSpamRequired: "Please complete the security check before submitting.",
     contactSpamFailed: "Security verification failed. Please refresh the page and try again.",
