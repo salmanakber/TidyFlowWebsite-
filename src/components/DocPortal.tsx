@@ -217,8 +217,8 @@ export default function DocPortal({
   const categories = ["Overview", "Role Guides", "Core Features", "Advanced", "Support"] as const;
 
   return (
-    <div className="pt-24 min-h-screen flex flex-col bg-slate-900 text-slate-100 text-left">
-      <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 flex-1 flex flex-col lg:flex-row gap-8 pb-16 relative">
+    <div className="pt-20 sm:pt-24 min-h-screen flex flex-col bg-slate-900 text-slate-100 text-left">
+      <div className="max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 flex-1 flex flex-col lg:flex-row gap-6 sm:gap-8 pb-12 sm:pb-16 relative">
         
         {/* MOBILE SIDEBAR TOGGLE BANNER */}
         <div className="lg:hidden flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800 mb-2">
@@ -233,7 +233,9 @@ export default function DocPortal({
             }
           </button>
           <span className="text-[10px] font-mono text-slate-400">
-            {(portalTranslations[language]?.chaptersCount || portalTranslations["en"].chaptersCount).replace("{num}", String(activeChapter.num))}
+            {(portalTranslations[language]?.chaptersCount || portalTranslations["en"].chaptersCount)
+              .replace("{num}", String(activeChapter.num))
+              .replace("{total}", String(chapters.length))}
           </span>
         </div>
 
@@ -322,7 +324,9 @@ export default function DocPortal({
                   {portalTranslations[language]?.title || portalTranslations["en"].title}
                 </span>
                 <h1 className="font-display font-bold text-2xl sm:text-3xl text-white">
-                  {(portalTranslations[language]?.chaptersCount || portalTranslations["en"].chaptersCount).replace("{num}", String(activeChapter.num))}: {activeChapter.title}
+                  {(portalTranslations[language]?.chaptersCount || portalTranslations["en"].chaptersCount)
+                    .replace("{num}", String(activeChapter.num))
+                    .replace("{total}", String(chapters.length))}: {activeChapter.title}
                 </h1>
                 <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-slate-900 rounded text-[10px] text-slate-400 border border-slate-800">
                   <span>{portalTranslations[language]?.categoryLabel || portalTranslations["en"].categoryLabel}</span>

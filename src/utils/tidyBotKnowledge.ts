@@ -67,8 +67,8 @@ const TIDYBOT_WEBSITE_KNOWLEDGE = `
 - **/personas** — owners, managers, cleaners, facility clients.
 - **/integrations** — Sheets, QuickBooks, Stripe, Maps / Integrations hub.
 - **/contact** — book demo / 14-day free trial (no card required).
-- **/documentation** — 23-chapter interactive user guide + TidyBot.
-- **/blog** (+ individual posts) — cleaning ops education; includes TidyFlow vs Jobber comparison, replacing WhatsApp ops, and why offline field apps win for commercial cleaning.
+- **/documentation** — interactive user guide + TidyBot.
+- **/blog** (+ individual posts) — cleaning ops education; QuickBooks invoice sync, rota & leave, verified payroll, Revenue AI, TidyFlow vs Jobber, replacing WhatsApp ops, and offline field apps for commercial cleaning.
 - **/careers** — open roles at TidyFlow.
 - App stores: iOS App Store + Google Play (offline field app).
 
@@ -158,7 +158,7 @@ Q: ${enMarketing.faq6Q}
 A: ${enMarketing.faq6A}
 `.trim();
 
-/** Chapter index for fast lookup — full content is in the 23 chapters block */
+/** Chapter index for fast lookup — full content is in the user guide chapters block */
 export function getTidyBotChapterIndex(): string {
   return rawChapters
     .map((ch) => `- ${ch.id} | Ch.${ch.num}: ${ch.title} [${ch.category}]`)

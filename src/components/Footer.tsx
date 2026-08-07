@@ -34,17 +34,17 @@ export default function Footer({ language }: FooterProps) {
   const getT = (key: string) => getMarketingTranslation(key, language);
 
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-20 pb-10 text-left relative overflow-hidden">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10 text-left relative overflow-hidden">
       {/* Soft background glow */}
       <div className="absolute bottom-0 left-1/4 w-[500px] h-[250px] bg-brand-amber/[0.01] rounded-full blur-[120px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 border-b border-slate-900 pb-16 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 border-b border-slate-900 pb-10 sm:pb-16 mb-8 sm:mb-12">
           
           {/* Brand Info */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="col-span-2 space-y-4 sm:space-y-5">
             <Link href="/" className="cursor-pointer inline-block transition-transform hover:scale-[1.01]">
-              <Logo size={44} />
+              <Logo size={36} />
             </Link>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
               {getT("footerDesc")}

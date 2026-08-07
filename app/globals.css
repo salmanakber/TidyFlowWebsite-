@@ -361,4 +361,29 @@ body {
   animation: scan 2.5s ease-in-out infinite;
 }
 
+/* Mobile polish */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
 
+/* Safer tap targets without bloating chrome controls */
+@media (max-width: 640px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overscroll-behavior-x: none;
+  }
+}
+
+/* Prefer readable article measure on small screens */
+@media (max-width: 480px) {
+  .font-display {
+    letter-spacing: -0.02em;
+  }
+}

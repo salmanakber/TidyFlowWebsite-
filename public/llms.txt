@@ -17,7 +17,7 @@
 - [Personas](https://tidyflowapp.com/personas): Owners, managers, cleaners, clients
 - [Integrations](https://tidyflowapp.com/integrations): Google Sheets, QuickBooks, Stripe, Maps
 - [Contact](https://tidyflowapp.com/contact): Book a demo / start free trial
-- [Documentation](https://tidyflowapp.com/documentation): 23-chapter user guide + TidyBot
+- [Documentation](https://tidyflowapp.com/documentation): Interactive user guide + TidyBot (chat, QuickBooks, billing, Revenue AI included)
 - [Blog](https://tidyflowapp.com/blog): Cleaning operations articles
 - [Careers](https://tidyflowapp.com/careers): Open roles
 
@@ -35,6 +35,10 @@
 - [Supplies](https://tidyflowapp.com/whats-new/supplies): Catalog + per-job usage logging
 
 ## Blog
+- [QuickBooks invoices for cleaning companies](https://tidyflowapp.com/blog/quickbooks-cleaning-invoices)
+- [Cleaning rota and leave management](https://tidyflowapp.com/blog/cleaning-rota-leave-management)
+- [Payroll from verified cleaner hours](https://tidyflowapp.com/blog/payroll-verified-cleaner-hours)
+- [Revenue AI for cleaning margins](https://tidyflowapp.com/blog/revenue-ai-cleaning-margins)
 - [TidyFlow vs Jobber for cleaning](https://tidyflowapp.com/blog/tidyflow-vs-jobber-cleaning)
 - [Replace WhatsApp for cleaning ops](https://tidyflowapp.com/blog/replace-whatsapp-cleaning-ops)
 - [Why offline cleaning apps win](https://tidyflowapp.com/blog/why-offline-cleaning-apps-win)

@@ -21,14 +21,14 @@ const en: Record<SeoPage, SeoMeta> = {
     description:
       "Offline field app, GPS proof, Google Sheets sync, QuickBooks, task chat, and payroll for janitorial teams. Start a 14-day free trial.",
     keywords:
-      "cleaning company software, janitorial software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning, QuickBooks cleaning, TidyFlow",
+      "cleaning company software, janitorial software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning, QuickBooks cleaning invoices, cleaning payroll software, task chat cleaners, TidyFlow",
     canonicalPath: "/"
   },
   documentation: {
     title: "TidyFlow User Guide & Docs",
     description:
-      "23-chapter TidyFlow guide: Sheets sync, offline app, GPS, payroll, SOS, and AI. Available in 11 languages with TidyBot.",
-    keywords: "TidyFlow docs, cleaning app user guide, Google Sheets integration guide, offline mode",
+      "TidyFlow user guide: Sheets sync, offline app, GPS, task chat, QuickBooks, payroll, Revenue AI, SOS, and billing. Available in 11 languages with TidyBot.",
+    keywords: "TidyFlow docs, cleaning app user guide, QuickBooks cleaning, Google Sheets integration guide, offline mode, task chat",
     canonicalPath: "/documentation"
   },
   features: {
@@ -87,7 +87,7 @@ const pt: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "Guia do Usuário TidyFlow — Documentação Interativa (11 idiomas)",
-    description: "Documentação oficial TidyFlow em 23 capítulos com assistente TidyBot: setup, Sheets, app offline, GPS, folha e IA.",
+    description: "Documentação oficial TidyFlow oficial TidyFlow com TidyBot: Sheets, QuickBooks, chat, app offline, GPS, folha e IA.",
     keywords: "documentação TidyFlow, guia usuário limpeza, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -138,7 +138,7 @@ const es: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "Guía TidyFlow — Documentación Interactiva Oficial",
-    description: "Documentación oficial en 23 capítulos con TidyBot: setup, Sheets, app offline, GPS, nómina e IA en 11 idiomas.",
+    description: "Documentación oficial oficial con TidyBot: Sheets, QuickBooks, chat, app offline, GPS, nómina e IA en 11 idiomas.",
     keywords: "documentación TidyFlow, guía limpieza, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -189,7 +189,7 @@ const fr: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "Guide TidyFlow — Documentation interactive officielle",
-    description: "Documentation officielle en 23 chapitres avec TidyBot : setup, Sheets, app offline, GPS, paie et IA.",
+    description: "Documentation officielle officielle avec TidyBot : Sheets, QuickBooks, chat, app offline, GPS, paie et IA.",
     keywords: "documentation TidyFlow, guide nettoyage, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -240,7 +240,7 @@ const de: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "TidyFlow Benutzerhandbuch — Interaktive Dokumentation",
-    description: "Offizielle Dokumentation in 23 Kapiteln mit TidyBot: Setup, Sheets, Offline-App, GPS, Lohn und KI.",
+    description: "Offizielle Dokumentation mit TidyBot: Sheets, QuickBooks, Chat, Offline-App, GPS, Lohn und KI.",
     keywords: "TidyFlow Dokumentation, Handbuch Reinigung, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -291,7 +291,7 @@ const pl: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "Przewodnik TidyFlow — Oficjalna dokumentacja interaktywna",
-    description: "Oficjalna dokumentacja w 23 rozdziałach z TidyBot: setup, Sheets, app offline, GPS, płace i AI.",
+    description: "Oficjalna dokumentacja z TidyBot: Sheets, QuickBooks, czat, app offline, GPS, płace i AI.",
     keywords: "dokumentacja TidyFlow, przewodnik sprzątanie, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -342,7 +342,7 @@ const no: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "TidyFlow brukerveiledning — Interaktiv dokumentasjon",
-    description: "Offisiell dokumentasjon i 23 kapitler med TidyBot: oppsett, Sheets, offline-app, GPS, lønn og AI.",
+    description: "Offisiell dokumentasjon med TidyBot: Sheets, QuickBooks, chat, offline-app, GPS, lønn og AI.",
     keywords: "TidyFlow dokumentasjon, veiledning renhold, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -393,7 +393,7 @@ const sv: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "TidyFlow användarhandbok — Interaktiv dokumentation",
-    description: "Officiell dokumentation i 23 kapitel med TidyBot: setup, Sheets, offline-app, GPS, lön och AI.",
+    description: "Officiell dokumentation med TidyBot: Sheets, QuickBooks, chatt, offline-app, GPS, lön och AI.",
     keywords: "TidyFlow dokumentation, städhandbok, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -444,7 +444,7 @@ const it: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "Guida utente TidyFlow — Documentazione interattiva ufficiale",
-    description: "Documentazione ufficiale in 23 capitoli con TidyBot: setup, Sheets, app offline, GPS, paghe e IA.",
+    description: "Documentazione ufficiale con TidyBot: Sheets, QuickBooks, chat, app offline, GPS, paghe e IA.",
     keywords: "documentazione TidyFlow, guida pulizie, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -495,7 +495,7 @@ const ar: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "دليل مستخدم TidyFlow — توثيق تفاعلي رسمي",
-    description: "التوثيق الرسمي في 23 فصلاً مع TidyBot: الإعداد، Sheets، التطبيق دون اتصال، GPS، الرواتب والذكاء الاصطناعي.",
+    description: "التوثيق الرسمي مع TidyBot: الإعداد، Sheets، التطبيق دون اتصال، GPS، الرواتب والذكاء الاصطناعي.",
     keywords: "توثيق TidyFlow, دليل تنظيف, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -546,7 +546,7 @@ const cn: Record<SeoPage, SeoMeta> = {
   },
   documentation: {
     title: "TidyFlow 用户手册 — 官方互动文档",
-    description: "23 章官方文档与 TidyBot：设置、表格同步、离线 App、GPS、薪酬与 AI，支持 11 种语言。",
+    description: "官方文档与 TidyBot：设置、表格同步、离线 App、GPS、薪酬与 AI，支持 11 种语言。",
     keywords: "TidyFlow 文档, 保洁软件指南, TidyBot",
     canonicalPath: "/documentation"
   },
@@ -929,22 +929,24 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, iOS, Android",
     offers: {
-      "@type": "Offer",
-      price: "9",
+      "@type": "AggregateOffer",
+      lowPrice: "9",
+      highPrice: "149",
       priceCurrency: "USD",
-      description: "14-day free trial · Startup plan from $9/month"
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      ratingCount: "1200",
-      bestRating: "5"
+      offerCount: 3,
+      description: "14-day free trial · Startup from $9/month · Standard $79 · Premium $149",
+      url: `${SITE_URL}/pricing`
     },
     featureList: [
       "Offline field app",
       "GPS geofenced time tracking",
+      "Offline GPS location queue",
       "Google Sheets two-way sync",
+      "QuickBooks Online invoice sync",
+      "Per-task team chat with voice notes",
+      "Company announcements",
       "AI cleaner assignment",
+      "Revenue AI profit analysis",
       "Payroll from verified hours",
       "Client photo proof PDFs",
       "SOS lone-worker safety"

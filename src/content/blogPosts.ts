@@ -27,6 +27,192 @@ export const BLOG_SLUG_REDIRECTS: Record<string, string> = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "quickbooks-cleaning-invoices",
+    metaTitle: "QuickBooks Invoices for Cleaning Cos | TidyFlow",
+    title: "How Cleaning Companies Sync Client Invoices to QuickBooks Without Retyping Jobs",
+    excerpt:
+      "Stop copying customers and line items from ops software into QuickBooks Online. Connect once, sync invoices from completed cleans, and keep AR aligned with fieldwork.",
+    keywords: [
+      "QuickBooks cleaning company",
+      "QuickBooks Online invoices janitorial",
+      "cleaning invoice sync QuickBooks",
+      "bookkeeping for cleaning businesses",
+    ],
+    publishedAt: "2026-08-07",
+    readTime: "9 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Why ops and books drift apart",
+        paragraphs: [
+          "Commercial cleaning companies usually create work in a field app or spreadsheet, then rebuild the same customers and amounts in QuickBooks for accounting. Every manual hop invents typos, missing line items, and “which invoice is real?” arguments at month-end.",
+          "The fix is not another spreadsheet export ritual. It is keeping job completion as the system of record for what was delivered, then pushing a clean accounting copy into QuickBooks Online when finance is ready.",
+        ],
+      },
+      {
+        heading: "What a cleaning-friendly QuickBooks sync should do",
+        paragraphs: [
+          "Connect QuickBooks Online once with OAuth from an Integrations hub — not a buried developer setting. Map customers and push invoice totals with line items so AR matches the jobs managers already approved.",
+          "Support single-invoice sync and bulk sync for a batch of pending bills. Optional rules (sync on create, send, or mark-paid) let bookkeepers choose how hands-on they want to be.",
+          "On supported plans, approved payroll runs can flow as vendor bills so labor cost hits the books without a second spreadsheet. An activity log should show what synced and when when something fails.",
+        ],
+      },
+      {
+        heading: "How TidyFlow closes the loop",
+        paragraphs: [
+          "In TidyFlow, managers build client invoices from approved, unbilled tasks with branding and tax rules already configured. With QuickBooks connected, those invoices can sync as customers, line items, and totals — so the field proof that produced the bill is the same record finance posts.",
+          "Website /integrations explains the partnership story; the in-app Integrations hub is where owners check Sheets, QuickBooks, and Stripe health and reconnect OAuth if a token expires.",
+        ],
+      },
+      {
+        heading: "Rollout checklist for owners and bookkeepers",
+        paragraphs: [
+          "Week one: connect QuickBooks, sync five recent invoices manually, and reconcile totals against TidyFlow. Week two: turn on the automation rule that matches how you already send or mark invoices paid.",
+          "Keep inventing jobs in WhatsApp and you will still retype forever. Put completed commercial work on payroll-ready jobs first — QuickBooks sync amplifies clean ops data; it cannot repair missing checklists.",
+          "See invoice sync and the Integrations hub on a 14-day trial, or walk your current AR process on a demo at /contact.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cleaning-rota-leave-management",
+    metaTitle: "Cleaning Rota & Leave Management | TidyFlow",
+    title: "Build a Cleaning Rota That Respects Leave, Conflicts, and Travel Time",
+    excerpt:
+      "Weekly rota grids fail when leave is tribal knowledge. Use leave-aware assignment, conflict warnings, and route-aware scheduling so night crews stay covered.",
+    keywords: [
+      "cleaning rota software",
+      "janitorial scheduling leave",
+      "cleaner roster management",
+      "commercial cleaning dispatch",
+    ],
+    publishedAt: "2026-08-07",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "The Friday scramble is a systems problem",
+        paragraphs: [
+          "When the only person who “knows who is off” is a manager’s memory or a sticky note, double-bookings and uncovered sites become normal. Cleaners burn out; facilities clients escalate.",
+          "A modern cleaning rota is not a pretty calendar screenshot. It is a weekly timeline where leave locks, unassigned filters, conflict warnings, and travel-aware suggestions are visible before you publish the week.",
+        ],
+      },
+      {
+        heading: "What “leave-aware” actually means",
+        paragraphs: [
+          "Cleaners submit sick and holiday requests in-app. Managers approve or reject once. Approved leave must disable those dates in the rota picker — not rely on someone remembering to check a separate sheet.",
+          "Conflict warnings for overlapping assignments protect both payroll honesty and service levels. Unassigned filters help dispatchers clear the backlog before shift start instead of discovering gaps at 9pm.",
+        ],
+      },
+      {
+        heading: "Travel radius and AI suggestions — after the rules exist",
+        paragraphs: [
+          "Route optimization between properties cuts windshield time once pins are accurate. AI best-match suggestions help only after leave and skills rules exist; otherwise you automate chaos.",
+          "In TidyFlow, managers confirm every AI suggestion. Recurring jobs fill the calendar for weekly commercial cleans so the rota is editing exceptions — not retyping the same sites every Monday.",
+        ],
+      },
+      {
+        heading: "A one-week rollout",
+        paragraphs: [
+          "Import properties and staff, approve existing leave, then build next week only in the rota builder. Require task chat for access notes so instructions travel with the job, not a separate WhatsApp thread.",
+          "Measure uncovered sites and last-minute swaps for 14 days. If both drop, your schedule is finally a system of record — start at /pricing or book a walkthrough at /contact.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "payroll-verified-cleaner-hours",
+    metaTitle: "Payroll From Verified Cleaner Hours | TidyFlow",
+    title: "Approve Cleaning Payroll From GPS-Verified Hours — Not Chat Screenshots",
+    excerpt:
+      "Payroll cleanup shrinks when timers, geofence presence, and breaks feed one pending-hours queue managers can trust before payday.",
+    keywords: [
+      "cleaning payroll software",
+      "verified hours cleaners",
+      "janitorial timesheet approval",
+      "GPS time tracking cleaning",
+    ],
+    publishedAt: "2026-08-06",
+    readTime: "9 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Why cleaning payroll turns into archaeology",
+        paragraphs: [
+          "End-of-week chat dumps (“I started at 6 but forgot to clock”) force managers to reconstruct nights from memory. Finance distrusts the hours; honest cleaners feel accused; margins hide inside overtime noise.",
+          "Verified field timers solve the data problem only when they work underground, respect breaks, and land in a single approval queue — not three different apps.",
+        ],
+      },
+      {
+        heading: "The payroll-ready chain",
+        paragraphs: [
+          "Cleaners start/stop timers on the job with geofenced presence checks and offline continuity. Breaks are excluded from paid time. Submitted hours appear in Payroll → Pending Hours for manager review and adjustment.",
+          "Pay rules per user (hourly rates, salary types, overtime) compile into payroll periods, PDF payslips, and exports owners can hand to accountants. Expense claims with receipts travel the same approval path.",
+        ],
+      },
+      {
+        heading: "Where GPS helps — and where it should not",
+        paragraphs: [
+          "Presence at the property boundary for clock-in and completion is enough for most cleaning disputes. All-day route surveillance is usually the wrong culture fit and the wrong compliance conversation.",
+          "Offline GPS queues keep a trail when basements kill signal, so low-signal buildings do not become “free edit” hours. Pair geofence proof with checklist and photo completion so payroll is defending quality, not only minutes on site.",
+        ],
+      },
+      {
+        heading: "KPI to track for 30 days",
+        paragraphs: [
+          "Track hours submitted vs hours verified on-site, and calendar days from period close to payslip export. Closing those gaps is often the highest-ROI systems change a multi-site cleaner can make.",
+          "On supported plans, approved payroll can optionally sync toward QuickBooks as vendor bills — but only after the field hours are trustworthy. See verified timers and payroll approval on a free trial at tidyflowapp.com/pricing.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "revenue-ai-cleaning-margins",
+    metaTitle: "Revenue AI for Cleaning Margins | TidyFlow",
+    title: "See Which Cleaning Sites Make Money — Then Ask AI What Changed",
+    excerpt:
+      "Busy is not profitable. Use property-level margins, cash vs outstanding invoices, and Revenue AI narratives to spot cost drivers before quarter-end surprises.",
+    keywords: [
+      "cleaning company margins",
+      "janitorial profit by site",
+      "Revenue AI cleaning",
+      "cleaning business cash flow",
+    ],
+    publishedAt: "2026-08-06",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Occupancy without margin is a vanity metric",
+        paragraphs: [
+          "Owners often celebrate a full rota while petrol, overtime, callbacks, and chemical burn erase the contract. If you cannot see margin by property and client for a chosen date range, you are managing vibes — not a P&L.",
+          "A Revenue dashboard should show net profit, cash collected, expenses, paid vs outstanding invoices, and site-level contribution before you hire the next crew.",
+        ],
+      },
+      {
+        heading: "What Revenue AI is (and is not)",
+        paragraphs: [
+          "Revenue AI reads the same period you selected and explains risks, cost drivers, and cash-flow pressure in plain language — overall, margin-focused, cash-focused, or cost-focused modes depending on the question.",
+          "It is not a black-box price setter and it does not replace your judgment. Like TidyFlow’s dispatch AI, it recommends; owners decide. Plan quotas apply so usage stays fair across Startup, Standard, and Premium.",
+        ],
+      },
+      {
+        heading: "Feed AI real operations data",
+        paragraphs: [
+          "AI narratives are only as good as the jobs behind them. Verified hours, completed checklists, supplies logged per job, and invoices that can sync to QuickBooks turn the dashboard into decision fuel.",
+          "If proof still lives in WhatsApp, fix field capture first — then open Revenue AI. Otherwise you will get confident stories about incomplete data.",
+        ],
+      },
+      {
+        heading: "Questions to ask in your first month",
+        paragraphs: [
+          "Which three sites dragged margin last month? Is cash collected lagging approvals? Did overtime spike on routes with bad pins or uncovered leave?",
+          "Run those questions on a live portfolio during a 14-day trial. For a guided walkthrough of Revenue + Integrations, book a demo at /contact.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "tidyflow-vs-jobber-cleaning",
     metaTitle: "TidyFlow vs Jobber for Cleaning | TidyFlow",
     title: "TidyFlow vs Jobber for Cleaning Companies: Which Fits Janitorial Ops?",

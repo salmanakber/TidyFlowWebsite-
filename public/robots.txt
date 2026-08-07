@@ -10,9 +10,20 @@ Allow: /sitemap.xml
 Allow: /whats-new
 Allow: /documentation
 Allow: /blog
+Allow: /careers
+Allow: /features
+Allow: /pricing
+Allow: /integrations
 
 # Language is cookie-based; do not treat query variants as separate pages
 # (middleware 301s ?lang= to the clean canonical URL)
 
 # RSS is a feed, not a sitemap — list only the XML sitemap here
 Sitemap: https://tidyflowapp.com/sitemap.xml
+
+# Crawl hints for major bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
