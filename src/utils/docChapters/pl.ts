@@ -9,7 +9,7 @@ export const plChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Pierwsze kroki",
     category: "Overview",
-    content: "Aby rozpocząć operacje, administratorzy firmy mogą zarejestrować się w portalu TidyFlow, zakładając swoją rejestrację biznesową. Przy pierwszym logowaniu pracownicy doświadczają interaktywnego przewodnika wdrożeniowego, który objaśnia główne moduły. Po aktywacji właściciele są prowadzeni przez konfigurację bezpiecznych profili płatności przez Stripe. Stamtąd właściciele mogą zapraszać personel, wchodząc do 'Użytkownicy' na Pasku Bocznym, wprowadzając nazwiska, e-maile i kategorie ról pracowników (Menedżerowie lub Sprzątacze) w celu natychmiastowego wysłania danych logowania."
+    content: "Aby rozpocząć operacje, administratorzy firmy mogą zarejestrować się w portalu TidyFlow, zakładając swoją rejestrację biznesową. Przy pierwszym logowaniu pracownicy doświadczają interaktywnego przewodnika wdrożeniowego, który objaśnia główne moduły. Po aktywacji właściciele są prowadzeni przez konfigurację bezpiecznych profili płatności przez. Stamtąd właściciele mogą zapraszać personel, wchodząc do 'Użytkownicy' na Pasku Bocznym, wprowadzając nazwiska, e-maile i kategorie ról pracowników (Menedżerowie lub Sprzątacze) w celu natychmiastowego wysłania danych logowania."
   },
   "ch-3": {
     title: "Zrozumienie swojej roli",
@@ -49,7 +49,7 @@ export const plChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Przewodnik dla właścicieli",
     category: "Role Guides",
-    content: "Właściciele mają najwyższą władzę nad kontami firmowymi. Po zalogowaniu uzyskują dostęp do ustawień fakturowania, zarządzają subskrypcjami Stripe, dostosowują korporacyjną tożsamość wizualną (logo, dane bankowe, nagłówki rachunków) i auditują zapisy wieloużytkownikowe. Właściciele mają również dostęp do szczegółowych raportów analitycznych, które monitorują przychody, aktywne miejsca zespołu i spostrzeżenia operacyjne generowane przez AI."
+    content: "Właściciele mają najwyższą władzę nad kontami firmowymi. Po zalogowaniu uzyskują dostęp do ustawień fakturowania, zarządzają subskrypcjami, dostosowują korporacyjną tożsamość wizualną (logo, dane bankowe, nagłówki rachunków) i auditują zapisy wieloużytkownikowe. Właściciele mają również dostęp do szczegółowych raportów analitycznych, które monitorują przychody, aktywne miejsca zespołu i spostrzeżenia operacyjne generowane przez AI."
   },
   "ch-11": {
     title: "Grafik i planowanie",

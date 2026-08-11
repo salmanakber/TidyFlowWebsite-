@@ -441,7 +441,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-2": {
       title: "Primeiros passos",
       category: "Overview",
-      content: "Para iniciar as operações, os administradores da empresa podem se inscrever no portal TidyFlow, estabelecendo seu registro comercial. Na primeira instalação, os funcionários encontram um tour de integração interativo que explica os módulos principais. Uma vez ativado, os proprietários são guiados a configurar perfis de pagamento seguros via Stripe. A partir daí, os proprietários podem convidar a equipe acessando 'Usuários' na Barra Lateral, inserindo nomes, e-mails e categorias de função dos funcionários (Gerentes ou Faxineiros) para enviar credenciais de acesso imediatamente."
+      content: "Para iniciar as operações, os administradores da empresa podem se inscrever no portal TidyFlow, estabelecendo seu registro comercial. Na primeira instalação, os funcionários encontram um tour de integração interativo que explica os módulos principais. Uma vez ativado, os proprietários são guiados a configurar perfis de pagamento seguros securely online. A partir daí, os proprietários podem convidar a equipe acessando 'Usuários' na Barra Lateral, inserindo nomes, e-mails e categorias de função dos funcionários (Gerentes ou Faxineiros) para enviar credenciais de acesso imediatamente."
     },
     "ch-3": {
       title: "Compreender a sua função",
@@ -481,7 +481,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-10": {
       title: "Guia para proprietários",
       category: "Role Guides",
-      content: "Os proprietários têm autoridade máxima sobre as contas da empresa. Ao fazer o login, eles acessam as configurações de faturamento, gerenciam assinaturas do Stripe, personalizam a identidade visual corporativa (logotipo, dados bancários, cabeçalhos de recibos) e auditam registros multiusuário. Os proprietários também têm acesso a relatórios de análises detalhadas que monitoram receita, assentos ativos da equipe e insights operacionais gerados por IA."
+      content: "Os proprietários têm autoridade máxima sobre as contas da empresa. Ao fazer o login, eles acessam as configurações de faturamento, gerenciam assinaturas do, personalizam a identidade visual corporativa (logotipo, dados bancários, cabeçalhos de recibos) e auditam registros multiusuário. Os proprietários também têm acesso a relatórios de análises detalhadas que monitoram receita, assentos ativos da equipe e insights operacionais gerados por IA."
     },
     "ch-11": {
       title: "Escalas e agendamento",
@@ -558,7 +558,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-2": {
       title: "Primeros pasos",
       category: "Overview",
-      content: "Para comenzar las operaciones, los administradores de la empresa pueden registrarse en el portal TidyFlow, creando su registro comercial. Al ingresar por primera vez, el personal experimenta un recorrido interactivo de bienvenida que explica los módulos principales. Una vez activado, se guía a los propietarios para configurar perfiles de pago seguros a través de Stripe. Desde allí, los propietarios invitan al personal ingresando a 'Usuarios' en la barra lateral, capturando el nombre, correo electrónico y rol del trabajador (Gerentes o Limpiadores) para enviar sus credenciales al instante."
+      content: "Para comenzar las operaciones, los administradores de la empresa pueden registrarse en el portal TidyFlow, creando su registro comercial. Al ingresar por primera vez, el personal experimenta un recorrido interactivo de bienvenida que explica los módulos principales. Una vez activado, se guía a los propietarios para configurar perfiles de pago seguros en línea. Desde allí, los propietarios invitan al personal ingresando a 'Usuarios' en la barra lateral, capturando el nombre, correo electrónico y rol del trabajador (Gerentes o Limpiadores) para enviar sus credenciales al instante."
     },
     "ch-3": {
       title: "Comprender su rol",
@@ -598,7 +598,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-10": {
       title: "Guía para propietarios",
       category: "Role Guides",
-      content: "Los propietarios poseen la máxima autoridad sobre las cuentas comerciales. Al iniciar sesión, configuran los parámetros de facturación, administran la suscripción del Stripe, personalizan el diseño de marca corporativa (logotipo, detalles bancarios, encabezados de facturas) y auditan los registros de seguridad. También acceden a los gráficos de rentabilidad operativa, recuento de limpiadores activos e informes gerenciales con IA."
+      content: "Los propietarios poseen la máxima autoridad sobre las cuentas comerciales. Al iniciar sesión, configuran los parámetros de facturación, administran la suscripción del, personalizan el diseño de marca corporativa (logotipo, detalles bancarios, encabezados de facturas) y auditan los registros de seguridad. También acceden a los gráficos de rentabilidad operativa, recuento de limpiadores activos e informes gerenciales con IA."
     },
     "ch-11": {
       title: "Turnos y programación",
@@ -675,7 +675,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-2": {
       title: "快速入门指南",
       category: "Overview",
-      content: "要启动业务，企业管理员只需注册 TidyFlow 账户即可。员工首次登录系统时，将自动开启交互式功能引导，演示各大核心模块。账户开通后，企业主可通过 Stripe 安全配置支付信息。随后可在侧边栏的“员工管理”中输入员工姓名、邮箱并设置对应角色权限（调度经理或清洁人员），系统将立即向其发送带有登录信息的激活邮件。"
+      content: "要启动业务，企业管理员只需注册 TidyFlow 账户即可。员工首次登录系统时，将自动开启交互式功能引导，演示各大核心模块。账户开通后，企业主可通过 安全配置支付信息。随后可在侧边栏的“员工管理”中输入员工姓名、邮箱并设置对应角色权限（调度经理或清洁人员），系统将立即向其发送带有登录信息的激活邮件。"
     },
     "ch-3": {
       title: "了解您的角色权限",
@@ -715,7 +715,7 @@ export const chapterTranslations: Record<string, Record<string, ChapterTranslati
     "ch-10": {
       title: "企业主管理端指南",
       category: "Role Guides",
-      content: "企业主对系统拥有最高控制权。登录后可设定开票抬头、开户行信息，配置 Stripe 订阅套餐，并能自定义输出报告的品牌 LOGO 样式。同时系统内置高级数据分析，帮助企业主洞察多项目总营收、员工出勤效率、平均清洁评分以及由 AI 生成的业务增长与成本分析简报。"
+      content: "企业主对系统拥有最高控制权。登录后可设定开票抬头、开户行信息，配置 订阅套餐，并能自定义输出报告的品牌 LOGO 样式。同时系统内置高级数据分析，帮助企业主洞察多项目总营收、员工出勤效率、平均清洁评分以及由 AI 生成的业务增长与成本分析简报。"
     },
     "ch-11": {
       title: "排班与智能调度系统",

@@ -202,7 +202,7 @@ ${buildTidyBotSystemKnowledge()}
 Current page: ${pageContext}
 Tailor answers to the page:
 - marketing:pricing → plans, trial, self-serve billing, usage meters
-- marketing:integrations → Sheets, QuickBooks, Stripe, Integrations hub
+- marketing:integrations → Sheets, QuickBooks, Maps, Integrations hub
 - marketing:whats-new or marketing:whats-new:{slug} → that feature / What's New FAQ; link /whats-new/{slug}
 - marketing:features → product capabilities + link related /whats-new pages when relevant
 - marketing:contact → demo / 14-day trial
@@ -315,7 +315,7 @@ Return JSON only:
 
       const systemInstruction = `You are a professional technical translator for TidyFlow, the ultimate operating system for cleaning companies.
 Translate this documentation chapter (ID: ${chapterId}) into ${langName}.
-Translate both the title and content perfectly. Maintain professional tone, clarity, and Markdown formatting. Do NOT translate product names like TidyFlow, Stripe, Twilio, Slack, or Google Sheets.
+Translate both the title and content perfectly. Maintain professional tone, clarity, and Markdown formatting. Do NOT translate product names like TidyFlow, Twilio, Slack, or Google Sheets.
 
 You MUST return your response as a JSON object matching this schema:
 {
@@ -381,7 +381,7 @@ You MUST return your response as a JSON object matching this schema:
       const langName = langNames[language] || language;
 
       const systemInstruction = `You are a professional translator. Translate the text into ${langName}.
-Maintain exact layout, formatting, and capitalizations. Keep any placeholders like {num} or {count} exactly the same. Keep brand names like TidyFlow, Stripe, Twilio, Slack, and Google Sheets exactly in English.
+Maintain exact layout, formatting, and capitalizations. Keep any placeholders like {num} or {count} exactly the same. Keep brand names like TidyFlow, Twilio, Slack, and Google Sheets exactly in English.
 
 Return ONLY the translated plain text.`;
 

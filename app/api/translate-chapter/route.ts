@@ -35,7 +35,7 @@ export async function POST(req: Request) {
 
     const systemInstruction = `You are a professional technical translator for TidyFlow, the ultimate operating system for cleaning companies.
 Translate this documentation chapter (ID: ${chapterId}) into ${langName}.
-Translate both the title and content perfectly. Maintain professional tone, clarity, and Markdown formatting. Do NOT translate product names like TidyFlow, Stripe, Twilio, Slack, or Google Sheets.
+Translate both the title and content perfectly. Maintain professional tone, clarity, and Markdown formatting. Do NOT translate product names like TidyFlow, Twilio, Slack, or Google Sheets.
 
 You MUST return your response as a JSON object matching this schema:
 {

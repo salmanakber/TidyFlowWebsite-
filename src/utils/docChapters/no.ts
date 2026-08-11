@@ -9,7 +9,7 @@ export const noChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Komme i gang",
     category: "Overview",
-    content: "For å starte driften kan bedriftsadministratorer registrere seg i TidyFlow-portalen og etablere sin forretningsregistrering. Ved første installasjon opplever ansatte en interaktiv onboarding-tur som forklarer hovedmodulene. Når den er aktivert, veileder eiere til å sette opp sikre betalingsprofiler via Stripe. Derfra kan eiere invitere personale ved å gå til 'Brukere' i sidemenyen, legge inn ansattes navn, e-post og rollekategorier (Ledere eller Rengjørere) for å sende påloggingsopplysninger øyeblikkelig."
+    content: "For å starte driften kan bedriftsadministratorer registrere seg i TidyFlow-portalen og etablere sin forretningsregistrering. Ved første installasjon opplever ansatte en interaktiv onboarding-tur som forklarer hovedmodulene. Når den er aktivert, veileder eiere til å sette opp sikre betalingsprofiler securely online. Derfra kan eiere invitere personale ved å gå til 'Brukere' i sidemenyen, legge inn ansattes navn, e-post og rollekategorier (Ledere eller Rengjørere) for å sende påloggingsopplysninger øyeblikkelig."
   },
   "ch-3": {
     title: "Forstå din rolle",
@@ -49,7 +49,7 @@ export const noChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Veiledning for eiere",
     category: "Role Guides",
-    content: "Eiere har maksimal myndighet over bedriftskontoer. Ved pålogging får de tilgang til faktureringsinnstillinger, administrerer Stripe-abonnementer, tilpasser bedriftens visuelle identitet (logo, bankdetaljer, regningsoverskrifter) og reviderer flerbrukerlogger. Eiere har også tilgang til detaljerte analytiske rapporter som overvåker inntekter, aktive teamplasser og AI-genererte operasjonelle innsikter."
+    content: "Eiere har maksimal myndighet over bedriftskontoer. Ved pålogging får de tilgang til faktureringsinnstillinger, administrerer-abonnementer, tilpasser bedriftens visuelle identitet (logo, bankdetaljer, regningsoverskrifter) og reviderer flerbrukerlogger. Eiere har også tilgang til detaljerte analytiske rapporter som overvåker inntekter, aktive teamplasser og AI-genererte operasjonelle innsikter."
   },
   "ch-11": {
     title: "Rota og planlegging",

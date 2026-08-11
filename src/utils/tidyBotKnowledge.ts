@@ -22,7 +22,7 @@ export const TIDYBOT_COMPANY_KNOWLEDGE = `
 - **Facebook:** https://www.facebook.com/tidyflowapp (@tidyflowapp)
 
 ## Who it's for (personas)
-- **Owners:** Revenue visibility, Stripe billing, reports, branding, subscription control, Integrations hub, QuickBooks sync, Revenue AI.
+- **Owners:** Revenue visibility, subscription billing, reports, branding, subscription control, Integrations hub, QuickBooks sync, Revenue AI.
 - **Managers:** Rota, live tracking, AI assign suggestions, payroll approval, issue logs, client proof, task team chat, announcements, AI job setup.
 - **Cleaners:** Simple daily job list, offline timer, checklists, photos, SOS safety, voice notes in task chat, supplies logging, offline GPS queue.
 - **Clients:** Secure portal links, PDF reports, photo proof, review forms.
@@ -32,10 +32,10 @@ export const TIDYBOT_COMPANY_KNOWLEDGE = `
 **Field app:** Work timer, GPS geofence verify on start/complete, live on-site status (off-site alerts), checklists, before/after photos, offline mode, offline GPS ping queue, SOS button, job notes, per-task chat + voice notes. No speed or route tracking — presence at the property only.
 **Quality & proof:** AI photo scoring, branded PDF reports, client portal links, client reviews (negative routed privately), QA workflow, issue tracking.
 **Team & HR:** Role-based access, leave management, working hours, payroll from verified hours, pay rules per user, team invites, company announcements.
-**Finance:** Stripe subscriptions (self-serve plan change/cancel), plan usage meters, client invoicing, QuickBooks Online invoice sync, expense claims with receipts, multi-currency, Revenue dashboard + AI analysis.
+**Finance:** plan subscriptions (self-serve plan change/cancel), plan usage meters, client invoicing, QuickBooks Online invoice sync, expense claims with receipts, multi-currency, Revenue dashboard + AI analysis.
 **AI (managers decide):** Cleaner recommendations, checklist suggestions, business insights / Revenue AI, photo quality flags, setup assistant. AI never auto-assigns.
 **Supplies:** Company supply catalog, per-job usage logging from field or office, low-stock awareness.
-**Integrations hub:** Google Sheets (two-way), QuickBooks Online, Stripe, Google Maps/geofencing — connection status + activity in one screen.
+**Integrations hub:** Google Sheets (two-way), QuickBooks Online, Google Maps/geofencing — connection status + activity in one screen.
 **Platform:** Multi-tenant SaaS (data isolated per company), 11 languages, mobile + web, built-in onboarding tours, smart address autocomplete by company country.
 
 ## Languages supported
@@ -48,10 +48,10 @@ AI recommends — managers always approve. TidyBot helps users learn the product
 const TIDYBOT_PRICING_KNOWLEDGE = `
 ## Pricing & trials (official — always send users to /pricing for live rates)
 - **14-day free trial** on all plans — no credit card required to explore.
-- Plans: **Startup**, **Standard** (most popular), **Premium** — billed monthly via **Stripe**.
+- Plans: **Startup**, **Standard** (most popular), **Premium** — billed monthly.
 - Live prices & limits sync from management (typical fallback: Startup from **$9/mo**, Standard **$79/mo**, Premium **$149/mo** — confirm on Pricing page).
-- Limits include properties, cleaners/managers, and monthly quotas for AI ops, invoices, photo AI, PDFs (reset each Stripe billing cycle).
-- **Self-serve billing:** owners/admins change plan, start trial, or cancel in-app (trial cancel anytime; paid cancel at period end via Stripe).
+- Limits include properties, cleaners/managers, and monthly quotas for AI ops, invoices, photo AI, PDFs (reset each billing cycle).
+- **Self-serve billing:** owners/admins change plan, start trial, or cancel in-app (trial cancel anytime; paid cancel at period end securely online).
 - Upgrade immediately; downgrades schedule for next period.
 - All tiers include core ops: Sheets sync, offline field app, GPS proof, photo QA, SOS, PDFs, payroll export, 11 languages. Advanced AI / accounting features may vary by plan.
 `.trim();
@@ -65,7 +65,7 @@ const TIDYBOT_WEBSITE_KNOWLEDGE = `
 - **/pricing** — live Startup / Standard / Premium plans + trial.
 - **/how-it-works** — spreadsheet → field → payroll pipeline.
 - **/personas** — owners, managers, cleaners, facility clients.
-- **/integrations** — Sheets, QuickBooks, Stripe, Maps / Integrations hub.
+- **/integrations** — Sheets, QuickBooks, Maps, Maps / Integrations hub.
 - **/contact** — book demo / 14-day free trial (no card required).
 - **/documentation** — interactive user guide + TidyBot.
 - **/blog** (+ individual posts) — cleaning ops education; QuickBooks invoice sync, rota & leave, verified payroll, Revenue AI, TidyFlow vs Jobber, replacing WhatsApp ops, and offline field apps for commercial cleaning.
@@ -73,7 +73,7 @@ const TIDYBOT_WEBSITE_KNOWLEDGE = `
 - App stores: iOS App Store + Google Play (offline field app).
 
 ## Operational pipeline (how TidyFlow works)
-1. Owner sets up properties (manual, smart addresses, or Google Sheets sync) + Stripe billing / company country.
+1. Owner sets up properties (manual, smart addresses, or Google Sheets sync) + subscription billing / company country.
 2. Managers build rota; AI suggests assignments & checklists (manager approves). New jobs can use AI setup assistant.
 3. Cleaners run offline timers, checklists, GPS verify (offline queue if no signal), photos, task chat/voice notes, supplies logs, SOS if needed.
 4. Managers QA approve hours → payroll + client invoices/PDF reports; invoices can sync to QuickBooks.
@@ -220,21 +220,21 @@ const whatIsReplies: Record<string, string> = {
 };
 
 const pricingReplies: Record<string, string> = {
-  en: "💰 **TidyFlow pricing** — live plans via Stripe:\n\n• **Startup** — from **$9/mo** (10 properties, 5 cleaners)\n• **Standard** — **$79/mo** (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — **$149/mo** (unlimited + priority support)\n\n**14-day free trial**. Change or cancel in-app (self-serve billing). Visit **/pricing** for live rates & usage limits!",
-  pt: "💰 **Preços TidyFlow** — planos via Stripe:\n\n• **Startup** — a partir de **$9/mês**\n• **Standard** — **$79/mês**\n• **Premium** — **$149/mês**\n\n**Teste grátis 14 dias**. Veja **/pricing** para valores ao vivo!",
-  es: "💰 **Precios TidyFlow** — planes Stripe:\n\n• **Startup** — desde **$9/mes**\n• **Standard** — **$79/mes**\n• **Premium** — **$149/mes**\n\n**Prueba 14 días**. Visita **/pricing** para precios en vivo!",
-  ar: "💰 **أسعار TidyFlow** عبر Stripe:\n\n• **Startup** من **٩$/شهر**\n• **Standard** **٧٩$/شهر**\n• **Premium** **١٤٩$/شهر**\n\n**تجربة ١٤ يوماً**. راجع **/pricing**!",
-  cn: "💰 **TidyFlow 定价**（Stripe）：\n\n• **Startup** 起 **$9/月**\n• **Standard** **$79/月**\n• **Premium** **$149/月**\n\n**14 天试用**。请查看 **/pricing** 实时价格！",
-  fr: "💰 **Tarifs TidyFlow** (Stripe) :\n\n• **Startup** dès **9 $/mois**\n• **Standard** **79 $/mois**\n• **Premium** **149 $/mois**\n\n**Essai 14 jours**. Voir **/pricing** !",
-  de: "💰 **TidyFlow Preise** (Stripe):\n\n• **Startup** ab **9 $/Monat**\n• **Standard** **79 $/Monat**\n• **Premium** **149 $/Monat**\n\n**14 Tage Test**. Siehe **/pricing**!",
-  pl: "💰 **Cennik TidyFlow** (Stripe):\n\n• **Startup** od **9 $/mies.**\n• **Standard** **79 $/mies.**\n• **Premium** **149 $/mies.**\n\n**14 dni trial**. Zobacz **/pricing**!",
-  no: "💰 **TidyFlow-priser** (Stripe):\n\n• **Startup** fra **$9/mnd**\n• **Standard** **$79/mnd**\n• **Premium** **$149/mnd**\n\n**14 dagers prøve**. Se **/pricing**!",
-  sv: "💰 **TidyFlow-priser** (Stripe):\n\n• **Startup** från **$9/mån**\n• **Standard** **$79/mån**\n• **Premium** **$149/mån**\n\n**14 dagars prov**. Se **/pricing**!",
-  it: "💰 **Prezzi TidyFlow** (Stripe):\n\n• **Startup** da **$9/mese**\n• **Standard** **$79/mese**\n• **Premium** **$149/mese**\n\n**Prova 14 giorni**. Vedi **/pricing**!",
+  en: "💰 **TidyFlow pricing** — live plans securely online:\n\n• **Startup** — from **$9/mo** (10 properties, 5 cleaners)\n• **Standard** — **$79/mo** (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — **$149/mo** (unlimited + priority support)\n\n**14-day free trial**. Change or cancel in-app (self-serve billing). Visit **/pricing** for live rates & usage limits!",
+  pt: "💰 **Preços TidyFlow** — planos securely online:\n\n• **Startup** — a partir de **$9/mês**\n• **Standard** — **$79/mês**\n• **Premium** — **$149/mês**\n\n**Teste grátis 14 dias**. Veja **/pricing** para valores ao vivo!",
+  es: "💰 **Precios TidyFlow** — planes:\n\n• **Startup** — desde **$9/mes**\n• **Standard** — **$79/mes**\n• **Premium** — **$149/mes**\n\n**Prueba 14 días**. Visita **/pricing** para precios en vivo!",
+  ar: "💰 **أسعار TidyFlow** عبر:\n\n• **Startup** من **٩$/شهر**\n• **Standard** **٧٩$/شهر**\n• **Premium** **١٤٩$/شهر**\n\n**تجربة ١٤ يوماً**. راجع **/pricing**!",
+  cn: "💰 **TidyFlow 定价**：\n\n• **Startup** 起 **$9/月**\n• **Standard** **$79/月**\n• **Premium** **$149/月**\n\n**14 天试用**。请查看 **/pricing** 实时价格！",
+  fr: "💰 **Tarifs TidyFlow**  :\n\n• **Startup** dès **9 $/mois**\n• **Standard** **79 $/mois**\n• **Premium** **149 $/mois**\n\n**Essai 14 jours**. Voir **/pricing** !",
+  de: "💰 **TidyFlow Preise** :\n\n• **Startup** ab **9 $/Monat**\n• **Standard** **79 $/Monat**\n• **Premium** **149 $/Monat**\n\n**14 Tage Test**. Siehe **/pricing**!",
+  pl: "💰 **Cennik TidyFlow** :\n\n• **Startup** od **9 $/mies.**\n• **Standard** **79 $/mies.**\n• **Premium** **149 $/mies.**\n\n**14 dni trial**. Zobacz **/pricing**!",
+  no: "💰 **TidyFlow-priser** :\n\n• **Startup** fra **$9/mnd**\n• **Standard** **$79/mnd**\n• **Premium** **$149/mnd**\n\n**14 dagers prøve**. Se **/pricing**!",
+  sv: "💰 **TidyFlow-priser** :\n\n• **Startup** från **$9/mån**\n• **Standard** **$79/mån**\n• **Premium** **$149/mån**\n\n**14 dagars prov**. Se **/pricing**!",
+  it: "💰 **Prezzi TidyFlow** :\n\n• **Startup** da **$9/mese**\n• **Standard** **$79/mese**\n• **Premium** **$149/mese**\n\n**Prova 14 giorni**. Vedi **/pricing**!",
 };
 
 const whatsNewReplies: Record<string, string> = {
-  en: "🆕 **What's New in TidyFlow** — latest releases:\n\n• **Task chat** + voice notes (replace WhatsApp job threads)\n• **QuickBooks** invoice sync\n• **Integrations hub** (Sheets, QuickBooks, Stripe)\n• **Self-serve billing** & plan usage meters\n• **Revenue AI** profit analysis\n• **Smart addresses**, **offline GPS** queue\n• **AI setup**, **announcements**, **supplies** logging\n\nBrowse all: **/whats-new** — or ask about any feature!",
+  en: "🆕 **What's New in TidyFlow** — latest releases:\n\n• **Task chat** + voice notes (replace WhatsApp job threads)\n• **QuickBooks** invoice sync\n• **Integrations hub** (Sheets, QuickBooks, Maps)\n• **Self-serve billing** & plan usage meters\n• **Revenue AI** profit analysis\n• **Smart addresses**, **offline GPS** queue\n• **AI setup**, **announcements**, **supplies** logging\n\nBrowse all: **/whats-new** — or ask about any feature!",
   pt: "🆕 **Novidades no TidyFlow**: chat por tarefa, QuickBooks, hub de integrações, faturação self-service, Revenue AI, endereços inteligentes, GPS offline, setup IA, anúncios e consumíveis.\n\nVeja tudo em **/whats-new**!",
   es: "🆕 **Novedades en TidyFlow**: chat por tarea, QuickBooks, hub de integraciones, facturación self-service, Revenue AI, direcciones inteligentes, GPS offline, setup IA, anuncios y suministros.\n\nTodo en **/whats-new**!",
   ar: "🆕 **ما الجديد في TidyFlow**: دردشة المهام، QuickBooks، مركز التكاملات، الفوترة الذاتية، Revenue AI والمزيد.\n\nراجع **/whats-new**!",

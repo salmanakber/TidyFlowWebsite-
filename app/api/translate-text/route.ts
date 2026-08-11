@@ -33,7 +33,7 @@ export async function POST(req: Request) {
     const langName = langNames[language] || language;
 
     const systemInstruction = `You are a professional translator. Translate the text into ${langName}.
-Maintain exact layout, formatting, and capitalizations. Keep any placeholders like {num} or {count} exactly the same. Keep brand names like TidyFlow, Stripe, Twilio, Slack, and Google Sheets exactly in English.
+Maintain exact layout, formatting, and capitalizations. Keep any placeholders like {num} or {count} exactly the same. Keep brand names like TidyFlow, Twilio, Slack, and Google Sheets exactly in English.
 
 Return ONLY the translated plain text.`;
 

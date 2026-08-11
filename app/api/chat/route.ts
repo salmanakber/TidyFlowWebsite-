@@ -123,7 +123,7 @@ ${buildTidyBotSystemKnowledge()}
 Current page: ${pageContext}
 Tailor answers to the page:
 - marketing:pricing → plans, trial, self-serve billing, usage meters
-- marketing:integrations → Sheets, QuickBooks, Stripe, Integrations hub
+- marketing:integrations → Sheets, QuickBooks, Maps, Integrations hub
 - marketing:whats-new or marketing:whats-new:{slug} → that feature / What's New FAQ; link /whats-new/{slug}
 - marketing:features → product capabilities + link related /whats-new pages when relevant
 - marketing:contact → demo / 14-day trial

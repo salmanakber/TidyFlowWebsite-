@@ -173,10 +173,10 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
       "QuickBooks cleaning software, invoice sync QuickBooks Online, janitorial accounting integration, cleaning company QuickBooks",
   },
   "integrations-hub": {
-    pill: "Integrations hub — See Sheets, QuickBooks & Stripe in one place",
+    pill: "Integrations hub — See Sheets, QuickBooks & Maps in one place",
     pillShort: "Integrations hub",
     headline: "One screen for everything you’ve connected",
-    body: "Owners see Google Sheets, QuickBooks, Stripe, and sync health in a single Integrations hub — with recent activity and connection status at a glance.",
+    body: "Owners see Google Sheets, QuickBooks, Maps, and sync health in a single Integrations hub — with recent activity and connection status at a glance.",
     bullets: [
       "Google Sheets — live two-way sync",
       "QuickBooks — invoice & payroll automation",
@@ -186,9 +186,9 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
     caption: "All connections in one place",
     seoTitle: "In-App Integrations Hub | TidyFlow",
     seoDescription:
-      "Live control panel for Google Sheets, QuickBooks, and Stripe inside TidyFlow — sync health, activity log, and one-tap reconnect for owners.",
+      "Live control panel for Google Sheets, QuickBooks, and Maps inside TidyFlow — sync health, activity log, and one-tap reconnect for owners.",
     keywords:
-      "cleaning software integrations hub, Sheets QuickBooks Stripe status, janitorial integrations dashboard",
+      "cleaning software integrations hub, Sheets QuickBooks Maps status, janitorial integrations dashboard",
   },
   "self-serve-billing": {
     pill: "Self-serve billing — Change plan or cancel from the app",
@@ -199,16 +199,16 @@ const enFeatures: Record<NewFeatureSlug, FeatureCopy> = {
       "Current plan, next bill date, and billing history",
       "Upgrade immediately; schedule downgrades for next period",
       "Cancel free trial anytime (no charge)",
-      "Cancel paid plan at period end via Stripe",
+      "Cancel paid plan at period end securely online",
       "Email + in-app alerts for payments, trials, and renewals",
     ],
     cta: "Transparent SaaS billing your team controls.",
     caption: "Change plan or cancel without support tickets",
     seoTitle: "Self-Serve Billing | TidyFlow",
     seoDescription:
-      "Owners change plan, start a trial, or cancel from the TidyFlow Billing screen. Stripe-powered history, renewals, and clear trial vs paid messaging.",
+      "Owners change plan, start a trial, or cancel from the TidyFlow Billing screen. Billing history, renewals, and clear trial vs paid messaging.",
     keywords:
-      "TidyFlow billing, cancel subscription, change plan SaaS cleaning, self-serve Stripe billing",
+      "TidyFlow billing, cancel subscription, change plan SaaS cleaning, self-serve subscription billing",
   },
   "plan-limits": {
     pill: "Plan limits — Live usage meters for team, AI & PDFs",
@@ -371,7 +371,7 @@ const enUi: WhatsNewUiCopy = {
     },
     {
       q: "Do monthly AI limits reset?",
-      a: "Yes — monthly quotas reset each Stripe billing cycle (AI, invoices, photo AI, PDFs).",
+      a: "Yes — monthly quotas reset each billing cycle (AI, invoices, photo AI, PDFs).",
     },
     {
       q: "Is chat included on all plans?",
@@ -381,7 +381,7 @@ const enUi: WhatsNewUiCopy = {
   changelog: [
     "Task team chat with voice messages",
     "QuickBooks Online invoice sync + automation rules",
-    "Integrations hub for Sheets, QuickBooks & Stripe",
+    "Integrations hub for Sheets, QuickBooks & Maps",
     "Self-serve billing — plan change & cancellation in-app",
     "Usage meters for plan limits and monthly AI/PDF quotas",
     "Revenue AI analysis on owner dashboard",

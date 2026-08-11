@@ -28,7 +28,7 @@ export const BLOG_SLUG_REDIRECTS: Record<string, string> = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "quickbooks-cleaning-invoices",
-    metaTitle: "QuickBooks Invoices for Cleaning Cos | TidyFlow",
+    metaTitle: "QuickBooks for Cleaning Companies | Invoice Sync",
     title: "How Cleaning Companies Sync Client Invoices to QuickBooks Without Retyping Jobs",
     excerpt:
       "Stop copying customers and line items from ops software into QuickBooks Online. Connect once, sync invoices from completed cleans, and keep AR aligned with fieldwork.",
@@ -61,7 +61,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "How TidyFlow closes the loop",
         paragraphs: [
           "In TidyFlow, managers build client invoices from approved, unbilled tasks with branding and tax rules already configured. With QuickBooks connected, those invoices can sync as customers, line items, and totals — so the field proof that produced the bill is the same record finance posts.",
-          "Website /integrations explains the partnership story; the in-app Integrations hub is where owners check Sheets, QuickBooks, and Stripe health and reconnect OAuth if a token expires.",
+          "Website /integrations explains the partnership story; the in-app Integrations hub is where owners check Sheets, QuickBooks, and Maps health and reconnect OAuth if a token expires.",
         ],
       },
       {
@@ -76,7 +76,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-rota-leave-management",
-    metaTitle: "Cleaning Rota & Leave Management | TidyFlow",
+    metaTitle: "Cleaning Rota Software & Leave Management",
     title: "Build a Cleaning Rota That Respects Leave, Conflicts, and Travel Time",
     excerpt:
       "Weekly rota grids fail when leave is tribal knowledge. Use leave-aware assignment, conflict warnings, and route-aware scheduling so night crews stay covered.",
@@ -122,7 +122,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "payroll-verified-cleaner-hours",
-    metaTitle: "Payroll From Verified Cleaner Hours | TidyFlow",
+    metaTitle: "Cleaning Payroll Software | Verified Hours",
     title: "Approve Cleaning Payroll From GPS-Verified Hours — Not Chat Screenshots",
     excerpt:
       "Payroll cleanup shrinks when timers, geofence presence, and breaks feed one pending-hours queue managers can trust before payday.",
@@ -168,7 +168,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "revenue-ai-cleaning-margins",
-    metaTitle: "Revenue AI for Cleaning Margins | TidyFlow",
+    metaTitle: "Cleaning Company Profit Margins | Revenue AI",
     title: "See Which Cleaning Sites Make Money — Then Ask AI What Changed",
     excerpt:
       "Busy is not profitable. Use property-level margins, cash vs outstanding invoices, and Revenue AI narratives to spot cost drivers before quarter-end surprises.",
@@ -214,7 +214,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "tidyflow-vs-jobber-cleaning",
-    metaTitle: "TidyFlow vs Jobber for Cleaning | TidyFlow",
+    metaTitle: "TidyFlow vs Jobber for Cleaning Companies",
     title: "TidyFlow vs Jobber for Cleaning Companies: Which Fits Janitorial Ops?",
     excerpt:
       "Jobber is strong for general home-service CRM. TidyFlow is built for cleaning ops: offline field work, GPS presence, Sheets sync, payroll proof, and client reports.",
@@ -265,7 +265,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "replace-whatsapp-cleaning-ops",
-    metaTitle: "Replace WhatsApp for Cleaning Ops | TidyFlow",
+    metaTitle: "Replace WhatsApp for Cleaning Companies",
     title: "Stop Running Your Cleaning Company Inside WhatsApp",
     excerpt:
       "Group chats bury access codes, photos, and payroll disputes. Move job chat, announcements, and proof into one ops system built for cleaners.",
@@ -315,7 +315,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "why-offline-cleaning-apps-win",
-    metaTitle: "Why Offline Cleaning Apps Win | TidyFlow",
+    metaTitle: "Offline Cleaning App for Janitorial Teams",
     title: "Why Offline-First Cleaning Apps Beat “Always Online” Field Tools",
     excerpt:
       "Basements, hospitals, and concrete cores kill signal. If your cleaner app needs Wi‑Fi to clock in, your payroll and client proof are already broken.",
@@ -363,7 +363,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-software-buying-guide",
-    metaTitle: "Cleaning Software Buying Guide | TidyFlow",
+    metaTitle: "Best Cleaning Company Software Guide 2026",
     title: "Cleaning Company Software Buying Guide (2026): What To Compare Before You Commit",
     excerpt:
       "Compare janitorial software on offline field work, GPS proof, Sheets sync, payroll export, and client reports — not feature checklists alone.",
@@ -406,7 +406,7 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "Most cleaning businesses already rely on spreadsheets. Replacing them overnight is unrealistic, so prioritize software that can sync bidirectionally with your existing Google Sheets structure.",
           "The right setup lets managers keep strategic reporting in sheets while field data remains accurate and standardized in the operations app.",
-          "Also ask how invoices reach accounting. QuickBooks Online sync, Stripe billing for your SaaS subscription, and a single integrations status screen save weeks of spreadsheet gymnastics each quarter.",
+          "Also ask how invoices reach accounting. QuickBooks Online sync, subscription billing for your SaaS subscription, and a single integrations status screen save weeks of spreadsheet gymnastics each quarter.",
         ],
       },
       {
@@ -420,7 +420,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "geofenced-clock-ins",
-    metaTitle: "Geofenced Clock-Ins for Cleaners | TidyFlow",
+    metaTitle: "GPS Clock-In for Cleaners | Geofencing",
     title: "How Geofenced Clock-Ins Reduce No-Shows and Payroll Disputes",
     excerpt:
       "On-site GPS verification cuts no-show disputes and payroll cleanup while staying presence-focused — not all-day route surveillance.",
@@ -470,7 +470,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "sheets-to-operations",
-    metaTitle: "From Google Sheets to Ops System | TidyFlow",
+    metaTitle: "Google Sheets Cleaning Schedule to Ops Software",
     title: "From Google Sheets Chaos to a Real Cleaning Operations System",
     excerpt:
       "Keep your master Sheet, then layer scheduling, offline proof, GPS, and payroll so field work stops living in chat threads.",
@@ -519,7 +519,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-company-kpis",
-    metaTitle: "7 Cleaning Company KPIs That Matter | TidyFlow",
+    metaTitle: "Cleaning Company KPIs That Improve Profit",
     title: "7 Cleaning Company KPIs That Actually Improve Profitability",
     excerpt:
       "Track utilization, verified hours, callbacks, payroll cycle time, proof completeness, AR days, and chemical burn — not vanity dashboards.",
@@ -586,7 +586,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "scale-commercial-cleaning",
-    metaTitle: "Scale a Commercial Cleaning Company | TidyFlow",
+    metaTitle: "Scale a Commercial Cleaning Company",
     title: "How To Scale a Commercial Cleaning Company Without Breaking Operations",
     excerpt:
       "Standardize dispatch, keep one source of truth for field proof, and automate client reporting before you add the next crew.",

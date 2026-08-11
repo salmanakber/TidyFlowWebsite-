@@ -33,7 +33,7 @@ Use this file as the **source of truth for website copy**, feature grids, compar
 - Works offline for cleaners in basements & low-signal buildings
 - GPS + photo proof on every job
 - Google Sheets sync for existing workflows
-- Stripe billing built in
+- subscription billing built in
 - 11 languages supported
 
 ---
@@ -93,7 +93,7 @@ Use this file as the **source of truth for website copy**, feature grids, compar
 
 | Feature | Benefit |
 |---------|---------|
-| **Stripe subscriptions** | SaaS billing for your company account |
+| **plan subscriptions** | SaaS billing for your company account |
 | **Usage-based pricing** | Base plan + per-property unit model |
 | **Client invoicing** | Invoice clients from completed tasks |
 | **Expense claims** | Cleaners submit expenses with receipts |
@@ -118,7 +118,7 @@ Use this file as the **source of truth for website copy**, feature grids, compar
 |-------------|-----------------|
 | **Google Sheets** | Keep using your spreadsheet; TidyFlow syncs both ways |
 | **Google Maps** | Maps, geofencing, and route planning |
-| **Stripe** | Secure payments and subscription management |
+| **secure checkout** | Secure payments and subscription management |
 | **Push notifications** | Instant alerts for assignments, SOS, and sync events |
 
 ### 8. Platform & trust

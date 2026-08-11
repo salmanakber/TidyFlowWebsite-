@@ -17,62 +17,67 @@ export const GOOGLE_SITE_VERIFICATION = "XkJtk16LIKzsYV3q7_pAVbgnD8nTbHt6mzeaXGb
 
 const en: Record<SeoPage, SeoMeta> = {
   home: {
-    title: "TidyFlow | Cleaning Company Software",
+    title: "Cleaning Company Software | TidyFlow",
     description:
-      "Offline field app, GPS proof, Google Sheets sync, QuickBooks, task chat, and payroll for janitorial teams. Start a 14-day free trial.",
+      "Janitorial management software with offline cleaner app, GPS clock-in, Google Sheets sync, QuickBooks invoices, payroll, and photo proof. Free 14-day trial.",
     keywords:
-      "cleaning company software, janitorial software, offline cleaning app, GPS geofencing cleaners, Google Sheets cleaning, QuickBooks cleaning invoices, cleaning payroll software, task chat cleaners, TidyFlow",
+      "cleaning company software, janitorial management software, commercial cleaning software, cleaning business software, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, QuickBooks cleaning invoices, house cleaning management software, field service cleaning app, TidyFlow",
     canonicalPath: "/"
   },
   documentation: {
-    title: "TidyFlow User Guide & Docs",
+    title: "TidyFlow User Guide | Cleaning Software Docs",
     description:
-      "TidyFlow user guide: Sheets sync, offline app, GPS, task chat, QuickBooks, payroll, Revenue AI, SOS, and billing. Available in 11 languages with TidyBot.",
-    keywords: "TidyFlow docs, cleaning app user guide, QuickBooks cleaning, Google Sheets integration guide, offline mode, task chat",
+      "How to run TidyFlow: Google Sheets sync, offline cleaner app, GPS clock-ins, task chat, QuickBooks invoices, payroll, rota, and Revenue AI — 11 languages.",
+    keywords:
+      "cleaning software user guide, janitorial app tutorial, Google Sheets cleaning sync, QuickBooks cleaning setup, offline cleaner app guide, TidyFlow documentation",
     canonicalPath: "/documentation"
   },
   features: {
-    title: "TidyFlow Features for Field Teams",
+    title: "Cleaning Software Features | Scheduling, GPS, Payroll",
     description:
-      "Rota scheduling, offline timers, GPS geofencing, photo proof, AI dispatch, payroll, and Sheets sync — built for cleaning ops.",
+      "Explore cleaning ops features: rota scheduling, offline timers, GPS geofencing, photo proof, AI dispatch, payroll, QuickBooks, and Sheets sync.",
     keywords:
-      "cleaning app features, rota scheduling, offline field app, GPS cleaning tracker, AI dispatch cleaning",
+      "cleaning software features, janitorial scheduling software, cleaner GPS tracking app, cleaning payroll software, rota builder cleaning, offline field service app, AI dispatch cleaning",
     canonicalPath: "/features"
   },
   pricing: {
-    title: "TidyFlow Pricing & Plans",
+    title: "Cleaning Software Pricing | TidyFlow Plans",
     description:
-      "Startup, Standard, and Premium plans for cleaning companies. Live Stripe pricing, usage limits, and a 14-day free trial.",
-    keywords: "cleaning software pricing, TidyFlow plans, janitorial SaaS cost",
+      "Simple Startup, Standard, and Premium plans for cleaning companies. Transparent limits, self-serve billing, and a 14-day free trial.",
+    keywords:
+      "cleaning software pricing, janitorial software cost, cleaning business software plans, commercial cleaning software price, TidyFlow pricing",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow App Integrations",
+    title: "Cleaning Software Integrations | Sheets & QuickBooks",
     description:
-      "Connect Google Sheets two-way sync, QuickBooks Online invoices, Stripe billing, and geofenced Maps for cleaning operations.",
+      "Connect Google Sheets two-way sync, QuickBooks Online invoices, and Google Maps geofencing for cleaning companies.",
     keywords:
-      "Google Sheets cleaning software, QuickBooks Online cleaning, Stripe janitorial integration",
+      "Google Sheets cleaning software, QuickBooks Online cleaning invoices, cleaning software integrations, Maps geofencing cleaners, janitorial accounting sync",
     canonicalPath: "/integrations"
   },
   contact: {
-    title: "Book a TidyFlow Demo",
+    title: "Book a Cleaning Software Demo | TidyFlow",
     description:
-      "Request a live demo or 14-day free trial. Tell us your team size and spreadsheet workflow — no credit card required.",
-    keywords: "TidyFlow demo, cleaning software trial, contact TidyFlow",
+      "See TidyFlow on your sites — offline app, GPS proof, Sheets sync, and payroll. Book a live demo or start a 14-day free trial.",
+    keywords:
+      "cleaning software demo, janitorial software trial, book cleaning software demo, TidyFlow contact",
     canonicalPath: "/contact"
   },
   personas: {
-    title: "TidyFlow by Role",
+    title: "Cleaning Software for Owners, Managers & Cleaners",
     description:
-      "Workflows for cleaning company owners, operations managers, field cleaners, and facility clients — each with the right tools.",
-    keywords: "cleaning owner software, manager dashboard, cleaner mobile app offline",
+      "Role-based workflows for cleaning company owners, operations managers, field cleaners, and facility clients.",
+    keywords:
+      "cleaning company owner software, cleaning manager dashboard, cleaner mobile app, facilities cleaning client portal",
     canonicalPath: "/personas"
   },
   "how-it-works": {
-    title: "How TidyFlow Works",
+    title: "How Cleaning Ops Software Works | TidyFlow",
     description:
-      "Sync your Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients in one pipeline.",
-    keywords: "cleaning workflow software, field to office sync, cleaning operations pipeline",
+      "Sync your Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients in one cleaning operations pipeline.",
+    keywords:
+      "how cleaning software works, cleaning operations workflow, field to office cleaning sync, commercial cleaning process software",
     canonicalPath: "/how-it-works"
   }
 };
@@ -99,14 +104,14 @@ const pt: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "Preços TidyFlow — Planos Startup, Standard e Premium",
-    description: "Preços transparentes por propriedades e faxineiros. Teste grátis de 14 dias, faturação Stripe e limites claros de uso.",
+    description: "Preços transparentes por propriedades e faxineiros. Teste grátis de 14 dias, faturação e limites claros de uso.",
     keywords: "preços software limpeza, planos TidyFlow, assinatura limpeza",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "Integrações TidyFlow — Sheets, QuickBooks, Stripe e Mapas",
-    description: "Ligue Google Sheets, QuickBooks Online, Stripe e mapas geofence num único hub de integrações com saúde de sync.",
-    keywords: "integração Google Sheets limpeza, QuickBooks limpeza, Stripe TidyFlow",
+    title: "Integrações TidyFlow — Sheets, QuickBooks e Mapas",
+    description: "Ligue Google Sheets, QuickBooks Online e mapas geofence num único hub de integrações com saúde de sync.",
+    keywords: "integração Google Sheets limpeza, QuickBooks limpeza, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -150,14 +155,14 @@ const es: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "Precios TidyFlow — Planes Startup, Standard y Premium",
-    description: "Planes transparentes según propiedades y limpiadores. Prueba gratis 14 días y facturación Stripe.",
+    description: "Planes transparentes según propiedades y limpiadores. Prueba gratis 14 días y facturación mensual.",
     keywords: "precios software limpieza, planes TidyFlow, suscripción limpieza",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "Integraciones TidyFlow — Sheets, QuickBooks, Stripe y Mapas",
-    description: "Conecta Google Sheets, QuickBooks Online, Stripe y mapas geofence desde un hub de integraciones.",
-    keywords: "integración Google Sheets limpieza, QuickBooks limpieza, Stripe TidyFlow",
+    title: "Integraciones TidyFlow — Sheets, QuickBooks y Mapas",
+    description: "Conecta Google Sheets, QuickBooks Online y mapas geofence desde un hub de integraciones.",
+    keywords: "integración Google Sheets limpieza, QuickBooks limpieza, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -201,14 +206,14 @@ const fr: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "Tarifs TidyFlow — Forfaits Startup, Standard et Premium",
-    description: "Tarifs transparents selon propriétés et agents. Essai gratuit 14 jours, facturation Stripe.",
+    description: "Tarifs transparents selon propriétés et agents. Essai gratuit 14 jours, facturation mensale.",
     keywords: "tarifs logiciel nettoyage, forfaits TidyFlow",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "Intégrations TidyFlow — Sheets, QuickBooks, Stripe et Cartes",
-    description: "Connectez Google Sheets, QuickBooks Online, Stripe et cartes géofence depuis un hub d'intégrations.",
-    keywords: "intégration Google Sheets nettoyage, QuickBooks nettoyage, Stripe TidyFlow",
+    title: "Intégrations TidyFlow — Sheets, QuickBooks, Maps et Cartes",
+    description: "Connectez Google Sheets, QuickBooks Online et cartes géofence depuis un hub d'intégrations.",
+    keywords: "intégration Google Sheets nettoyage, QuickBooks nettoyage, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -252,14 +257,14 @@ const de: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "TidyFlow Preise — Startup-, Standard- & Premium-Pläne",
-    description: "Transparente Preise nach Objekten und Kräften. 14-Tage-Test, Stripe-Abrechnung.",
+    description: "Transparente Preise nach Objekten und Kräften. 14-Tage-Test, monatliche Abrechnung.",
     keywords: "Preise Reinigungssoftware, TidyFlow Pläne",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow Integrationen — Sheets, QuickBooks, Stripe & Karten",
-    description: "Verbinden Sie Google Sheets, QuickBooks Online, Stripe und Geofence-Karten in einem Integrations-Hub.",
-    keywords: "Google Sheets Integration Reinigung, QuickBooks Reinigung, Stripe TidyFlow",
+    title: "TidyFlow Integrationen — Sheets, QuickBooks, Maps & Karten",
+    description: "Verbinden Sie Google Sheets, QuickBooks Online und Geofence-Karten in einem Integrations-Hub.",
+    keywords: "Google Sheets Integration Reinigung, QuickBooks Reinigung, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -303,14 +308,14 @@ const pl: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "Cennik TidyFlow — Plany Startup, Standard i Premium",
-    description: "Przejrzyste plany według obiektów i pracowników. 14-dniowy trial, rozliczenie Stripe.",
+    description: "Przejrzyste plany według obiektów i pracowników. 14-dniowy trial, rozliczenie miesięczne.",
     keywords: "cennik oprogramowanie sprzątanie, plany TidyFlow",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "Integracje TidyFlow — Sheets, QuickBooks, Stripe i Mapy",
-    description: "Połącz Google Sheets, QuickBooks Online, Stripe i mapy geofence w jednym hubie integracji.",
-    keywords: "integracja Google Sheets sprzątanie, QuickBooks sprzątanie, Stripe TidyFlow",
+    title: "Integracje TidyFlow — Sheets, QuickBooks, Maps i Mapy",
+    description: "Połącz Google Sheets, QuickBooks Online i mapy geofence w jednym hubie integracji.",
+    keywords: "integracja Google Sheets sprzątanie, QuickBooks sprzątanie, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -354,14 +359,14 @@ const no: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "TidyFlow-priser — Startup-, Standard- og Premium-planer",
-    description: "Transparente planer etter eiendommer og renholdere. 14 dagers prøve, Stripe-fakturering.",
+    description: "Transparente planer etter eiendommer og renholdere. 14 dagers prøve, månedlig fakturering.",
     keywords: "priser rengjøringsprogramvare, TidyFlow planer",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow-integrasjoner — Sheets, QuickBooks, Stripe og Kart",
-    description: "Koble Google Sheets, QuickBooks Online, Stripe og geofence-kart i ett integrasjonshub.",
-    keywords: "integrasjon Google Sheets renhold, QuickBooks renhold, Stripe TidyFlow",
+    title: "TidyFlow-integrasjoner — Sheets, QuickBooks, Maps og Kart",
+    description: "Koble Google Sheets, QuickBooks Online og geofence-kart i ett integrasjonshub.",
+    keywords: "integrasjon Google Sheets renhold, QuickBooks renhold, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -405,14 +410,14 @@ const sv: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "TidyFlow-priser — Startup-, Standard- och Premium-planer",
-    description: "Transparenta planer efter objekt och städare. 14 dagars provperiod, Stripe-fakturering.",
+    description: "Transparenta planer efter objekt och städare. 14 dagars provperiod, månedlig fakturering.",
     keywords: "priser städprogramvara, TidyFlow planer",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow-integrationer — Sheets, QuickBooks, Stripe och Kartor",
-    description: "Anslut Google Sheets, QuickBooks Online, Stripe och geofence-kartor i ett integrationsnav.",
-    keywords: "integration Google Sheets städ, QuickBooks städ, Stripe TidyFlow",
+    title: "TidyFlow-integrationer — Sheets, QuickBooks, Maps och Kartor",
+    description: "Anslut Google Sheets, QuickBooks Online och geofence-kartor i ett integrationsnav.",
+    keywords: "integration Google Sheets städ, QuickBooks städ, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -456,14 +461,14 @@ const it: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "Prezzi TidyFlow — Piani Startup, Standard e Premium",
-    description: "Piani trasparenti per immobili e operatori. Prova gratuita 14 giorni, fatturazione Stripe.",
+    description: "Piani trasparenti per immobili e operatori. Prova gratuita 14 giorni, fatturazione mensile.",
     keywords: "prezzi software pulizie, piani TidyFlow",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "Integrazioni TidyFlow — Sheets, QuickBooks, Stripe e Mappe",
-    description: "Collega Google Sheets, QuickBooks Online, Stripe e mappe geofence in un hub di integrazioni.",
-    keywords: "integrazione Google Sheets pulizie, QuickBooks pulizie, Stripe TidyFlow",
+    title: "Integrazioni TidyFlow — Sheets, QuickBooks, Maps e Mappe",
+    description: "Collega Google Sheets, QuickBooks Online e mappe geofence in un hub di integrazioni.",
+    keywords: "integrazione Google Sheets pulizie, QuickBooks pulizie, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -507,14 +512,14 @@ const ar: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "أسعار TidyFlow — خطط Startup وStandard وPremium",
-    description: "خطط شفافة حسب العقارات والعمال. تجربة 14 يوماً وفوترة Stripe.",
+    description: "خطط شفافة حسب العقارات والعمال. تجربة 14 يوماً وفوترة شهرية.",
     keywords: "أسعار برنامج تنظيف, خطط TidyFlow",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "تكاملات TidyFlow — Sheets وQuickBooks وStripe والخرائط",
-    description: "اربط Google Sheets وQuickBooks Online وStripe وخرائط السياج الجغرافي من مركز تكاملات واحد.",
-    keywords: "تكامل Google Sheets تنظيف, QuickBooks تنظيف, Stripe TidyFlow",
+    title: "تكاملات TidyFlow — Sheets وQuickBooks ووالخرائط",
+    description: "اربط Google Sheets وQuickBooks Online ووخرائط السياج الجغرافي من مركز تكاملات واحد.",
+    keywords: "تكامل Google Sheets تنظيف, QuickBooks تنظيف, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {
@@ -558,14 +563,14 @@ const cn: Record<SeoPage, SeoMeta> = {
   },
   pricing: {
     title: "TidyFlow 定价 — Startup、Standard 与 Premium",
-    description: "按物业与保洁员透明定价。14 天免费试用，Stripe 计费与用量限额一目了然。",
+    description: "按物业与保洁员透明定价。14 天免费试用，月度计费与用量限额一目了然。",
     keywords: "保洁软件价格, TidyFlow 套餐",
     canonicalPath: "/pricing"
   },
   integrations: {
-    title: "TidyFlow 集成 — 表格、QuickBooks、Stripe 与地图",
-    description: "在统一集成中心连接 Google Sheets、QuickBooks Online、Stripe 与地理围栏地图。",
-    keywords: "表格集成保洁, QuickBooks 保洁, Stripe TidyFlow",
+    title: "TidyFlow 集成 — 表格、QuickBooks、与地图",
+    description: "在统一集成中心连接 Google Sheets、QuickBooks Online、与地理围栏地图。",
+    keywords: "表格集成保洁, QuickBooks 保洁, TidyFlow integrations",
     canonicalPath: "/integrations"
   },
   contact: {

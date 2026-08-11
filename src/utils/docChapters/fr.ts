@@ -9,7 +9,7 @@ export const frChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Premiers pas",
     category: "Overview",
-    content: "Pour lancer les opérations, les administrateurs d'entreprise peuvent s'inscrire sur un portail TidyFlow, établissant ainsi leur dossier commercial. Lors de la première installation, le personnel rencontre une visite interactive d'intégration expliquant les modules principaux. Une fois activé, les propriétaires sont guidés pour configurer des profils de paiement sécurisés via Stripe. De là, les propriétaires peuvent inviter le personnel en accédant aux Utilisateurs dans la barre latérale, en saisissant les noms des travailleurs, leurs e-mails et leurs catégories de rôles (Gestionnaires ou Agents de nettoyage) pour envoyer immédiatement les identifiants de connexion."
+    content: "Pour lancer les opérations, les administrateurs d'entreprise peuvent s'inscrire sur un portail TidyFlow, établissant ainsi leur dossier commercial. Lors de la première installation, le personnel rencontre une visite interactive d'intégration expliquant les modules principaux. Une fois activé, les propriétaires sont guidés pour configurer des profils de paiement sécurisés securely online. De là, les propriétaires peuvent inviter le personnel en accédant aux Utilisateurs dans la barre latérale, en saisissant les noms des travailleurs, leurs e-mails et leurs catégories de rôles (Gestionnaires ou Agents de nettoyage) pour envoyer immédiatement les identifiants de connexion."
   },
   "ch-3": {
     title: "Comprendre votre rôle",
@@ -49,7 +49,7 @@ export const frChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Guide pour les propriétaires",
     category: "Role Guides",
-    content: "Les propriétaires ont une autorité maîtresse sur les comptes d'entreprise. Lors de la connexion, les propriétaires accèdent aux configurations de facturation, gèrent les abonnements Stripe actifs, personnalisent les dispositions de marque d'entreprise (intégrations de logo, détails bancaires et en-têtes de reçu), et auditent les journaux multi-utilisateurs. Les propriétaires peuvent également accéder aux interfaces d'analyse suivant les revenus à l'échelle de l'entreprise, les sièges de personnel actifs et les insights opérationnels alimentés par l'IA."
+    content: "Les propriétaires ont une autorité maîtresse sur les comptes d'entreprise. Lors de la connexion, les propriétaires accèdent aux configurations de facturation, gèrent les abonnements actifs, personnalisent les dispositions de marque d'entreprise (intégrations de logo, détails bancaires et en-têtes de reçu), et auditent les journaux multi-utilisateurs. Les propriétaires peuvent également accéder aux interfaces d'analyse suivant les revenus à l'échelle de l'entreprise, les sièges de personnel actifs et les insights opérationnels alimentés par l'IA."
   },
   "ch-11": {
     title: "Planning et planification",

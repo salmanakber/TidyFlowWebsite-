@@ -90,7 +90,7 @@ export function getSiteJsonLdGraph() {
           "Offline GPS location queue",
           "Two-way Google Sheets sync",
           "QuickBooks Online invoice sync",
-          "Integrations hub (Sheets, QuickBooks, Stripe)",
+          "Integrations hub (Sheets, QuickBooks, Maps)",
           "Per-task team chat with voice notes",
           "Company announcements",
           "AI cleaner dispatch recommendations",

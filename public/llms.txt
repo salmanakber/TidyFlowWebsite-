@@ -2,20 +2,20 @@
 # https://tidyflowapp.com
 # Guidance for AI assistants and LLM crawlers summarizing this product website.
 
-> TidyFlow is cleaning company operations software: schedule jobs, verify work on-site with GPS, pay teams from verified hours, and prove quality to clients — offline-first, with Google Sheets sync and 11 languages.
+> TidyFlow is janitorial management / cleaning company software: schedule jobs, verify work on-site with GPS, pay teams from verified hours, and prove quality to clients — offline-first, with Google Sheets sync and 11 languages.
 
 ## Primary pages
 - [Home](https://tidyflowapp.com/): Product overview and interactive demos
 - [Features](https://tidyflowapp.com/features): Scheduling, field app, quality, payroll, AI, integrations
 - [What's New](https://tidyflowapp.com/whats-new): Latest releases and feature deep-dives
 - [Pricing](https://tidyflowapp.com/pricing): Startup, Standard, Premium · 14-day free trial
-  - Subscribe all plans: https://app.tidyflowapp.com/subscribe
-  - Startup: https://app.tidyflowapp.com/subscribe/startup
-  - Standard: https://app.tidyflowapp.com/subscribe/standard
-  - Premium: https://app.tidyflowapp.com/subscribe/premium
+ - Subscribe all plans: https://app.tidyflowapp.com/subscribe
+ - Startup: https://app.tidyflowapp.com/subscribe/startup
+ - Standard: https://app.tidyflowapp.com/subscribe/standard
+ - Premium: https://app.tidyflowapp.com/subscribe/premium
 - [How it works](https://tidyflowapp.com/how-it-works): Sheet → field → payroll pipeline
 - [Personas](https://tidyflowapp.com/personas): Owners, managers, cleaners, clients
-- [Integrations](https://tidyflowapp.com/integrations): Google Sheets, QuickBooks, Stripe, Maps
+- [Integrations](https://tidyflowapp.com/integrations): Google Sheets, QuickBooks Online, Google Maps
 - [Contact](https://tidyflowapp.com/contact): Book a demo / start free trial
 - [Documentation](https://tidyflowapp.com/documentation): Interactive user guide + TidyBot (chat, QuickBooks, billing, Revenue AI included)
 - [Blog](https://tidyflowapp.com/blog): Cleaning operations articles
@@ -24,7 +24,7 @@
 ## What's New feature pages
 - [Task chat](https://tidyflowapp.com/whats-new/task-chat): Per-job team messaging + voice notes
 - [QuickBooks](https://tidyflowapp.com/whats-new/quickbooks): Invoice sync to QuickBooks Online
-- [Integrations hub](https://tidyflowapp.com/whats-new/integrations-hub): Sheets, QuickBooks, Stripe status
+- [Integrations hub](https://tidyflowapp.com/whats-new/integrations-hub): Sheets, QuickBooks, Maps status
 - [Self-serve billing](https://tidyflowapp.com/whats-new/self-serve-billing): Change/cancel plan in-app
 - [Plan limits](https://tidyflowapp.com/whats-new/plan-limits): Live usage meters and quotas
 - [Revenue AI](https://tidyflowapp.com/whats-new/revenue-ai): Profit dashboard + AI analysis

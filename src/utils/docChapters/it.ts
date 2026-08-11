@@ -9,7 +9,7 @@ export const itChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Per iniziare",
     category: "Overview",
-    content: "Per avviare le operazioni, gli amministratori aziendali possono registrarsi nel portale TidyFlow, stabilendo la loro registrazione commerciale. Alla prima installazione, i dipendenti sperimentano un tour di onboarding interattivo che spiega i moduli principali. Una volta attivati, i proprietari sono guidati a configurare profili di pagamento sicuri tramite Stripe. Da lì, i proprietari possono invitare il personale accedendo a 'Utenti' nella Barra Laterale, inserendo nomi, email e categorie di ruolo dei dipendenti (Manager o Addetti alle pulizie) per inviare le credenziali di accesso immediatamente."
+    content: "Per avviare le operazioni, gli amministratori aziendali possono registrarsi nel portale TidyFlow, stabilendo la loro registrazione commerciale. Alla prima installazione, i dipendenti sperimentano un tour di onboarding interattivo che spiega i moduli principali. Una volta attivati, i proprietari sono guidati a configurare profili di pagamento sicuri dall’app. Da lì, i proprietari possono invitare il personale accedendo a 'Utenti' nella Barra Laterale, inserendo nomi, email e categorie di ruolo dei dipendenti (Manager o Addetti alle pulizie) per inviare le credenziali di accesso immediatamente."
   },
   "ch-3": {
     title: "Comprendere il proprio ruolo",
@@ -49,7 +49,7 @@ export const itChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Guida per i proprietari",
     category: "Role Guides",
-    content: "I proprietari hanno la massima autorità sui conti aziendali. Al login, accedono alle impostazioni di fatturazione, gestiscono gli abbonamenti Stripe, personalizzano l'identità visiva aziendale (logo, dettagli bancari, intestazioni fatture) e verificano i log multi-utente. I proprietari hanno anche accesso a report analitici dettagliati che monitorano ricavi, posti team attivi e insight operativi generati dall'AI."
+    content: "I proprietari hanno la massima autorità sui conti aziendali. Al login, accedono alle impostazioni di fatturazione, gestiscono l'abbonamento TidyFlow, personalizzano l'identità visiva aziendale (logo, dettagli bancari, intestazioni fatture) e verificano i log multi-utente. I proprietari hanno anche accesso a report analitici dettagliati che monitorano ricavi, posti team attivi e insight operativi generati dall'AI."
   },
   "ch-11": {
     title: "Turni e pianificazione",

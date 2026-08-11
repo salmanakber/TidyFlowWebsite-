@@ -1737,8 +1737,8 @@ function FeaturesPage({ language }: { language: string }) {
                   <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">{st("featuresIntegMapsDesc")}</p>
                 </div>
                 <div className="p-3 bg-slate-900/40 rounded-xl border border-slate-850">
-                  <h5 className="font-bold text-[11px] text-brand-amber">{st("featuresIntegStripe")}</h5>
-                  <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">{st("featuresIntegStripeDesc")}</p>
+                  <h5 className="font-bold text-[11px] text-brand-amber">{st("featuresIntegQbo")}</h5>
+                  <p className="text-[10px] text-slate-400 mt-1 leading-relaxed">{st("featuresIntegQboDesc")}</p>
                 </div>
               </div>
             </div>
@@ -2327,8 +2327,8 @@ function IntegrationsPage({ language }: { language: string }) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs pt-2">
               <div className="p-4 bg-slate-900/20 backdrop-blur-sm border border-slate-900 rounded-xl">
-                <h3 className="font-bold text-white text-sm">{t("integPageStripeTitle")}</h3>
-                <p className="text-[11px] mt-1.5 text-slate-400 leading-relaxed">{t("integPageStripeDesc")}</p>
+                <h3 className="font-bold text-white text-sm">{t("integPageQboTitle")}</h3>
+                <p className="text-[11px] mt-1.5 text-slate-400 leading-relaxed">{t("integPageQboDesc")}</p>
               </div>
               <div className="p-4 bg-slate-900/20 backdrop-blur-sm border border-slate-900 rounded-xl">
                 <h3 className="font-bold text-white text-sm">{t("integPageMapsTitle")}</h3>

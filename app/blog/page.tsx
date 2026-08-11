@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description:
       "Guides for cleaning owners: QuickBooks invoice sync, rota & leave, verified payroll, Revenue AI, TidyFlow vs Jobber, WhatsApp ops, offline field apps, and scaling commercial cleaning.",
     keywords:
-      "cleaning operations blog, QuickBooks cleaning invoices, cleaning rota software, janitorial payroll, TidyFlow vs Jobber, cleaning company software guides, offline cleaning app",
+      "cleaning company software guide, janitorial management tips, commercial cleaning software, QuickBooks cleaning invoices, cleaning rota software, cleaning payroll software, offline cleaning app, GPS cleaner tracking, TidyFlow vs Jobber",
     canonicalPath: "/blog",
   }),
 };

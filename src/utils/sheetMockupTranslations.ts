@@ -26,7 +26,7 @@ const en = {
   syncLogManual: "Manual sync triggered at {time} — Updated {count} active properties",
   integPageBadge: "Continuous Synchronization",
   integPageTitle: "Unified Cloud Integration",
-  integPageSubtitle: "Keep your properties, schedules, and billing synchronized across your core business tools.",
+  integPageSubtitle: "Connect Google Sheets, QuickBooks Online, and Google Maps — the tools cleaning companies already use every day.",
   integPageSheetsTitle: "Two-Way Google Sheets Sync",
   integPageSheetsDesc:
     "Many professional cleaning operations run on customized spreadsheet rosters. TidyFlow respects this workflow. By connecting your master Sheet URL, our system automatically populates your app's property listings, checklists, and active tasks.",
@@ -34,8 +34,8 @@ const en = {
   integPageFormatTitle: "Required spreadsheet format",
   integPageFormatDesc:
     "Create a Google Sheet featuring two tabs: Properties (address, property ID, rates) and Tasks (scheduled dates, assignments, statuses). Share edit permissions with our secure service account email, and watch the updates synchronize bi-directionally!",
-  integPageStripeTitle: "Stripe Subscriptions",
-  integPageStripeDesc: "Automate monthly company base plan charges and track property add-ons securely.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Push client invoices from completed cleaning jobs into QuickBooks Online — customers, line items, and totals without retyping.",
   integPageMapsTitle: "Google Maps Geofences",
   integPageMapsDesc: "Verifies cleaner arrival timestamps automatically using strict geofenced coordinate locks.",
   integPageTimerDesc: "GPS-verified work timer with breaks and job submission — fully operational offline in basements and low-signal buildings.",
@@ -51,8 +51,8 @@ const en = {
     "Never restrict your data. TidyFlow connects with the foundational cloud tools your janitorial operations already run on, ensuring reliable data portability.",
   featuresIntegMaps: "Google Maps Platform",
   featuresIntegMapsDesc: "Powers property-boundary geofencing so clock-in and live on-site status are verified at the job address.",
-  featuresIntegStripe: "Stripe Billing Portal",
-  featuresIntegStripeDesc: "Manages secure customer billing methods and recurring SaaS plan subscriptions.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Sync client invoices to QuickBooks so bookkeeping stays aligned with field work and payroll-ready hours.",
 };
 
 const pt: typeof en = {
@@ -89,8 +89,8 @@ const pt: typeof en = {
   integPageFormatTitle: "Formato de planilha obrigatório",
   integPageFormatDesc:
     "Crie uma planilha Google com duas abas: Propriedades (endereço, ID, tarifas) e Tarefas (datas, atribuições, status). Compartilhe permissões de edição com nossa conta de serviço segura e veja as atualizações sincronizarem bidirecionalmente!",
-  integPageStripeTitle: "Assinaturas Stripe",
-  integPageStripeDesc: "Automatize cobranças mensais do plano base e acompanhe adicionais de propriedades com segurança.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Envie faturas de clientes de limpezas concluídas para o QuickBooks Online — clientes, linhas e totais sem redigitar.",
   integPageMapsTitle: "Geocercas Google Maps",
   integPageMapsDesc: "Verifica automaticamente horários de chegada dos limpadores com bloqueios de coordenadas geográficas.",
   integPageTimerDesc: "Cronômetro de trabalho com GPS, pausas e envio de tarefas — funciona totalmente offline.",
@@ -106,8 +106,8 @@ const pt: typeof en = {
     "Nunca restrinja seus dados. O TidyFlow conecta-se às ferramentas em nuvem que suas operações de limpeza já utilizam, garantindo portabilidade confiável.",
   featuresIntegMaps: "Plataforma Google Maps",
   featuresIntegMapsDesc: "Geofencing no perímetro da propriedade para verificar ponto e status no local durante o serviço.",
-  featuresIntegStripe: "Portal de Cobrança Stripe",
-  featuresIntegStripeDesc: "Gerencia métodos de pagamento seguros e assinaturas SaaS recorrentes.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Sincronize faturas de clientes com o QuickBooks para alinhar a contabilidade ao trabalho de campo.",
 };
 
 const es: typeof en = {
@@ -144,8 +144,8 @@ const es: typeof en = {
   integPageFormatTitle: "Formato de hoja de cálculo requerido",
   integPageFormatDesc:
     "Cree una hoja de Google con dos pestañas: Propiedades (dirección, ID, tarifas) y Tareas (fechas, asignaciones, estados). Comparta permisos de edición con nuestra cuenta de servicio segura y vea las actualizaciones sincronizarse bidireccionalmente.",
-  integPageStripeTitle: "Suscripciones Stripe",
-  integPageStripeDesc: "Automatice cargos mensuales del plan base y rastree complementos de propiedades de forma segura.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Envíe facturas de clientes desde limpiezas completadas a QuickBooks Online sin volver a escribir datos.",
   integPageMapsTitle: "Geocercas de Google Maps",
   integPageMapsDesc: "Verifica automáticamente las marcas de llegada de los limpiadores con bloqueos de coordenadas geográficas.",
   integPageTimerDesc: "Temporizador de trabajo con GPS, descansos y envío de tareas — totalmente offline.",
@@ -161,8 +161,8 @@ const es: typeof en = {
     "Nunca restrinja sus datos. TidyFlow se conecta con las herramientas en la nube que sus operaciones de limpieza ya utilizan, garantizando portabilidad confiable.",
   featuresIntegMaps: "Plataforma Google Maps",
   featuresIntegMapsDesc: "Geocerca en el perímetro de la propiedad para verificar entrada y estado en el sitio durante el servicio.",
-  featuresIntegStripe: "Portal de Facturación Stripe",
-  featuresIntegStripeDesc: "Gestiona métodos de pago seguros y suscripciones SaaS recurrentes.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Sincroniza facturas de clientes con QuickBooks para alinear contabilidad y operaciones de campo.",
 };
 
 const ar: typeof en = {
@@ -199,8 +199,8 @@ const ar: typeof en = {
   integPageFormatTitle: "تنسيق جدول البيانات المطلوب",
   integPageFormatDesc:
     "أنشئ جدول Google بعلامتي تبويب: العقارات (العنوان، المعرف، الأسعار) والمهام (التواريخ، التعيينات، الحالات). شارك أذونات التحرير مع حساب الخدمة الآمن وشاهد التحديثات تتزامن ثنائيًا!",
-  integPageStripeTitle: "اشتراكات Stripe",
-  integPageStripeDesc: "أتمتة رسوم الخطة الشهرية وتتبع إضافات العقارات بأمان.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "ادفع فواتير العملاء من مهام التنظيف المكتملة إلى QuickBooks Online دون إعادة الكتابة.",
   integPageMapsTitle: "أسوار Google Maps الجغرافية",
   integPageMapsDesc: "يتحقق تلقائيًا من أوقات وصول عمال النظافة باستخدام قفل إحداثيات جغرافية صارم.",
   integPageTimerDesc: "مؤقت عمل مع تحقق GPS وفترات راحة وإرسال المهام — يعمل بالكامل دون إنترنت.",
@@ -216,8 +216,8 @@ const ar: typeof en = {
     "لا تقيد بياناتك أبدًا. يتصل TidyFlow بالأدوات السحابية الأساسية التي تعتمد عليها عمليات التنظيف، مما يضمن نقل بيانات موثوقًا.",
   featuresIntegMaps: "منصة Google Maps",
   featuresIntegMapsDesc: "سياج جغرافي لحدود العقار للتحقق من الحضور وحالة التواجد في الموقع أثناء المهمة.",
-  featuresIntegStripe: "بوابة فوترة Stripe",
-  featuresIntegStripeDesc: "يدير طرق الدفع الآمنة واشتراكات SaaS المتكررة.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "زامن فواتير العملاء مع QuickBooks لربط المحاسبة بعمل الميدان.",
 };
 
 const cn: typeof en = {
@@ -254,8 +254,8 @@ const cn: typeof en = {
   integPageFormatTitle: "所需表格格式",
   integPageFormatDesc:
     "创建包含两个标签页的 Google 表格：物业（地址、ID、费率）和任务（日期、指派、状态）。与我们的安全服务账户共享编辑权限，即可看到双向同步更新！",
-  integPageStripeTitle: "Stripe 订阅",
-  integPageStripeDesc: "自动处理月度基础套餐费用并安全追踪物业附加项。",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "将已完成保洁任务的客户发票同步到 QuickBooks Online，无需重复录入。",
   integPageMapsTitle: "Google Maps 地理围栏",
   integPageMapsDesc: "通过严格的地理坐标锁定自动验证保洁员到达时间戳。",
   integPageTimerDesc: "GPS 核验工时器，支持休息与提交任务 — 地下室与弱信号环境可完全离线使用。",
@@ -270,8 +270,8 @@ const cn: typeof en = {
   featuresIntegDesc: "永不限制您的数据。TidyFlow 连接保洁运营所依赖的核心云工具，确保可靠的数据可移植性。",
   featuresIntegMaps: "Google Maps 平台",
   featuresIntegMapsDesc: "物业边界地理围栏，用于核验打卡与任务期间的在场状态。",
-  featuresIntegStripe: "Stripe 计费门户",
-  featuresIntegStripeDesc: "安全管理客户付款方式和 recurring SaaS 订阅计划。",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "将客户发票同步到 QuickBooks，让账务与外勤作业一致。",
 };
 
 const fr: typeof en = {
@@ -308,8 +308,8 @@ const fr: typeof en = {
   integPageFormatTitle: "Format de feuille requis",
   integPageFormatDesc:
     "Créez une feuille Google avec deux onglets : Propriétés (adresse, ID, tarifs) et Tâches (dates, affectations, statuts). Partagez les droits d'édition avec notre compte de service sécurisé.",
-  integPageStripeTitle: "Abonnements Stripe",
-  integPageStripeDesc: "Automatisez les frais mensuels du plan de base et suivez les ajouts de propriétés en toute sécurité.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Poussez les factures clients des chantiers terminés vers QuickBooks Online — clients, lignes et totaux sans resaisie.",
   integPageMapsTitle: "Géorepérages Google Maps",
   integPageMapsDesc: "Vérifie automatiquement les horaires d'arrivée des agents avec des verrous de coordonnées stricts.",
   integPageTimerDesc: "Minuteur de travail GPS avec pauses et soumission — entièrement hors ligne sur le terrain.",
@@ -325,8 +325,8 @@ const fr: typeof en = {
     "Ne limitez jamais vos données. TidyFlow se connecte aux outils cloud essentiels de vos opérations de nettoyage.",
   featuresIntegMaps: "Plateforme Google Maps",
   featuresIntegMapsDesc: "Géorepérage du périmètre de la propriété pour vérifier le pointage et le statut sur site pendant la mission.",
-  featuresIntegStripe: "Portail de facturation Stripe",
-  featuresIntegStripeDesc: "Gère les moyens de paiement sécurisés et les abonnements SaaS récurrents.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Synchronisez les factures clients avec QuickBooks pour aligner comptabilité et terrain.",
 };
 
 const de: typeof en = {
@@ -363,8 +363,8 @@ const de: typeof en = {
   integPageFormatTitle: "Erforderliches Tabellenformat",
   integPageFormatDesc:
     "Erstellen Sie ein Google Sheet mit zwei Tabs: Objekte (Adresse, ID, Tarife) und Aufgaben (Termine, Zuweisungen, Status). Teilen Sie Bearbeitungsrechte mit unserem sicheren Servicekonto.",
-  integPageStripeTitle: "Stripe-Abonnements",
-  integPageStripeDesc: "Automatisieren Sie monatliche Basisgebühren und verfolgen Sie Objektzusätze sicher.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Übertragen Sie Kundenrechnungen aus abgeschlossenen Reinigungsjobs nach QuickBooks Online — ohne erneute Eingabe.",
   integPageMapsTitle: "Google Maps Geofences",
   integPageMapsDesc: "Verifiziert automatisch Ankunftszeiten mit strengen Geofence-Koordinaten.",
   integPageTimerDesc: "GPS-Arbeitszeitnehmer mit Pausen und Auftragsabschluss — vollständig offline im Außendienst.",
@@ -380,8 +380,8 @@ const de: typeof en = {
     "Beschränken Sie Ihre Daten nie. TidyFlow verbindet sich mit den Cloud-Tools Ihrer Reinigungsoperationen.",
   featuresIntegMaps: "Google Maps Plattform",
   featuresIntegMapsDesc: "Objektgrenzen-Geofencing zur Prüfung von Stempelung und Vor-Ort-Status während des Auftrags.",
-  featuresIntegStripe: "Stripe-Abrechnungsportal",
-  featuresIntegStripeDesc: "Verwaltet sichere Zahlungsmethoden und wiederkehrende SaaS-Abonnements.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Synchronisieren Sie Kundenrechnungen mit QuickBooks — Buchhaltung bleibt an Feldarbeit gekoppelt.",
 };
 
 const pl: typeof en = {
@@ -418,8 +418,8 @@ const pl: typeof en = {
   integPageFormatTitle: "Wymagany format arkusza",
   integPageFormatDesc:
     "Utwórz arkusz Google z dwoma kartami: Nieruchomości (adres, ID, stawki) i Zadania (daty, przypisania, statusy). Udostępnij uprawnienia edycji naszemu bezpiecznemu kontu usługi.",
-  integPageStripeTitle: "Subskrypcje Stripe",
-  integPageStripeDesc: "Automatyzuj miesięczne opłaty planu bazowego i bezpiecznie śledź dodatki nieruchomości.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Wysyłaj faktury klientów z ukończonych sprzątań do QuickBooks Online bez ponownego wpisywania.",
   integPageMapsTitle: "Geofence Google Maps",
   integPageMapsDesc: "Automatycznie weryfikuje czasy przyjazdu sprzątaczy za pomocą ścisłych blokad współrzędnych.",
   integPageTimerDesc: "Licznik czasu pracy z GPS, przerwami i zgłoszeniem zadania — w pełni offline w terenie.",
@@ -435,8 +435,8 @@ const pl: typeof en = {
     "Nigdy nie ograniczaj swoich danych. TidyFlow łączy się z podstawowymi narzędziami chmurowymi operacji sprzątania.",
   featuresIntegMaps: "Platforma Google Maps",
   featuresIntegMapsDesc: "Geofencing granicy obiektu do weryfikacji obecności i statusu na miejscu podczas zlecenia.",
-  featuresIntegStripe: "Portal rozliczeń Stripe",
-  featuresIntegStripeDesc: "Zarządza bezpiecznymi metodami płatności i cyklicznymi subskrypcjami SaaS.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Synchronizuj faktury klientów z QuickBooks, aby księgowość odpowiadała pracy w terenie.",
 };
 
 const no: typeof en = {
@@ -473,8 +473,8 @@ const no: typeof en = {
   integPageFormatTitle: "Påkrevd regnearkformat",
   integPageFormatDesc:
     "Opprett et Google-ark med to faner: Eiendommer (adresse, ID, priser) og Oppgaver (datoer, tildelinger, statuser). Del redigeringstilgang med vår sikre tjenestekonto.",
-  integPageStripeTitle: "Stripe-abonnementer",
-  integPageStripeDesc: "Automatiser månedlige basisplanavgifter og spor eiendomstillegg sikkert.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Send kundeinvoices fra ferdige renholdsjobber til QuickBooks Online uten dobbeltarbeid.",
   integPageMapsTitle: "Google Maps geogjerder",
   integPageMapsDesc: "Verifiserer automatisk ankomsttider med strenge geofence-koordinatlåser.",
   integPageTimerDesc: "GPS-arbeidstimer med pauser og jobbinnsending — fungerer fullt offline i felt.",
@@ -490,8 +490,8 @@ const no: typeof en = {
     "Begrens aldri dataene dine. TidyFlow kobler til grunnleggende skyt verktøy rengjøringsoperasjonen din allerede bruker.",
   featuresIntegMaps: "Google Maps-plattform",
   featuresIntegMapsDesc: "Eiendomsgrense-geofencing for å verifisere stempling og status på stedet under jobben.",
-  featuresIntegStripe: "Stripe-faktureringsportal",
-  featuresIntegStripeDesc: "Administrerer sikre betalingsmetoder og gjentakende SaaS-abonnementer.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Synkroniser kundeinvoices med QuickBooks slik at regnskap matcher feltarbeid.",
 };
 
 const sv: typeof en = {
@@ -528,8 +528,8 @@ const sv: typeof en = {
   integPageFormatTitle: "Obligatoriskt kalkylbladsformat",
   integPageFormatDesc:
     "Skapa ett Google-ark med två flikar: Fastigheter (adress, ID, priser) och Uppgifter (datum, tilldelningar, statusar). Dela redigeringsbehörighet med vårt säkra tjänstkonto.",
-  integPageStripeTitle: "Stripe-prenumerationer",
-  integPageStripeDesc: "Automatisera månatliga basplanavgifter och spåra fastighetstillägg säkert.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Skicka kundfakturor från slutförda städjobb till QuickBooks Online utan omskrivning.",
   integPageMapsTitle: "Google Maps geostaket",
   integPageMapsDesc: "Verifierar automatiskt ankomsttider med strikta geofence-koordinatlås.",
   integPageTimerDesc: "GPS-arbetstimer med raster och jobbinlämning — fungerar helt offline i fält.",
@@ -545,8 +545,8 @@ const sv: typeof en = {
     "Begränsa aldrig din data. TidyFlow ansluter till grundläggande molnverktyg som din städverksamhet redan använder.",
   featuresIntegMaps: "Google Maps-plattform",
   featuresIntegMapsDesc: "Fastighetsgräns-geofencing för att verifiera stämpling och status på plats under jobbet.",
-  featuresIntegStripe: "Stripe-faktureringsportal",
-  featuresIntegStripeDesc: "Hanterar säkra betalningsmetoder och återkommande SaaS-prenumerationer.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Synka kundfakturor till QuickBooks så bokföringen hänger ihop med fältarbetet.",
 };
 
 const it: typeof en = {
@@ -583,8 +583,8 @@ const it: typeof en = {
   integPageFormatTitle: "Formato foglio richiesto",
   integPageFormatDesc:
     "Crea un foglio Google con due schede: Proprietà (indirizzo, ID, tariffe) e Attività (date, assegnazioni, stati). Condividi i permessi di modifica con il nostro account di servizio sicuro.",
-  integPageStripeTitle: "Abbonamenti Stripe",
-  integPageStripeDesc: "Automatizza gli addebiti mensili del piano base e traccia gli add-on proprietà in sicurezza.",
+  integPageQboTitle: "QuickBooks Online",
+  integPageQboDesc: "Invia fatture clienti dai lavori di pulizia completati a QuickBooks Online senza reinserire i dati.",
   integPageMapsTitle: "Geofence Google Maps",
   integPageMapsDesc: "Verifica automaticamente gli orari di arrivo con blocchi di coordinate geofence rigorosi.",
   integPageTimerDesc: "Timer di lavoro con GPS, pause e invio attività — completamente offline sul campo.",
@@ -600,8 +600,8 @@ const it: typeof en = {
     "Non limitare mai i tuoi dati. TidyFlow si connette agli strumenti cloud fondamentali delle tue operazioni di pulizia.",
   featuresIntegMaps: "Piattaforma Google Maps",
   featuresIntegMapsDesc: "Geofencing del perimetro proprietà per verificare timbratura e stato in sede durante il lavoro.",
-  featuresIntegStripe: "Portale fatturazione Stripe",
-  featuresIntegStripeDesc: "Gestisce metodi di pagamento sicuri e abbonamenti SaaS ricorrenti.",
+  featuresIntegQbo: "QuickBooks Online",
+  featuresIntegQboDesc: "Sincronizza le fatture clienti con QuickBooks per allineare contabilità e lavoro sul campo.",
 };
 
 export const sheetTranslations: Record<string, typeof en> = {

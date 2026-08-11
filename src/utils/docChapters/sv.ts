@@ -9,7 +9,7 @@ export const svChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Komma igång",
     category: "Overview",
-    content: "För att starta verksamheten kan företagsadministratörer registrera sig i TidyFlow-portalen och etablera sin företagsregistrering. Vid första installationen upplever anställda en interaktiv onboarding-tur som förklarar huvudmodulerna. När den är aktiverad vägleds ägare att sätta upp säkra betalningsprofiler via Stripe. Därifrån kan ägare bjuda in personal genom att gå till 'Användare' i sidomenyn, mata in anställdas namn, e-post och rollkategorier (Chefer eller Städare) för att skicka inloggningsuppgifter omedelbart."
+    content: "För att starta verksamheten kan företagsadministratörer registrera sig i TidyFlow-portalen och etablera sin företagsregistrering. Vid första installationen upplever anställda en interaktiv onboarding-tur som förklarar huvudmodulerna. När den är aktiverad vägleds ägare att sätta upp säkra betalningsprofiler securely online. Därifrån kan ägare bjuda in personal genom att gå till 'Användare' i sidomenyn, mata in anställdas namn, e-post och rollkategorier (Chefer eller Städare) för att skicka inloggningsuppgifter omedelbart."
   },
   "ch-3": {
     title: "Förstå din roll",
@@ -49,7 +49,7 @@ export const svChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Guide för ägare",
     category: "Role Guides",
-    content: "Ägare har maximal auktoritet över företagskonton. Vid inloggning får de tillgång till faktureringsinställningar, hanterar Stripe-prenumerationer, anpassar företagets visuella identitet (logotype, bankdetaljer, fakturarubriker) och granskar fleranvändarloggar. Ägare har också tillgång till detaljerade analytiska rapporter som övervakar intäkter, aktiva teamplatser och AI-genererade operativa insikter."
+    content: "Ägare har maximal auktoritet över företagskonton. Vid inloggning får de tillgång till faktureringsinställningar, hanterar-prenumerationer, anpassar företagets visuella identitet (logotype, bankdetaljer, fakturarubriker) och granskar fleranvändarloggar. Ägare har också tillgång till detaljerade analytiska rapporter som övervakar intäkter, aktiva teamplatser och AI-genererade operativa insikter."
   },
   "ch-11": {
     title: "Schema och planering",

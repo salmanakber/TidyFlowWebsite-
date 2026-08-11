@@ -93,14 +93,14 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
     whoFor: {
       heading: "Who the Integrations hub is for",
       paragraphs: [
-        "Owners and company admins who need one screen to confirm Google Sheets, QuickBooks, and Stripe are healthy — without hunting through nested settings.",
+        "Owners and company admins who need one screen to confirm Google Sheets, QuickBooks, and Maps are healthy — without hunting through nested settings.",
         "Ops leads who reconnect a sheet or OAuth session after a password change or expired token.",
       ],
     },
     howItWorks: {
       heading: "What you see in the hub",
       paragraphs: [
-        "The hub lists each connection with status, recent sync activity, and shortcuts to fix or reconnect. Google Sheets two-way sync, QuickBooks invoice automation, and Stripe subscription billing all surface here.",
+        "The hub lists each connection with status, recent sync activity, and shortcuts to fix or reconnect. Google Sheets two-way sync and QuickBooks invoice automation surface here.",
         "Unlike the marketing Integrations overview page (which explains what TidyFlow connects to), the in-app hub is the live control panel for your company’s linked accounts.",
       ],
     },
@@ -118,7 +118,7 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
       },
       {
         q: "Which connections appear?",
-        a: "Google Sheets, QuickBooks Online, and Stripe billing status, plus related sync activity.",
+        a: "Google Sheets and QuickBooks Online, plus related sync activity.",
       },
     ],
   },
@@ -133,8 +133,8 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
     howItWorks: {
       heading: "How billing works in the app",
       paragraphs: [
-        "Open Billing to see your current plan, next bill date, usage summary, and history. Upgrades apply immediately; downgrades can be scheduled for the next Stripe period so you are not surprised mid-cycle.",
-        "Cancel a free trial anytime with no charge. Cancel a paid plan at period end through Stripe’s hosted flow. Email and in-app alerts cover payments, trial endings, and renewals.",
+        "Open Billing to see your current plan, next bill date, usage summary, and history. Upgrades apply immediately; downgrades can be scheduled for the next billing period so you are not surprised mid-cycle.",
+        "Cancel a free trial anytime with no charge. Cancel a paid plan at period end from the Billing screen. Email and in-app alerts cover payments, trial endings, and renewals.",
       ],
     },
     whyItMatters: {
@@ -150,8 +150,8 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
         a: "In the app Billing screen, or start from tidyflowapp.com/pricing which deep-links into subscribe flows.",
       },
       {
-        q: "Is billing handled by Stripe?",
-        a: "Yes. TidyFlow uses Stripe for subscription payments, invoices, and cancellations.",
+        q: "How do I pay for TidyFlow?",
+        a: "Pay securely online from Billing — change plan, start a trial, or cancel without emailing support.",
       },
     ],
   },
@@ -166,7 +166,7 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
     howItWorks: {
       heading: "How usage meters work",
       paragraphs: [
-        "TidyFlow shows live usage against fixed caps (properties, cleaners, managers) and monthly quotas (AI operations, invoices, photo AI, PDFs). Quotas reset each Stripe billing cycle.",
+        "TidyFlow shows live usage against fixed caps (properties, cleaners, managers) and monthly quotas (AI operations, invoices, photo AI, PDFs). Quotas reset each billing cycle.",
         "In-app warnings appear as you approach limits so you can upgrade before a blocked action hits a busy Friday payroll run.",
       ],
     },
@@ -180,7 +180,7 @@ export const FEATURE_PAGE_EXTRA: Record<NewFeatureSlug, FeaturePageExtra> = {
     faqs: [
       {
         q: "Do AI limits reset monthly?",
-        a: "Yes. Monthly quotas reset with each Stripe billing cycle.",
+        a: "Yes. Monthly quotas reset with each billing cycle.",
       },
       {
         q: "What happens at a hard cap?",

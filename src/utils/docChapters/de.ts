@@ -9,7 +9,7 @@ export const deChapters: Record<string, ChapterTranslation> = {
   "ch-2": {
     title: "Erste Schritte",
     category: "Overview",
-    content: "Um den Betrieb aufzunehmen, können sich Unternehmensadministratoren für ein TidyFlow-Portal anmelden und dabei ihren Geschäftsdatensatz einrichten. Bei der ersten Installation durchlaufen Mitarbeiter eine interaktive Feature-Einführungstour, die die Hauptmodule erklärt. Nach der Aktivierung werden Inhaber durch die Einrichtung sicherer Zahlungsprofile über Stripe geleitet. Von dort aus können Inhaber Mitarbeiter einladen, indem sie über die Seitenleiste auf 'Benutzer' zugreifen, Namen, E-Mails und Rollenkategorien der Mitarbeiter (Manager oder Reinigungskräfte) eingeben, um Login-Daten sofort zu versenden."
+    content: "Um den Betrieb aufzunehmen, können sich Unternehmensadministratoren für ein TidyFlow-Portal anmelden und dabei ihren Geschäftsdatensatz einrichten. Bei der ersten Installation durchlaufen Mitarbeiter eine interaktive Feature-Einführungstour, die die Hauptmodule erklärt. Nach der Aktivierung werden Inhaber durch die Einrichtung sicherer Zahlungsprofile über geleitet. Von dort aus können Inhaber Mitarbeiter einladen, indem sie über die Seitenleiste auf 'Benutzer' zugreifen, Namen, E-Mails und Rollenkategorien der Mitarbeiter (Manager oder Reinigungskräfte) eingeben, um Login-Daten sofort zu versenden."
   },
   "ch-3": {
     title: "Ihre Rolle verstehen",
@@ -49,7 +49,7 @@ export const deChapters: Record<string, ChapterTranslation> = {
   "ch-10": {
     title: "Leitfaden für Inhaber",
     category: "Role Guides",
-    content: "Inhaber haben Hauptautorität über Geschäftskonten. Bei der Anmeldung greifen Inhaber auf Abrechnungskonfigurationen zu, verwalten aktive Stripe-Abonnements, passen Unternehmens-Branding-Layouts an (Logo-Einbettungen, Bankdetails und Beleg-Header) und auditieren Multi-User-Protokolle. Inhaber können auch auf Analyse-Interfaces zugreifen, die unternehmensweite Einnahmen, aktive Roster-Plätze und KI-gestützte betriebliche Einsichten verfolgen."
+    content: "Inhaber haben Hauptautorität über Geschäftskonten. Bei der Anmeldung greifen Inhaber auf Abrechnungskonfigurationen zu, verwalten aktive TidyFlow-Abonnements, passen Unternehmens-Branding-Layouts an (Logo-Einbettungen, Bankdetails und Beleg-Header) und auditieren Multi-User-Protokolle. Inhaber können auch auf Analyse-Interfaces zugreifen, die unternehmensweite Einnahmen, aktive Roster-Plätze und KI-gestützte betriebliche Einsichten verfolgen."
   },
   "ch-11": {
     title: "Dienstplan und Einsatzplanung",
