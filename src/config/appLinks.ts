@@ -5,7 +5,9 @@ export const ANDROID_APP_URL =
   process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
   "https://play.google.com/store/apps/details?id=com.tidyflow.app";
 
-/** App subscription checkout (marketing Pricing page CTAs) */
+/** Customer billing / account login (not the admin console) */
+export const LOGIN_URL =
+  process.env.NEXT_PUBLIC_LOGIN_URL || "https://app.tidyflowapp.com/account/login";
 export const SUBSCRIBE_BASE_URL =
   process.env.NEXT_PUBLIC_SUBSCRIBE_URL || "https://app.tidyflowapp.com/subscribe";
 

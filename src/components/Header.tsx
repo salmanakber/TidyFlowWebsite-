@@ -4,8 +4,9 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Logo from "./Logo";
-import { Menu, X, BookOpen, ChevronRight, ChevronDown, Check, Sun, Moon, Monitor } from "lucide-react";
+import { Menu, X, BookOpen, ChevronRight, ChevronDown, Check, Sun, Moon, Monitor, LogIn } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
+import { LOGIN_URL } from "../config/appLinks";
 import { pathForPage } from "../utils/seo";
 
 export const SUPPORTED_LANGUAGES = [
@@ -107,6 +108,10 @@ export default function Header({
     userGuide: {
       en: "Guide", pt: "Guia", es: "Guía", ar: "الدليل", cn: "指南",
       fr: "Guide", de: "Handbuch", pl: "Przewodnik", no: "Guide", sv: "Guide", it: "Guida",
+    },
+    login: {
+      en: "Log in", pt: "Entrar", es: "Iniciar sesión", ar: "تسجيل الدخول", cn: "登录",
+      fr: "Connexion", de: "Anmelden", pl: "Zaloguj się", no: "Logg inn", sv: "Logga in", it: "Accedi",
     },
     getStarted: {
       en: "Get Started", pt: "Iniciar", es: "Comenzar", ar: "ابدأ", cn: "开始",
@@ -323,6 +328,14 @@ export default function Header({
               <span className="hidden xl:inline">{t("userGuide")}</span>
             </button>
 
+            <a
+              href={LOGIN_URL}
+              className="h-8 text-[11px] font-semibold px-2.5 rounded-md flex items-center gap-1.5 border border-slate-700/80 bg-slate-800/40 text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all whitespace-nowrap"
+            >
+              <LogIn size={12} />
+              {t("login")}
+            </a>
+
             <button
               type="button"
               onClick={() => handleNavClick("contact")}
@@ -372,6 +385,15 @@ export default function Header({
             >
               <BookOpen size={14} />
             </button>
+
+            <a
+              href={LOGIN_URL}
+              className="h-8 inline-flex items-center justify-center gap-1 rounded-md border border-slate-700/80 bg-slate-800/50 text-slate-200 hover:bg-slate-800 hover:text-white transition-colors px-2 sm:px-2.5"
+              aria-label={t("login")}
+            >
+              <LogIn size={14} />
+              <span className="hidden md:inline text-[11px] font-semibold whitespace-nowrap">{t("login")}</span>
+            </a>
 
             <button
               type="button"
@@ -440,6 +462,13 @@ export default function Header({
           </div>
 
           <div className="border-t border-slate-800 pt-3 flex flex-col gap-2">
+            <a
+              href={LOGIN_URL}
+              className="w-full py-2.5 px-3 text-xs font-bold rounded-md flex items-center justify-center gap-1.5 border border-slate-700 bg-slate-800 text-slate-200"
+            >
+              <LogIn size={13} />
+              {t("login")}
+            </a>
             <button
               type="button"
               onClick={handleDocClick}
