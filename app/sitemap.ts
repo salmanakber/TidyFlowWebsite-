@@ -1,45 +1,54 @@
 /**
- * Dynamic sitemap — clean canonical URLs only (no ?lang= variants).
- * Language is handled client-side / via cookie after middleware redirect.
+ * Sitemap includes language variants (?lang=) for marketing pages so
+ * each locale can rank. Blog articles stay English canonical URLs.
  */
 
 import type { MetadataRoute } from "next";
 import { NEW_FEATURE_SLUGS } from "@/src/content/newFeatures";
 import { getAllPosts } from "@/src/content/blogPosts";
-import { SITE_URL } from "@/src/utils/seo";
+import { SEO_LANGUAGE_CODES, localizedUrl } from "@/src/utils/seo";
 
 function entry(
   path: string,
+  lang: string,
   priority: number,
   changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"]
 ): MetadataRoute.Sitemap[number] {
   return {
-    url: path === "/" ? SITE_URL : `${SITE_URL}${path}`,
+    url: localizedUrl(path, lang),
     lastModified: new Date(),
     changeFrequency,
-    priority,
+    priority: lang === "en" ? priority : Math.max(0.4, priority - 0.15),
   };
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const core: MetadataRoute.Sitemap = [
-    entry("/", 1.0, "weekly"),
-    entry("/features", 0.9, "monthly"),
-    entry("/whats-new", 0.9, "weekly"),
-    ...NEW_FEATURE_SLUGS.map((slug) => entry(`/whats-new/${slug}`, 0.8, "monthly")),
-    entry("/pricing", 0.9, "weekly"),
-    entry("/integrations", 0.8, "monthly"),
-    entry("/how-it-works", 0.8, "monthly"),
-    entry("/personas", 0.7, "monthly"),
-    entry("/contact", 0.8, "monthly"),
-    entry("/documentation", 0.9, "weekly"),
-    entry("/careers", 0.7, "weekly"),
-    entry("/blog", 0.8, "weekly"),
+  const corePaths: { path: string; priority: number; freq: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
+    { path: "/", priority: 1.0, freq: "weekly" },
+    { path: "/features", priority: 0.9, freq: "monthly" },
+    { path: "/whats-new", priority: 0.9, freq: "weekly" },
+    ...NEW_FEATURE_SLUGS.map((slug) => ({
+      path: `/whats-new/${slug}`,
+      priority: 0.8,
+      freq: "monthly" as const,
+    })),
+    { path: "/pricing", priority: 0.9, freq: "weekly" },
+    { path: "/integrations", priority: 0.8, freq: "monthly" },
+    { path: "/how-it-works", priority: 0.8, freq: "monthly" },
+    { path: "/personas", priority: 0.7, freq: "monthly" },
+    { path: "/contact", priority: 0.8, freq: "monthly" },
+    { path: "/documentation", priority: 0.9, freq: "weekly" },
+    { path: "/careers", priority: 0.7, freq: "weekly" },
+    { path: "/blog", priority: 0.8, freq: "weekly" },
   ];
 
-  const posts: MetadataRoute.Sitemap = getAllPosts().map((post) =>
-    entry(`/blog/${post.slug}`, 0.7, "monthly")
+  const localized: MetadataRoute.Sitemap = corePaths.flatMap(({ path, priority, freq }) =>
+    SEO_LANGUAGE_CODES.map((lang) => entry(path, lang, priority, freq))
   );
 
-  return [...core, ...posts];
+  const posts: MetadataRoute.Sitemap = getAllPosts().map((post) =>
+    entry(`/blog/${post.slug}`, "en", 0.7, "monthly")
+  );
+
+  return [...localized, ...posts];
 }

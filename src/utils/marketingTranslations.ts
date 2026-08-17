@@ -3,6 +3,7 @@
 import { marketingLocaleOverrides } from "./marketingLocaleOverrides";
 import { marketingPageLocales } from "./marketingPageLocales";
 import { marketingPageLocalesExtended } from "./marketingPageLocalesExtended";
+import { homeStripI18n } from "../content/homeStripI18n";
 
 export const marketingTranslations: Record<string, any> = {
   en: {
@@ -3132,6 +3133,13 @@ const careersI18n: Record<string, Record<string, string>> = {
 };
 
 Object.entries(careersI18n).forEach(([lang, dict]) => {
+  marketingTranslations[lang] = {
+    ...(marketingTranslations[lang] || marketingTranslations.en),
+    ...dict,
+  };
+});
+
+Object.entries(homeStripI18n).forEach(([lang, dict]) => {
   marketingTranslations[lang] = {
     ...(marketingTranslations[lang] || marketingTranslations.en),
     ...dict,

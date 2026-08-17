@@ -74,7 +74,7 @@ export default function Header({
   const translations: Record<string, Record<string, string>> = {
     home: {
       en: "Home", pt: "Início", es: "Inicio", ar: "الرئيسية", cn: "首页",
-      fr: "Accueil", de: "Startseite", pl: "Główna", no: "Hjem", sv: "Hem", it: "Home",
+      fr: "Accueil", de: "Startseite", pl: "Główna", no: "Hjem", sv: "Hem", it: "Inizio",
     },
     features: {
       en: "Features", pt: "Funcionalidades", es: "Características", ar: "الميزات", cn: "功能特点",

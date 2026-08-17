@@ -1,27 +1,30 @@
 import type { Metadata, Viewport } from "next";
+import { cookies, headers } from "next/headers";
 import SiteChrome from "@/src/components/SiteChrome";
 import { SiteProvider } from "@/src/context/SiteContext";
 import SiteJsonLd from "@/src/components/SiteJsonLd";
-import { buildPageMetadata } from "@/src/utils/seo";
+import { buildPageMetadata, getHtmlLang, resolveSeoLanguage } from "@/src/utils/seo";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  ...buildPageMetadata("home", "en", { includeSiteVerification: true }),
-  icons: {
-    icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    shortcut: "/logo.png",
-  },
-  manifest: "/manifest.json",
-  appleWebApp: {
-    capable: true,
-    title: "TidyFlow",
-    statusBarStyle: "black-translucent",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    ...buildPageMetadata("home", "en", { includeSiteVerification: true }),
+    icons: {
+      icon: [
+        { url: "/logo.png", type: "image/png" },
+        { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+      shortcut: "/logo.png",
+    },
+    manifest: "/manifest.json",
+    appleWebApp: {
+      capable: true,
+      title: "TidyFlow",
+      statusBarStyle: "black-translucent",
+    },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: [
@@ -33,12 +36,18 @@ export const viewport: Viewport = {
   maximumScale: 5,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headerStore = await headers();
+  const cookieStore = await cookies();
+  const language = resolveSeoLanguage(
+    headerStore.get("x-tidyflow-lang") || cookieStore.get("tidyflow_language")?.value
+  );
+
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
+    <html lang={getHtmlLang(language)} suppressHydrationWarning>
+      <body className="min-h-screen antialiased">
         <SiteJsonLd />
-        <SiteProvider>
+        <SiteProvider initialLanguage={language}>
           <SiteChrome>{children}</SiteChrome>
         </SiteProvider>
       </body>

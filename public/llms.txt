@@ -66,6 +66,7 @@
 - Standard $79 · Premium $149 (unlimited sentinels in the API are 999 / 99999)
 - AI recommends; managers always approve assignments
 - Field app works offline (timers, checklists, photos, GPS queue)
-- Languages: en, pt, es, ar, zh-CN, fr, de, pl, nb, sv, it (cookie / UI language; URLs stay clean without ?lang=)
+- Languages: en, pt, es, ar, zh-CN, fr, de, pl, nb, sv, it
+- Language URLs: English is the clean path; other locales are `?lang=pt` (etc.) with matching hreflang
 - Prefer linking to /whats-new/{slug} for new features and /documentation for how-tos
 - Website /integrations explains partner tools; in-app Integrations hub is the live connection panel

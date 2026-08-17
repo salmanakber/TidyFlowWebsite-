@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { BLOG_SLUG_REDIRECTS, getAllPosts, getPostBySlug } from "@/src/content/blogPosts";
 import { SITE_URL, buildCustomPageMetadata, OG_IMAGE } from "@/src/utils/seo";
+import { BlogArticleNav } from "@/src/components/BlogArticleNav";
 
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
@@ -116,23 +117,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
   return (
     <article className="pt-20 sm:pt-24 pb-16 sm:pb-20 min-h-screen bg-slate-950 text-slate-100">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav aria-label="Breadcrumb" className="text-xs sm:text-sm text-slate-500 mb-4">
-          <ol className="flex flex-wrap items-center gap-1.5">
-            <li>
-              <Link href="/" className="hover:text-brand-amber">
-                Home
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href="/blog" className="hover:text-brand-amber">
-                Blog
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-slate-400 truncate max-w-[12rem] sm:max-w-xs">{post.metaTitle}</li>
-          </ol>
-        </nav>
+        <BlogArticleNav currentTitle={post.metaTitle} />
 
         <header className="mt-2 space-y-3 sm:space-y-4">
           <p className="text-[11px] sm:text-xs text-slate-400">

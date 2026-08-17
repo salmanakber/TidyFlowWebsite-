@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
 import CareersPage from "@/src/components/CareersPage";
-import { buildCustomPageMetadata } from "@/src/utils/seo";
+import { buildCustomPageMetadata, getExtraPageSeo, resolveSeoLanguage } from "@/src/utils/seo";
 
-export const metadata: Metadata = buildCustomPageMetadata({
-  title: "Careers at TidyFlow",
-  description:
-    "Remote-first roles in operations, customer success, sales, and engineering. Apply with your desired pay — help cleaning companies run better with TidyFlow.",
-  keywords:
-    "tidyflow careers, cleaning software jobs, remote saas jobs, operations manager careers, customer success jobs, desired salary application",
-  canonicalPath: "/careers",
-  language: "en",
-});
+type CareersProps = {
+  searchParams: Promise<{ lang?: string }>;
+};
+
+export async function generateMetadata({ searchParams }: CareersProps): Promise<Metadata> {
+  const { lang } = await searchParams;
+  const language = resolveSeoLanguage(lang);
+  const extra = getExtraPageSeo("careers", language);
+  return buildCustomPageMetadata({
+    ...extra,
+    canonicalPath: "/careers",
+    language,
+  });
+}
 
 export default function CareersRoute() {
   return <CareersPage />;

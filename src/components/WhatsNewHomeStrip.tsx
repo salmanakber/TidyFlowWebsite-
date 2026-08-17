@@ -55,9 +55,8 @@ export function WhatsNewHomeStrip({ language }: { language: string }) {
             >
               {ui.stripTitle}
             </h2>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-              Task chat, QuickBooks invoices, offline GPS, and self-serve billing — the newest tools
-              cleaning companies use to replace WhatsApp chaos and spreadsheet dispatch.
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+              {ui.indexSubtitle}
             </p>
           </div>
           <Link

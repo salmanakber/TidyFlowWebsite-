@@ -1,13 +1,8 @@
 import { SOCIAL_SAME_AS } from "../config/appLinks";
+import { extraPageSeo, ogImageAlt, seoLocales } from "./seoLocales";
+import type { SeoMeta, SeoPage } from "./seoTypes";
 
-export type SeoPage = "home" | "documentation" | "features" | "pricing" | "integrations" | "contact" | "personas" | "how-it-works";
-
-export interface SeoMeta {
-  title: string;
-  description: string;
-  keywords: string;
-  canonicalPath: string;
-}
+export type { SeoMeta, SeoPage } from "./seoTypes";
 
 const SITE_URL = "https://tidyflowapp.com";
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
@@ -15,585 +10,7 @@ const OG_IMAGE = `${SITE_URL}/og-image.png`;
 /** Google Search Console HTML tag verification token */
 export const GOOGLE_SITE_VERIFICATION = "XkJtk16LIKzsYV3q7_pAVbgnD8nTbHt6mzeaXGbbWRQ";
 
-const en: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "Cleaning Company Software | TidyFlow",
-    description:
-      "Janitorial management software with offline cleaner app, GPS clock-in, Google Sheets sync, QuickBooks invoices, payroll, and photo proof. Free 14-day trial. Plans from $25/mo.",
-    keywords:
-      "cleaning company software, janitorial management software, commercial cleaning software, cleaning business software, maid service software, house cleaning software, office cleaning software, contract cleaning software, facility cleaning software, janitorial time tracking, cleaning dispatch software, cleaning quality control software, cleaner timesheet app, night janitorial software, building services software, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, QuickBooks cleaning invoices, field service cleaning app, proof of cleaning software, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "TidyFlow User Guide | Cleaning Software Docs",
-    description:
-      "How to run TidyFlow: Google Sheets sync, offline cleaner app, GPS clock-ins, task chat, QuickBooks invoices, payroll, rota, and Revenue AI — 11 languages.",
-    keywords:
-      "cleaning software user guide, janitorial app tutorial, Google Sheets cleaning sync, QuickBooks cleaning setup, offline cleaner app guide, TidyFlow documentation",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Cleaning Software Features | Scheduling, GPS, Payroll",
-    description:
-      "Explore cleaning ops features: rota scheduling, offline timers, GPS geofencing, photo proof, AI dispatch, payroll, QuickBooks, and Sheets sync.",
-    keywords:
-      "cleaning software features, janitorial scheduling software, cleaner GPS tracking app, cleaning payroll software, rota builder cleaning, offline field service app, AI dispatch cleaning",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Cleaning Software Pricing | TidyFlow Plans",
-    description:
-      "Simple Startup ($25), Standard ($79), and Premium ($149) plans for cleaning companies. Transparent limits, self-serve billing, and a 14-day free trial.",
-    keywords:
-      "cleaning software pricing, janitorial software cost, cleaning business software plans, commercial cleaning software price, maid service software pricing, TidyFlow pricing, cleaning software $25",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Cleaning Software Integrations | Sheets & QuickBooks",
-    description:
-      "Connect Google Sheets two-way sync, QuickBooks Online invoices, and Google Maps geofencing for cleaning companies.",
-    keywords:
-      "Google Sheets cleaning software, QuickBooks Online cleaning invoices, cleaning software integrations, Maps geofencing cleaners, janitorial accounting sync",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Book a Cleaning Software Demo | TidyFlow",
-    description:
-      "See TidyFlow on your sites — offline app, GPS proof, Sheets sync, and payroll. Book a live demo or start a 14-day free trial.",
-    keywords:
-      "cleaning software demo, janitorial software trial, book cleaning software demo, TidyFlow contact",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "Cleaning Software for Owners, Managers & Cleaners",
-    description:
-      "Role-based workflows for cleaning company owners, operations managers, field cleaners, and facility clients.",
-    keywords:
-      "cleaning company owner software, cleaning manager dashboard, cleaner mobile app, facilities cleaning client portal",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "How Cleaning Ops Software Works | TidyFlow",
-    description:
-      "Sync your Google Sheet, dispatch jobs, track hours offline with GPS, approve payroll, and invoice clients in one cleaning operations pipeline.",
-    keywords:
-      "how cleaning software works, cleaning operations workflow, field to office cleaning sync, commercial cleaning process software",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const pt: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Software de Operações de Limpeza | App Offline, GPS e Google Sheets",
-    description:
-      "Software completo para empresas de limpeza: app offline iOS/Android, geofencing GPS, sync Google Sheets, QuickBooks, chat por tarefa, IA e folha de pagamento. Teste grátis 14 dias.",
-    keywords: "software limpeza, app offline limpeza, GPS faxineiros, Google Sheets limpeza, QuickBooks limpeza, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "Guia do Usuário TidyFlow — Documentação Interativa (11 idiomas)",
-    description: "Documentação oficial TidyFlow oficial TidyFlow com TidyBot: Sheets, QuickBooks, chat, app offline, GPS, folha e IA.",
-    keywords: "documentação TidyFlow, guia usuário limpeza, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Recursos TidyFlow — Agendamento, App Offline, GPS, Chat e IA",
-    description: "Explore agendamento, app de campo offline, GPS, chat por tarefa, QuickBooks, Revenue AI, folha e integrações para empresas de limpeza.",
-    keywords: "recursos software limpeza, app offline, GPS limpeza, chat tarefas",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Preços TidyFlow — Planos Startup, Standard e Premium",
-    description: "Preços transparentes por propriedades e faxineiros. Teste grátis de 14 dias, faturação e limites claros de uso.",
-    keywords: "preços software limpeza, planos TidyFlow, assinatura limpeza",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Integrações TidyFlow — Sheets, QuickBooks e Mapas",
-    description: "Ligue Google Sheets, QuickBooks Online e mapas geofence num único hub de integrações com saúde de sync.",
-    keywords: "integração Google Sheets limpeza, QuickBooks limpeza, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Agendar Demo TidyFlow — Teste Grátis 14 Dias",
-    description: "Marque uma demo ao vivo. Conte-nos sobre a equipa, planilhas e objetivos operacionais. Sem cartão de crédito.",
-    keywords: "demo TidyFlow, teste software limpeza, contacto vendas TidyFlow",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow para Proprietários, Gestores, Faxineiros e Clientes",
-    description: "Veja como o TidyFlow serve proprietários, gestores de operações, faxineiros de campo e clientes de facilities.",
-    keywords: "software limpeza proprietário, app gestor limpeza, app faxineiro offline",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Como o TidyFlow Funciona — Da Planilha ao Campo e à Folha",
-    description: "Sincronize a Google Sheet, despache tarefas, registe horas offline com GPS, aprove a folha e fatura clientes.",
-    keywords: "fluxo operações limpeza, pipeline campo escritório, sync limpeza",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const es: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Software de Operaciones de Limpieza | App Offline y GPS",
-    description: "Plataforma para empresas de limpieza: app offline iOS/Android, geofencing GPS, sync Google Sheets, QuickBooks, chat por tarea e IA. Prueba gratis 14 días.",
-    keywords: "software limpieza, app offline limpieza, GPS limpiadores, Google Sheets limpieza, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "Guía TidyFlow — Documentación Interactiva Oficial",
-    description: "Documentación oficial oficial con TidyBot: Sheets, QuickBooks, chat, app offline, GPS, nómina e IA en 11 idiomas.",
-    keywords: "documentación TidyFlow, guía limpieza, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Funciones TidyFlow — Programación, Offline, GPS, Chat e IA",
-    description: "Explora programación, app de campo offline, GPS, chat por tarea, QuickBooks, Revenue AI y nómina para limpieza.",
-    keywords: "funciones limpieza, app offline, GPS limpieza, chat tareas",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Precios TidyFlow — Planes Startup, Standard y Premium",
-    description: "Planes transparentes según propiedades y limpiadores. Prueba gratis 14 días y facturación mensual.",
-    keywords: "precios software limpieza, planes TidyFlow, suscripción limpieza",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Integraciones TidyFlow — Sheets, QuickBooks y Mapas",
-    description: "Conecta Google Sheets, QuickBooks Online y mapas geofence desde un hub de integraciones.",
-    keywords: "integración Google Sheets limpieza, QuickBooks limpieza, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Demo TidyFlow — Prueba Gratis 14 Días",
-    description: "Agenda una demo en vivo. Cuéntanos sobre tu equipo y flujo con hojas de cálculo. Sin tarjeta.",
-    keywords: "demo TidyFlow, prueba software limpieza",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow para Propietarios, Gerentes, Limpiadores y Clientes",
-    description: "Flujos a medida para dueños, gerentes de operaciones, limpiadores de campo y clientes de facilities.",
-    keywords: "software limpieza roles, app gerentes limpieza, app limpiadores offline",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Cómo Funciona TidyFlow — De la Hoja al Campo y la Nómina",
-    description: "Sincroniza tu Sheet, despacha trabajos, registra horas offline con GPS, aprueba nómina y factura clientes.",
-    keywords: "flujo limpieza, pipeline operaciones, sync limpieza",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const fr: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Logiciel d'opérations de nettoyage | App hors ligne & GPS",
-    description: "Plateforme pour entreprises de nettoyage : app hors ligne iOS/Android, géofencing GPS, sync Google Sheets, QuickBooks, chat par tâche et IA. Essai gratuit 14 jours.",
-    keywords: "logiciel nettoyage, app hors ligne, GPS agents, Google Sheets nettoyage, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "Guide TidyFlow — Documentation interactive officielle",
-    description: "Documentation officielle officielle avec TidyBot : Sheets, QuickBooks, chat, app offline, GPS, paie et IA.",
-    keywords: "documentation TidyFlow, guide nettoyage, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Fonctionnalités TidyFlow — Planning, Offline, GPS, Chat et IA",
-    description: "Planning, app terrain hors ligne, GPS, chat par tâche, QuickBooks, Revenue AI et paie pour le nettoyage.",
-    keywords: "fonctionnalités nettoyage, app offline, GPS nettoyage",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Tarifs TidyFlow — Forfaits Startup, Standard et Premium",
-    description: "Tarifs transparents selon propriétés et agents. Essai gratuit 14 jours, facturation mensale.",
-    keywords: "tarifs logiciel nettoyage, forfaits TidyFlow",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Intégrations TidyFlow — Sheets, QuickBooks, Maps et Cartes",
-    description: "Connectez Google Sheets, QuickBooks Online et cartes géofence depuis un hub d'intégrations.",
-    keywords: "intégration Google Sheets nettoyage, QuickBooks nettoyage, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Démo TidyFlow — Essai gratuit 14 jours",
-    description: "Planifiez une démo en direct. Parlez-nous de votre équipe et de vos tableurs. Sans carte bancaire.",
-    keywords: "démo TidyFlow, essai logiciel nettoyage",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow pour propriétaires, managers, agents et clients",
-    description: "Parcours adaptés aux propriétaires, managers ops, agents terrain et clients facilities.",
-    keywords: "logiciel nettoyage rôles, app managers, app agents offline",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Comment fonctionne TidyFlow — De la feuille au terrain et à la paie",
-    description: "Synchronisez votre Sheet, dispatchtez, suivez les heures offline avec GPS, approuvez la paie et facturez.",
-    keywords: "workflow nettoyage, pipeline opérations, sync nettoyage",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const de: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Reinigungs-Operations-Software | Offline-App & GPS",
-    description: "All-in-one für Reinigungsfirmen: Offline-App iOS/Android, GPS-Geofencing, Google-Sheets-Sync, QuickBooks, Aufgaben-Chat und KI. 14 Tage gratis testen.",
-    keywords: "Reinigungssoftware, Offline-App Reinigung, GPS Reinigungskräfte, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "TidyFlow Benutzerhandbuch — Interaktive Dokumentation",
-    description: "Offizielle Dokumentation mit TidyBot: Sheets, QuickBooks, Chat, Offline-App, GPS, Lohn und KI.",
-    keywords: "TidyFlow Dokumentation, Handbuch Reinigung, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "TidyFlow Funktionen — Planung, Offline, GPS, Chat & KI",
-    description: "Planung, Offline-Feldapp, GPS, Aufgaben-Chat, QuickBooks, Revenue AI und Lohn für Reinigungsteams.",
-    keywords: "Reinigungssoftware Funktionen, Offline-App, GPS Reinigung",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "TidyFlow Preise — Startup-, Standard- & Premium-Pläne",
-    description: "Transparente Preise nach Objekten und Kräften. 14-Tage-Test, monatliche Abrechnung.",
-    keywords: "Preise Reinigungssoftware, TidyFlow Pläne",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "TidyFlow Integrationen — Sheets, QuickBooks, Maps & Karten",
-    description: "Verbinden Sie Google Sheets, QuickBooks Online und Geofence-Karten in einem Integrations-Hub.",
-    keywords: "Google Sheets Integration Reinigung, QuickBooks Reinigung, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "TidyFlow Demo — 14 Tage kostenlos testen",
-    description: "Buchen Sie eine Live-Demo. Erzählen Sie uns von Teamgröße und Tabellen-Workflow. Keine Kreditkarte.",
-    keywords: "TidyFlow Demo, Reinigungssoftware testen",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow für Inhaber, Manager, Kräfte und Kunden",
-    description: "Rollenbasierte Workflows für Betriebsinhaber, Ops-Manager, Feldkräfte und Facility-Kunden.",
-    keywords: "Reinigungssoftware Rollen, Manager-Dashboard, Offline-App Kräfte",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "So funktioniert TidyFlow — Vom Sheet zum Feld zur Lohnabrechnung",
-    description: "Sheet synchronisieren, Jobs dispatchen, Offline-Stunden mit GPS erfassen, Lohn freigeben und Kunden fakturieren.",
-    keywords: "Reinigungs-Workflow, Operations-Pipeline, Sync Reinigung",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const pl: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Oprogramowanie operacyjne sprzątania | App offline i GPS",
-    description: "Kompleksowa platforma dla firm sprzątających: app offline iOS/Android, geofencing GPS, sync Google Sheets, QuickBooks, czat zadań i AI. 14 dni za darmo.",
-    keywords: "oprogramowanie sprzątanie, app offline, GPS sprzątanie, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "Przewodnik TidyFlow — Oficjalna dokumentacja interaktywna",
-    description: "Oficjalna dokumentacja z TidyBot: Sheets, QuickBooks, czat, app offline, GPS, płace i AI.",
-    keywords: "dokumentacja TidyFlow, przewodnik sprzątanie, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Funkcje TidyFlow — Grafik, Offline, GPS, Czat i AI",
-    description: "Grafik, app terenowa offline, GPS, czat zadań, QuickBooks, Revenue AI i płace dla firm sprzątających.",
-    keywords: "funkcje sprzątanie, app offline, GPS sprzątanie",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Cennik TidyFlow — Plany Startup, Standard i Premium",
-    description: "Przejrzyste plany według obiektów i pracowników. 14-dniowy trial, rozliczenie miesięczne.",
-    keywords: "cennik oprogramowanie sprzątanie, plany TidyFlow",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Integracje TidyFlow — Sheets, QuickBooks, Maps i Mapy",
-    description: "Połącz Google Sheets, QuickBooks Online i mapy geofence w jednym hubie integracji.",
-    keywords: "integracja Google Sheets sprzątanie, QuickBooks sprzątanie, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Demo TidyFlow — Bezpłatny okres próbny 14 dni",
-    description: "Umów live demo. Opowiedz o zespole i arkuszach. Bez karty kredytowej.",
-    keywords: "demo TidyFlow, trial oprogramowanie sprzątanie",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow dla właścicieli, menedżerów, pracowników i klientów",
-    description: "Role: właściciele firm, menedżerowie operacji, pracownicy terenowi i klienci facilities.",
-    keywords: "oprogramowanie sprzątanie role, panel menedżera, app offline",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Jak działa TidyFlow — Od arkusza przez pole do listy płac",
-    description: "Zsynchronizuj Sheet, rozdziel zadania, rejestruj godziny offline z GPS, zatwierdź płace i wystaw faktury.",
-    keywords: "workflow sprzątanie, pipeline operacje, sync sprzątanie",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const no: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Driftssprogramvare for rengjøring | Offline-app og GPS",
-    description: "Alt-i-ett for rengjøringsfirmaer: offline-app iOS/Android, GPS-geofencing, Google Sheets-sync, QuickBooks, oppgavechat og AI. 14 dagers gratis prøve.",
-    keywords: "rengjøringsprogramvare, offline-app, GPS renhold, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "TidyFlow brukerveiledning — Interaktiv dokumentasjon",
-    description: "Offisiell dokumentasjon med TidyBot: Sheets, QuickBooks, chat, offline-app, GPS, lønn og AI.",
-    keywords: "TidyFlow dokumentasjon, veiledning renhold, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "TidyFlow-funksjoner — Planlegging, Offline, GPS, Chat og AI",
-    description: "Planlegging, offline feltapp, GPS, oppgavechat, QuickBooks, Revenue AI og lønn for renholdsteam.",
-    keywords: "funksjoner rengjøring, offline-app, GPS renhold",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "TidyFlow-priser — Startup-, Standard- og Premium-planer",
-    description: "Transparente planer etter eiendommer og renholdere. 14 dagers prøve, månedlig fakturering.",
-    keywords: "priser rengjøringsprogramvare, TidyFlow planer",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "TidyFlow-integrasjoner — Sheets, QuickBooks, Maps og Kart",
-    description: "Koble Google Sheets, QuickBooks Online og geofence-kart i ett integrasjonshub.",
-    keywords: "integrasjon Google Sheets renhold, QuickBooks renhold, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "TidyFlow-demo — Gratis prøveperiode 14 dager",
-    description: "Bestill livedemo. Fortell oss om team og regneark. Ingen kredittkort.",
-    keywords: "demo TidyFlow, prøve rengjøringsprogramvare",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow for eiere, ledere, renholdere og kunder",
-    description: "Rollebaserte arbeidsflyter for bedriftseiere, driftsledere, feltrenholdere og facility-kunder.",
-    keywords: "rengjøring roller, lederpanel, offline-app renhold",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Slik fungerer TidyFlow — Fra regneark til felt til lønn",
-    description: "Synkroniser Sheet, dispatch jobber, spor timer offline med GPS, godkjenn lønn og fakturer kunder.",
-    keywords: "arbeidsflyt rengjøring, driftspipeline, sync renhold",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const sv: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Driftprogramvara för städföretag | Offline-app & GPS",
-    description: "Allt-i-ett för städföretag: offline-app iOS/Android, GPS-geofencing, Google Sheets-synk, QuickBooks, uppgiftschatt och AI. 14 dagars gratis provperiod.",
-    keywords: "städprogramvara, offline-app städ, GPS städare, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "TidyFlow användarhandbok — Interaktiv dokumentation",
-    description: "Officiell dokumentation med TidyBot: Sheets, QuickBooks, chatt, offline-app, GPS, lön och AI.",
-    keywords: "TidyFlow dokumentation, städhandbok, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "TidyFlow-funktioner — Schema, Offline, GPS, Chatt och AI",
-    description: "Schemaläggning, offline fältapp, GPS, uppgiftschatt, QuickBooks, Revenue AI och lön för städteam.",
-    keywords: "städfunktioner, offline-app, GPS städning",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "TidyFlow-priser — Startup-, Standard- och Premium-planer",
-    description: "Transparenta planer efter objekt och städare. 14 dagars provperiod, månedlig fakturering.",
-    keywords: "priser städprogramvara, TidyFlow planer",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "TidyFlow-integrationer — Sheets, QuickBooks, Maps och Kartor",
-    description: "Anslut Google Sheets, QuickBooks Online och geofence-kartor i ett integrationsnav.",
-    keywords: "integration Google Sheets städ, QuickBooks städ, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "TidyFlow-demo — Gratis 14-dagarsprov",
-    description: "Boka en livedemo. Berätta om team och kalkylblad. Inget kreditkort.",
-    keywords: "demo TidyFlow, prova städprogramvara",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow för ägare, chefer, städare och kunder",
-    description: "Arbetsflöden för företagsägare, driftschefer, fältstädare och facility-kunder.",
-    keywords: "städning roller, chefspanel, offline-app städare",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Så fungerar TidyFlow — Från kalkylblad till fält till lön",
-    description: "Synka Sheet, skicka jobb, spåra tid offline med GPS, godkänn lön och fakturera kunder.",
-    keywords: "arbetsflöde städning, driftspipeline, sync städ",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const it: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — Software operativo per imprese di pulizie | App offline e GPS",
-    description: "Piattaforma completa per imprese di pulizie: app offline iOS/Android, geofencing GPS, sync Google Sheets, QuickBooks, chat per task e IA. Prova gratis 14 giorni.",
-    keywords: "software pulizie, app offline pulizie, GPS addetti, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "Guida utente TidyFlow — Documentazione interattiva ufficiale",
-    description: "Documentazione ufficiale con TidyBot: Sheets, QuickBooks, chat, app offline, GPS, paghe e IA.",
-    keywords: "documentazione TidyFlow, guida pulizie, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "Funzionalità TidyFlow — Pianificazione, Offline, GPS, Chat e IA",
-    description: "Pianificazione, app campo offline, GPS, chat per task, QuickBooks, Revenue AI e paghe per team di pulizie.",
-    keywords: "funzionalità pulizie, app offline, GPS pulizie",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "Prezzi TidyFlow — Piani Startup, Standard e Premium",
-    description: "Piani trasparenti per immobili e operatori. Prova gratuita 14 giorni, fatturazione mensile.",
-    keywords: "prezzi software pulizie, piani TidyFlow",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "Integrazioni TidyFlow — Sheets, QuickBooks, Maps e Mappe",
-    description: "Collega Google Sheets, QuickBooks Online e mappe geofence in un hub di integrazioni.",
-    keywords: "integrazione Google Sheets pulizie, QuickBooks pulizie, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "Demo TidyFlow — Prova gratuita 14 giorni",
-    description: "Prenota una demo live. Raccontaci del team e dei fogli di calcolo. Nessuna carta di credito.",
-    keywords: "demo TidyFlow, prova software pulizie",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow per proprietari, manager, operatori e clienti",
-    description: "Flussi su misura per titolari, operations manager, operatori sul campo e clienti facility.",
-    keywords: "software pulizie ruoli, dashboard manager, app offline operatori",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "Come funziona TidyFlow — Dal foglio al campo alle paghe",
-    description: "Sincronizza lo Sheet, assegna lavori, registra ore offline con GPS, approva le paghe e fattura i clienti.",
-    keywords: "workflow pulizie, pipeline operazioni, sync pulizie",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const ar: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — برنامج عمليات التنظيف | تطبيق بدون إنترنت وGPS",
-    description: "منصة متكاملة لشركات التنظيف: تطبيق بدون إنترنت، تحقق GPS، مزامنة Google Sheets، QuickBooks، دردشة المهام والذكاء الاصطناعي. تجربة مجانية 14 يوماً.",
-    keywords: "برنامج تنظيف, تطبيق بدون إنترنت, GPS عمال نظافة, Google Sheets, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "دليل مستخدم TidyFlow — توثيق تفاعلي رسمي",
-    description: "التوثيق الرسمي مع TidyBot: الإعداد، Sheets، التطبيق دون اتصال، GPS، الرواتب والذكاء الاصطناعي.",
-    keywords: "توثيق TidyFlow, دليل تنظيف, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "ميزات TidyFlow — جدولة، Offline، GPS، دردشة وذكاء اصطناعي",
-    description: "جدولة، تطبيق ميداني دون اتصال، GPS، دردشة لكل مهمة، QuickBooks، Revenue AI وكشوف رواتب لفرق التنظيف.",
-    keywords: "ميزات تنظيف, تطبيق offline, GPS تنظيف",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "أسعار TidyFlow — خطط Startup وStandard وPremium",
-    description: "خطط شفافة حسب العقارات والعمال. تجربة 14 يوماً وفوترة شهرية.",
-    keywords: "أسعار برنامج تنظيف, خطط TidyFlow",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "تكاملات TidyFlow — Sheets وQuickBooks ووالخرائط",
-    description: "اربط Google Sheets وQuickBooks Online ووخرائط السياج الجغرافي من مركز تكاملات واحد.",
-    keywords: "تكامل Google Sheets تنظيف, QuickBooks تنظيف, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "عرض TidyFlow — تجربة مجانية 14 يوماً",
-    description: "احجز عرضاً مباشراً. أخبرنا عن حجم الفريق وجداول العمل. بدون بطاقة ائتمان.",
-    keywords: "عرض TidyFlow, تجربة برنامج تنظيف",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow للملاك والمديرين وعمال النظافة والعملاء",
-    description: "مسارات عمل حسب الدور للملاك ومديري العمليات وعمال الميدان وعملاء المرافق.",
-    keywords: "برنامج تنظيف أدوار, لوحة مدير, تطبيق offline",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "كيف يعمل TidyFlow — من الجدول إلى الميدان إلى الرواتب",
-    description: "زامن Sheet، وزّع المهام، سجّل الساعات دون اتصال مع GPS، اعتمد الرواتب وفاتر العملاء.",
-    keywords: "سير عمل تنظيف, خط أنابيب العمليات, مزامنة تنظيف",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const cn: Record<SeoPage, SeoMeta> = {
-  home: {
-    title: "TidyFlow — 保洁运营软件 | 离线 App、GPS 与 Google 表格",
-    description: "保洁公司一体化平台：离线外勤 App、GPS 围栏核验、表格双向同步、QuickBooks、任务聊天与 AI 派单。免费试用 14 天。",
-    keywords: "保洁软件, 离线 App, GPS 考勤, Google 表格同步, QuickBooks, TidyFlow",
-    canonicalPath: "/"
-  },
-  documentation: {
-    title: "TidyFlow 用户手册 — 官方互动文档",
-    description: "官方文档与 TidyBot：设置、表格同步、离线 App、GPS、薪酬与 AI，支持 11 种语言。",
-    keywords: "TidyFlow 文档, 保洁软件指南, TidyBot",
-    canonicalPath: "/documentation"
-  },
-  features: {
-    title: "TidyFlow 功能 — 排班、离线、GPS、聊天与 AI",
-    description: "排班、离线外勤 App、GPS、任务聊天、QuickBooks、Revenue AI 与薪酬，专为保洁团队打造。",
-    keywords: "保洁软件功能, 离线 App, GPS 保洁",
-    canonicalPath: "/features"
-  },
-  pricing: {
-    title: "TidyFlow 定价 — Startup、Standard 与 Premium",
-    description: "按物业与保洁员透明定价。14 天免费试用，月度计费与用量限额一目了然。",
-    keywords: "保洁软件价格, TidyFlow 套餐",
-    canonicalPath: "/pricing"
-  },
-  integrations: {
-    title: "TidyFlow 集成 — 表格、QuickBooks、与地图",
-    description: "在统一集成中心连接 Google Sheets、QuickBooks Online、与地理围栏地图。",
-    keywords: "表格集成保洁, QuickBooks 保洁, TidyFlow integrations",
-    canonicalPath: "/integrations"
-  },
-  contact: {
-    title: "预约 TidyFlow 演示 — 免费试用 14 天",
-    description: "预约现场演示，介绍团队规模与表格流程。无需信用卡。",
-    keywords: "TidyFlow 演示, 保洁软件试用",
-    canonicalPath: "/contact"
-  },
-  personas: {
-    title: "TidyFlow 面向业主、经理、保洁员与客户",
-    description: "为业主、运营经理、外勤保洁员与设施客户提供角色化工作流。",
-    keywords: "保洁软件角色, 经理看板, 离线保洁 App",
-    canonicalPath: "/personas"
-  },
-  "how-it-works": {
-    title: "TidyFlow 如何运作 — 从表格到外勤再到工资",
-    description: "同步主表、派发任务、离线 GPS 记工时、审批工资并为客户开票。",
-    keywords: "保洁运营流程, 外勤办公同步, 表格同步",
-    canonicalPath: "/how-it-works"
-  }
-};
-
-const byLang: Record<string, Record<SeoPage, SeoMeta>> = { en, pt, es, fr, de, pl, no, sv, it, ar, cn };
+const byLang = seoLocales;
 
 const HREFLANG_MAP: Record<string, string> = {
   en: "en",
@@ -606,7 +23,7 @@ const HREFLANG_MAP: Record<string, string> = {
   sv: "sv",
   it: "it",
   ar: "ar",
-  cn: "zh-CN"
+  cn: "zh-CN",
 };
 
 export function getSeoMeta(
@@ -623,7 +40,7 @@ export function getSeoMeta(
     integrations: "integrations",
     contact: "contact",
     personas: "personas",
-    "how-it-works": "how-it-works"
+    "how-it-works": "how-it-works",
   };
   const page = pageMap[marketingPage] || "home";
   return langDict[page] || langDict.home;
@@ -641,139 +58,38 @@ export function resolveSeoLanguage(lang?: string | null): string {
   return "en";
 }
 
-/** Next.js Metadata API (server-safe — no document access). */
-export function buildPageMetadata(
-  page: SeoPage,
-  language = "en",
-  options?: { includeSiteVerification?: boolean }
-) {
+export function getOgImageAlt(language: string): string {
+  return ogImageAlt[resolveSeoLanguage(language)] || ogImageAlt.en;
+}
+
+export function getExtraPageSeo(
+  page: "blog" | "careers",
+  language: string
+): { title: string; description: string; keywords: string } {
+  const pack = extraPageSeo[page];
+  return pack[resolveSeoLanguage(language)] || pack.en;
+}
+
+/** Self-canonical URL for a language. English stays clean; others use ?lang=. */
+export function localizedUrl(canonicalPath: string, language: string): string {
   const resolved = resolveSeoLanguage(language);
-  const langDict = byLang[resolved] || byLang.en;
-  const meta = langDict[page] || langDict.home;
-  const path = meta.canonicalPath === "/" ? "" : meta.canonicalPath;
-  const canonical = `${SITE_URL}${path}`;
-  const htmlLang = getHtmlLang(resolved);
-  const ogLocale = htmlLang.replace("-", "_");
-  const alternateLocales = Object.values(HREFLANG_MAP)
-    .map((h) => h.replace("-", "_"))
-    .filter((h) => h !== ogLocale);
-
-  const languages = buildAlternateLanguages(meta.canonicalPath);
-
-  return {
-    metadataBase: new URL(SITE_URL),
-    title: meta.title,
-    description: meta.description,
-    keywords: meta.keywords.split(",").map((k) => k.trim()),
-    authors: [{ name: "TidyFlow", url: SITE_URL }],
-    creator: "TidyFlow",
-    publisher: "TidyFlow",
-    applicationName: "TidyFlow",
-    category: "business",
-    formatDetection: {
-      email: false,
-      address: false,
-      telephone: false,
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-image-preview": "large" as const,
-        "max-snippet": -1,
-        "max-video-preview": -1,
-      },
-    },
-    alternates: {
-      canonical: canonical || SITE_URL,
-      languages,
-    },
-    openGraph: {
-      type: "website" as const,
-      url: canonical || SITE_URL,
-      siteName: "TidyFlow",
-      title: meta.title,
-      description: meta.description,
-      locale: ogLocale,
-      alternateLocale: alternateLocales,
-      images: [
-        {
-          url: OG_IMAGE,
-          width: 1200,
-          height: 630,
-          alt: "TidyFlow — Cleaning company software for field teams",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image" as const,
-      site: "@tidyflowapp",
-      creator: "@tidyflowapp",
-      title: meta.title,
-      description: meta.description,
-      images: [OG_IMAGE],
-    },
-    ...(options?.includeSiteVerification
-      ? {
-          verification: {
-            google: GOOGLE_SITE_VERIFICATION,
-          },
-        }
-      : {}),
-  };
-}
-
-export function pageFromPath(pathname: string): SeoPage {
-  const clean = pathname.replace(/\/$/, "") || "/";
-  const map: Record<string, SeoPage> = {
-    "/": "home",
-    "/features": "features",
-    "/pricing": "pricing",
-    "/how-it-works": "how-it-works",
-    "/personas": "personas",
-    "/integrations": "integrations",
-    "/contact": "contact",
-    "/documentation": "documentation",
-  };
-  if (clean === "/whats-new" || clean.startsWith("/whats-new/")) {
-    return "features";
-  }
-  return map[clean] || "home";
-}
-
-export function pathForPage(pageId: string): string {
-  if (pageId === "home" || pageId === "") return "/";
-  if (pageId === "documentation") return "/documentation";
-  return `/${pageId}`;
-}
-
-/** Build hreflang map — clean canonical URLs only (language is cookie/client-side). */
-export function buildAlternateLanguages(canonicalPath: string): Record<string, string> {
   const path = canonicalPath === "/" ? "" : canonicalPath;
-  const canonical = `${SITE_URL}${path}` || SITE_URL;
-  // Point all language tags at the same clean URL. Query ?lang= variants are
-  // redirected by middleware and must not appear as separate indexable URLs.
-  const languages: Record<string, string> = { "x-default": canonical };
-  Object.values(HREFLANG_MAP).forEach((hreflang) => {
-    languages[hreflang] = canonical;
-  });
-  return languages;
+  const base = `${SITE_URL}${path}` || SITE_URL;
+  if (resolved === "en") return base;
+  return `${base}?lang=${resolved}`;
 }
 
-/** Generic Next metadata for dynamic marketing pages with full multilingual alternates. */
-export function buildCustomPageMetadata(options: {
+function metadataShell(options: {
   title: string;
   description: string;
   keywords: string;
   canonicalPath: string;
-  language?: string;
+  language: string;
+  includeSiteVerification?: boolean;
 }) {
-  const language = resolveSeoLanguage(options.language);
-  const path = options.canonicalPath === "/" ? "" : options.canonicalPath;
-  const canonical = `${SITE_URL}${path}`;
-  const htmlLang = getHtmlLang(language);
+  const resolved = resolveSeoLanguage(options.language);
+  const canonical = localizedUrl(options.canonicalPath, resolved);
+  const htmlLang = getHtmlLang(resolved);
   const ogLocale = htmlLang.replace("-", "_");
   const alternateLocales = Object.values(HREFLANG_MAP)
     .map((h) => h.replace("-", "_"))
@@ -790,6 +106,11 @@ export function buildCustomPageMetadata(options: {
     publisher: "TidyFlow",
     applicationName: "TidyFlow",
     category: "business",
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
     robots: {
       index: true,
       follow: true,
@@ -818,7 +139,7 @@ export function buildCustomPageMetadata(options: {
           url: OG_IMAGE,
           width: 1200,
           height: 630,
-          alt: "TidyFlow — Cleaning company software for field teams",
+          alt: getOgImageAlt(resolved),
         },
       ],
     },
@@ -830,7 +151,85 @@ export function buildCustomPageMetadata(options: {
       description: options.description,
       images: [OG_IMAGE],
     },
+    ...(options.includeSiteVerification
+      ? {
+          verification: {
+            google: GOOGLE_SITE_VERIFICATION,
+          },
+        }
+      : {}),
   };
+}
+
+/** Next.js Metadata API (server-safe — no document access). */
+export function buildPageMetadata(
+  page: SeoPage,
+  language = "en",
+  options?: { includeSiteVerification?: boolean }
+) {
+  const resolved = resolveSeoLanguage(language);
+  const langDict = byLang[resolved] || byLang.en;
+  const meta = langDict[page] || langDict.home;
+  return metadataShell({
+    title: meta.title,
+    description: meta.description,
+    keywords: meta.keywords,
+    canonicalPath: meta.canonicalPath,
+    language: resolved,
+    includeSiteVerification: options?.includeSiteVerification,
+  });
+}
+
+export function pageFromPath(pathname: string): SeoPage {
+  const clean = pathname.replace(/\/$/, "") || "/";
+  const map: Record<string, SeoPage> = {
+    "/": "home",
+    "/features": "features",
+    "/pricing": "pricing",
+    "/how-it-works": "how-it-works",
+    "/personas": "personas",
+    "/integrations": "integrations",
+    "/contact": "contact",
+    "/documentation": "documentation",
+  };
+  if (clean === "/whats-new" || clean.startsWith("/whats-new/")) {
+    return "features";
+  }
+  return map[clean] || "home";
+}
+
+export function pathForPage(pageId: string): string {
+  if (pageId === "home" || pageId === "") return "/";
+  if (pageId === "documentation") return "/documentation";
+  return `/${pageId}`;
+}
+
+/** hreflang: English = clean URL, other languages = ?lang= code. */
+export function buildAlternateLanguages(canonicalPath: string): Record<string, string> {
+  const languages: Record<string, string> = {
+    "x-default": localizedUrl(canonicalPath, "en"),
+  };
+  Object.keys(HREFLANG_MAP).forEach((code) => {
+    languages[HREFLANG_MAP[code]] = localizedUrl(canonicalPath, code);
+  });
+  return languages;
+}
+
+/** Generic Next metadata for dynamic marketing pages with full multilingual alternates. */
+export function buildCustomPageMetadata(options: {
+  title: string;
+  description: string;
+  keywords: string;
+  canonicalPath: string;
+  language?: string;
+}) {
+  return metadataShell({
+    title: options.title,
+    description: options.description,
+    keywords: options.keywords,
+    canonicalPath: options.canonicalPath,
+    language: options.language || "en",
+  });
 }
 
 export { SITE_URL, OG_IMAGE, HREFLANG_MAP };
@@ -873,8 +272,10 @@ function injectJsonLd(id: string, data: object) {
 }
 
 export function applySeoMeta(meta: SeoMeta, language: string): void {
-  const canonical = `${SITE_URL}${meta.canonicalPath === "/" ? "" : meta.canonicalPath}`;
-  const htmlLang = getHtmlLang(language);
+  const resolved = resolveSeoLanguage(language);
+  const canonical = localizedUrl(meta.canonicalPath, resolved);
+  const htmlLang = getHtmlLang(resolved);
+  const alternates = buildAlternateLanguages(meta.canonicalPath);
 
   document.title = meta.title;
   document.documentElement.lang = htmlLang;
@@ -891,7 +292,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
   setMeta("og:url", canonical, "property");
   setMeta("og:site_name", "TidyFlow", "property");
   setMeta("og:image", OG_IMAGE, "property");
-  setMeta("og:image:alt", "TidyFlow — Cleaning Operations Hub", "property");
+  setMeta("og:image:alt", getOgImageAlt(resolved), "property");
   setMeta("og:locale", htmlLang.replace("-", "_"), "property");
 
   setMeta("twitter:card", "summary_large_image");
@@ -903,18 +304,13 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
   setLink("canonical", canonical);
 
   document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((n) => n.remove());
-  Object.values(HREFLANG_MAP).forEach((hreflang) => {
+  Object.entries(alternates).forEach(([hreflang, href]) => {
     const link = document.createElement("link");
     link.rel = "alternate";
     link.hreflang = hreflang;
-    link.href = canonical;
+    link.href = href;
     document.head.appendChild(link);
   });
-  const xDefault = document.createElement("link");
-  xDefault.rel = "alternate";
-  xDefault.hreflang = "x-default";
-  xDefault.href = canonical;
-  document.head.appendChild(xDefault);
 
   injectJsonLd("seo-org", {
     "@context": "https://schema.org",
@@ -924,7 +320,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     logo: `${SITE_URL}/favicon.png`,
     email: "tidyflaw@gmail.com",
     description: meta.description,
-    sameAs: [...SOCIAL_SAME_AS]
+    sameAs: [...SOCIAL_SAME_AS],
   });
 
   injectJsonLd("seo-software", {
@@ -933,6 +329,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     name: "TidyFlow",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, iOS, Android",
+    inLanguage: htmlLang,
     offers: {
       "@type": "AggregateOffer",
       lowPrice: "25",
@@ -940,7 +337,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
       priceCurrency: "USD",
       offerCount: 3,
       description: "14-day free trial · Startup from $25/month · Standard $79 · Premium $149",
-      url: `${SITE_URL}/pricing`
+      url: localizedUrl("/pricing", resolved),
     },
     featureList: [
       "Offline field app",
@@ -954,8 +351,8 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
       "Revenue AI profit analysis",
       "Payroll from verified hours",
       "Client photo proof PDFs",
-      "SOS lone-worker safety"
-    ]
+      "SOS lone-worker safety",
+    ],
   });
 
   injectJsonLd("seo-website", {
@@ -968,7 +365,7 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     potentialAction: {
       "@type": "SearchAction",
       target: `${SITE_URL}/documentation?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+      "query-input": "required name=search_term_string",
+    },
   });
 }

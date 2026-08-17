@@ -15,8 +15,14 @@ interface SiteContextValue {
 
 const SiteContext = createContext<SiteContextValue | null>(null);
 
-export function SiteProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState("en");
+export function SiteProvider({
+  children,
+  initialLanguage = "en",
+}: {
+  children: React.ReactNode;
+  initialLanguage?: string;
+}) {
+  const [language, setLanguageState] = useState(initialLanguage);
   const [theme, setThemeState] = useState<Theme>("dark");
   const [docJumpChapter, setDocJumpChapter] = useState<string | null>(null);
   const [ready, setReady] = useState(false);

@@ -97,7 +97,7 @@ interface PhoneFrameProps {
 
 function PhoneFrame({ children }: PhoneFrameProps) {
   return (
-    <div className="relative mx-auto w-full max-w-[340px] sm:max-w-[370px] transition-all duration-500 hover:translate-y-[-6px] select-none">
+    <div className="keep-dark relative mx-auto w-full max-w-[340px] sm:max-w-[370px] transition-all duration-500 hover:translate-y-[-6px] select-none">
       {/* Outer ambient glow */}
       <div className="absolute inset-0 bg-brand-amber/[0.14] rounded-[60px] blur-3xl -z-10 transition-opacity duration-500" />
 
@@ -190,7 +190,10 @@ function AppDownloadButtons({ language, layout = "row" }: { language: string; la
 // HIGH-FIDELITY SIMULATORS (AUTO-SCROLLING & CLICKING)
 // ==========================================
 
-function LocalReviewBadges() {
+function LocalReviewBadges({ language }: { language: string }) {
+  const mt = (key: string) => getMarketingTranslation(key, language);
+  const operators = formatMarketingTranslation("trustedOperators", language, { count: "1,200+" });
+
   return (
     <div className="space-y-5">
       <div className="flex flex-wrap gap-3 items-center">
@@ -201,7 +204,7 @@ function LocalReviewBadges() {
             ))}
           </div>
           <div className="text-sm text-slate-300 font-medium">
-            <span className="text-white font-bold">4.8 / 5</span> on Capterra
+            <span className="text-white font-bold">4.8 / 5</span> {mt("reviewOnCapterra")}
           </div>
         </div>
         <div className="flex items-center gap-2.5 bg-slate-900/50 border border-slate-800 px-5 py-3 rounded-2xl backdrop-blur-sm">
@@ -211,7 +214,7 @@ function LocalReviewBadges() {
             ))}
           </div>
           <div className="text-sm text-slate-300 font-medium">
-            <span className="text-white font-bold">4.9 / 5</span> on G2 Crowd
+            <span className="text-white font-bold">4.9 / 5</span> {mt("reviewOnG2")}
           </div>
         </div>
       </div>
@@ -222,27 +225,26 @@ function LocalReviewBadges() {
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64&q=80" alt="" className="w-8 h-8 rounded-full border-2 border-slate-950 object-cover" />
           <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=64&h=64&q=80" alt="" className="w-8 h-8 rounded-full border-2 border-slate-950 object-cover" />
         </div>
-        <p className="text-sm text-slate-300 leading-snug">
-          Trusted by <span className="text-white font-semibold">1,200+ field operators</span> and coordinators.
-        </p>
+        <p className="text-sm text-slate-300 leading-snug">{operators}</p>
       </div>
     </div>
   );
 }
 
-function LocalTrustedByStrip() {
+function LocalTrustedByStrip({ language }: { language: string }) {
+  const mt = (key: string) => getMarketingTranslation(key, language);
   const companies = [
-    { name: "CBRE Facilities", industry: "Commercial portfolio", initials: "CB" },
-    { name: "JLL Vanguard", industry: "Asset management", initials: "JL" },
-    { name: "Mitie Care", industry: "Facilities group", initials: "MT" },
-    { name: "Compass Group", industry: "Corporate support", initials: "CP" },
-    { name: "Aramark Logistics", industry: "Property services", initials: "AR" },
+    { name: "CBRE Facilities", industry: mt("coIndustryCbre"), initials: "CB" },
+    { name: "JLL Vanguard", industry: mt("coIndustryJll"), initials: "JL" },
+    { name: "Mitie Care", industry: mt("coIndustryMitie"), initials: "MT" },
+    { name: "Compass Group", industry: mt("coIndustryCompass"), initials: "CP" },
+    { name: "Aramark Logistics", industry: mt("coIndustryAramark"), initials: "AR" },
   ];
   const stats = [
-    { value: "11", label: "Languages in the field app" },
-    { value: "14 days", label: "Free trial — no card required" },
-    { value: "GPS + photos", label: "Proof that survives night shifts" },
-    { value: "Offline", label: "Timers that work in basements" },
+    { value: "11", label: mt("statLanguages") },
+    { value: "14", label: mt("statTrial") },
+    { value: "GPS + photos", label: mt("statGps") },
+    { value: "Offline", label: mt("statOffline") },
   ];
 
   return (
@@ -251,13 +253,13 @@ function LocalTrustedByStrip() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 space-y-4">
           <p className="text-sm font-mono tracking-[0.22em] text-brand-amber uppercase font-bold">
-            Built for real cleaning operations
+            {mt("trustedByEyebrow")}
           </p>
           <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12]">
-            Trusted by operators in leading facilities enterprises
+            {mt("trustedByHeading")}
           </h2>
           <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            Cleaning contractors and facilities teams use TidyFlow to dispatch jobs, prove work, and close payroll — from night shifts in towers to multi-site commercial contracts.
+            {mt("trustedByBody")}
           </p>
         </div>
 
@@ -298,27 +300,28 @@ function LocalTrustedByStrip() {
   );
 }
 
-function LocalSolutionsBand() {
+function LocalSolutionsBand({ language }: { language: string }) {
+  const mt = (key: string) => getMarketingTranslation(key, language);
   const items = [
     {
       href: "/blog/office-cleaning-software",
-      title: "Office & night cleaning",
-      desc: "Floor-by-floor checklists, restrooms, and proof for facility managers.",
+      title: mt("solOfficeTitle"),
+      desc: mt("solOfficeDesc"),
     },
     {
       href: "/blog/maid-service-software",
-      title: "Maid & residential",
-      desc: "Recurring homes without WhatsApp chaos or missing photos.",
+      title: mt("solMaidTitle"),
+      desc: mt("solMaidDesc"),
     },
     {
       href: "/blog/contract-cleaning-software",
-      title: "Contract janitorial",
-      desc: "Multi-site dispatch, SLAs, payroll, and invoices on the same job.",
+      title: mt("solContractTitle"),
+      desc: mt("solContractDesc"),
     },
     {
       href: "/blog/janitorial-time-tracking-software",
-      title: "Time & payroll",
-      desc: "GPS hours that still count when the basement has no signal.",
+      title: mt("solPayrollTitle"),
+      desc: mt("solPayrollDesc"),
     },
   ];
 
@@ -328,14 +331,14 @@ function LocalSolutionsBand() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
           <div className="space-y-2 max-w-2xl">
             <p className="text-sm font-mono tracking-[0.18em] text-brand-amber uppercase font-bold">
-              Who TidyFlow is for
+              {mt("solutionsEyebrow")}
             </p>
             <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
-              Commercial, office, maid, and facilities crews
+              {mt("solutionsHeading")}
             </h2>
           </div>
           <Link href="/features" className="text-sm font-semibold text-brand-amber hover:text-amber-300 inline-flex items-center gap-1.5">
-            See all features <ArrowRight size={15} />
+            {mt("solutionsSeeAll")} <ArrowRight size={15} />
           </Link>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1121,7 +1124,7 @@ function HomePage({
             </div>
 
             <div className="pt-3 border-t border-slate-900">
-              <LocalReviewBadges />
+              <LocalReviewBadges language={language} />
             </div>
           </div>
 
@@ -1135,9 +1138,9 @@ function HomePage({
         </div>
       </section>
 
-      <LocalTrustedByStrip />
+      <LocalTrustedByStrip language={language} />
 
-      <LocalSolutionsBand />
+      <LocalSolutionsBand language={language} />
 
       <WhatsNewHomeStrip language={language} />
 
@@ -2508,7 +2511,7 @@ function ContactPage({ language }: { language: string }) {
       }
       setSubmitted(true);
     } catch (err: any) {
-      setSubmitError(err.message || "Failed to send message.");
+      setSubmitError(err.message || mt("contactFailedSend"));
       setTurnstileToken(null);
       setTurnstileKey((k) => k + 1);
     } finally {
@@ -2607,7 +2610,7 @@ function ContactPage({ language }: { language: string }) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full p-4 bg-slate-900 border border-slate-800 rounded-xl focus:border-brand-amber focus:ring-1 focus:ring-brand-amber text-slate-200 text-xs sm:text-sm placeholder-slate-600 focus:outline-none"
-                    placeholder="John Doe"
+                    placeholder={mt("phName")}
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -2618,7 +2621,7 @@ function ContactPage({ language }: { language: string }) {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     className="w-full p-4 bg-slate-900 border border-slate-800 rounded-xl focus:border-brand-amber focus:ring-1 focus:ring-brand-amber text-slate-200 text-xs sm:text-sm placeholder-slate-600 focus:outline-none"
-                    placeholder="john@cleancompany.com"
+                    placeholder={mt("phEmail")}
                   />
                 </div>
               </div>
@@ -2631,7 +2634,7 @@ function ContactPage({ language }: { language: string }) {
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="w-full p-4 bg-slate-900 border border-slate-800 rounded-xl focus:border-brand-amber focus:ring-1 focus:ring-brand-amber text-slate-200 text-xs sm:text-sm placeholder-slate-600 focus:outline-none"
-                  placeholder="e.g. Sparkle Facilities Group"
+                    placeholder={mt("phCompany")}
                 />
               </div>
 
@@ -2643,10 +2646,10 @@ function ContactPage({ language }: { language: string }) {
                     onChange={(e) => setFormData({ ...formData, size: e.target.value })}
                     className="w-full p-4 bg-slate-900 border border-slate-800 rounded-xl text-slate-300 focus:border-brand-amber text-xs sm:text-sm focus:outline-none"
                   >
-                    <option value="1-10">1 - 10 active cleaners</option>
-                    <option value="11-49">11 - 49 active cleaners</option>
-                    <option value="50-100">50 - 100 active cleaners</option>
-                    <option value="100+">100+ cleaners</option>
+                    <option value="1-10">{mt("optCleaners1")}</option>
+                    <option value="11-49">{mt("optCleaners2")}</option>
+                    <option value="50-100">{mt("optCleaners3")}</option>
+                    <option value="100+">{mt("optCleaners4")}</option>
                   </select>
                 </div>
                 <div className="space-y-1.5">
@@ -2656,9 +2659,9 @@ function ContactPage({ language }: { language: string }) {
                     onChange={(e) => setFormData({ ...formData, sheetUse: e.target.value })}
                     className="w-full p-4 bg-slate-900 border border-slate-800 rounded-xl text-slate-300 focus:border-brand-amber text-xs sm:text-sm focus:outline-none"
                   >
-                    <option value="yes">Yes, primarily</option>
-                    <option value="no">No, only paper/WhatsApp</option>
-                    <option value="excel">Yes, Excel/Local files</option>
+                    <option value="yes">{mt("optSheetsYes")}</option>
+                    <option value="no">{mt("optSheetsNo")}</option>
+                    <option value="excel">{mt("optSheetsExcel")}</option>
                   </select>
                 </div>
               </div>
