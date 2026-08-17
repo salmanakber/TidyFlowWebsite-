@@ -27,6 +27,240 @@ export const BLOG_SLUG_REDIRECTS: Record<string, string> = {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "office-cleaning-software",
+    metaTitle: "Office Cleaning Software | Night Crews & QC",
+    title: "Office Cleaning Software: Run Night Crews Without Spreadsheet Dispatch",
+    excerpt:
+      "Office and night janitorial work needs floor checklists, restroom proof, GPS hours, and a report the facility manager can open in the morning — not a WhatsApp album.",
+    keywords: [
+      "office cleaning software",
+      "night janitorial software",
+      "commercial office cleaning app",
+      "facility cleaning management",
+    ],
+    publishedAt: "2026-08-17",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Why office accounts break general field-service apps",
+        paragraphs: [
+          "An office tower is not a plumber’s single visit. You have stacked floors, restrooms on a rota, keys or access codes, and a facilities contact who wants proof before 8 a.m. — while your crew worked with no cell signal in the basement.",
+          "Generic FSM tools assume live internet and a one-job-one-tech day. Office cleaning needs an offline timer, a floor checklist, before/after photos, and a branded PDF that matches the same job your payroll used.",
+        ],
+      },
+      {
+        heading: "What a night crew actually needs on the phone",
+        paragraphs: [
+          "Start the timer inside the geofence. Tick restrooms, kitchens, and floors even when Wi-Fi is off. Queue GPS pings and photos until the elevator lobby has signal. If any of that fails, someone will invent a WhatsApp workaround by week two.",
+          "Managers need a morning QA view: who finished which floors, which photos failed a sanity check, and which hours are pending approval — not a scroll through 400 images named IMG_8841.",
+        ],
+      },
+      {
+        heading: "How TidyFlow runs office and facilities contracts",
+        paragraphs: [
+          "TidyFlow is janitorial operations software: rota and AI assignment, offline GPS, photo QC, payroll from verified hours, and invoices that can sync to QuickBooks Online on Premium. Google Sheets two-way sync is available on Standard and Premium if that is still your source of truth.",
+          "Start a 14-day trial on the Startup plan (30 properties, 8 cleaners) or book a walkthrough of your hardest tower at tidyflowapp.com/contact.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "maid-service-software",
+    metaTitle: "Maid Service Software | Recurring Home Cleans",
+    title: "Maid Service Software: Recurring Homes, Same Cleaner, Proof You Can Invoice",
+    excerpt:
+      "Residential and maid services stall when schedules live in chats. Keep recurring homes, preferred cleaners, photos, and hours on one job record.",
+    keywords: [
+      "maid service software",
+      "house cleaning scheduling software",
+      "residential cleaning app",
+      "recurring cleaning management",
+    ],
+    publishedAt: "2026-08-17",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "The residential mess is not ‘too small for software’",
+        paragraphs: [
+          "A 12-home maid book still has no-shows, last-minute swaps, disputed hours, and clients who want photo proof that the oven was done. Spreadsheets plus WhatsApp work until the first payroll fight.",
+          "Maid service software should remember preferred cleaners, leave and conflicts, travel between jobs, and a checklist that matches the package the client paid for — not a blank timer.",
+        ],
+      },
+      {
+        heading: "What to demo before you switch",
+        paragraphs: [
+          "Create a recurring home, assign a cleaner, send them offline, capture photos, then approve hours. Ask whether the same record can become a client invoice without retyping the address.",
+          "If GPS clock-in is all-day tracking instead of presence at the property, residential staff will resist. Presence at the home is enough; all-day surveillance is not a selling point.",
+        ],
+      },
+      {
+        heading: "TidyFlow for residential and mixed books",
+        paragraphs: [
+          "Owners mix office nights and house days on the same roster. TidyFlow’s rota, task chat, offline GPS, and payroll rules are built for that mix — not a separate ‘maid-only’ silo that cannot grow into commercial contracts.",
+          "Plans start at $25/month for Startup. Compare limits on tidyflowapp.com/pricing and start the 14-day trial without a card.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "contract-cleaning-software",
+    metaTitle: "Contract Cleaning Software | Multi-Site SLAs",
+    title: "Contract Cleaning Software: Multi-Site SLAs, Proof, Payroll, and Invoices Together",
+    excerpt:
+      "Facilities contracts die in handoffs: dispatch in Sheets, hours in a group chat, invoices in accounting. Keep the job, the hours, and the proof on one record.",
+    keywords: [
+      "contract cleaning software",
+      "janitorial contract management",
+      "multi-site cleaning software",
+      "building services operations software",
+    ],
+    publishedAt: "2026-08-16",
+    readTime: "9 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "SLAs fail in the gaps between tools",
+        paragraphs: [
+          "A commercial cleaning contract is a promise: sites cleaned, hours billed, quality evidenced. If dispatch, time, QA, and invoicing live in four systems, you will miss a site and still pay the crew — or invoice a client you cannot prove.",
+          "Contract cleaning software is not a calendar. It is a pipeline: who is assigned, did they arrive, what was done, who approved hours, and what invoice those hours became.",
+        ],
+      },
+      {
+        heading: "Multi-site operations without a second ops person",
+        paragraphs: [
+          "Rota builder plus leave-aware assignment stops double-booking. AI can suggest who is closest; a manager still confirms. Task chat keeps site instructions on the job when a substitute walks in at 10 p.m.",
+          "Photo QC and branded PDFs are how you survive a facilities audit without printing WhatsApp threads. Revenue AI on higher plans helps owners see which contracts actually make money after verified wages.",
+        ],
+      },
+      {
+        heading: "Where TidyFlow fits a growing contract book",
+        paragraphs: [
+          "Startup covers early routes (30 properties, 8 cleaners). Standard adds Sheets sync and a larger roster. Premium is for unlimited-scale books plus QuickBooks Online invoice sync.",
+          "Walk one live contract on a demo, or start the 14-day trial and import the sites you already run from Google Sheets.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "janitorial-time-tracking-software",
+    metaTitle: "Janitorial Time Tracking Software | GPS Hours",
+    title: "Janitorial Time Tracking Software: Clock Hours Cleaners (and Payroll) Can Trust",
+    excerpt:
+      "Commercial cleaning payroll fails when timers need signal. Use GPS-verified, offline-capable time tracking so hours, presence, and payslips match the job.",
+    keywords: [
+      "janitorial time tracking software",
+      "cleaner time clock app",
+      "cleaning staff timesheet",
+      "GPS time tracking janitorial",
+    ],
+    publishedAt: "2026-08-17",
+    readTime: "9 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Why cleaning time clocks are different from office HR apps",
+        paragraphs: [
+          "A cleaner in a hospital basement cannot walk outside to punch. A general time-clock app that needs live internet — or that never proves they were on the property — creates disputed overtime and unpaid callbacks.",
+          "Janitorial time tracking needs three things together: a work timer that runs offline, presence verification at the site, and hours that flow into payroll without a Friday spreadsheet rebuild.",
+        ],
+      },
+      {
+        heading: "What to require in a demo",
+        paragraphs: [
+          "Start a timer on airplane mode. Complete a checklist item, take a photo, stop the timer, then restore signal and confirm sync. If that fails, commercial sites will invent WhatsApp workarounds.",
+          "Ask how geofencing works at clock-in and completion — presence at the building, not all-day route surveillance. Then ask whether breaks are excluded from paid time and whether managers can adjust pending hours with an audit trail.",
+        ],
+      },
+      {
+        heading: "How TidyFlow captures payroll-ready hours",
+        paragraphs: [
+          "TidyFlow timers, GPS checks, and offline GPS queues attach to the job. Submitted sessions land in a pending-hours queue for manager approval. Pay rules per cleaner compile into payroll periods and branded payslips.",
+          "That is the path from field proof to finance — not a second product. Start with your hardest basement site on a 14-day trial at tidyflowapp.com/pricing.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cleaning-dispatch-software",
+    metaTitle: "Cleaning Dispatch Software | Rota & Routes",
+    title: "Cleaning Dispatch Software: Assign the Right Cleaner Without WhatsApp Chaos",
+    excerpt:
+      "Replace group-chat dispatch with a rota that respects leave, flags conflicts, and suggests travel-aware assignments for commercial cleaning crews.",
+    keywords: [
+      "cleaning dispatch software",
+      "janitorial scheduling software",
+      "cleaner rota app",
+      "commercial cleaning job assignment",
+    ],
+    publishedAt: "2026-08-17",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Dispatch is where growth breaks first",
+        paragraphs: [
+          "When one manager holds the week in their head, adding a third crew means missed sites. WhatsApp ‘who can take Park Street?’ is not dispatch — it is a raffle.",
+          "Cleaning dispatch software should show unassigned slots, leave locks, double-booking warnings, and property pins so travel time is visible before you publish the rota.",
+        ],
+      },
+      {
+        heading: "From sheet to published week",
+        paragraphs: [
+          "Keep your master Google Sheet if bidding still lives there. Sync properties and jobs, then assign in a weekly rota. Recurring commercial cleans should auto-create so managers edit exceptions, not retype Monday every Sunday night.",
+          "AI assignment suggestions help only after leave and skill rules exist. Managers must confirm — cleaning is too messy for silent auto-assign.",
+        ],
+      },
+      {
+        heading: "What TidyFlow puts on one job record",
+        paragraphs: [
+          "Each task carries assignees, checklists, task chat, photos, GPS proof, and hours. Instructions stay on the job when a late-shift replacement opens the app.",
+          "See rota, AI suggestions, and offline field execution on a trial — or walk your current dispatch mess on a demo at /contact.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cleaning-quality-control-software",
+    metaTitle: "Cleaning QC Software | Photo Proof & QA",
+    title: "Cleaning Quality Control Software: Photos, Checklists, and Client Proof That Stick",
+    excerpt:
+      "Stop defending invoices with WhatsApp image dumps. Attach before/after photos, checklists, and branded PDFs to every commercial clean.",
+    keywords: [
+      "cleaning quality control software",
+      "janitorial photo proof",
+      "cleaning inspection checklist app",
+      "client proof of cleaning",
+    ],
+    publishedAt: "2026-08-16",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    sections: [
+      {
+        heading: "Callbacks are a QC systems problem",
+        paragraphs: [
+          "If proof lives in camera rolls, you cannot answer ‘what happened on Tuesday?’ without a scavenger hunt. Facilities clients will demand a re-clean you cannot invoice.",
+          "Quality control for cleaning means a required checklist, before/after photos on the task, manager QA, and a branded report the client can open without logging into five tools.",
+        ],
+      },
+      {
+        heading: "Offline photos still count",
+        paragraphs: [
+          "Basements kill uploads mid-job. The app must cache photos and checklists locally, then sync. Otherwise QC only works on well-lit lobby jobs — the ones that were never your problem.",
+          "AI photo scoring can flag weak images for managers without blocking cleaners in the field. Humans still decide pass/fail.",
+        ],
+      },
+      {
+        heading: "Close the loop to invoices",
+        paragraphs: [
+          "Once QA approves a job, hours can hit payroll and the same record can become a client invoice — optionally synced to QuickBooks Online on Premium. Proof and billing finally share a timeline.",
+          "Use TidyFlow photo reports and client portal links on a 14-day trial, or book a walkthrough at tidyflowapp.com/contact.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "quickbooks-cleaning-invoices",
     metaTitle: "QuickBooks for Cleaning Companies | Invoice Sync",
     title: "How Cleaning Companies Sync Client Invoices to QuickBooks Without Retyping Jobs",

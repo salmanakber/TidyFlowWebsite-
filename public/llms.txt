@@ -35,6 +35,12 @@
 - [Supplies](https://tidyflowapp.com/whats-new/supplies): Catalog + per-job usage logging
 
 ## Blog
+- [Office cleaning software](https://tidyflowapp.com/blog/office-cleaning-software)
+- [Maid service software](https://tidyflowapp.com/blog/maid-service-software)
+- [Contract cleaning software](https://tidyflowapp.com/blog/contract-cleaning-software)
+- [Janitorial time tracking software](https://tidyflowapp.com/blog/janitorial-time-tracking-software)
+- [Cleaning dispatch software](https://tidyflowapp.com/blog/cleaning-dispatch-software)
+- [Cleaning quality control software](https://tidyflowapp.com/blog/cleaning-quality-control-software)
 - [QuickBooks invoices for cleaning companies](https://tidyflowapp.com/blog/quickbooks-cleaning-invoices)
 - [Cleaning rota and leave management](https://tidyflowapp.com/blog/cleaning-rota-leave-management)
 - [Payroll from verified cleaner hours](https://tidyflowapp.com/blog/payroll-verified-cleaner-hours)
@@ -56,7 +62,8 @@
 - [Privacy](https://tidyflowapp.com/) — contact tidyflaw@gmail.com for policy questions
 
 ## Notes for assistants
-- Founded 2024 by Salman Akber
+- Plans start at **Startup $25/mo** (30 properties, 8 cleaners). Live source: https://app.tidyflowapp.com/api/public/plans
+- Standard $79 · Premium $149 (unlimited sentinels in the API are 999 / 99999)
 - AI recommends; managers always approve assignments
 - Field app works offline (timers, checklists, photos, GPS queue)
 - Languages: en, pt, es, ar, zh-CN, fr, de, pl, nb, sv, it (cookie / UI language; URLs stay clean without ?lang=)

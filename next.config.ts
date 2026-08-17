@@ -54,6 +54,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        source: "/api/plans",
+        headers: [{ key: "Cache-Control", value: "no-store, no-cache, max-age=0, must-revalidate" }],
+      },
+      {
+        source: "/api/plans/:code",
+        headers: [{ key: "Cache-Control", value: "no-store, no-cache, max-age=0, must-revalidate" }],
+      },
+      {
         source: "/sitemap.xml",
         headers: [{ key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" }],
       },

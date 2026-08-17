@@ -12,6 +12,7 @@ import {
   isEmailConfigured,
   sendTransactionalEmail,
 } from "./src/lib/email";
+import { fetchPublicPlansUpstream } from "./src/lib/plansUpstream";
 
 // Keep the process alive on unexpected async errors (log only — do not exit).
 // Without this, a single unhandled rejection can kill tidyflowapp.com until restart.
@@ -115,24 +116,13 @@ async function startServer() {
     }
   });
 
-  const TIDYFLOW_API_URL = (process.env.TIDYFLOW_API_URL || "https://api.tidyflowapp.com").replace(/\/$/, "");
-
-  // Proxy: public pricing plans from management API (read-only)
+  // Proxy: public pricing plans from management API (read-only, no cache)
   app.get("/api/plans", async (_req, res) => {
     try {
-      const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans`, {
-        headers: { Accept: "application/json" },
-        signal: AbortSignal.timeout(8000),
-      });
-      if (!upstream.ok) {
-        const text = await upstream.text().catch(() => "");
-        res.status(upstream.status).json({
-          error: `Failed to load plans (${upstream.status})`,
-          detail: text.slice(0, 200) || undefined
-        });
-        return;
-      }
-      const data = await upstream.json();
+      const { data, from } = await fetchPublicPlansUpstream("/api/public/plans");
+      res.setHeader("Cache-Control", "no-store, no-cache, max-age=0, must-revalidate");
+      res.setHeader("Pragma", "no-cache");
+      res.setHeader("X-TidyFlow-Plans-From", from);
       res.json(data);
     } catch (error: any) {
       console.error("Plans list proxy error:", error);
@@ -143,19 +133,10 @@ async function startServer() {
   app.get("/api/plans/:code", async (req, res) => {
     try {
       const code = String(req.params.code || "").toUpperCase();
-      const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans/${encodeURIComponent(code)}`, {
-        headers: { Accept: "application/json" },
-        signal: AbortSignal.timeout(8000),
-      });
-      if (!upstream.ok) {
-        const text = await upstream.text().catch(() => "");
-        res.status(upstream.status).json({
-          error: `Failed to load plan ${code} (${upstream.status})`,
-          detail: text.slice(0, 200) || undefined
-        });
-        return;
-      }
-      const data = await upstream.json();
+      const { data, from } = await fetchPublicPlansUpstream(`/api/public/plans/${encodeURIComponent(code)}`);
+      res.setHeader("Cache-Control", "no-store, no-cache, max-age=0, must-revalidate");
+      res.setHeader("Pragma", "no-cache");
+      res.setHeader("X-TidyFlow-Plans-From", from);
       res.json(data);
     } catch (error: any) {
       console.error("Plan detail proxy error:", error);

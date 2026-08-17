@@ -347,7 +347,7 @@ const enUi: WhatsNewUiCopy = {
   indexTitle: "What’s new in TidyFlow",
   indexSubtitle:
     "Task chat, QuickBooks, Revenue AI, self-serve billing, smarter addresses, and more — built for real cleaning operations.",
-  stripTitle: "What’s new",
+  stripTitle: "What’s new in TidyFlow",
   viewAll: "View all new features",
   backToWhatsNew: "Back to What’s New",
   backToFeatures: "All features",

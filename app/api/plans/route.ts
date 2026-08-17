@@ -1,34 +1,23 @@
 import { NextResponse } from "next/server";
+import { fetchPublicPlansUpstream } from "@/src/lib/plansUpstream";
 
-const TIDYFLOW_API_URL = (process.env.TIDYFLOW_API_URL || "https://api.tidyflowapp.com").replace(
-  /\/$/,
-  ""
-);
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const fetchCache = "force-no-store";
 
 export async function GET() {
   try {
-    const upstream = await fetch(`${TIDYFLOW_API_URL}/api/public/plans`, {
-      headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(8000),
-      next: { revalidate: 300 },
+    const { data, from } = await fetchPublicPlansUpstream("/api/public/plans");
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "no-store, no-cache, max-age=0, must-revalidate",
+        Pragma: "no-cache",
+        "X-TidyFlow-Plans-From": from,
+      },
     });
-    if (!upstream.ok) {
-      const text = await upstream.text().catch(() => "");
-      return NextResponse.json(
-        {
-          error: `Failed to load plans (${upstream.status})`,
-          detail: text.slice(0, 200) || undefined,
-        },
-        { status: upstream.status }
-      );
-    }
-    const data = await upstream.json();
-    return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Could not reach TidyFlow plans API.";
     console.error("Plans list proxy error:", error);
-    return NextResponse.json(
-      { error: error.message || "Could not reach TidyFlow plans API." },
-      { status: 502 }
-    );
+    return NextResponse.json({ error: message }, { status: 502 });
   }
 }

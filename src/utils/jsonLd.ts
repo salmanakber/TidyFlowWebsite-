@@ -77,11 +77,11 @@ export function getSiteJsonLdGraph() {
         url: SITE_URL,
         offers: {
           "@type": "AggregateOffer",
-          lowPrice: "9",
+          lowPrice: "25",
           highPrice: "149",
           priceCurrency: "USD",
           offerCount: 3,
-          description: "14-day free trial · Startup from $9/month · Standard $79 · Premium $149",
+          description: "14-day free trial · Startup from $25/month · Standard $79 · Premium $149",
           url: `${SITE_URL}/pricing`,
         },
         featureList: [

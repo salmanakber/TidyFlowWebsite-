@@ -8,6 +8,7 @@ import { getTranslation } from "../utils/translations";
 import { getSheetTranslation } from "../utils/sheetMockupTranslations";
 import { getMarketingTranslation, formatMarketingTranslation } from "../utils/marketingTranslations";
 import {
+  FALLBACK_PLANS,
   fetchPublicPlans,
   formatAiOps,
   formatPlanLimit,
@@ -191,43 +192,39 @@ function AppDownloadButtons({ language, layout = "row" }: { language: string; la
 
 function LocalReviewBadges() {
   return (
-    <div className="space-y-4">
-      <div className="flex flex-wrap gap-4 items-center">
-        {/* Rating platform 1 */}
-        <div className="flex items-center gap-2.5 bg-slate-900/30 border border-slate-900 px-4 py-2 rounded-xl backdrop-blur-sm shadow-sm">
+    <div className="space-y-5">
+      <div className="flex flex-wrap gap-3 items-center">
+        <div className="flex items-center gap-2.5 bg-slate-900/50 border border-slate-800 px-5 py-3 rounded-2xl backdrop-blur-sm">
           <div className="flex text-brand-amber gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={11} fill="currentColor" className="stroke-none" />
+              <Star key={i} size={15} fill="currentColor" className="stroke-none" />
             ))}
           </div>
-          <div className="text-[10px] text-slate-400 font-medium">
+          <div className="text-sm text-slate-300 font-medium">
             <span className="text-white font-bold">4.8 / 5</span> on Capterra
           </div>
         </div>
-
-        {/* Rating platform 2 */}
-        <div className="flex items-center gap-2.5 bg-slate-900/30 border border-slate-900 px-4 py-2 rounded-xl backdrop-blur-sm shadow-sm">
+        <div className="flex items-center gap-2.5 bg-slate-900/50 border border-slate-800 px-5 py-3 rounded-2xl backdrop-blur-sm">
           <div className="flex text-brand-amber gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={11} fill="currentColor" className="stroke-none" />
+              <Star key={i} size={15} fill="currentColor" className="stroke-none" />
             ))}
           </div>
-          <div className="text-[10px] text-slate-400 font-medium">
+          <div className="text-sm text-slate-300 font-medium">
             <span className="text-white font-bold">4.9 / 5</span> on G2 Crowd
           </div>
         </div>
       </div>
 
-      {/* Mini Customer Testimonial Row */}
-      <div className="flex items-center gap-3 bg-slate-900/20 p-2 rounded-xl border border-slate-900/80 max-w-sm">
-        <div className="flex -space-x-1.5">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80" alt="User" className="w-6 h-6 rounded-full border border-slate-950 object-cover" />
-          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64&q=80" alt="User" className="w-6 h-6 rounded-full border border-slate-950 object-cover" />
-          <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=64&h=64&q=80" alt="User" className="w-6 h-6 rounded-full border border-slate-950 object-cover" />
+      <div className="flex items-center gap-3 bg-slate-900/40 p-3 rounded-xl border border-slate-800 max-w-md">
+        <div className="flex -space-x-2">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64&q=80" alt="" className="w-8 h-8 rounded-full border-2 border-slate-950 object-cover" />
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64&q=80" alt="" className="w-8 h-8 rounded-full border-2 border-slate-950 object-cover" />
+          <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=64&h=64&q=80" alt="" className="w-8 h-8 rounded-full border-2 border-slate-950 object-cover" />
         </div>
-        <div className="text-[10px] text-slate-400 leading-tight">
+        <p className="text-sm text-slate-300 leading-snug">
           Trusted by <span className="text-white font-semibold">1,200+ field operators</span> and coordinators.
-        </div>
+        </p>
       </div>
     </div>
   );
@@ -235,34 +232,124 @@ function LocalReviewBadges() {
 
 function LocalTrustedByStrip() {
   const companies = [
-    { name: "CBRE Facilities", industry: "Commercial Portfolio", initials: "CB" },
-    { name: "JLL Vanguard", industry: "Asset Management", initials: "JL" },
-    { name: "Mitie Care", industry: "Facilities Group", initials: "MT" },
-    { name: "Compass Group", industry: "Corporate Support", initials: "CP" },
-    { name: "Aramark Logistics", industry: "Property Services", initials: "AR" }
+    { name: "CBRE Facilities", industry: "Commercial portfolio", initials: "CB" },
+    { name: "JLL Vanguard", industry: "Asset management", initials: "JL" },
+    { name: "Mitie Care", industry: "Facilities group", initials: "MT" },
+    { name: "Compass Group", industry: "Corporate support", initials: "CP" },
+    { name: "Aramark Logistics", industry: "Property services", initials: "AR" },
+  ];
+  const stats = [
+    { value: "11", label: "Languages in the field app" },
+    { value: "14 days", label: "Free trial — no card required" },
+    { value: "GPS + photos", label: "Proof that survives night shifts" },
+    { value: "Offline", label: "Timers that work in basements" },
   ];
 
   return (
-    <section className="border-y border-slate-900/80 bg-slate-950/60 py-12 relative backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-[10px] font-mono tracking-widest text-slate-550 uppercase font-semibold mb-10">
-          trusted by operators in leading facilities enterprises
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-center">
-          {companies.map((co, idx) => (
-            <div 
-              key={idx} 
-              className="flex items-center gap-3 justify-center group opacity-60 hover:opacity-100 transition-all duration-300"
+    <section className="border-y border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-16 sm:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(245,158,11,0.10)_0%,_transparent_55%)] pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-10 sm:mb-14 space-y-4">
+          <p className="text-sm font-mono tracking-[0.22em] text-brand-amber uppercase font-bold">
+            Built for real cleaning operations
+          </p>
+          <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight leading-[1.12]">
+            Trusted by operators in leading facilities enterprises
+          </h2>
+          <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
+            Cleaning contractors and facilities teams use TidyFlow to dispatch jobs, prove work, and close payroll — from night shifts in towers to multi-site commercial contracts.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
+          {stats.map((stat) => (
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-5 sm:px-5 sm:py-6 text-center"
             >
-              {/* Virtual Corporate Logo */}
-              <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-[12px] font-mono font-extrabold text-brand-amber group-hover:border-brand-amber/30 transition-colors">
+              <p className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight">
+                {stat.value}
+              </p>
+              <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-snug">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
+          {companies.map((co) => (
+            <div
+              key={co.initials}
+              className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-brand-amber/50 hover:bg-slate-900 transition-all min-h-[5.5rem]"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-slate-950 border border-slate-700 flex items-center justify-center text-base font-mono font-extrabold text-brand-amber shrink-0">
                 {co.initials}
               </div>
-              <div className="text-left">
-                <span className="block font-display font-bold text-xs text-white tracking-wide">{co.name}</span>
-                <span className="text-[9px] text-slate-500 block leading-none font-mono mt-1">{co.industry}</span>
+              <div className="text-left min-w-0">
+                <span className="block font-display font-bold text-base sm:text-lg text-white tracking-wide truncate">
+                  {co.name}
+                </span>
+                <span className="text-sm text-slate-400 block mt-1">{co.industry}</span>
               </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function LocalSolutionsBand() {
+  const items = [
+    {
+      href: "/blog/office-cleaning-software",
+      title: "Office & night cleaning",
+      desc: "Floor-by-floor checklists, restrooms, and proof for facility managers.",
+    },
+    {
+      href: "/blog/maid-service-software",
+      title: "Maid & residential",
+      desc: "Recurring homes without WhatsApp chaos or missing photos.",
+    },
+    {
+      href: "/blog/contract-cleaning-software",
+      title: "Contract janitorial",
+      desc: "Multi-site dispatch, SLAs, payroll, and invoices on the same job.",
+    },
+    {
+      href: "/blog/janitorial-time-tracking-software",
+      title: "Time & payroll",
+      desc: "GPS hours that still count when the basement has no signal.",
+    },
+  ];
+
+  return (
+    <section className="py-12 sm:py-16 border-b border-slate-800 bg-slate-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
+          <div className="space-y-2 max-w-2xl">
+            <p className="text-sm font-mono tracking-[0.18em] text-brand-amber uppercase font-bold">
+              Who TidyFlow is for
+            </p>
+            <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
+              Commercial, office, maid, and facilities crews
+            </h2>
+          </div>
+          <Link href="/features" className="text-sm font-semibold text-brand-amber hover:text-amber-300 inline-flex items-center gap-1.5">
+            See all features <ArrowRight size={15} />
+          </Link>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {items.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group rounded-2xl border border-slate-800 bg-slate-900/50 hover:border-brand-amber/40 p-5 sm:p-6 transition-colors"
+            >
+              <span className="block font-display font-bold text-white text-lg leading-snug group-hover:text-brand-amber transition-colors">
+                {item.title}
+              </span>
+              <span className="block text-sm text-slate-400 mt-2 leading-relaxed">{item.desc}</span>
+            </Link>
           ))}
         </div>
       </div>
@@ -1050,6 +1137,8 @@ function HomePage({
 
       <LocalTrustedByStrip />
 
+      <LocalSolutionsBand />
+
       <WhatsNewHomeStrip language={language} />
 
       {/* SECTION 2: LANDING SHOWCASE - FEATURE STEPS */}
@@ -1761,7 +1850,7 @@ function PricingPage({ language }: { language: string }) {
   const [isAnnual, setIsAnnual] = useState(false);
   const [estimatedProperties, setEstimatedProperties] = useState(15);
   const [estimatedCleaners, setEstimatedCleaners] = useState(8);
-  const [plans, setPlans] = useState<NormalizedPlan[]>([]);
+  const [plans, setPlans] = useState<NormalizedPlan[]>(() => [...FALLBACK_PLANS]);
   const [plansLoading, setPlansLoading] = useState(true);
   const [plansSource, setPlansSource] = useState<"live" | "fallback">("live");
   const mt = (key: string, vars?: Record<string, string | number>) =>
@@ -1790,7 +1879,7 @@ function PricingPage({ language }: { language: string }) {
   const recommendedCode: PlanCode =
     plans.length > 0
       ? recommendPlanCode(estimatedProperties, estimatedCleaners, plans)
-      : estimatedProperties <= 10 && estimatedCleaners <= 5
+      : estimatedProperties <= 30 && estimatedCleaners <= 8
         ? "STARTUP"
         : estimatedProperties <= 50 && estimatedCleaners <= 25
           ? "STANDARD"
@@ -1818,7 +1907,7 @@ function PricingPage({ language }: { language: string }) {
           {getTranslation("pricingSubtitle", language)}
         </p>
         {plansSource === "live" && !plansLoading && (
-          <p className="text-[10px] font-mono text-emerald-400/90 pt-1">
+          <p className="text-xs font-mono text-emerald-400/90 pt-2">
             {mt("pricingLiveRates")}
           </p>
         )}

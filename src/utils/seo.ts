@@ -19,9 +19,9 @@ const en: Record<SeoPage, SeoMeta> = {
   home: {
     title: "Cleaning Company Software | TidyFlow",
     description:
-      "Janitorial management software with offline cleaner app, GPS clock-in, Google Sheets sync, QuickBooks invoices, payroll, and photo proof. Free 14-day trial.",
+      "Janitorial management software with offline cleaner app, GPS clock-in, Google Sheets sync, QuickBooks invoices, payroll, and photo proof. Free 14-day trial. Plans from $25/mo.",
     keywords:
-      "cleaning company software, janitorial management software, commercial cleaning software, cleaning business software, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, QuickBooks cleaning invoices, house cleaning management software, field service cleaning app, TidyFlow",
+      "cleaning company software, janitorial management software, commercial cleaning software, cleaning business software, maid service software, house cleaning software, office cleaning software, contract cleaning software, facility cleaning software, janitorial time tracking, cleaning dispatch software, cleaning quality control software, cleaner timesheet app, night janitorial software, building services software, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, QuickBooks cleaning invoices, field service cleaning app, proof of cleaning software, TidyFlow",
     canonicalPath: "/"
   },
   documentation: {
@@ -43,9 +43,9 @@ const en: Record<SeoPage, SeoMeta> = {
   pricing: {
     title: "Cleaning Software Pricing | TidyFlow Plans",
     description:
-      "Simple Startup, Standard, and Premium plans for cleaning companies. Transparent limits, self-serve billing, and a 14-day free trial.",
+      "Simple Startup ($25), Standard ($79), and Premium ($149) plans for cleaning companies. Transparent limits, self-serve billing, and a 14-day free trial.",
     keywords:
-      "cleaning software pricing, janitorial software cost, cleaning business software plans, commercial cleaning software price, TidyFlow pricing",
+      "cleaning software pricing, janitorial software cost, cleaning business software plans, commercial cleaning software price, maid service software pricing, TidyFlow pricing, cleaning software $25",
     canonicalPath: "/pricing"
   },
   integrations: {
@@ -935,11 +935,11 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     operatingSystem: "Web, iOS, Android",
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: "9",
+      lowPrice: "25",
       highPrice: "149",
       priceCurrency: "USD",
       offerCount: 3,
-      description: "14-day free trial · Startup from $9/month · Standard $79 · Premium $149",
+      description: "14-day free trial · Startup from $25/month · Standard $79 · Premium $149",
       url: `${SITE_URL}/pricing`
     },
     featureList: [

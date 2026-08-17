@@ -38,7 +38,7 @@ export const PLAN_UI_COPY: Record<
       "AI checklist generation",
       "Capped AI photo verification",
       "Standard invoice PDFs",
-      "Google Sheets real-time sync"
+      "Self-serve billing"
     ]
   },
   STANDARD: {
@@ -50,7 +50,8 @@ export const PLAN_UI_COPY: Record<
       "100 PDF reports / month",
       "Higher cap AI photo verification",
       "Timesheet wage rules engine",
-      "Live Rota Builder dispatch"
+      "Live Rota Builder dispatch",
+      "Google Sheets two-way sync"
     ]
   },
   PREMIUM: {
@@ -62,6 +63,7 @@ export const PLAN_UI_COPY: Record<
       "Unlimited AI operations",
       "Multi-company / Multi-tenant",
       "Full CSV & database exports",
+      "QuickBooks Online invoice sync",
       "24/7 VIP priority support"
     ]
   }
@@ -69,21 +71,21 @@ export const PLAN_UI_COPY: Record<
 
 const PLAN_ORDER: PlanCode[] = ["STARTUP", "STANDARD", "PREMIUM"];
 
-const FALLBACK_PLANS: NormalizedPlan[] = [
+export const FALLBACK_PLANS: NormalizedPlan[] = [
   {
     code: "STARTUP",
     id: "startup",
     name: "Startup",
     currency: "USD",
-    monthlyPrice: 9,
-    annualMonthlyPrice: 7,
-    maxProperties: 10,
-    maxCleaners: 5,
+    monthlyPrice: 25,
+    annualMonthlyPrice: 20,
+    maxProperties: 30,
+    maxCleaners: 8,
     maxManagers: 2,
-    maxAiOperations: 50,
-    maxInvoicesPerMonth: 5,
+    maxAiOperations: 100,
+    maxInvoicesPerMonth: 100,
     maxPhotoVerificationsPerMonth: 30,
-    maxPdfGenerationsPerMonth: 20,
+    maxPdfGenerationsPerMonth: 50,
     isPopular: false,
     trialDays: 14,
     ...PLAN_UI_COPY.STARTUP
@@ -99,7 +101,7 @@ const FALLBACK_PLANS: NormalizedPlan[] = [
     maxCleaners: 25,
     maxManagers: 10,
     maxAiOperations: 500,
-    maxInvoicesPerMonth: 100,
+    maxInvoicesPerMonth: 50,
     maxPhotoVerificationsPerMonth: 200,
     maxPdfGenerationsPerMonth: 100,
     isPopular: true,
@@ -140,9 +142,18 @@ function pick<T>(obj: Record<string, unknown>, keys: string[]): T | undefined {
 }
 
 function toNumber(val: unknown): number | null {
-  if (val === null || val === undefined || val === "" || val === "unlimited") return null;
+  if (val === null || val === undefined || val === "") return null;
   const n = Number(val);
   return Number.isFinite(n) ? n : null;
+}
+
+function toLimit(val: unknown): number | null {
+  if (val === null || val === undefined || val === "" || val === "unlimited") return null;
+  const n = Number(val);
+  if (!Number.isFinite(n)) return null;
+  // Live API uses 999 / 99999 as unlimited sentinels
+  if (n >= 999) return null;
+  return n;
 }
 
 function normalizeCode(raw: unknown): PlanCode | null {
@@ -167,11 +178,11 @@ function readLimit(
 ): number | null {
   const limits = asRecord(obj.limits);
   const scope = asRecord(obj.scope);
-  const fromLimits = limits ? toNumber(limits[limitsKey]) : null;
+  const fromLimits = limits ? toLimit(limits[limitsKey]) : null;
   if (fromLimits !== null) return fromLimits;
-  const fromScope = scope ? toNumber(scope[scopeKey]) : null;
+  const fromScope = scope ? toLimit(scope[scopeKey]) : null;
   if (fromScope !== null) return fromScope;
-  return toNumber(obj[limitsKey]) ?? toNumber(obj[scopeKey]);
+  return toLimit(obj[limitsKey]) ?? toLimit(obj[scopeKey]);
 }
 
 const FEATURE_FLAG_LABELS: Record<string, string> = {
@@ -179,21 +190,35 @@ const FEATURE_FLAG_LABELS: Record<string, string> = {
   aiInsights: "AI business insights dashboard",
   aiAssignment: "AI cleaner assignment",
   aiTaskSuggestions: "AI checklist suggestions",
+  aiSupplyForecast: "AI supply forecast",
   invoicesEnabled: "Client invoicing modules",
-  aiInvoiceAssist: "AI Invoice Assist"
+  aiInvoiceAssist: "AI Invoice Assist",
+  googleSheetsEnabled: "Google Sheets two-way sync",
+  quickbooksEnabled: "QuickBooks Online invoice sync",
 };
 
 function featuresFromFlags(flags: Record<string, unknown>, code: PlanCode): string[] {
-  const enabled = Object.entries(FEATURE_FLAG_LABELS)
-    .filter(([key]) => flags[key] === true)
-    .map(([, label]) => label);
-  if (!enabled.length) return PLAN_UI_COPY[code].features;
-  const base = PLAN_UI_COPY[code].features.filter(
-    (f) => !enabled.some((e) => f.toLowerCase().includes(e.split(" ")[0].toLowerCase()))
-  );
-  return [...base.slice(0, 2), ...enabled, ...base.slice(2)].filter(
-    (v, i, arr) => arr.indexOf(v) === i
-  );
+  let features = [...PLAN_UI_COPY[code].features];
+
+  for (const [key, label] of Object.entries(FEATURE_FLAG_LABELS)) {
+    const on = flags[key] === true;
+    const has = features.some((f) => f.toLowerCase().includes(label.split(" ")[0].toLowerCase()) || f === label);
+    if (on && !has) features.push(label);
+    if (flags[key] === false) {
+      features = features.filter(
+        (f) => f !== label && !f.toLowerCase().includes(label.toLowerCase().slice(0, 12))
+      );
+    }
+  }
+
+  if (flags.googleSheetsEnabled === false) {
+    features = features.filter((f) => !/google sheets/i.test(f));
+  }
+  if (flags.quickbooksEnabled === false) {
+    features = features.filter((f) => !/quickbooks/i.test(f));
+  }
+
+  return features.filter((v, i, arr) => arr.indexOf(v) === i);
 }
 
 /** Normalize a single plan object from management API */
@@ -264,20 +289,27 @@ export function mergePlan(base: NormalizedPlan, detail: NormalizedPlan | null): 
 
 export async function fetchPublicPlans(): Promise<{ plans: NormalizedPlan[]; fromApi: boolean }> {
   try {
-    const res = await fetch("/api/plans");
+    const res = await fetch("/api/plans", {
+      cache: "no-store",
+      headers: { Pragma: "no-cache", "Cache-Control": "no-cache" },
+    });
     if (!res.ok) throw new Error(`Plans API ${res.status}`);
     const listPayload = await res.json();
-    let plans = normalizePlansList(listPayload);
+    const plans = normalizePlansList(listPayload);
+    const looksLive = plans.some(
+      (p, i) => p.monthlyPrice !== FALLBACK_PLANS[i]?.monthlyPrice || p.maxProperties !== FALLBACK_PLANS[i]?.maxProperties
+    );
+    const allHavePrice = plans.every((p) => p.monthlyPrice > 0);
 
-    if (plans.every((p, i) => p.monthlyPrice === FALLBACK_PLANS[i]?.monthlyPrice && listPayload?.success)) {
-      // List may be sparse — enrich each tier from detail endpoint
+    if (allHavePrice) {
+      return { plans, fromApi: true };
     }
 
     const enriched = await Promise.all(
       PLAN_ORDER.map(async (code) => {
         const base = plans.find((p) => p.code === code) || FALLBACK_PLANS.find((p) => p.code === code)!;
         try {
-          const detailRes = await fetch(`/api/plans/${code}`);
+          const detailRes = await fetch(`/api/plans/${code}`, { cache: "no-store" });
           if (!detailRes.ok) return base;
           const detailPayload = await detailRes.json();
           const detail = normalizePlan(unwrapApiPayload(detailPayload), base);
@@ -288,7 +320,7 @@ export async function fetchPublicPlans(): Promise<{ plans: NormalizedPlan[]; fro
       })
     );
 
-    return { plans: enriched, fromApi: true };
+    return { plans: enriched, fromApi: looksLive || true };
   } catch {
     return { plans: [...FALLBACK_PLANS], fromApi: false };
   }

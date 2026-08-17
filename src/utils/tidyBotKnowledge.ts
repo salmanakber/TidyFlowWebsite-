@@ -49,7 +49,7 @@ const TIDYBOT_PRICING_KNOWLEDGE = `
 ## Pricing & trials (official — always send users to /pricing for live rates)
 - **14-day free trial** on all plans — no credit card required to explore.
 - Plans: **Startup**, **Standard** (most popular), **Premium** — billed monthly.
-- Live prices & limits sync from management (typical fallback: Startup from **$9/mo**, Standard **$79/mo**, Premium **$149/mo** — confirm on Pricing page).
+- Live prices & limits sync from management (typical: Startup **$25/mo**, Standard **$79/mo**, Premium **$149/mo** — confirm on Pricing page).
 - Limits include properties, cleaners/managers, and monthly quotas for AI ops, invoices, photo AI, PDFs (reset each billing cycle).
 - **Self-serve billing:** owners/admins change plan, start trial, or cancel in-app (trial cancel anytime; paid cancel at period end securely online).
 - Upgrade immediately; downgrades schedule for next period.
@@ -65,7 +65,7 @@ const TIDYBOT_WEBSITE_KNOWLEDGE = `
 - **/pricing** — live Startup / Standard / Premium plans + trial.
 - **/how-it-works** — spreadsheet → field → payroll pipeline.
 - **/personas** — owners, managers, cleaners, facility clients.
-- **/integrations** — Sheets, QuickBooks, Maps, Maps / Integrations hub.
+- **/integrations** — Sheets, QuickBooks, Maps / Integrations hub.
 - **/contact** — book demo / 14-day free trial (no card required).
 - **/documentation** — interactive user guide + TidyBot.
 - **/blog** (+ individual posts) — cleaning ops education; QuickBooks invoice sync, rota & leave, verified payroll, Revenue AI, TidyFlow vs Jobber, replacing WhatsApp ops, and offline field apps for commercial cleaning.
@@ -220,17 +220,17 @@ const whatIsReplies: Record<string, string> = {
 };
 
 const pricingReplies: Record<string, string> = {
-  en: "💰 **TidyFlow pricing** — live plans securely online:\n\n• **Startup** — from **$9/mo** (10 properties, 5 cleaners)\n• **Standard** — **$79/mo** (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — **$149/mo** (unlimited + priority support)\n\n**14-day free trial**. Change or cancel in-app (self-serve billing). Visit **/pricing** for live rates & usage limits!",
-  pt: "💰 **Preços TidyFlow** — planos securely online:\n\n• **Startup** — a partir de **$9/mês**\n• **Standard** — **$79/mês**\n• **Premium** — **$149/mês**\n\n**Teste grátis 14 dias**. Veja **/pricing** para valores ao vivo!",
-  es: "💰 **Precios TidyFlow** — planes:\n\n• **Startup** — desde **$9/mes**\n• **Standard** — **$79/mes**\n• **Premium** — **$149/mes**\n\n**Prueba 14 días**. Visita **/pricing** para precios en vivo!",
-  ar: "💰 **أسعار TidyFlow** عبر:\n\n• **Startup** من **٩$/شهر**\n• **Standard** **٧٩$/شهر**\n• **Premium** **١٤٩$/شهر**\n\n**تجربة ١٤ يوماً**. راجع **/pricing**!",
-  cn: "💰 **TidyFlow 定价**：\n\n• **Startup** 起 **$9/月**\n• **Standard** **$79/月**\n• **Premium** **$149/月**\n\n**14 天试用**。请查看 **/pricing** 实时价格！",
-  fr: "💰 **Tarifs TidyFlow**  :\n\n• **Startup** dès **9 $/mois**\n• **Standard** **79 $/mois**\n• **Premium** **149 $/mois**\n\n**Essai 14 jours**. Voir **/pricing** !",
-  de: "💰 **TidyFlow Preise** :\n\n• **Startup** ab **9 $/Monat**\n• **Standard** **79 $/Monat**\n• **Premium** **149 $/Monat**\n\n**14 Tage Test**. Siehe **/pricing**!",
-  pl: "💰 **Cennik TidyFlow** :\n\n• **Startup** od **9 $/mies.**\n• **Standard** **79 $/mies.**\n• **Premium** **149 $/mies.**\n\n**14 dni trial**. Zobacz **/pricing**!",
-  no: "💰 **TidyFlow-priser** :\n\n• **Startup** fra **$9/mnd**\n• **Standard** **$79/mnd**\n• **Premium** **$149/mnd**\n\n**14 dagers prøve**. Se **/pricing**!",
-  sv: "💰 **TidyFlow-priser** :\n\n• **Startup** från **$9/mån**\n• **Standard** **$79/mån**\n• **Premium** **$149/mån**\n\n**14 dagars prov**. Se **/pricing**!",
-  it: "💰 **Prezzi TidyFlow** :\n\n• **Startup** da **$9/mese**\n• **Standard** **$79/mese**\n• **Premium** **$149/mese**\n\n**Prova 14 giorni**. Vedi **/pricing**!",
+  en: "💰 **TidyFlow pricing** — live plans from app.tidyflowapp.com:\n\n• **Startup** — **$25/mo** (30 properties, 8 cleaners)\n• **Standard** — **$79/mo** (50 properties, 25 cleaners) ⭐ most popular\n• **Premium** — **$149/mo** (unlimited properties, cleaners & managers + priority support)\n\n**14-day free trial**. Change or cancel in-app (self-serve billing). Visit **/pricing** for live rates & usage limits!",
+  pt: "💰 **Preços TidyFlow** — planos ao vivo:\n\n• **Startup** — **$25/mês** (30 imóveis, 8 faxineiros)\n• **Standard** — **$79/mês**\n• **Premium** — **$149/mês**\n\n**Teste grátis 14 dias**. Veja **/pricing** para valores ao vivo!",
+  es: "💰 **Precios TidyFlow** — planes:\n\n• **Startup** — **$25/mes** (30 inmuebles, 8 limpiadores)\n• **Standard** — **$79/mes**\n• **Premium** — **$149/mes**\n\n**Prueba 14 días**. Visita **/pricing** para precios en vivo!",
+  ar: "💰 **أسعار TidyFlow** عبر:\n\n• **Startup** **٢٥$/شهر** (٣٠ عقار، ٨ منظفين)\n• **Standard** **٧٩$/شهر**\n• **Premium** **١٤٩$/شهر**\n\n**تجربة ١٤ يوماً**. راجع **/pricing**!",
+  cn: "💰 **TidyFlow 定价**：\n\n• **Startup** **$25/月**（30 物业、8 清洁工）\n• **Standard** **$79/月**\n• **Premium** **$149/月**\n\n**14 天试用**。请查看 **/pricing** 实时价格！",
+  fr: "💰 **Tarifs TidyFlow** :\n\n• **Startup** **25 $/mois** (30 propriétés, 8 agents)\n• **Standard** **79 $/mois**\n• **Premium** **149 $/mois**\n\n**Essai 14 jours**. Voir **/pricing** !",
+  de: "💰 **TidyFlow Preise** :\n\n• **Startup** **25 $/Monat** (30 Objekte, 8 Kräfte)\n• **Standard** **79 $/Monat**\n• **Premium** **149 $/Monat**\n\n**14 Tage Test**. Siehe **/pricing**!",
+  pl: "💰 **Cennik TidyFlow** :\n\n• **Startup** **25 $/mies.** (30 nieruchomości, 8 sprzątaczy)\n• **Standard** **79 $/mies.**\n• **Premium** **149 $/mies.**\n\n**14 dni trial**. Zobacz **/pricing**!",
+  no: "💰 **TidyFlow-priser** :\n\n• **Startup** **$25/mnd** (30 eiendommer, 8 renholdere)\n• **Standard** **$79/mnd**\n• **Premium** **$149/mnd**\n\n**14 dagers prøve**. Se **/pricing**!",
+  sv: "💰 **TidyFlow-priser** :\n\n• **Startup** **$25/mån** (30 fastigheter, 8 städare)\n• **Standard** **$79/mån**\n• **Premium** **$149/mån**\n\n**14 dagars prov**. Se **/pricing**!",
+  it: "💰 **Prezzi TidyFlow** :\n\n• **Startup** **$25/mese** (30 immobili, 8 addetti)\n• **Standard** **$79/mese**\n• **Premium** **$149/mese**\n\n**Prova 14 giorni**. Vedi **/pricing**!",
 };
 
 const whatsNewReplies: Record<string, string> = {
@@ -280,7 +280,7 @@ export function getTidyBotOfflineReply(message: string, lang: string): string | 
   ) {
     return whatsNewReplies[lang] || whatsNewReplies.en;
   }
-  if (/pric(e|ing)|how much|subscription|plan|tier|\$9|\$29|\$79|\$149|cost|trial|billing|cancel (plan|subscription)/.test(q)) {
+  if (/pric(e|ing)|how much|subscription|plan|tier|\$9|\$25|\$29|\$79|\$149|cost|trial|billing|cancel (plan|subscription)/.test(q)) {
     return pricingReplies[lang] || pricingReplies.en;
   }
   return null;
