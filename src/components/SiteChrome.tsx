@@ -8,6 +8,8 @@ import TidyBotWidget from "./TidyBotWidget";
 import { useSite } from "../context/SiteContext";
 import { applySeoMeta, getExtraPageSeo, getSeoMeta, pageFromPath } from "../utils/seo";
 import { getFeatureBySlug, getFeatureCopy, getWhatsNewIndexSeo } from "../content/newFeatures";
+import { isSeoLandingSlug } from "../content/seoLandings/registry";
+import { getSeoLandingCopy } from "../content/seoLandings";
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname() || "/";
@@ -81,6 +83,19 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     if (pathPageId === "whats-new") {
       const extra = getWhatsNewIndexSeo(language);
       applySeoMeta({ ...extra, canonicalPath: "/whats-new" }, language);
+      return;
+    }
+    if (isSeoLandingSlug(pathPageId)) {
+      const copy = getSeoLandingCopy(pathPageId, language);
+      applySeoMeta(
+        {
+          title: copy.seoTitle,
+          description: copy.seoDescription,
+          keywords: copy.keywords,
+          canonicalPath: `/${pathPageId}`,
+        },
+        language
+      );
       return;
     }
     applySeoMeta(getSeoMeta(activeTab, marketingPage, language), language);

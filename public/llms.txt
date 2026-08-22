@@ -21,6 +21,18 @@
 - [Blog](https://tidyflowapp.com/blog): Cleaning operations articles
 - [Careers](https://tidyflowapp.com/careers): Open roles
 
+## SEO solution landing pages
+- [Cleaning company software](https://tidyflowapp.com/cleaning-company-software): Pillar — schedule, track, verify, payroll, proof
+- [Cleaning management software](https://tidyflowapp.com/cleaning-management-software): Ops dashboard, rotas, QA, approvals
+- [Janitorial software](https://tidyflowapp.com/janitorial-software): Contract sites, night shifts, offline field work
+- [Commercial cleaning software](https://tidyflowapp.com/commercial-cleaning-software): Multi-site contracts, client proof, invoicing
+- [Cleaning scheduling software](https://tidyflowapp.com/cleaning-scheduling-software): Calendar, recurring jobs, rota, dispatch
+- [Cleaning payroll software](https://tidyflowapp.com/cleaning-payroll-software): Verified hours, GPS, payroll runs
+- [Cleaning inspection software](https://tidyflowapp.com/cleaning-inspection-software): Checklists, photos, QA, client reports
+- [Cleaning time tracking software](https://tidyflowapp.com/cleaning-time-tracking-software): GPS clock-in, geofencing, timesheets
+- [Offline cleaning software](https://tidyflowapp.com/offline-cleaning-software): Offline checklists, timer, photos, GPS queue
+- [Cleaning business software](https://tidyflowapp.com/cleaning-business-software): Grow from startup to multi-team operations
+
 ## What's New feature pages
 - [Task chat](https://tidyflowapp.com/whats-new/task-chat): Per-job team messaging + voice notes
 - [QuickBooks](https://tidyflowapp.com/whats-new/quickbooks): Invoice sync to QuickBooks Online

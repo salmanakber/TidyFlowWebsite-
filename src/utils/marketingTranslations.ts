@@ -254,6 +254,7 @@ export const marketingTranslations: Record<string, any> = {
     contactBackBtn: "Back to Home Page",
     footerCareers: "Careers",
     footerBlog: "Blog",
+    footerSolutions: "Solutions",
     careersBadge: "Careers at TidyFlow",
     careersTitle: "Help us build the operating system for cleaning companies",
     careersSubtitle:
@@ -3140,6 +3141,26 @@ Object.entries(careersI18n).forEach(([lang, dict]) => {
 });
 
 Object.entries(homeStripI18n).forEach(([lang, dict]) => {
+  marketingTranslations[lang] = {
+    ...(marketingTranslations[lang] || marketingTranslations.en),
+    ...dict,
+  };
+});
+
+const footerSolutionsI18n: Record<string, { footerSolutions: string }> = {
+  pt: { footerSolutions: "Soluções" },
+  es: { footerSolutions: "Soluciones" },
+  ar: { footerSolutions: "الحلول" },
+  cn: { footerSolutions: "解决方案" },
+  fr: { footerSolutions: "Solutions" },
+  de: { footerSolutions: "Lösungen" },
+  pl: { footerSolutions: "Rozwiązania" },
+  no: { footerSolutions: "Løsninger" },
+  sv: { footerSolutions: "Lösningar" },
+  it: { footerSolutions: "Soluzioni" },
+};
+
+Object.entries(footerSolutionsI18n).forEach(([lang, dict]) => {
   marketingTranslations[lang] = {
     ...(marketingTranslations[lang] || marketingTranslations.en),
     ...dict,

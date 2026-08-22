@@ -5,6 +5,7 @@
 
 import type { MetadataRoute } from "next";
 import { NEW_FEATURE_SLUGS } from "@/src/content/newFeatures";
+import { SEO_LANDING_SLUGS } from "@/src/content/seoLandings/registry";
 import { getAllPosts } from "@/src/content/blogPosts";
 import { SEO_LANGUAGE_CODES, localizedUrl } from "@/src/utils/seo";
 
@@ -40,6 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/documentation", priority: 0.9, freq: "weekly" },
     { path: "/careers", priority: 0.7, freq: "weekly" },
     { path: "/blog", priority: 0.8, freq: "weekly" },
+    ...SEO_LANDING_SLUGS.map((slug) => ({
+      path: `/${slug}`,
+      priority: slug === "cleaning-company-software" ? 0.85 : 0.75,
+      freq: "monthly" as const,
+    })),
   ];
 
   const localized: MetadataRoute.Sitemap = corePaths.flatMap(({ path, priority, freq }) =>
