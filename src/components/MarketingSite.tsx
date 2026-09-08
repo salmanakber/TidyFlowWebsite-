@@ -1060,8 +1060,10 @@ function HomePage({
   return (
     <div className="space-y-40 pb-32 relative">
       
+      {/* SECTION 1: HERO + FULL-BLEED VIDEO */}
+      <div className="space-y-0">
       {/* SECTION 1: HERO */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 lg:pt-12 pb-16 lg:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
           <div className="lg:col-span-6 space-y-8 text-left relative z-10">
             <div className="flex flex-col gap-3">
@@ -1137,11 +1139,10 @@ function HomePage({
             </PhoneFrame>
           </div>
         </div>
-
-        <div className="mt-14 lg:mt-16">
-          <HeroVideoCta language={language} />
-        </div>
       </section>
+
+      <HeroVideoCta language={language} />
+      </div>
 
       <LocalTrustedByStrip language={language} />
 

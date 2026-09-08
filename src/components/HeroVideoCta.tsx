@@ -39,88 +39,104 @@ export default function HeroVideoCta({ language }: HeroVideoCtaProps) {
 
   return (
     <>
-      <section className="w-full" aria-label={t("videoCtaAria")}>
+      <section className="relative w-full" aria-label={t("videoCtaAria")}>
         <motion.button
           type="button"
           onClick={openModal}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          whileHover={{ scale: 1.008 }}
-          whileTap={{ scale: 0.992 }}
-          className="group relative w-full text-left overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-slate-950 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 cursor-pointer"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="group relative block w-full min-h-[72vh] sm:min-h-[80vh] lg:min-h-[88vh] h-[min(960px,90vh)] text-left overflow-hidden bg-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-amber focus-visible:ring-inset cursor-pointer"
         >
-          {/* Thumbnail */}
-          <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full">
-            <Image
-              src={VIDEO_THUMBNAIL}
-              alt={t("videoCtaAlt")}
-              fill
-              priority={false}
-              sizes="(max-width: 1280px) 100vw, 1280px"
-              className="object-cover object-center scale-[1.01] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-            />
+          {/* Full-bleed cover image */}
+          <Image
+            src={VIDEO_THUMBNAIL}
+            alt={t("videoCtaAlt")}
+            fill
+            priority={false}
+            sizes="100vw"
+            className="object-cover object-center transition-transform duration-[1.1s] ease-out group-hover:scale-[1.035]"
+          />
 
-            {/* Sharp, low-opacity dark veil — keeps image detail */}
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/25 to-slate-950/15 transition-opacity duration-500 group-hover:from-slate-950/50 group-hover:via-slate-950/20"
-              aria-hidden
-            />
-            <div
-              className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(2,6,23,0.35)_100%)]"
-              aria-hidden
-            />
+          {/* Very dark overlays — CTA stays sharp and readable */}
+          <div className="absolute inset-0 bg-black/75 transition-[background-color] duration-500 group-hover:bg-black/70" aria-hidden />
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-black/85 via-slate-950/70 to-black/90"
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(15,23,42,0.2)_0%,rgba(0,0,0,0.82)_68%)]"
+            aria-hidden
+          />
 
-            {/* Amber edge glow */}
-            <div
-              className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              aria-hidden
-            >
-              <div className="absolute inset-0 ring-1 ring-inset ring-brand-amber/25 rounded-2xl sm:rounded-3xl" />
-              <div className="absolute -inset-px bg-[radial-gradient(circle_at_30%_40%,rgba(245,158,11,0.12),transparent_45%)]" />
+          {/* Soft amber atmosphere */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-40 mix-blend-screen"
+            aria-hidden
+          >
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[58%] w-[min(70vw,520px)] h-[min(70vw,520px)] rounded-full bg-brand-amber/[0.12] blur-[90px]" />
+          </div>
+
+          {/* Thin cinematic edge frame */}
+          <div
+            className="pointer-events-none absolute inset-4 sm:inset-6 lg:inset-8 border border-white/[0.07] rounded-sm opacity-80 group-hover:border-brand-amber/20 transition-colors duration-500"
+            aria-hidden
+          />
+
+          {/* Content */}
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 sm:px-10 text-center">
+            {/* Animated play */}
+            <div className="relative mb-7 sm:mb-9">
+              <span
+                className="absolute inset-0 rounded-full bg-brand-amber/30 animate-ping"
+                style={{ animationDuration: "2.6s" }}
+                aria-hidden
+              />
+              <span
+                className="absolute -inset-4 sm:-inset-5 rounded-full border border-brand-amber/35 animate-[pulse_2.8s_ease-in-out_infinite]"
+                aria-hidden
+              />
+              <span
+                className="absolute -inset-8 sm:-inset-10 rounded-full border border-white/10 group-hover:border-brand-amber/25 transition-colors duration-500"
+                aria-hidden
+              />
+              <span
+                className="absolute -inset-12 sm:-inset-14 rounded-full border border-white/[0.04] hidden sm:block"
+                aria-hidden
+              />
+              <span className="relative flex h-[4.5rem] w-[4.5rem] sm:h-24 sm:w-24 items-center justify-center rounded-full bg-gradient-to-br from-brand-amber via-amber-400 to-amber-600 text-slate-950 shadow-[0_0_60px_-4px_rgba(245,158,11,0.85),0_12px_40px_rgba(0,0,0,0.45)] ring-2 ring-white/25 transition-transform duration-400 group-hover:scale-110">
+                <Play
+                  size={34}
+                  className="ml-1 fill-current sm:w-10 sm:h-10 drop-shadow-sm"
+                  aria-hidden
+                />
+              </span>
             </div>
 
-            {/* Content overlay */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center px-5 sm:px-8 text-center">
-              {/* Animated play control */}
-              <div className="relative mb-5 sm:mb-6">
-                <span
-                  className="absolute inset-0 rounded-full bg-brand-amber/25 animate-ping opacity-40"
-                  style={{ animationDuration: "2.4s" }}
-                  aria-hidden
-                />
-                <span
-                  className="absolute -inset-3 rounded-full border border-brand-amber/30 animate-[pulse_2.8s_ease-in-out_infinite]"
-                  aria-hidden
-                />
-                <span
-                  className="absolute -inset-6 rounded-full border border-white/10 opacity-70 group-hover:border-brand-amber/20 transition-colors"
-                  aria-hidden
-                />
-                <span className="relative flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand-amber via-amber-400 to-amber-600 text-slate-950 shadow-[0_0_40px_-6px_rgba(245,158,11,0.75)] ring-1 ring-white/30 transition-transform duration-300 group-hover:scale-105">
-                  <Play size={28} className="ml-0.5 fill-current sm:w-8 sm:h-8" aria-hidden />
-                </span>
-              </div>
+            <p className="text-[11px] sm:text-xs font-mono uppercase tracking-[0.28em] text-brand-amber mb-3">
+              {t("videoCtaEyebrow")}
+            </p>
+            <h2 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] text-white tracking-tight leading-[1.1] max-w-3xl drop-shadow-[0_4px_24px_rgba(0,0,0,0.65)]">
+              {t("videoCtaTitle")}
+            </h2>
+            <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-lg text-slate-200/95 max-w-xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.7)]">
+              {t("videoCtaSubtitle")}
+            </p>
 
-              <p className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.22em] text-brand-amber/95 mb-2 drop-shadow-sm">
-                {t("videoCtaEyebrow")}
-              </p>
-              <h2 className="font-display font-extrabold text-xl sm:text-2xl lg:text-3xl text-white tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)] max-w-xl">
-                {t("videoCtaTitle")}
-              </h2>
-              <p className="mt-2 sm:mt-2.5 text-xs sm:text-sm text-slate-200/90 max-w-md leading-relaxed drop-shadow-sm">
-                {t("videoCtaSubtitle")}
-              </p>
-
-              <div className="mt-4 sm:mt-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-slate-950/45 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-semibold text-slate-100">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand-amber animate-pulse" aria-hidden />
-                {t("videoCtaWatch")}
-                <span className="text-slate-500">·</span>
-                <span className="text-slate-300 font-mono font-medium">{t("videoCtaDuration")}</span>
-              </div>
+            <div className="mt-7 sm:mt-8 inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/50 backdrop-blur-xl px-5 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-[0_8px_32px_rgba(0,0,0,0.4)] transition-colors duration-300 group-hover:border-brand-amber/40 group-hover:bg-black/55">
+              <span className="w-2 h-2 rounded-full bg-brand-amber shadow-[0_0_10px_rgba(245,158,11,0.9)] animate-pulse" aria-hidden />
+              {t("videoCtaWatch")}
+              <span className="text-white/35">·</span>
+              <span className="text-slate-300 font-mono font-medium tracking-wide">{t("videoCtaDuration")}</span>
             </div>
           </div>
+
+          {/* Bottom fade into page */}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950 to-transparent"
+            aria-hidden
+          />
         </motion.button>
       </section>
 
@@ -139,7 +155,7 @@ export default function HeroVideoCta({ language }: HeroVideoCtaProps) {
           >
             <button
               type="button"
-              className="absolute inset-0 bg-slate-950/85 backdrop-blur-md cursor-pointer"
+              className="absolute inset-0 bg-black/90 backdrop-blur-md cursor-pointer"
               aria-label={t("videoCtaClose")}
               onClick={close}
             />
