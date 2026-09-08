@@ -16,7 +16,7 @@ import {
   type NormalizedPlan,
   type PlanCode
 } from "../utils/plansApi";
-import { IOS_APP_URL, ANDROID_APP_URL, subscribeUrlForPlan } from "../config/appLinks";
+import { subscribeUrlForPlan } from "../config/appLinks";
 import TurnstileWidget from "./TurnstileWidget";
 import { useSite } from "../context/SiteContext";
 import {
@@ -56,6 +56,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { WhatsNewHomeStrip } from "./WhatsNewHomeStrip";
 import HeroVideoCta from "./HeroVideoCta";
+import AppStoreButtons from "./AppStoreButtons";
 
 export function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
@@ -147,44 +148,7 @@ function PhoneFrame({ children }: PhoneFrameProps) {
 }
 
 function AppDownloadButtons({ language, layout = "row" }: { language: string; layout?: "row" | "stack" }) {
-  const mt = (key: string) => getMarketingTranslation(key, language);
-  const stack = layout === "stack";
-
-  return (
-    <div className={`${stack ? "flex flex-col gap-3 w-full" : "flex flex-wrap gap-3 items-center"}`}>
-      <a
-        href={IOS_APP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`flex items-center gap-3 px-4 py-2.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-brand-amber/30 rounded-xl transition-all hover:-translate-y-0.5 group shadow-sm ${stack ? "w-full justify-center sm:justify-start" : ""}`}
-      >
-        <svg className="w-6 h-6 text-white fill-current shrink-0" viewBox="0 0 24 24" aria-hidden>
-          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42.14-.61.32M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .05-2.2.68-2.92 1.5-.63.73-1.18 1.87-1.03 2.98 1.12.09 2.26-.56 2.96-1.42z" />
-        </svg>
-        <div className="text-left">
-          <span className="block text-[8px] uppercase tracking-wider font-mono text-slate-500 leading-none">{mt("downloadOn")}</span>
-          <span className="font-bold text-sm text-white group-hover:text-brand-amber transition-colors">{mt("appleStore")}</span>
-        </div>
-      </a>
-      <a
-        href={ANDROID_APP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`flex items-center gap-3 px-4 py-2.5 bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-brand-amber/30 rounded-xl transition-all hover:-translate-y-0.5 group shadow-sm ${stack ? "w-full justify-center sm:justify-start" : ""}`}
-      >
-        <svg className="w-6 h-6 text-white fill-current shrink-0" viewBox="0 0 24 24" aria-hidden>
-          <path d="M3 5.27v13.46c0 .87.8 1.43 1.57 1.05l14.22-7.06c.64-.32.64-1.24 0-1.55L4.57 4.22C3.8 3.84 3 4.4 3 5.27zm1.5 2l11.11 4.73-11.11 4.73V7.27z" />
-        </svg>
-        <div className="text-left">
-          <span className="block text-[8px] uppercase tracking-wider font-mono text-slate-500 leading-none">{mt("getItOn")}</span>
-          <span className="font-bold text-sm text-white group-hover:text-brand-amber transition-colors">{mt("playStore")}</span>
-        </div>
-      </a>
-      <p className={`text-[10px] text-slate-500 font-mono ${stack ? "text-center sm:text-left" : "w-full basis-full pt-1"}`}>
-        {mt("downloadHeroNote")}
-      </p>
-    </div>
-  );
+  return <AppStoreButtons language={language} layout={layout} showNote size="md" />;
 }
 
 // ==========================================

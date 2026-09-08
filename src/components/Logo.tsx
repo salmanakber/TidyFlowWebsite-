@@ -21,7 +21,7 @@ export default function Logo({ className = "", size = 40, showText = true }: Log
 
       {showText && (
         <div className="flex flex-col leading-none min-w-0">
-          <span className="font-display font-bold text-base sm:text-lg tracking-tight text-white">
+          <span className="font-display font-bold text-base sm:text-lg tracking-tight text-slate-100">
             Tidy<span className="text-brand-amber">Flow</span>
           </span>
           <span className="hidden sm:block font-mono text-[9px] uppercase tracking-widest text-slate-400 font-medium mt-0.5">

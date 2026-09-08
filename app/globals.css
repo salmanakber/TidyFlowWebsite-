@@ -186,6 +186,47 @@ html.light-mode :where([class*="hover:bg-slate-9"], [class*="hover:bg-slate-8"],
   background-color: var(--theme-surface-muted) !important;
 }
 
+/* Stronger light-mode text remaps (avoid :where zero-specificity losing to utilities) */
+html.light-mode .text-white:not(.keep-dark):not(.keep-dark *),
+html.light-mode .text-slate-50:not(.keep-dark):not(.keep-dark *),
+html.light-mode .text-slate-100:not(.keep-dark):not(.keep-dark *),
+html.light-mode .text-slate-200:not(.keep-dark):not(.keep-dark *),
+html.light-mode [class*="text-white"]:not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]),
+html.light-mode [class*="text-slate-50"]:not(.keep-dark):not(.keep-dark *),
+html.light-mode [class*="text-slate-100"]:not(.keep-dark):not(.keep-dark *),
+html.light-mode [class*="text-slate-200"]:not(.keep-dark):not(.keep-dark *),
+.light-mode .text-white:not(.keep-dark):not(.keep-dark *),
+.light-mode .text-slate-50:not(.keep-dark):not(.keep-dark *),
+.light-mode .text-slate-100:not(.keep-dark):not(.keep-dark *),
+.light-mode .text-slate-200:not(.keep-dark):not(.keep-dark *),
+.light-mode [class*="text-white"]:not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]),
+.light-mode [class*="text-slate-50"]:not(.keep-dark):not(.keep-dark *),
+.light-mode [class*="text-slate-100"]:not(.keep-dark):not(.keep-dark *),
+.light-mode [class*="text-slate-200"]:not(.keep-dark):not(.keep-dark *) {
+  color: var(--theme-text-primary) !important;
+}
+
+html.light-mode h1:not(.keep-dark):not(.keep-dark *),
+html.light-mode h2:not(.keep-dark):not(.keep-dark *),
+html.light-mode h3:not(.keep-dark):not(.keep-dark *),
+html.light-mode h4:not(.keep-dark):not(.keep-dark *),
+html.light-mode .font-display:not(.keep-dark):not(.keep-dark *),
+.light-mode h1:not(.keep-dark):not(.keep-dark *),
+.light-mode h2:not(.keep-dark):not(.keep-dark *),
+.light-mode h3:not(.keep-dark):not(.keep-dark *),
+.light-mode h4:not(.keep-dark):not(.keep-dark *),
+.light-mode .font-display:not(.keep-dark):not(.keep-dark *) {
+  color: var(--theme-text-primary) !important;
+}
+
+/* Amber brand wordmark / accents stay amber */
+html.light-mode .text-brand-amber,
+html.light-mode [class*="text-brand-amber"],
+.light-mode .text-brand-amber,
+.light-mode [class*="text-brand-amber"] {
+  color: #d97706 !important;
+}
+
 html.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-white"], [class*="text-slate-50"], [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]),
 .light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-white"], [class*="text-slate-50"], [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]) {
   color: var(--theme-text-primary) !important;
@@ -194,7 +235,7 @@ html.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate
 /* Headings without an explicit color class still read as primary in light mode */
 html.light-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *),
 .light-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *) {
-  color: var(--theme-text-primary);
+  color: var(--theme-text-primary) !important;
 }
 
 html.light-mode :where(.text-slate-300, .text-slate-400, [class*="text-slate-300"], [class*="text-slate-400"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]),
@@ -285,8 +326,26 @@ html.light-mode [class*="bg-brand-amber/"],
     color: var(--theme-text-primary) !important;
   }
 
+  .system-mode .text-white:not(.keep-dark):not(.keep-dark *),
+  .system-mode .text-slate-100:not(.keep-dark):not(.keep-dark *),
+  .system-mode [class*="text-white"]:not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]),
+  .system-mode [class*="text-slate-100"]:not(.keep-dark):not(.keep-dark *),
+  .system-mode [class*="text-slate-200"]:not(.keep-dark):not(.keep-dark *),
+  .system-mode h1:not(.keep-dark):not(.keep-dark *),
+  .system-mode h2:not(.keep-dark):not(.keep-dark *),
+  .system-mode h3:not(.keep-dark):not(.keep-dark *),
+  .system-mode h4:not(.keep-dark):not(.keep-dark *),
+  .system-mode .font-display:not(.keep-dark):not(.keep-dark *) {
+    color: var(--theme-text-primary) !important;
+  }
+
+  .system-mode .text-brand-amber,
+  .system-mode [class*="text-brand-amber"] {
+    color: #d97706 !important;
+  }
+
   .system-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *) {
-    color: var(--theme-text-primary);
+    color: var(--theme-text-primary) !important;
   }
 
   .system-mode :where(.text-slate-300, .text-slate-400, [class*="text-slate-300"], [class*="text-slate-400"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]) {
@@ -435,5 +494,99 @@ html.light-mode [class*="bg-brand-amber/"],
 @media (max-width: 480px) {
   .font-display {
     letter-spacing: -0.02em;
+  }
+}
+
+/* ==========================================================================
+   App Store / Play Store badges — theme-aware (light + dark)
+   ========================================================================== */
+.app-store-btn {
+  background: #0b1220;
+  border-color: rgba(148, 163, 184, 0.28);
+  color: #f8fafc;
+  box-shadow: 0 1px 2px rgba(2, 6, 23, 0.35), 0 8px 24px -14px rgba(2, 6, 23, 0.55);
+}
+.app-store-btn:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+  background: #111827;
+}
+.app-store-btn__icon {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.06);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.app-store-btn__eyebrow {
+  color: rgba(226, 232, 240, 0.72);
+}
+.app-store-btn__title {
+  color: #ffffff;
+}
+.app-store-btn:hover .app-store-btn__title {
+  color: #fbbf24;
+}
+.app-store-btn__note {
+  color: var(--theme-text-muted, #94a3b8);
+}
+
+html.light-mode .app-store-btn,
+.light-mode .app-store-btn {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 28px -16px rgba(15, 23, 42, 0.14) !important;
+}
+html.light-mode .app-store-btn:hover,
+.light-mode .app-store-btn:hover {
+  border-color: rgba(245, 158, 11, 0.55) !important;
+  background: #fffbeb !important;
+}
+html.light-mode .app-store-btn__icon,
+.light-mode .app-store-btn__icon {
+  color: #0f172a !important;
+  background: #f1f5f9 !important;
+}
+html.light-mode .app-store-btn__eyebrow,
+.light-mode .app-store-btn__eyebrow {
+  color: #64748b !important;
+}
+html.light-mode .app-store-btn__title,
+.light-mode .app-store-btn__title {
+  color: #0f172a !important;
+}
+html.light-mode .app-store-btn:hover .app-store-btn__title,
+.light-mode .app-store-btn:hover .app-store-btn__title {
+  color: #b45309 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html.system-mode .app-store-btn,
+  .system-mode .app-store-btn {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+    color: #0f172a !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 10px 28px -16px rgba(15, 23, 42, 0.14) !important;
+  }
+  html.system-mode .app-store-btn:hover,
+  .system-mode .app-store-btn:hover {
+    border-color: rgba(245, 158, 11, 0.55) !important;
+    background: #fffbeb !important;
+  }
+  html.system-mode .app-store-btn__icon,
+  .system-mode .app-store-btn__icon {
+    color: #0f172a !important;
+    background: #f1f5f9 !important;
+  }
+  html.system-mode .app-store-btn__eyebrow,
+  .system-mode .app-store-btn__eyebrow {
+    color: #64748b !important;
+  }
+  html.system-mode .app-store-btn__title,
+  .system-mode .app-store-btn__title {
+    color: #0f172a !important;
+  }
+  html.system-mode .app-store-btn:hover .app-store-btn__title,
+  .system-mode .app-store-btn:hover .app-store-btn__title {
+    color: #b45309 !important;
   }
 }
