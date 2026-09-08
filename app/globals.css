@@ -186,9 +186,15 @@ html.light-mode :where([class*="hover:bg-slate-9"], [class*="hover:bg-slate-8"],
   background-color: var(--theme-surface-muted) !important;
 }
 
-html.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]),
-.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]) {
+html.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-white"], [class*="text-slate-50"], [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]),
+.light-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-white"], [class*="text-slate-50"], [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not(.text-brand-amber):not([class*="text-brand-amber"]) {
   color: var(--theme-text-primary) !important;
+}
+
+/* Headings without an explicit color class still read as primary in light mode */
+html.light-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *),
+.light-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *) {
+  color: var(--theme-text-primary);
 }
 
 html.light-mode :where(.text-slate-300, .text-slate-400, [class*="text-slate-300"], [class*="text-slate-400"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]),
@@ -275,8 +281,12 @@ html.light-mode [class*="bg-brand-amber/"],
     background-color: var(--theme-surface-muted) !important;
   }
 
-  .system-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]) {
+  .system-mode :where(.text-white, .text-slate-50, .text-slate-100, .text-slate-200, [class*="text-white"], [class*="text-slate-50"], [class*="text-slate-100"], [class*="text-slate-200"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]) {
     color: var(--theme-text-primary) !important;
+  }
+
+  .system-mode :where(h1, h2, h3, h4).font-display:not(.keep-dark *) {
+    color: var(--theme-text-primary);
   }
 
   .system-mode :where(.text-slate-300, .text-slate-400, [class*="text-slate-300"], [class*="text-slate-400"]):not(.keep-dark):not(.keep-dark *):not([class*="text-brand-amber"]) {

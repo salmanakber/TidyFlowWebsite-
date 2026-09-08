@@ -65,6 +65,9 @@
 - [Sheets to operations](https://tidyflowapp.com/blog/sheets-to-operations)
 - [Cleaning company KPIs](https://tidyflowapp.com/blog/cleaning-company-kpis)
 - [Scale commercial cleaning](https://tidyflowapp.com/blog/scale-commercial-cleaning)
+- [What is cleaning company software](https://tidyflowapp.com/blog/what-is-cleaning-company-software)
+- [Cleaning scheduling best practices](https://tidyflowapp.com/blog/cleaning-scheduling-best-practices)
+- [Offline cleaning app checklist](https://tidyflowapp.com/blog/offline-cleaning-app-checklist)
 
 ## Optional
 - [Sitemap](https://tidyflowapp.com/sitemap.xml)

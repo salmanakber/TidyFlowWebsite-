@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { BLOG_SLUG_REDIRECTS, getAllPosts, getPostBySlug } from "@/src/content/blogPosts";
 import { SITE_URL, buildCustomPageMetadata, OG_IMAGE } from "@/src/utils/seo";
 import { BlogArticleNav } from "@/src/components/BlogArticleNav";
+import { BlogRichText } from "@/src/components/BlogRichText";
 
 type BlogPageProps = {
   params: Promise<{ slug: string }>;
@@ -64,6 +65,15 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
   const related = getAllPosts()
     .filter((p) => p.slug !== post.slug)
     .slice(0, 3);
+
+  const cta = post.cta || {
+    title: "Want this in your operation?",
+    body: "Book a TidyFlow demo and get a practical rollout plan — offline field app, GPS proof, scheduling, and payroll from verified hours.",
+    primaryHref: "/contact",
+    primaryLabel: "Book Demo",
+    secondaryHref: "/pricing",
+    secondaryLabel: "See pricing",
+  };
 
   const postSchema = {
     "@context": "https://schema.org",
@@ -130,7 +140,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
             </time>{" "}
             · {post.readTime} · {post.author}
           </p>
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight text-white">
             {post.title}
           </h1>
           <p className="text-slate-300 text-sm sm:text-base">{post.excerpt}</p>
@@ -139,41 +149,65 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
         <div className="mt-8 sm:mt-10 space-y-8 sm:space-y-10">
           {post.sections.map((section) => (
             <section key={section.heading} className="space-y-3 sm:space-y-4">
-              <h2 className="text-xl sm:text-2xl font-bold text-white">{section.heading}</h2>
+              <h2 className="font-display text-xl sm:text-2xl font-bold text-white">{section.heading}</h2>
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 48)} className="text-slate-300 text-sm sm:text-base leading-7">
-                  {paragraph}
-                </p>
+                <BlogRichText
+                  key={paragraph.slice(0, 48)}
+                  text={paragraph}
+                  className="text-slate-300 text-sm sm:text-base leading-7"
+                />
               ))}
             </section>
           ))}
         </div>
 
+        {post.relatedSolutions && post.relatedSolutions.length > 0 && (
+          <nav
+            className="mt-10 sm:mt-12 rounded-xl sm:rounded-2xl border border-slate-800 bg-slate-900/40 p-5 sm:p-6"
+            aria-label="Related solutions"
+          >
+            <h2 className="font-display font-bold text-white text-base sm:text-lg mb-3">
+              Related TidyFlow solutions
+            </h2>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              {post.relatedSolutions.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2.5 text-sm font-semibold text-brand-amber hover:border-brand-amber/40 hover:bg-slate-900 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+
         <aside className="mt-10 sm:mt-14 border border-slate-800 rounded-xl sm:rounded-2xl p-5 sm:p-6 bg-slate-900/40">
-          <h3 className="font-bold text-white text-base sm:text-lg">Want this in your operation?</h3>
-          <p className="text-slate-300 mt-2 text-sm">
-            Book a TidyFlow demo and get a practical rollout plan for your team — offline field app,
-            GPS proof, QuickBooks sync, and payroll from verified hours.
-          </p>
+          <h3 className="font-display font-bold text-white text-base sm:text-lg">{cta.title}</h3>
+          <p className="text-slate-300 mt-2 text-sm leading-relaxed">{cta.body}</p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link
-              href="/contact"
-              className="inline-block px-4 py-2 rounded-lg bg-brand-amber text-slate-950 font-semibold text-sm"
+              href={cta.primaryHref}
+              className="inline-block px-4 py-2.5 rounded-lg bg-brand-amber text-slate-950 font-semibold text-sm hover:bg-brand-amber/90 transition-colors"
             >
-              Book Demo
+              {cta.primaryLabel}
             </Link>
-            <Link
-              href="/pricing"
-              className="inline-block px-4 py-2 rounded-lg border border-slate-700 text-slate-200 font-semibold text-sm hover:border-brand-amber/50"
-            >
-              See pricing
-            </Link>
+            {cta.secondaryHref && cta.secondaryLabel && (
+              <Link
+                href={cta.secondaryHref}
+                className="inline-block px-4 py-2.5 rounded-lg border border-slate-700 text-slate-200 font-semibold text-sm hover:border-brand-amber/50 transition-colors"
+              >
+                {cta.secondaryLabel}
+              </Link>
+            )}
           </div>
         </aside>
 
         {related.length > 0 && (
           <section className="mt-12 sm:mt-14 border-t border-slate-800 pt-8">
-            <h2 className="text-lg sm:text-xl font-bold text-white mb-4">Related guides</h2>
+            <h2 className="font-display text-lg sm:text-xl font-bold text-white mb-4">Related guides</h2>
             <ul className="space-y-3">
               {related.map((item) => (
                 <li key={item.slug}>

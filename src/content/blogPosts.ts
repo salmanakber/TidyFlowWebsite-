@@ -3,6 +3,11 @@ export interface BlogSection {
   paragraphs: string[];
 }
 
+export interface BlogRelatedLink {
+  href: string;
+  label: string;
+}
+
 export interface BlogPost {
   slug: string;
   /** Short SEO title (≤60 chars). H1 can still use `title`. */
@@ -14,6 +19,16 @@ export interface BlogPost {
   readTime: string;
   author: string;
   sections: BlogSection[];
+  /** Optional internal links shown under the article for SEO/UX. */
+  relatedSolutions?: BlogRelatedLink[];
+  cta?: {
+    title: string;
+    body: string;
+    primaryHref: string;
+    primaryLabel: string;
+    secondaryHref?: string;
+    secondaryLabel?: string;
+  };
 }
 
 /** Old long slugs → current canonical (for redirects / bookmarks). */
@@ -610,13 +625,19 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-07-09",
     readTime: "10 min read",
     author: "TidyFlow Operations Team",
+    relatedSolutions: [
+      { href: "/cleaning-company-software", label: "Cleaning company software" },
+      { href: "/offline-cleaning-software", label: "Offline cleaning software" },
+      { href: "/cleaning-payroll-software", label: "Cleaning payroll software" },
+      { href: "/pricing", label: "Plans & pricing" },
+    ],
     sections: [
       {
         heading: "Start with workflow fit, not feature count",
         paragraphs: [
           "Many cleaning companies choose software by counting checkboxes. In practice, the best platform is the one that matches how your team actually works from first job assignment to payroll export.",
           "Before demos, map your current process for scheduling, cleaner check-ins, quality proof, and payroll approvals. If a tool creates extra handoffs at any of those stages, total admin time will rise even if the product looks modern.",
-          "Write the path for one commercial site: who assigns the job, how the cleaner clocks in, what checklist and photos are required, who approves hours, and how the client gets proof. Score every vendor against that path.",
+          "Write the path for one commercial site: who assigns the job, how the cleaner clocks in, what checklist and photos are required, who approves hours, and how the client gets proof. Score every vendor against that path — or start from our [cleaning company software](/cleaning-company-software) overview.",
         ],
       },
       {
@@ -862,6 +883,182 @@ export const BLOG_POSTS: BlogPost[] = [
         paragraphs: [
           "Scaling also means more properties, cleaners, invoices, and AI ops. Live plan-limit meters prevent a busy month from colliding with a hard SaaS cap mid-payroll.",
           "Self-serve billing lets owners upgrade when growth is real — without waiting on a sales email to unblock the field.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "what-is-cleaning-company-software",
+    metaTitle: "What Is Cleaning Company Software? | Guide",
+    title: "What Is Cleaning Company Software? A Practical Guide for Owners",
+    excerpt:
+      "Cleaning company software is the operating system for scheduling jobs, verifying field work, managing hours, and proving quality — not another generic CRM.",
+    keywords: [
+      "what is cleaning company software",
+      "cleaning company software",
+      "janitorial software definition",
+      "cleaning business software",
+      "cleaning management software",
+    ],
+    publishedAt: "2026-09-08",
+    readTime: "9 min read",
+    author: "TidyFlow Operations Team",
+    relatedSolutions: [
+      { href: "/cleaning-company-software", label: "Cleaning company software overview" },
+      { href: "/cleaning-management-software", label: "Cleaning management software" },
+      { href: "/cleaning-business-software", label: "Cleaning business software" },
+      { href: "/janitorial-software", label: "Janitorial software" },
+    ],
+    cta: {
+      title: "See TidyFlow as your cleaning company OS",
+      body: "Schedule jobs, verify GPS hours, capture photo proof, and run payroll from one platform — with a 14-day free trial.",
+      primaryHref: "/contact",
+      primaryLabel: "Start free trial",
+      secondaryHref: "/cleaning-company-software",
+      secondaryLabel: "Explore cleaning company software",
+    },
+    sections: [
+      {
+        heading: "Cleaning company software vs generic field apps",
+        paragraphs: [
+          "Cleaning company software is built for recurring site visits, multi-cleaner crews, and proof clients can audit — not one-off plumber tickets. Owners need [cleaning company software](/cleaning-company-software) that connects scheduling, field timers, checklists, photos, payroll, and client reports in one place.",
+          "Generic CRMs track leads. Generic FSM tools assume constant internet and a single technician. Janitorial work fails both assumptions: basements lose signal, contracts repeat weekly, and facilities managers want timestamped evidence.",
+        ],
+      },
+      {
+        heading: "Core modules every cleaning business should evaluate",
+        paragraphs: [
+          "Start with [cleaning scheduling software](/cleaning-scheduling-software) for rotas and recurring jobs. Add [cleaning time tracking software](/cleaning-time-tracking-software) with GPS verification so hours match on-site work. Quality teams need [cleaning inspection software](/cleaning-inspection-software) for checklists and before/after photos.",
+          "Finance closes the loop with [cleaning payroll software](/cleaning-payroll-software) from verified hours and client invoicing. If your crews work underground or in plant rooms, prioritize [offline cleaning software](/offline-cleaning-software) that completes jobs without signal.",
+        ],
+      },
+      {
+        heading: "Commercial and janitorial use cases",
+        paragraphs: [
+          "Contract cleaners running multi-site SLAs should look at [commercial cleaning software](/commercial-cleaning-software) and [janitorial software](/janitorial-software) workflows: night shifts, facility proof PDFs, and manager QA. Growing local brands often start with [cleaning business software](/cleaning-business-software) that scales plan limits as properties and cleaners increase.",
+          "Operations managers benefit from [cleaning management software](/cleaning-management-software) dashboards — live job status, leave-aware rotas, and payroll approvals without WhatsApp archaeology.",
+        ],
+      },
+      {
+        heading: "How TidyFlow maps to this definition",
+        paragraphs: [
+          "TidyFlow is cleaning company software for professional teams: calendar and rota scheduling, offline field app, GPS-verified timers, photo proof, payroll from logged hours, client PDF reports, Google Sheets sync, and QuickBooks Online invoice sync on supported plans. Plans start at $25/month with a 14-day free trial.",
+          "If you are comparing vendors, read our [buying guide](/blog/cleaning-software-buying-guide) and score offline reliability, GPS proof, and payroll export — not feature-count marketing slides.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "cleaning-scheduling-best-practices",
+    metaTitle: "Cleaning Scheduling Best Practices | TidyFlow",
+    title: "Cleaning Scheduling Best Practices: Recurring Jobs, Leave, and Dispatch",
+    excerpt:
+      "How cleaning companies build reliable weekly rotas — recurring contracts, leave-aware assignment, and field dispatch that actually reaches cleaners.",
+    keywords: [
+      "cleaning scheduling best practices",
+      "cleaning scheduling software",
+      "cleaning dispatch software",
+      "janitorial rota",
+      "recurring cleaning jobs",
+    ],
+    publishedAt: "2026-09-08",
+    readTime: "8 min read",
+    author: "TidyFlow Operations Team",
+    relatedSolutions: [
+      { href: "/cleaning-scheduling-software", label: "Cleaning scheduling software" },
+      { href: "/cleaning-management-software", label: "Cleaning management software" },
+      { href: "/cleaning-time-tracking-software", label: "Cleaning time tracking" },
+      { href: "/cleaning-company-software", label: "Cleaning company software" },
+    ],
+    cta: {
+      title: "Put your rota in software built for cleaning",
+      body: "Recurring jobs, leave-aware assignment, and instant field updates — try TidyFlow free for 14 days.",
+      primaryHref: "/contact",
+      primaryLabel: "Start free trial",
+      secondaryHref: "/cleaning-scheduling-software",
+      secondaryLabel: "See scheduling software",
+    },
+    sections: [
+      {
+        heading: "Stop rebuilding the same week every Sunday",
+        paragraphs: [
+          "Most cleaning schedules fail the same way: a spreadsheet of recurring visits, a separate leave list, and a WhatsApp blast when someone calls in sick. By Thursday the sheet and the field no longer match.",
+          "[Cleaning scheduling software](/cleaning-scheduling-software) should generate recurring property visits automatically and push assignments to cleaner phones in real time — not rely on managers retyping the same contracts every month.",
+        ],
+      },
+      {
+        heading: "Leave-aware rotas prevent no-shows",
+        paragraphs: [
+          "Publish a rota that ignores approved leave and you guarantee last-minute chaos. Good [cleaning management software](/cleaning-management-software) blocks conflicts when you drag cleaners onto shifts.",
+          "Pair scheduling with [cleaning time tracking software](/cleaning-time-tracking-software) so the same system that assigned the job also verifies clock-in on site. Dispatch without attendance proof recreates the spreadsheet problem in a prettier UI.",
+        ],
+      },
+      {
+        heading: "Dispatch rules that scale beyond one manager",
+        paragraphs: [
+          "Write explicit rules for travel radius, skill tags, and shift overlap before you hire a second supervisor. AI assignment suggestions help only after those rules exist — managers should always confirm the final assignee.",
+          "For deeper dispatch patterns, see our guide on [cleaning dispatch software](/blog/cleaning-dispatch-software) and how [cleaning company software](/cleaning-company-software) ties schedule → track → verify → report.",
+        ],
+      },
+      {
+        heading: "Keep Sheets only if they stay in sync",
+        paragraphs: [
+          "If your team still maintains a master Google Sheet, two-way sync can bridge the transition. The goal is not to delete spreadsheets overnight — it is to stop the field app and the sheet from disagreeing about who is on which site tonight.",
+          "When you are ready, [book a demo](/contact) or review [pricing](/pricing) for Startup, Standard, and Premium limits.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "offline-cleaning-app-checklist",
+    metaTitle: "Offline Cleaning App Checklist | Field Ops",
+    title: "Offline Cleaning App Checklist: What Must Work Without Signal",
+    excerpt:
+      "Basements and plant rooms kill “online-only” field apps. Use this checklist to evaluate offline cleaning software before you buy.",
+    keywords: [
+      "offline cleaning app",
+      "offline cleaning software",
+      "cleaning app no internet",
+      "offline janitorial app",
+      "field cleaning checklist",
+    ],
+    publishedAt: "2026-09-07",
+    readTime: "7 min read",
+    author: "TidyFlow Operations Team",
+    relatedSolutions: [
+      { href: "/offline-cleaning-software", label: "Offline cleaning software" },
+      { href: "/cleaning-inspection-software", label: "Cleaning inspection software" },
+      { href: "/cleaning-time-tracking-software", label: "Time tracking with GPS queue" },
+      { href: "/janitorial-software", label: "Janitorial software" },
+    ],
+    cta: {
+      title: "Run jobs where signal dies",
+      body: "TidyFlow offline mode supports timers, checklists, photos, and GPS queues — then syncs when connectivity returns.",
+      primaryHref: "/contact",
+      primaryLabel: "Start free trial",
+      secondaryHref: "/offline-cleaning-software",
+      secondaryLabel: "Learn about offline cleaning",
+    },
+    sections: [
+      {
+        heading: "If it only caches the job list, it is not offline",
+        paragraphs: [
+          "Many vendors claim “offline.” Ask whether cleaners can finish the job underground: start and stop the timer, complete checklists, capture before/after photos, and queue GPS events. A read-only job list that cannot submit completion fails [janitorial software](/janitorial-software) night crews.",
+          "Evaluate vendors against [offline cleaning software](/offline-cleaning-software) requirements — full completion, then automatic sync — not marketing adjectives.",
+        ],
+      },
+      {
+        heading: "Checklist: must-work offline capabilities",
+        paragraphs: [
+          "Job timer with break/resume. Room-by-room checklists for [cleaning inspection software](/cleaning-inspection-software) workflows. Photo capture tied to the job record. GPS or geofence events queued for later upload. Clear sync status so managers are not told “no show” when the phone was offline.",
+          "Connect those hours to [cleaning time tracking software](/cleaning-time-tracking-software) and payroll so basement cleans still produce verified timesheets.",
+        ],
+      },
+      {
+        heading: "Why this matters for commercial clients",
+        paragraphs: [
+          "Facility managers judge you on proof, not effort. If photos wait until the car park and get mixed between sites, your QC story collapses. Offline capture keeps evidence on the correct visit.",
+          "Read [why offline cleaning apps win](/blog/why-offline-cleaning-apps-win) and compare platforms using the checklist above before you renew a SaaS contract.",
         ],
       },
     ],
