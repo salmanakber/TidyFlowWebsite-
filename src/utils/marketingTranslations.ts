@@ -4,6 +4,7 @@ import { marketingLocaleOverrides } from "./marketingLocaleOverrides";
 import { marketingPageLocales } from "./marketingPageLocales";
 import { marketingPageLocalesExtended } from "./marketingPageLocalesExtended";
 import { homeStripI18n } from "../content/homeStripI18n";
+import { videoCtaI18n } from "../content/videoCtaI18n";
 
 export const marketingTranslations: Record<string, any> = {
   en: {
@@ -255,6 +256,14 @@ export const marketingTranslations: Record<string, any> = {
     footerCareers: "Careers",
     footerBlog: "Blog",
     footerSolutions: "Solutions",
+    videoCtaAria: "Watch the TidyFlow product video",
+    videoCtaAlt: "TidyFlow cleaning management platform — mobile app and field operations",
+    videoCtaEyebrow: "Product tour",
+    videoCtaTitle: "See TidyFlow in action",
+    videoCtaSubtitle: "Schedule, verify, and pay — how cleaning companies run operations in one platform.",
+    videoCtaWatch: "Watch demo",
+    videoCtaDuration: "HD video",
+    videoCtaClose: "Close video",
     careersBadge: "Careers at TidyFlow",
     careersTitle: "Help us build the operating system for cleaning companies",
     careersSubtitle:
@@ -3161,6 +3170,13 @@ const footerSolutionsI18n: Record<string, { footerSolutions: string }> = {
 };
 
 Object.entries(footerSolutionsI18n).forEach(([lang, dict]) => {
+  marketingTranslations[lang] = {
+    ...(marketingTranslations[lang] || marketingTranslations.en),
+    ...dict,
+  };
+});
+
+Object.entries(videoCtaI18n).forEach(([lang, dict]) => {
   marketingTranslations[lang] = {
     ...(marketingTranslations[lang] || marketingTranslations.en),
     ...dict,

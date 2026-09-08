@@ -55,6 +55,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { WhatsNewHomeStrip } from "./WhatsNewHomeStrip";
+import HeroVideoCta from "./HeroVideoCta";
 
 export function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
@@ -1135,6 +1136,10 @@ function HomePage({
               <LiveTimerSimulator />
             </PhoneFrame>
           </div>
+        </div>
+
+        <div className="mt-14 lg:mt-16">
+          <HeroVideoCta language={language} />
         </div>
       </section>
 
