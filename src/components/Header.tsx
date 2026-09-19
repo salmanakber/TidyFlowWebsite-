@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Logo from "./Logo";
-import { Menu, X, BookOpen, ChevronRight, ChevronDown, Check, Sun, Moon, Monitor, LogIn } from "lucide-react";
+import { Menu, X, BookOpen, ChevronRight, ChevronDown, Check, Sun, Moon, Monitor } from "lucide-react";
 import { getMarketingTranslation } from "../utils/marketingTranslations";
-import { LOGIN_URL } from "../config/appLinks";
 import { pathForPage } from "../utils/seo";
+import AuthLoginLink from "./AuthLoginLink";
 
 export const SUPPORTED_LANGUAGES = [
   { code: "en", label: "English", flag: "🇬🇧", short: "EN" },
@@ -110,8 +110,12 @@ export default function Header({
       fr: "Guide", de: "Handbuch", pl: "Przewodnik", no: "Guide", sv: "Guide", it: "Guida",
     },
     login: {
-      en: "Log in", pt: "Entrar", es: "Iniciar sesión", ar: "تسجيل الدخول", cn: "登录",
+      en: "Login", pt: "Entrar", es: "Iniciar sesión", ar: "تسجيل الدخول", cn: "登录",
       fr: "Connexion", de: "Anmelden", pl: "Zaloguj się", no: "Logg inn", sv: "Logga in", it: "Accedi",
+    },
+    goToDashboard: {
+      en: "Go to dashboard", pt: "Ir ao painel", es: "Ir al panel", ar: "الذهاب إلى لوحة التحكم", cn: "进入控制台",
+      fr: "Aller au tableau de bord", de: "Zum Dashboard", pl: "Przejdź do panelu", no: "Gå til dashbord", sv: "Gå till panelen", it: "Vai alla dashboard",
     },
     getStarted: {
       en: "Get Started", pt: "Iniciar", es: "Comenzar", ar: "ابدأ", cn: "开始",
@@ -280,120 +284,112 @@ export default function Header({
             })}
           </nav>
 
-          {/* Desktop / large actions */}
-          <div className="hidden lg:flex items-center gap-1.5">
-            <div className="relative">
+          {/* Trailing actions — auth link is shared so #tf-login exists once */}
+          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+            {/* Desktop lang / theme / docs */}
+            <div className="hidden lg:flex items-center gap-1.5">
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={openLang}
+                  className={`${iconBtn} w-auto px-2 gap-1`}
+                  title="Language"
+                  aria-label="Select language"
+                  aria-expanded={langDropdownOpen}
+                >
+                  <span className="text-sm leading-none">{activeLangInfo.flag}</span>
+                  <span className="text-[10px] font-semibold tracking-wide">{activeLangInfo.short}</span>
+                  <ChevronDown
+                    size={11}
+                    className={`text-slate-500 transition-transform ${langDropdownOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {langDropdownOpen && <LangMenu />}
+              </div>
+
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={openTheme}
+                  className={iconBtn}
+                  title={t("theme")}
+                  aria-label={`${t("theme")}: ${theme}`}
+                  aria-expanded={themeDropdownOpen}
+                >
+                  <ThemeIcon size={14} className={themeIconClass} />
+                </button>
+                {themeDropdownOpen && <ThemeMenu />}
+              </div>
+
               <button
                 type="button"
-                onClick={openLang}
-                className={`${iconBtn} w-auto px-2 gap-1`}
-                title="Language"
-                aria-label="Select language"
-                aria-expanded={langDropdownOpen}
+                onClick={handleDocClick}
+                className={`h-8 text-[11px] font-semibold px-2.5 rounded-md flex items-center gap-1 border transition-all cursor-pointer ${
+                  activeTab === "documentation"
+                    ? "bg-brand-amber border-brand-amber text-slate-950"
+                    : "bg-slate-800/50 border-slate-700/80 text-slate-200 hover:bg-slate-800"
+                }`}
               >
-                <span className="text-sm leading-none">{activeLangInfo.flag}</span>
-                <span className="text-[10px] font-semibold tracking-wide">{activeLangInfo.short}</span>
-                <ChevronDown
-                  size={11}
-                  className={`text-slate-500 transition-transform ${langDropdownOpen ? "rotate-180" : ""}`}
-                />
+                <BookOpen size={12} />
+                <span className="hidden xl:inline">{t("userGuide")}</span>
               </button>
-              {langDropdownOpen && <LangMenu />}
             </div>
 
-            <div className="relative">
+            {/* Mobile lang / theme / docs */}
+            <div className="lg:hidden flex items-center gap-1">
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={openLang}
+                  className={iconBtn}
+                  aria-label="Select language"
+                  aria-expanded={langDropdownOpen}
+                >
+                  <span className="text-sm leading-none">{activeLangInfo.flag}</span>
+                </button>
+                {langDropdownOpen && <LangMenu />}
+              </div>
+
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={openTheme}
+                  className={iconBtn}
+                  aria-label={`${t("theme")}: ${theme}`}
+                  aria-expanded={themeDropdownOpen}
+                >
+                  <ThemeIcon size={14} className={themeIconClass} />
+                </button>
+                {themeDropdownOpen && <ThemeMenu />}
+              </div>
+
               <button
                 type="button"
-                onClick={openTheme}
-                className={iconBtn}
-                title={t("theme")}
-                aria-label={`${t("theme")}: ${theme}`}
-                aria-expanded={themeDropdownOpen}
+                onClick={handleDocClick}
+                className={`h-8 w-8 inline-flex items-center justify-center rounded-md border transition-colors ${
+                  activeTab === "documentation"
+                    ? "bg-brand-amber border-brand-amber text-slate-950"
+                    : "bg-slate-800/50 border-slate-700/80 text-slate-300"
+                }`}
+                aria-label="Open documentation"
               >
-                <ThemeIcon size={14} className={themeIconClass} />
+                <BookOpen size={14} />
               </button>
-              {themeDropdownOpen && <ThemeMenu />}
             </div>
 
-            <button
-              type="button"
-              onClick={handleDocClick}
-              className={`h-8 text-[11px] font-semibold px-2.5 rounded-md flex items-center gap-1 border transition-all cursor-pointer ${
-                activeTab === "documentation"
-                  ? "bg-brand-amber border-brand-amber text-slate-950"
-                  : "bg-slate-800/50 border-slate-700/80 text-slate-200 hover:bg-slate-800"
-              }`}
-            >
-              <BookOpen size={12} />
-              <span className="hidden xl:inline">{t("userGuide")}</span>
-            </button>
-
-            <a
-              href={LOGIN_URL}
-              className="h-8 text-[11px] font-semibold px-2.5 rounded-md flex items-center gap-1.5 border border-slate-700/80 bg-slate-800/40 text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all whitespace-nowrap"
-            >
-              <LogIn size={12} />
-              {t("login")}
-            </a>
+            <AuthLoginLink
+              loginLabel={t("login")}
+              dashboardLabel={t("goToDashboard")}
+              className="h-8 text-[11px] font-semibold px-2.5 sm:px-3 rounded-md inline-flex items-center justify-center border border-slate-700/80 bg-slate-800/40 text-slate-200 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all whitespace-nowrap"
+            />
 
             <button
               type="button"
               onClick={() => handleNavClick("contact")}
-              className="h-8 text-[11px] font-semibold bg-gradient-to-r from-brand-amber to-amber-500 hover:from-amber-400 hover:to-brand-amber text-slate-950 px-3 rounded-md shadow-sm transition-all cursor-pointer whitespace-nowrap"
+              className="hidden lg:inline-flex h-8 text-[11px] font-semibold bg-gradient-to-r from-brand-amber to-amber-500 hover:from-amber-400 hover:to-brand-amber text-slate-950 px-3 rounded-md shadow-sm transition-all cursor-pointer whitespace-nowrap items-center"
             >
               {t("getStarted")}
             </button>
-          </div>
-
-          {/* Mobile / tablet bar */}
-          <div className="lg:hidden flex items-center gap-1">
-            <div className="relative">
-              <button
-                type="button"
-                onClick={openLang}
-                className={iconBtn}
-                aria-label="Select language"
-                aria-expanded={langDropdownOpen}
-              >
-                <span className="text-sm leading-none">{activeLangInfo.flag}</span>
-              </button>
-              {langDropdownOpen && <LangMenu />}
-            </div>
-
-            <div className="relative">
-              <button
-                type="button"
-                onClick={openTheme}
-                className={iconBtn}
-                aria-label={`${t("theme")}: ${theme}`}
-                aria-expanded={themeDropdownOpen}
-              >
-                <ThemeIcon size={14} className={themeIconClass} />
-              </button>
-              {themeDropdownOpen && <ThemeMenu />}
-            </div>
-
-            <button
-              type="button"
-              onClick={handleDocClick}
-              className={`h-8 w-8 inline-flex items-center justify-center rounded-md border transition-colors ${
-                activeTab === "documentation"
-                  ? "bg-brand-amber border-brand-amber text-slate-950"
-                  : "bg-slate-800/50 border-slate-700/80 text-slate-300"
-              }`}
-              aria-label="Open documentation"
-            >
-              <BookOpen size={14} />
-            </button>
-
-            <a
-              href={LOGIN_URL}
-              className="h-8 inline-flex items-center justify-center gap-1 rounded-md border border-slate-700/80 bg-slate-800/50 text-slate-200 hover:bg-slate-800 hover:text-white transition-colors px-2 sm:px-2.5"
-              aria-label={t("login")}
-            >
-              <LogIn size={14} />
-              <span className="hidden md:inline text-[11px] font-semibold whitespace-nowrap">{t("login")}</span>
-            </a>
 
             <button
               type="button"
@@ -402,7 +398,7 @@ export default function Header({
                 setThemeDropdownOpen(false);
                 setIsOpen(!isOpen);
               }}
-              className={iconBtn}
+              className={`${iconBtn} lg:hidden`}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
@@ -462,13 +458,6 @@ export default function Header({
           </div>
 
           <div className="border-t border-slate-800 pt-3 flex flex-col gap-2">
-            <a
-              href={LOGIN_URL}
-              className="w-full py-2.5 px-3 text-xs font-bold rounded-md flex items-center justify-center gap-1.5 border border-slate-700 bg-slate-800 text-slate-200"
-            >
-              <LogIn size={13} />
-              {t("login")}
-            </a>
             <button
               type="button"
               onClick={handleDocClick}

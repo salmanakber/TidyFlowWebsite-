@@ -5,9 +5,14 @@ export const ANDROID_APP_URL =
   process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
   "https://play.google.com/store/apps/details?id=com.tidyflow.app";
 
-/** Customer billing / account login (not the admin console) */
+/** Customer login (session-aware via embed/nav-auth.js) */
 export const LOGIN_URL =
-  process.env.NEXT_PUBLIC_LOGIN_URL || "https://app.tidyflowapp.com/account/login";
+  process.env.NEXT_PUBLIC_LOGIN_URL || "https://app.tidyflowapp.com/login";
+
+/** Injects login / dashboard label based on app session */
+export const NAV_AUTH_SCRIPT_URL =
+  process.env.NEXT_PUBLIC_NAV_AUTH_SCRIPT_URL ||
+  "https://app.tidyflowapp.com/embed/nav-auth.js";
 export const SUBSCRIBE_BASE_URL =
   process.env.NEXT_PUBLIC_SUBSCRIBE_URL || "https://app.tidyflowapp.com/subscribe";
 
