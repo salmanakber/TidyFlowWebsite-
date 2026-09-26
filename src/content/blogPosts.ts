@@ -121,10 +121,10 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "contract-cleaning-software",
-    metaTitle: "Contract Cleaning Software | Multi-Site SLAs",
+    metaTitle: "Contract Cleaning Software | Multi-Site Ops | TidyFlow",
     title: "Contract Cleaning Software: Multi-Site SLAs, Proof, Payroll, and Invoices Together",
     excerpt:
-      "Facilities contracts die in handoffs: dispatch in Sheets, hours in a group chat, invoices in accounting. Keep the job, the hours, and the proof on one record.",
+      "Contract cleaning software for multi-site SLAs — schedule visits, verify GPS hours, capture photo proof, and invoice from one operations record. Not another calendar app.",
     keywords: [
       "contract cleaning software",
       "janitorial contract management",
@@ -134,6 +134,20 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: "2026-08-16",
     readTime: "9 min read",
     author: "TidyFlow Operations Team",
+    relatedSolutions: [
+      { href: "/commercial-cleaning-software", label: "Commercial cleaning software" },
+      { href: "/cleaning-company-software", label: "Cleaning company software" },
+      { href: "/cleaning-scheduling-software", label: "Cleaning scheduling software" },
+      { href: "/cleaning-inspection-software", label: "Cleaning inspection software" },
+    ],
+    cta: {
+      title: "Run multi-site contracts in one system",
+      body: "Web dashboard for managers, mobile for field crews — schedule, GPS proof, payroll, and client reports. Start a 14-day free trial.",
+      primaryHref: "/contact",
+      primaryLabel: "Start free trial",
+      secondaryHref: "/commercial-cleaning-software",
+      secondaryLabel: "Commercial cleaning software",
+    },
     sections: [
       {
         heading: "SLAs fail in the gaps between tools",
@@ -612,7 +626,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-software-buying-guide",
-    metaTitle: "Best Cleaning Company Software Guide 2026",
+    metaTitle: "Cleaning Company Software Buying Guide 2026 | TidyFlow",
     title: "Cleaning Company Software Buying Guide (2026): What To Compare Before You Commit",
     excerpt:
       "Compare janitorial software on offline field work, GPS proof, Sheets sync, payroll export, and client reports — not feature checklists alone.",

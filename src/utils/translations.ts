@@ -35,9 +35,9 @@ export interface LanguageTranslation {
 export const translations: Record<string, LanguageTranslation> = {
   en: {
     heroBadge: "Cleaning Company Software · Offline Field App · GPS Geofencing · 11 Languages",
-    heroTitle: "Cleaning company software that runs your field team, payroll & client proof",
-    heroSub: "Replace WhatsApp chaos and spreadsheet rotas with one platform built for janitorial and facilities teams. Schedule jobs, verify on-site GPS clock-ins, sync Google Sheets two-way, run offline mobile checklists, automate payroll, and send branded before/after reports to clients.",
-    heroTrialNote: "14-day free trial · no credit card · plans from $25/mo",
+    heroTitle: "Cleaning company software — web dashboard for managers, mobile for the field",
+    heroSub: "TidyFlow is built for janitorial and facilities teams. Plan jobs and rotas in the web app, verify GPS clock-ins and photo proof on mobile (online or offline), sync Google Sheets, run payroll, and send branded client reports — one platform, not five chat threads.",
+    heroTrialNote: "14-day free trial · no credit card · plans from $25/mo · web + iOS/Android",
     startTrial: "Start Free Trial",
     userDocs: "See User Documentation",
     badgeOffline: "Works offline in cellars",
@@ -63,7 +63,7 @@ export const translations: Record<string, LanguageTranslation> = {
     formSheets: "Use Google Sheets today?",
     formDetails: "Additional Operational Details",
     formSubmit: "Request Trial & Dispatch Secure Key Setup",
-    langSupported: "11 Languages Supported"
+    langSupported: "Web + Mobile · 11 Languages"
   },
   pt: {
     heroBadge: "🌐 Sistema Operativo para Empresas de Limpeza • 11 Idiomas Suportados",

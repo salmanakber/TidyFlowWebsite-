@@ -258,11 +258,11 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "commercial-cleaning-software": {
-    seoTitle: "Commercial Cleaning Software | Multi-Site Contracts | TidyFlow",
+    seoTitle: "Commercial & Contract Cleaning Software | Web + Mobile | TidyFlow",
     seoDescription:
-      "Commercial cleaning software for office, retail, and facility contracts — scheduling, QC inspections, client proof, invoicing, and team management.",
+      "Commercial and contract cleaning software with a web dashboard for multi-site schedules, mobile GPS proof, QC photos, payroll, and client reports. 14-day free trial.",
     keywords:
-      "commercial cleaning software, office cleaning software, contract cleaning platform, facility cleaning software, TidyFlow",
+      "commercial cleaning software, contract cleaning software, office cleaning software, facility cleaning software, multi-site cleaning software, TidyFlow",
     eyebrow: "Commercial cleaning software",
     h1: "Commercial cleaning software for contract operations",
     heroSubtitle:

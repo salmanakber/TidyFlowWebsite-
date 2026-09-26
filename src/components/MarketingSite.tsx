@@ -57,6 +57,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { WhatsNewHomeStrip } from "./WhatsNewHomeStrip";
 import HeroVideoCta from "./HeroVideoCta";
 import AppStoreButtons from "./AppStoreButtons";
+import { FeaturePromoImage, PlatformIntroBand } from "./PlatformIntroBand";
+import { getPlatformIntro } from "../content/platformIntroI18n";
 
 export function MarketingShell({ children }: { children: React.ReactNode }) {
   return (
@@ -945,13 +947,14 @@ function LearnMoreLink({
 }: {
   href: string;
   language: string;
-  tone?: "amber" | "violet" | "emerald" | "rose";
+  tone?: "amber" | "violet" | "emerald" | "rose" | "sky";
 }) {
   const tones = {
     amber: "text-brand-amber hover:text-amber-300",
     violet: "text-violet-300 hover:text-violet-200",
     emerald: "text-emerald-400 hover:text-emerald-300",
     rose: "text-rose-400 hover:text-rose-300",
+    sky: "text-sky-300 hover:text-sky-200",
   };
   return (
     <Link
@@ -1020,6 +1023,7 @@ function HomePage({
 }) {
   const router = useRouter();
   const mt = (key: string) => getMarketingTranslation(key, language);
+  const platform = getPlatformIntro(language);
 
   return (
     <div className="space-y-40 pb-32 relative">
@@ -1106,6 +1110,8 @@ function HomePage({
       </section>
 
       <HeroVideoCta language={language} />
+
+      <PlatformIntroBand language={language} />
       </div>
 
       <LocalTrustedByStrip language={language} />
@@ -1207,11 +1213,11 @@ function HomePage({
               <LearnMoreLink href="/whats-new/integrations-hub" language={language} tone="emerald" />
             </div>
 
-            <div className="lg:col-span-7 bg-slate-900/30 p-4 rounded-2xl border border-slate-900/80 max-w-full overflow-hidden shadow-2xl relative">
-              <div className="absolute inset-0 bg-gradient-to-b from-brand-amber/[0.02] to-transparent pointer-events-none" />
-              <div className="h-96 md:h-[450px]">
-                <SheetIntegrationSimulator />
-              </div>
+            <div className="lg:col-span-7 relative">
+              <FeaturePromoImage
+                src="/images/google-sheets-web-mobile-sync.png"
+                alt={platform.sheetsPromoAlt}
+              />
             </div>
 
           </div>
@@ -1285,13 +1291,50 @@ function HomePage({
               <LearnMoreLink href="/features" language={language} tone="emerald" />
             </div>
 
-            <div className="lg:col-span-6 flex justify-center relative">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500/5 via-transparent to-transparent opacity-40 blur-2xl pointer-events-none" />
-              <PhoneFrame>
-                <PhotoProofSimulator />
-              </PhoneFrame>
+            <div className="lg:col-span-6 relative">
+              <FeaturePromoImage
+                src="/images/before-after-photos-client-reports.png"
+                alt={platform.proofPromoAlt}
+              />
             </div>
 
+          </div>
+        </div>
+
+        {/* Module 3b: Online booking widget (web + embed) */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div className="lg:col-span-6 relative order-last lg:order-first">
+              <FeaturePromoImage
+                src="/images/online-booking-widget-embed.png"
+                alt={platform.bookingPromoAlt}
+              />
+            </div>
+            <div className="lg:col-span-6 space-y-6 text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sky-500/10 text-sky-300 text-xs font-semibold rounded-full border border-sky-500/20">
+                <Globe size={13} />
+                <span>{platform.bookingEyebrow}</span>
+              </div>
+              <h3 className="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight leading-[1.15]">
+                {platform.bookingTitle}
+              </h3>
+              <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                {platform.bookingDesc}
+              </p>
+              <ul className="space-y-4 text-xs sm:text-sm text-slate-400 pt-2">
+                {[platform.bookingCheck1, platform.bookingCheck2, platform.bookingCheck3].map(
+                  (text) => (
+                    <li key={text.slice(0, 36)} className="flex gap-3 items-start">
+                      <span className="w-5.5 h-5.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-300 flex items-center justify-center font-mono font-bold shrink-0 mt-0.5">
+                        ✓
+                      </span>
+                      <span>{text}</span>
+                    </li>
+                  )
+                )}
+              </ul>
+              <LearnMoreLink href="/features" language={language} tone="sky" />
+            </div>
           </div>
         </div>
 

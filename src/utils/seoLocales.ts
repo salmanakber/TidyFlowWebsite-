@@ -1,15 +1,15 @@
 import type { SeoMeta, SeoPage } from "./seoTypes";
 
 const homeKw = {
-  en: "cleaning company software, janitorial management software, commercial cleaning software, cleaning business software, maid service software, house cleaning software, office cleaning software, contract cleaning software, facility cleaning software, janitorial time tracking, cleaning dispatch software, cleaning quality control software, cleaner timesheet app, night janitorial software, building services software, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, QuickBooks cleaning invoices, field service cleaning app, proof of cleaning software, TidyFlow",
+  en: "cleaning company software, contract cleaning software, janitorial management software, commercial cleaning software, cleaning business software, cleaning management software, cleaning web dashboard, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, online booking cleaning, proof of cleaning software, TidyFlow",
 };
 
 export const seoLocales: Record<string, Record<SeoPage, SeoMeta>> = {
   en: {
     home: {
-      title: "Cleaning Company Software | TidyFlow",
+      title: "TidyFlow | Cleaning Company Software — Web Dashboard & Mobile App",
       description:
-        "Janitorial management software with offline cleaner app, GPS clock-in, Google Sheets sync, QuickBooks invoices, payroll, and photo proof. Free 14-day trial. Plans from $25/mo.",
+        "Cleaning company software with a web operations dashboard and offline mobile app. Schedule jobs, GPS clock-in, Google Sheets sync, photo proof, payroll, and online booking. 14-day free trial from $25/mo.",
       keywords: homeKw.en,
       canonicalPath: "/",
     },
@@ -22,9 +22,9 @@ export const seoLocales: Record<string, Record<SeoPage, SeoMeta>> = {
       canonicalPath: "/documentation",
     },
     features: {
-      title: "Cleaning Software Features | Scheduling, GPS, Payroll",
+      title: "Cleaning Software Features | Web Dashboard, GPS & Payroll",
       description:
-        "Explore cleaning ops features: rota scheduling, offline timers, GPS geofencing, photo proof, AI dispatch, payroll, QuickBooks, and Sheets sync.",
+        "Web dashboard for managers plus mobile field app: rota scheduling, offline timers, GPS geofencing, photo proof, online booking, AI dispatch, payroll, QuickBooks, and Sheets sync.",
       keywords:
         "cleaning software features, janitorial scheduling software, cleaner GPS tracking app, cleaning payroll software, rota builder cleaning, offline field service app, AI dispatch cleaning",
       canonicalPath: "/features",
@@ -876,12 +876,12 @@ export const extraPageSeo: Record<
 };
 
 export const ogImageAlt: Record<string, string> = {
-  en: "TidyFlow — Cleaning company software for field teams",
-  pt: "TidyFlow — Software para empresas de limpeza e equipas de campo",
-  es: "TidyFlow — Software para empresas de limpieza y equipos de campo",
-  fr: "TidyFlow — Logiciel pour entreprises de nettoyage et équipes terrain",
-  de: "TidyFlow — Software für Reinigungsunternehmen und Field-Teams",
-  pl: "TidyFlow — Oprogramowanie dla firm sprzątających i zespołów terenowych",
+  en: "TidyFlow — Cleaning company software with web dashboard and mobile field app",
+  pt: "TidyFlow — Software para empresas de limpeza com painel web e app móvel",
+  es: "TidyFlow — Software para empresas de limpieza con panel web y app móvil",
+  fr: "TidyFlow — Logiciel de nettoyage avec tableau de bord web et application mobile",
+  de: "TidyFlow — Reinigungssoftware mit Web-Dashboard und Mobile-App",
+  pl: "TidyFlow — Oprogramowanie dla firm sprzątających: panel web i aplikacja mobilna",
   no: "TidyFlow — Programvare for rengjøringsbedrifter og feltteam",
   sv: "TidyFlow — Programvara för städföretag och fältteam",
   it: "TidyFlow — Software per imprese di pulizia e team sul campo",
