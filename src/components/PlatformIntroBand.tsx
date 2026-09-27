@@ -7,6 +7,43 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle, MonitorSmartphone } from "lucide-react";
 import { getPlatformIntro } from "../content/platformIntroI18n";
 
+/** Soft cinematic presentation for transparent product screenshots */
+function PromoVisual({
+  src,
+  alt,
+  width,
+  height,
+  sizes,
+  className = "",
+  priority = false,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  sizes: string;
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <div className={`relative promo-visual ${className}`}>
+      {/* Ambient glow — reads well on dark canvas; softened in light mode via CSS */}
+      <div className="promo-visual__glow pointer-events-none absolute inset-[-8%] sm:inset-[-12%]" aria-hidden />
+      <div className="relative z-10">
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="promo-visual__img w-full h-auto object-contain"
+          sizes={sizes}
+          priority={priority}
+        />
+      </div>
+    </div>
+  );
+}
+
 export function PlatformIntroBand({ language }: { language: string }) {
   const router = useRouter();
   const copy = getPlatformIntro(language);
@@ -49,19 +86,14 @@ export function PlatformIntroBand({ language }: { language: string }) {
           </div>
         </div>
 
-        <div className="lg:col-span-7 relative">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-amber/10 via-transparent to-transparent opacity-50 blur-3xl pointer-events-none" />
-          <div className="relative rounded-2xl overflow-hidden border border-slate-800/80 bg-slate-950/40 shadow-[0_24px_80px_-28px_rgba(0,0,0,0.7)]">
-            <Image
-              src="/images/web-mobile-operations-dashboard.png"
-              alt={copy.platformImgAlt}
-              width={1704}
-              height={1100}
-              className="w-full h-auto object-cover"
-              sizes="(max-width: 1024px) 100vw, 60vw"
-              priority={false}
-            />
-          </div>
+        <div className="lg:col-span-7">
+          <PromoVisual
+            src="/images/web-mobile-operations-dashboard.png"
+            alt={copy.platformImgAlt}
+            width={1704}
+            height={1100}
+            sizes="(max-width: 1024px) 100vw, 60vw"
+          />
         </div>
       </div>
     </section>
@@ -78,17 +110,13 @@ export function FeaturePromoImage({
   className?: string;
 }) {
   return (
-    <div
-      className={`relative rounded-2xl overflow-hidden border border-slate-800/80 bg-slate-950/30 shadow-2xl ${className}`}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        width={1600}
-        height={1000}
-        className="w-full h-auto object-cover"
-        sizes="(max-width: 1024px) 100vw, 55vw"
-      />
-    </div>
+    <PromoVisual
+      src={src}
+      alt={alt}
+      width={1600}
+      height={1000}
+      sizes="(max-width: 1024px) 100vw, 55vw"
+      className={className}
+    />
   );
 }
