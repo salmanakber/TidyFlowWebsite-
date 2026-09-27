@@ -1215,7 +1215,7 @@ function HomePage({
 
             <div className="lg:col-span-7 relative">
               <FeaturePromoImage
-                src="/images/google-sheets-web-mobile-sync.png"
+                src="/images/2v-image-showin-google-sheet-integration.png"
                 alt={platform.sheetsPromoAlt}
               />
             </div>
@@ -1293,7 +1293,7 @@ function HomePage({
 
             <div className="lg:col-span-6 relative">
               <FeaturePromoImage
-                src="/images/before-after-photos-client-reports.png"
+                src="/images/2v-image-showing-after-before-photo-and-client-review.png"
                 alt={platform.proofPromoAlt}
               />
             </div>
@@ -1306,7 +1306,7 @@ function HomePage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-6 relative order-last lg:order-first">
               <FeaturePromoImage
-                src="/images/online-booking-widget-embed.png"
+                src="/images/2v-image-for-showing-embeding-on-client-side.png"
                 alt={platform.bookingPromoAlt}
               />
             </div>

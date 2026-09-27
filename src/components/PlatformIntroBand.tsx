@@ -88,7 +88,7 @@ export function PlatformIntroBand({ language }: { language: string }) {
 
         <div className="lg:col-span-7">
           <PromoVisual
-            src="/images/web-mobile-operations-dashboard.png"
+            src="/images/2v-image-showing-home-below-hero-section-as-intro-image.png"
             alt={copy.platformImgAlt}
             width={1704}
             height={1100}
