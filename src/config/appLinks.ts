@@ -3,7 +3,7 @@ export const IOS_APP_URL =
   process.env.NEXT_PUBLIC_IOS_APP_URL || "https://apps.apple.com/app/tidyflow";
 export const ANDROID_APP_URL =
   process.env.NEXT_PUBLIC_ANDROID_APP_URL ||
-  "https://play.google.com/store/apps/details?id=com.tidyflow.app";
+  "https://play.google.com/store/apps/details?id=com.tidyflow.mobile";
 
 /** Customer login (session-aware via embed/nav-auth.js) */
 export const LOGIN_URL =
