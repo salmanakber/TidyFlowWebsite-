@@ -1,15 +1,15 @@
 import type { SeoMeta, SeoPage } from "./seoTypes";
 
 const homeKw = {
-  en: "cleaning company software, contract cleaning software, janitorial management software, commercial cleaning software, cleaning business software, cleaning management software, cleaning web dashboard, offline cleaning app, cleaner GPS tracking, cleaning scheduling software, cleaning payroll software, Google Sheets cleaning, online booking cleaning, proof of cleaning software, TidyFlow",
+  en: "cleaning company software, contract cleaning software, contract cleaning management software, software for cleaning companies, best software for cleaning business, cleaning company management software, cleaning schedule software, cleaning scheduling software, cleaning software with checklists, cleaning software with photo proof, janitorial time tracking, commercial cleaning software, cleaning business software, cleaning management software, offline cleaning app, cleaner GPS tracking, cleaning payroll software, Google Sheets cleaning, TidyFlow",
 };
 
 export const seoLocales: Record<string, Record<SeoPage, SeoMeta>> = {
   en: {
     home: {
-      title: "TidyFlow | Cleaning Company Software — Web Dashboard & Mobile App",
+      title: "TidyFlow — Cleaning Company Software | Free Trial from $25/mo",
       description:
-        "Cleaning company software with a web operations dashboard and offline mobile app. Schedule jobs, GPS clock-in, Google Sheets sync, photo proof, payroll, and online booking. 14-day free trial from $25/mo.",
+        "TidyFlow is cleaning company software with a web dashboard and offline mobile app. Schedule jobs, GPS clock-in, checklists, photo proof, and payroll. Start a 14-day free trial today.",
       keywords: homeKw.en,
       canonicalPath: "/",
     },
@@ -22,17 +22,17 @@ export const seoLocales: Record<string, Record<SeoPage, SeoMeta>> = {
       canonicalPath: "/documentation",
     },
     features: {
-      title: "Cleaning Software Features | Web Dashboard, GPS & Payroll",
+      title: "Cleaning Software Features — GPS, Checklists & Payroll | TidyFlow",
       description:
-        "Web dashboard for managers plus mobile field app: rota scheduling, offline timers, GPS geofencing, photo proof, online booking, AI dispatch, payroll, QuickBooks, and Sheets sync.",
+        "See every TidyFlow feature: rota scheduling, offline GPS timers, checklists, photo proof, AI dispatch, payroll, QuickBooks, and Sheets sync. Free 14-day trial.",
       keywords:
         "cleaning software features, janitorial scheduling software, cleaner GPS tracking app, cleaning payroll software, rota builder cleaning, offline field service app, AI dispatch cleaning",
       canonicalPath: "/features",
     },
     pricing: {
-      title: "Cleaning Software Pricing | TidyFlow Plans",
+      title: "Cleaning Software Pricing — From $25/mo | Free Trial | TidyFlow",
       description:
-        "Simple Startup ($25), Standard ($79), and Premium ($149) plans for cleaning companies. Transparent limits, self-serve billing, and a 14-day free trial.",
+        "Transparent cleaning software pricing: Startup $25, Standard $79, Premium $149. Self-serve billing and a 14-day free trial — no long sales cycle.",
       keywords:
         "cleaning software pricing, janitorial software cost, cleaning business software plans, commercial cleaning software price, maid service software pricing, TidyFlow pricing, cleaning software $25",
       canonicalPath: "/pricing",
@@ -728,9 +728,9 @@ export const extraPageSeo: Record<
 > = {
   blog: {
     en: {
-      title: "TidyFlow Blog | Cleaning Ops Guides",
+      title: "TidyFlow Blog — Cleaning Software Guides & Buying Tips",
       description:
-        "Guides for cleaning owners: office & night crews, maid services, contract janitorial, time tracking, dispatch, QC, QuickBooks, payroll, and scaling commercial cleaning.",
+        "Practical guides for cleaning owners: contract cleaning software, scheduling, GPS time tracking, checklists, photo proof, payroll, and how to choose the best software.",
       keywords:
         "office cleaning software, maid service software, contract cleaning software, janitorial time tracking, cleaning dispatch software, cleaning quality control, commercial cleaning software, QuickBooks cleaning invoices, TidyFlow blog",
     },

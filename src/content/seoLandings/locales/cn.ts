@@ -1,6 +1,6 @@
 import type { SeoLandingCopy, SeoLandingSlug } from "../types";
 
-export const SEO_LANDING_LOCALES_CN: Record<SeoLandingSlug, SeoLandingCopy> = {
+export const SEO_LANDING_LOCALES_CN: Partial<Record<SeoLandingSlug, SeoLandingCopy>> = {
   "cleaning-company-software": {
     seoTitle: "保洁公司软件 | 排班、追踪与薪酬 | TidyFlow",
     seoDescription:

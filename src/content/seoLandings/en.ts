@@ -2,15 +2,15 @@ import type { SeoLandingCopy, SeoLandingSlug } from "./types";
 
 export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   "cleaning-company-software": {
-    seoTitle: "Cleaning Company Software | Schedule, Track & Pay Teams | TidyFlow",
+    seoTitle: "Cleaning Company Software — Free Trial from $25/mo | TidyFlow",
     seoDescription:
-      "TidyFlow is cleaning company software for scheduling jobs, GPS-verified field work, photo proof, payroll from verified hours, and client reports — online or offline.",
+      "Best cleaning company software for scheduling, GPS clock-in, checklists, photo proof, and payroll. Web dashboard + offline mobile app. Start a 14-day free trial.",
     keywords:
-      "cleaning company software, cleaning business platform, janitorial operations software, field cleaning app, cleaning dispatch software, TidyFlow",
+      "cleaning company software, software for cleaning companies, cleaning company management software, best software for cleaning business, cleaning business platform, janitorial operations software, field cleaning app, cleaning dispatch software, TidyFlow",
     eyebrow: "Cleaning company software",
-    h1: "The operating system for cleaning companies",
+    h1: "Cleaning company software for web ops and field teams",
     heroSubtitle:
-      "TidyFlow connects owners, managers, and cleaners in one platform — schedule recurring jobs, verify work on-site with GPS and photos, run payroll from logged hours, and send proof to clients.",
+      "Schedule jobs, verify GPS hours, capture checklist photo proof, and run payroll from one platform — online or offline. Built for cleaning companies, not generic field service.",
     navLabel: "Cleaning company software",
     problems: {
       title: "What breaks when you run a cleaning company on spreadsheets and group chats",
@@ -79,7 +79,8 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
       ],
     },
     faqs: [
-      { q: "What is cleaning company software?", a: "It is software that helps cleaning businesses schedule jobs, manage cleaners, track field work, verify quality, and run payroll or client billing from one system instead of spreadsheets and messaging apps." },
+      { q: "What is cleaning company software?", a: "Cleaning company software helps you schedule jobs, manage cleaners, track GPS-verified field hours, complete checklists with photo proof, and run payroll or client billing from one system instead of spreadsheets and WhatsApp." },
+      { q: "What is the best software for a cleaning business?", a: "The best fit depends on offline reliability, GPS proof, checklists, payroll from verified hours, and client reports. TidyFlow is built for cleaning ops with a web dashboard and offline mobile app — plans start at $25/month with a 14-day free trial." },
       { q: "Is TidyFlow only for large companies?", a: "No. Plans start at $25/month for smaller teams. You can run scheduling, field tracking, and proof on a growing roster without enterprise setup." },
       { q: "Does TidyFlow work offline?", a: "Yes. Cleaners can complete checklists, run the job timer, and capture photos offline. Data syncs when connectivity returns." },
       { q: "Can I keep using Google Sheets?", a: "Yes. TidyFlow offers two-way Google Sheets sync so you can keep a spreadsheet master list while the app handles field execution." },
@@ -88,15 +89,15 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "cleaning-management-software": {
-    seoTitle: "Cleaning Management Software | Operations Control | TidyFlow",
+    seoTitle: "Cleaning Management Software — Rotas, GPS & Proof | TidyFlow",
     seoDescription:
-      "Cleaning management software for owners and ops managers — rotas, live job status, team leave, issue tracking, payroll approval, and client proof in one dashboard.",
+      "Cleaning company management software for ops managers: live job status, staff scheduling, GPS proof, checklists, and payroll approval in one dashboard. Free 14-day trial.",
     keywords:
-      "cleaning management software, cleaning operations platform, janitorial management system, cleaning business management, TidyFlow",
+      "cleaning management software, cleaning company management software, cleaning operations platform, janitorial management system, cleaning workforce management software, cleaning business management, TidyFlow",
     eyebrow: "Cleaning management software",
-    h1: "Run cleaning operations from one management dashboard",
+    h1: "Cleaning management software for owners and ops managers",
     heroSubtitle:
-      "Give managers visibility into schedules, field completions, quality checks, and payroll approvals — without chasing cleaners on WhatsApp or rebuilding rotas in spreadsheets.",
+      "See schedules, field completions, quality checks, and payroll approvals in one place — without chasing cleaners on WhatsApp or rebuilding rotas in spreadsheets.",
     navLabel: "Cleaning management",
     problems: {
       title: "Why cleaning operations fall apart at scale",
@@ -173,11 +174,11 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "janitorial-software": {
-    seoTitle: "Janitorial Software | Night Shifts & Multi-Site Teams | TidyFlow",
+    seoTitle: "Janitorial Software — Offline App, GPS & Checklists | TidyFlow",
     seoDescription:
-      "Janitorial software for contract cleaners — recurring site visits, offline field app, GPS clock-ins, checklists, and proof for facility clients.",
+      "Janitorial software for night shifts and multi-site teams: offline field app, GPS clock-in, checklists, photo proof, and manager QA. Free 14-day trial.",
     keywords:
-      "janitorial software, janitorial management software, janitorial scheduling app, contract janitorial software, TidyFlow",
+      "janitorial software, janitorial management software, janitorial business software, janitorial service scheduling software, janitorial scheduling app, contract janitorial software, TidyFlow",
     eyebrow: "Janitorial software",
     h1: "Janitorial software built for contract site work",
     heroSubtitle:
@@ -258,15 +259,15 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "commercial-cleaning-software": {
-    seoTitle: "Commercial & Contract Cleaning Software | Web + Mobile | TidyFlow",
+    seoTitle: "Commercial Cleaning Software — Multi-Site Proof | TidyFlow",
     seoDescription:
-      "Commercial and contract cleaning software with a web dashboard for multi-site schedules, mobile GPS proof, QC photos, payroll, and client reports. 14-day free trial.",
+      "Commercial cleaning software for multi-site contracts: recurring schedules, GPS proof, checklists, photo QC, payroll, and client PDF reports. Free 14-day trial.",
     keywords:
-      "commercial cleaning software, contract cleaning software, office cleaning software, facility cleaning software, multi-site cleaning software, TidyFlow",
+      "commercial cleaning software, office cleaning software, facility cleaning software, multi-site cleaning software, commercial cleaning scheduling software, TidyFlow",
     eyebrow: "Commercial cleaning software",
-    h1: "Commercial cleaning software for contract operations",
+    h1: "Commercial cleaning software for multi-site contracts",
     heroSubtitle:
-      "Manage multi-site commercial contracts with recurring schedules, inspection checklists, photo proof for clients, and payroll from verified field hours.",
+      "Manage commercial portfolios with recurring schedules, inspection checklists, photo proof for clients, and payroll from verified field hours.",
     navLabel: "Commercial cleaning",
     problems: {
       title: "Commercial contracts need more than a calendar app",
@@ -342,16 +343,113 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
     ],
   },
 
-  "cleaning-scheduling-software": {
-    seoTitle: "Cleaning Scheduling Software | Recurring Jobs & Rotas | TidyFlow",
+  "contract-cleaning-software": {
+    seoTitle: "Contract Cleaning Software — GPS, Checklists & Payroll | TidyFlow",
     seoDescription:
-      "Cleaning scheduling software with calendar, rota builder, recurring jobs, AI assign suggestions, leave management, and Google Sheets sync.",
+      "Contract cleaning software for multi-site SLAs: schedule visits, GPS-verify hours, capture photo proof, and invoice from one ops record. Free 14-day trial from $25/mo.",
     keywords:
-      "cleaning scheduling software, cleaning dispatch software, maid service scheduling, janitorial scheduling app, TidyFlow",
-    eyebrow: "Cleaning scheduling software",
-    h1: "Cleaning scheduling software that matches real rotas",
+      "contract cleaning software, contract cleaning management software, multi-site cleaning software, building services operations software, commercial contract cleaning software, TidyFlow",
+    eyebrow: "Contract cleaning software",
+    h1: "Contract cleaning software for multi-site SLAs",
     heroSubtitle:
-      "Build weekly rotas, automate recurring property visits, assign cleaners with leave awareness, and dispatch updates to the field app instantly.",
+      "Run contract books with recurring site visits, GPS-verified attendance, checklist photo proof, payroll from logged hours, and client-ready PDF reports — without WhatsApp chaos.",
+    navLabel: "Contract cleaning",
+    problems: {
+      title: "Contract SLAs fail between tools",
+      items: [
+        "Dispatch lives in a calendar, hours in a sheet, and proof in WhatsApp — so one missed site still gets billed.",
+        "Substitutes arrive without site notes because instructions were buried in a chat thread.",
+        "Clients ask for SLA evidence and managers spend hours rebuilding photo albums.",
+        "Payroll disputes start when hours were typed from memory instead of on-site timers.",
+        "Basements and plant rooms kill signal — online-only apps force crews back outside to clock out.",
+      ],
+    },
+    solution: {
+      title: "One pipeline from schedule to invoice",
+      paragraphs: [
+        "Contract cleaning software should be a pipeline, not a calendar: who is assigned, did they arrive, what was done, who approved hours, and what invoice those hours became.",
+        "TidyFlow connects recurring contract visits, GPS-verified timers, checklists and photos (including offline), payroll approval, and client PDF reports so SLAs are proven — not argued.",
+      ],
+    },
+    features: [
+      {
+        title: "Recurring contract visits",
+        description: "Automate weekly and monthly site schedules with leave-aware assignment.",
+        benefit: "Stop rebuilding the same contract book every month.",
+        linkHref: "/cleaning-scheduling-software",
+        linkLabel: "Cleaning scheduling software",
+      },
+      {
+        title: "GPS-verified on-site hours",
+        description: "Job timers with location checks on start and complete.",
+        benefit: "Defend payroll and SLAs with presence evidence.",
+        linkHref: "/cleaning-time-tracking-software",
+        linkLabel: "Time tracking",
+      },
+      {
+        title: "Checklist & photo proof",
+        description: "Room checklists and before/after photos tied to each visit.",
+        benefit: "Answer client audits without digging through camera rolls.",
+        linkHref: "/cleaning-inspection-software",
+        linkLabel: "Inspection & photo proof",
+      },
+      {
+        title: "Payroll & client reports",
+        description: "Approve hours from verified jobs; share branded PDF proof.",
+        benefit: "Invoice against completed contract work, not guesses.",
+        linkHref: "/cleaning-payroll-software",
+        linkLabel: "Payroll software",
+      },
+    ],
+    howItWorks: {
+      title: "Contract → Schedule → Verify → Approve → Invoice",
+      steps: [
+        { title: "Contract", description: "Set properties, access notes, and checklist templates per client SLA." },
+        { title: "Schedule", description: "Generate recurring visits and assign standing or rotating crews." },
+        { title: "Verify", description: "Cleaners run GPS timers, checklists, and photos — online or offline." },
+        { title: "Approve", description: "Managers review completions and sign off verified working hours." },
+        { title: "Invoice", description: "Bill from completed work; sync invoices to QuickBooks on supported plans." },
+      ],
+    },
+    useCases: {
+      title: "Built for contract cleaning operators",
+      items: [
+        { title: "Multi-site B2B contracts", description: "Office, retail, and facility portfolios with recurring SLAs." },
+        { title: "Night janitorial routes", description: "Offline-capable field app for low-signal buildings." },
+        { title: "Growing contract books", description: "Scale sites and cleaners without adding a second ops admin first." },
+        { title: "Client audit readiness", description: "Timestamped proof packs for facilities managers." },
+      ],
+    },
+    faqs: [
+      {
+        q: "What is contract cleaning software?",
+        a: "Contract cleaning software helps multi-site cleaning companies schedule SLA visits, verify on-site hours with GPS, capture checklist and photo proof, approve payroll, and invoice clients from one operations record.",
+      },
+      {
+        q: "How is contract cleaning management software different from a calendar?",
+        a: "A calendar only shows who was supposed to attend. Contract cleaning management software ties attendance, checklists, photos, payroll hours, and invoices to each site visit so you can prove the SLA.",
+      },
+      {
+        q: "Does TidyFlow work for multi-site contract cleaners?",
+        a: "Yes. Recurring jobs, rotas, GPS timers, offline checklists, and client PDF reports are designed for commercial and contract portfolios.",
+      },
+      {
+        q: "Can we start with a free trial?",
+        a: "Yes. TidyFlow offers a 14-day free trial with plans from $25/month. Import sites from Google Sheets and run one live contract first.",
+      },
+    ],
+  },
+
+  "cleaning-scheduling-software": {
+    seoTitle: "Cleaning Scheduling Software — Rotas & Recurring Jobs | TidyFlow",
+    seoDescription:
+      "Cleaning schedule software for staff rotas, recurring jobs, leave-aware assignment, AI dispatch suggestions, and Google Sheets sync. Free 14-day trial.",
+    keywords:
+      "cleaning scheduling software, cleaning schedule software, cleaning company scheduling software, janitorial service scheduling software, cleaning staff scheduling software, scheduling software for cleaning company, cleaning dispatch software, maid service scheduling, TidyFlow",
+    eyebrow: "Cleaning scheduling software",
+    h1: "Cleaning scheduling software for real staff rotas",
+    heroSubtitle:
+      "Build weekly rotas, automate recurring property visits, assign cleaners with leave awareness, and push updates to the field app instantly.",
     navLabel: "Scheduling",
     problems: {
       title: "Scheduling breaks when the tool ignores cleaning reality",
@@ -420,6 +518,7 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
       ],
     },
     faqs: [
+      { q: "What is cleaning schedule software?", a: "Cleaning schedule software (also called cleaning scheduling software) helps you build staff rotas, automate recurring site visits, assign cleaners with leave awareness, and push the schedule to mobile job lists." },
       { q: "Can TidyFlow manage recurring cleaning jobs?", a: "Yes. Recurring jobs automate repeat visits per property with team assignment." },
       { q: "Does scheduling sync with Google Sheets?", a: "Yes. Two-way sync keeps spreadsheet masters aligned with app assignments." },
       { q: "Can cleaners see only their own schedule?", a: "Yes. Cleaners see today's job list; managers see the full rota." },
@@ -428,11 +527,11 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "cleaning-payroll-software": {
-    seoTitle: "Cleaning Payroll Software | Verified Hours & Timesheets | TidyFlow",
+    seoTitle: "Cleaning Payroll Software — Verified Hours | TidyFlow",
     seoDescription:
-      "Cleaning payroll software built on GPS-verified task hours, timesheet approval, pay rules, payroll runs, and PDF payslips for cleaning teams.",
+      "Cleaning company payroll software from GPS-verified job hours: timesheet approval, pay rules, payroll runs, and PDF payslips. Free 14-day trial.",
     keywords:
-      "cleaning payroll software, cleaner payroll app, janitorial payroll, cleaning timesheet software, TidyFlow",
+      "cleaning payroll software, cleaning company payroll software, cleaner payroll app, janitorial payroll, cleaning timesheet software, TidyFlow",
     eyebrow: "Cleaning payroll software",
     h1: "Cleaning payroll software from verified job hours",
     heroSubtitle:
@@ -513,15 +612,15 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "cleaning-inspection-software": {
-    seoTitle: "Cleaning Inspection Software | Checklists & Photo Proof | TidyFlow",
+    seoTitle: "Cleaning Software with Checklists & Photo Proof | TidyFlow",
     seoDescription:
-      "Cleaning inspection software with room checklists, before/after photos, QA scoring, PDF client reports, and issue tracking for quality verification.",
+      "Cleaning software with checklists and photo proof: room-by-room tasks, before/after photos, QA scoring, and PDF client reports. Works offline. Free trial.",
     keywords:
-      "cleaning inspection software, cleaning quality control software, cleaning checklist app, janitorial inspection software, TidyFlow",
+      "cleaning software with checklists, cleaning software with photo proof, cleaning inspection software, cleaning quality control software, cleaning checklist app, janitorial checklist software, janitorial inspection software, cleaning inspection checklist app, TidyFlow",
     eyebrow: "Cleaning inspection software",
-    h1: "Cleaning inspection software with checklist and photo proof",
+    h1: "Cleaning software with checklists and photo proof",
     heroSubtitle:
-      "Run room-by-room inspections, capture before/after photos, score quality with manager QA workflows, and share branded proof with clients.",
+      "Run room-by-room checklists, capture before/after photos on the job, score quality with manager QA, and share branded PDF proof with clients — even offline.",
     navLabel: "Inspections",
     problems: {
       title: "Quality problems when inspections live outside the job",
@@ -590,19 +689,20 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
       ],
     },
     faqs: [
+      { q: "Does TidyFlow include cleaning software with checklists?", a: "Yes. Room-by-room digital checklists run on the cleaner mobile app and stay attached to each job record." },
+      { q: "Do you support cleaning software with photo proof?", a: "Yes. Before/after photos capture on-site (including offline) and can be packaged into branded PDF client reports." },
       { q: "Can cleaners complete checklists offline?", a: "Yes. Checklists and photos work offline and sync when connectivity returns." },
       { q: "Does TidyFlow use AI for photo quality?", a: "On supported plans, AI photo analysis can score uploaded cleaning photos. Managers still make final QA decisions." },
-      { q: "Can clients access inspection reports?", a: "Yes. PDF job reports and secure portal links share completion evidence with clients." },
       { q: "Can I require checklist completion before clock-in?", a: "Yes. Optional rules can require checklist steps before starting the job timer." },
     ],
   },
 
   "cleaning-time-tracking-software": {
-    seoTitle: "Cleaning Time Tracking Software | GPS Clock-In | TidyFlow",
+    seoTitle: "Cleaning Time Tracking Software — GPS Clock-In | TidyFlow",
     seoDescription:
-      "Cleaning time tracking software with on-site job timers, GPS verification, geofencing, live tracking during active jobs, and hours for payroll.",
+      "Time tracking app for cleaning companies with GPS clock-in, geofencing, offline timers, and payroll-ready hours. Built for janitorial crews. Free trial.",
     keywords:
-      "cleaning time tracking software, janitorial time tracking, cleaner clock in app, GPS time tracking cleaning, TidyFlow",
+      "cleaning time tracking software, janitorial time tracking, janitorial time tracking software, time tracking app for cleaning companies, time tracking for cleaning companies, cleaner clock in app, GPS time tracking cleaning, TidyFlow",
     eyebrow: "Time tracking",
     h1: "Cleaning time tracking software with GPS verification",
     heroSubtitle:
@@ -768,11 +868,11 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "cleaning-business-software": {
-    seoTitle: "Cleaning Business Software | Run & Grow Operations | TidyFlow",
+    seoTitle: "Cleaning Business Software — Grow Ops from $25/mo | TidyFlow",
     seoDescription:
-      "Cleaning business software for owners growing from solo operator to multi-team — scheduling, billing, payroll, client proof, and Revenue AI insights.",
+      "Best cleaning business software for owners scaling teams: scheduling, GPS proof, payroll, client reports, and Revenue AI. Free 14-day trial from $25/mo.",
     keywords:
-      "cleaning business software, small cleaning business app, grow cleaning company software, cleaning startup software, TidyFlow",
+      "cleaning business software, best software for cleaning business, best apps for cleaning business, small cleaning business app, grow cleaning company software, cleaning startup software, TidyFlow",
     eyebrow: "Cleaning business software",
     h1: "Cleaning business software that scales with your company",
     heroSubtitle:

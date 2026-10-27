@@ -35,7 +35,7 @@ export interface LanguageTranslation {
 export const translations: Record<string, LanguageTranslation> = {
   en: {
     heroBadge: "Cleaning Company Software · Offline Field App · GPS Geofencing · 11 Languages",
-    heroTitle: "Cleaning company software — web dashboard for managers, mobile for the field",
+    heroTitle: "Cleaning company software — schedule, GPS proof, and payroll in one place",
     heroSub: "TidyFlow is built for janitorial and facilities teams. Plan jobs and rotas in the web app, verify GPS clock-ins and photo proof on mobile (online or offline), sync Google Sheets, run payroll, and send branded client reports — one platform, not five chat threads.",
     heroTrialNote: "14-day free trial · no credit card · plans from $25/mo · web + iOS/Android",
     startTrial: "Start Free Trial",

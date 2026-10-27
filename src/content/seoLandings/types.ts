@@ -3,6 +3,7 @@ export type SeoLandingSlug =
   | "cleaning-management-software"
   | "janitorial-software"
   | "commercial-cleaning-software"
+  | "contract-cleaning-software"
   | "cleaning-scheduling-software"
   | "cleaning-payroll-software"
   | "cleaning-inspection-software"

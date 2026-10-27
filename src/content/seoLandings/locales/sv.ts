@@ -1,6 +1,6 @@
 import type { SeoLandingCopy, SeoLandingSlug } from "../types";
 
-export const SEO_LANDING_LOCALES_SV: Record<SeoLandingSlug, SeoLandingCopy> = {
+export const SEO_LANDING_LOCALES_SV: Partial<Record<SeoLandingSlug, SeoLandingCopy>> = {
   "cleaning-company-software": {
     seoTitle: "Programvara för städföretag | Schemalägg, spåra och betala team | TidyFlow",
     seoDescription:
@@ -343,13 +343,13 @@ export const SEO_LANDING_LOCALES_SV: Record<SeoLandingSlug, SeoLandingCopy> = {
   },
 
   "cleaning-scheduling-software": {
-    seoTitle: "Schemaläggningsprogramvara för städ | Återkommande jobb och scheman | TidyFlow",
+    seoTitle: "Schemaläggningsprogram för städ — gratis test | TidyFlow",
     seoDescription:
-      "Schemaläggningsprogramvara för städ med kalender, schemabyggare, återkommande jobb, AI-tilldelningsförslag, ledighetshantering och Google Sheets-synk.",
+      "Schemaläggningsprogram för städbolag: kalender, schemabyggare, återkommande jobb, ledighetshantering och Google Sheets-synk. 14 dagars gratis test.",
     keywords:
-      "schemaläggningsprogramvara städ, dispatch-programvara städ, hemstäd schemaläggning, städ schemaläggningsapp, TidyFlow",
-    eyebrow: "Schemaläggningsprogramvara för städ",
-    h1: "Schemaläggningsprogramvara för städ som matchar verkliga scheman",
+      "schemaläggningsprogram, schemaläggningsprogramvara, schemaläggning program, program för schemaläggning, schemaläggning app, program för städfirma, app för städbolag, TidyFlow",
+    eyebrow: "Schemaläggningsprogram för städ",
+    h1: "Schemaläggningsprogram för städbolag och verkliga scheman",
     heroSubtitle:
       "Bygg veckoscheman, automatisera återkommande fastighetsbesök, tilldela städare med ledighetsmedvetenhet och skicka uppdateringar till fältappen direkt.",
     navLabel: "Schemaläggning",

@@ -121,12 +121,13 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "contract-cleaning-software",
-    metaTitle: "Contract Cleaning Software | Multi-Site Ops | TidyFlow",
+    metaTitle: "Contract Cleaning Software Guide — SLAs, GPS & Proof | TidyFlow",
     title: "Contract Cleaning Software: Multi-Site SLAs, Proof, Payroll, and Invoices Together",
     excerpt:
-      "Contract cleaning software for multi-site SLAs — schedule visits, verify GPS hours, capture photo proof, and invoice from one operations record. Not another calendar app.",
+      "How contract cleaning software should prove SLAs: schedule visits, GPS-verify hours, capture photo proof, approve payroll, and invoice from one record. Free trial from $25/mo.",
     keywords: [
       "contract cleaning software",
+      "contract cleaning management software",
       "janitorial contract management",
       "multi-site cleaning software",
       "building services operations software",
@@ -135,18 +136,18 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "9 min read",
     author: "TidyFlow Operations Team",
     relatedSolutions: [
+      { href: "/contract-cleaning-software", label: "Contract cleaning software" },
       { href: "/commercial-cleaning-software", label: "Commercial cleaning software" },
       { href: "/cleaning-company-software", label: "Cleaning company software" },
       { href: "/cleaning-scheduling-software", label: "Cleaning scheduling software" },
-      { href: "/cleaning-inspection-software", label: "Cleaning inspection software" },
     ],
     cta: {
       title: "Run multi-site contracts in one system",
       body: "Web dashboard for managers, mobile for field crews — schedule, GPS proof, payroll, and client reports. Start a 14-day free trial.",
       primaryHref: "/contact",
       primaryLabel: "Start free trial",
-      secondaryHref: "/commercial-cleaning-software",
-      secondaryLabel: "Commercial cleaning software",
+      secondaryHref: "/contract-cleaning-software",
+      secondaryLabel: "Contract cleaning software",
     },
     sections: [
       {
@@ -174,7 +175,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "janitorial-time-tracking-software",
-    metaTitle: "Janitorial Time Tracking Software | GPS Hours",
+    metaTitle: "Janitorial Time Tracking Software — GPS Hours | TidyFlow",
     title: "Janitorial Time Tracking Software: Clock Hours Cleaners (and Payroll) Can Trust",
     excerpt:
       "Commercial cleaning payroll fails when timers need signal. Use GPS-verified, offline-capable time tracking so hours, presence, and payslips match the job.",
@@ -252,11 +253,13 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-quality-control-software",
-    metaTitle: "Cleaning QC Software | Photo Proof & QA",
+    metaTitle: "Cleaning Software with Photo Proof & Checklists | TidyFlow",
     title: "Cleaning Quality Control Software: Photos, Checklists, and Client Proof That Stick",
     excerpt:
-      "Stop defending invoices with WhatsApp image dumps. Attach before/after photos, checklists, and branded PDFs to every commercial clean.",
+      "Need cleaning software with photo proof and checklists? Attach before/after photos, digital checklists, and branded PDFs to every commercial clean — free trial.",
     keywords: [
+      "cleaning software with photo proof",
+      "cleaning software with checklists",
       "cleaning quality control software",
       "janitorial photo proof",
       "cleaning inspection checklist app",
@@ -626,11 +629,13 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-software-buying-guide",
-    metaTitle: "Cleaning Company Software Buying Guide 2026 | TidyFlow",
-    title: "Cleaning Company Software Buying Guide (2026): What To Compare Before You Commit",
+    metaTitle: "Best Software for Cleaning Business (2026 Buying Guide) | TidyFlow",
+    title: "Best Software for a Cleaning Business (2026): What To Compare Before You Buy",
     excerpt:
-      "Compare janitorial software on offline field work, GPS proof, Sheets sync, payroll export, and client reports — not feature checklists alone.",
+      "Looking for the best software for a cleaning business? Compare offline field work, GPS proof, checklists, payroll export, and client reports — then start a free trial.",
     keywords: [
+      "best software for cleaning business",
+      "best apps for cleaning business",
       "cleaning company software",
       "janitorial software",
       "cleaning business management software",
