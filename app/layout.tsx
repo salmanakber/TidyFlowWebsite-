@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { cookies, headers } from "next/headers";
+import Script from "next/script";
 import SiteChrome from "@/src/components/SiteChrome";
 import { SiteProvider } from "@/src/context/SiteContext";
 import SiteJsonLd from "@/src/components/SiteJsonLd";
 import { buildPageMetadata, getHtmlLang, resolveSeoLanguage } from "@/src/utils/seo";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-EZE0WTS5ZR";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -46,6 +49,18 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang={getHtmlLang(language)} suppressHydrationWarning>
       <body className="min-h-screen antialiased">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <SiteJsonLd />
         <SiteProvider initialLanguage={language}>
           <SiteChrome>{children}</SiteChrome>
