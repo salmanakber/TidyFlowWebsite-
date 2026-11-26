@@ -330,6 +330,14 @@ export function applySeoMeta(meta: SeoMeta, language: string): void {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, iOS, Android",
     inLanguage: htmlLang,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.8",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "47",
+      reviewCount: "47",
+    },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: "25",

@@ -629,13 +629,16 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "cleaning-software-buying-guide",
-    metaTitle: "Best Software for Cleaning Business (2026 Buying Guide) | TidyFlow",
-    title: "Best Software for a Cleaning Business (2026): What To Compare Before You Buy",
+    metaTitle: "Best Commercial Cleaning Software 2026 — Buying Guide | TidyFlow",
+    title: "Best Commercial Cleaning Software & Cleaning Business Apps (2026 Buying Guide)",
     excerpt:
-      "Looking for the best software for a cleaning business? Compare offline field work, GPS proof, checklists, payroll export, and client reports — then start a free trial.",
+      "Comparing the best commercial cleaning software? Score offline GPS, checklists, photo proof, and payroll — then try TidyFlow free for 14 days (from $25/mo).",
     keywords: [
+      "best commercial cleaning software",
+      "best cleaning business software",
       "best software for cleaning business",
       "best apps for cleaning business",
+      "best cleaning company software",
       "cleaning company software",
       "janitorial software",
       "cleaning business management software",

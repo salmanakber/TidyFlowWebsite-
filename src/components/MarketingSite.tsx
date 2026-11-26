@@ -200,13 +200,6 @@ function LocalReviewBadges({ language }: { language: string }) {
 
 function LocalTrustedByStrip({ language }: { language: string }) {
   const mt = (key: string) => getMarketingTranslation(key, language);
-  const companies = [
-    { name: "CBRE Facilities", industry: mt("coIndustryCbre"), initials: "CB" },
-    { name: "JLL Vanguard", industry: mt("coIndustryJll"), initials: "JL" },
-    { name: "Mitie Care", industry: mt("coIndustryMitie"), initials: "MT" },
-    { name: "Compass Group", industry: mt("coIndustryCompass"), initials: "CP" },
-    { name: "Aramark Logistics", industry: mt("coIndustryAramark"), initials: "AR" },
-  ];
   const stats = [
     { value: "11", label: mt("statLanguages") },
     { value: "14", label: mt("statTrial") },
@@ -230,7 +223,7 @@ function LocalTrustedByStrip({ language }: { language: string }) {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -240,25 +233,6 @@ function LocalTrustedByStrip({ language }: { language: string }) {
                 {stat.value}
               </p>
               <p className="text-xs sm:text-sm text-slate-400 mt-2 leading-snug">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5">
-          {companies.map((co) => (
-            <div
-              key={co.initials}
-              className="flex items-center gap-4 p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-900/80 hover:border-brand-amber/50 hover:bg-slate-900 transition-all min-h-[5.5rem]"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-slate-950 border border-slate-700 flex items-center justify-center text-base font-mono font-extrabold text-brand-amber shrink-0">
-                {co.initials}
-              </div>
-              <div className="text-left min-w-0">
-                <span className="block font-display font-bold text-base sm:text-lg text-white tracking-wide truncate">
-                  {co.name}
-                </span>
-                <span className="text-sm text-slate-400 block mt-1">{co.industry}</span>
-              </div>
             </div>
           ))}
         </div>

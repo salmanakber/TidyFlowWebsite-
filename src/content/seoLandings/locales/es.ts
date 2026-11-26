@@ -428,13 +428,13 @@ export const SEO_LANDING_LOCALES_ES: Partial<Record<SeoLandingSlug, SeoLandingCo
   },
 
   "cleaning-payroll-software": {
-    seoTitle: "Software de Nómina para Limpieza | Horas Verificadas y Hojas de Horas | TidyFlow",
+    seoTitle: "Software de Nómina para Empresas de Limpieza | TidyFlow",
     seoDescription:
-      "Software de nómina para limpieza basado en horas de tareas verificadas por GPS, aprobación de hojas de horas, reglas de pago, procesamiento de nómina y recibos PDF para equipos de limpieza.",
+      "Software de nómina para empresas de limpieza con horas verificadas por GPS, hojas de horas, reglas de pago y recibos PDF. Prueba gratis 14 días.",
     keywords:
-      "software de nómina para limpieza, app de nómina para personal de limpieza, nómina de conserjería, software de hojas de horas de limpieza, TidyFlow",
+      "software de nómina para empresas de limpieza, software de nómina para limpieza, app de nómina para personal de limpieza, nómina de conserjería, software de hojas de horas de limpieza, TidyFlow",
     eyebrow: "Software de nómina para limpieza",
-    h1: "Software de nómina para limpieza con horas verificadas",
+    h1: "Software de nómina para empresas de limpieza",
     heroSubtitle:
       "Genera nómina a partir de temporizadores de tareas y horas trabajadas aprobadas — no de hojas de horas manuscritas. La verificación por GPS reduce disputas y da a los gerentes un historial auditable.",
     navLabel: "Nómina",
