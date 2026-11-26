@@ -159,7 +159,7 @@ function AppDownloadButtons({ language, layout = "row" }: { language: string; la
 
 function LocalReviewBadges({ language }: { language: string }) {
   const mt = (key: string) => getMarketingTranslation(key, language);
-  const operators = formatMarketingTranslation("trustedOperators", language, { count: "1,200+" });
+  const operators = formatMarketingTranslation("trustedOperators", language);
 
   return (
     <div className="space-y-5">

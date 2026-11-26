@@ -75,14 +75,6 @@ export function getSiteJsonLdGraph() {
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web, iOS, Android",
         url: SITE_URL,
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          bestRating: "5",
-          worstRating: "1",
-          ratingCount: "47",
-          reviewCount: "47",
-        },
         offers: {
           "@type": "AggregateOffer",
           lowPrice: "25",

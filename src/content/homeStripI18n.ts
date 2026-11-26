@@ -4,7 +4,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   en: {
     reviewOnCapterra: "on Capterra",
     reviewOnG2: "on G2 Crowd",
-    trustedOperators: "Trusted by {count} field operators and coordinators.",
+    trustedOperators: "Trusted by cleaning companies and facilities teams worldwide.",
     trustedByEyebrow: "Built for real cleaning operations",
     trustedByHeading: "Built for cleaning contractors and facilities teams",
     trustedByBody:
@@ -46,7 +46,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   pt: {
     reviewOnCapterra: "no Capterra",
     reviewOnG2: "no G2 Crowd",
-    trustedOperators: "Usado por {count} operadores de campo e coordenadores.",
+    trustedOperators: "Empresas de limpeza e equipes de facilities confiam no TidyFlow.",
     trustedByEyebrow: "Feito para operações reais de limpeza",
     trustedByHeading: "Operadores em grandes empresas de facilities confiam no TidyFlow",
     trustedByBody:
@@ -93,7 +93,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   es: {
     reviewOnCapterra: "en Capterra",
     reviewOnG2: "en G2 Crowd",
-    trustedOperators: "Confiado por {count} operadores de campo y coordinadores.",
+    trustedOperators: "Empresas de limpieza y equipos de facilities confían en TidyFlow.",
     trustedByEyebrow: "Hecho para operaciones reales de limpieza",
     trustedByHeading: "Operadores en grandes empresas de facilities confían en TidyFlow",
     trustedByBody:
@@ -140,7 +140,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   ar: {
     reviewOnCapterra: "على Capterra",
     reviewOnG2: "على G2 Crowd",
-    trustedOperators: "يثق به أكثر من {count} من المشغّلين والمنسّقين الميدانيين.",
+    trustedOperators: "تثق به شركات التنظيف وفرق المرافق حول العالم.",
     trustedByEyebrow: "مصمم لعمليات تنظيف حقيقية",
     trustedByHeading: "يثق به المشغّلون في مؤسسات المرافق الرائدة",
     trustedByBody:
@@ -187,7 +187,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   cn: {
     reviewOnCapterra: "来自 Capterra",
     reviewOnG2: "来自 G2 Crowd",
-    trustedOperators: "已获 {count} 名现场作业员与调度员信赖。",
+    trustedOperators: "保洁公司与设施团队都在使用 TidyFlow。",
     trustedByEyebrow: "为真实保洁作业打造",
     trustedByHeading: "领先设施企业的现场团队都在使用",
     trustedByBody:
@@ -233,7 +233,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   fr: {
     reviewOnCapterra: "sur Capterra",
     reviewOnG2: "sur G2 Crowd",
-    trustedOperators: "Plébiscité par {count} opérateurs terrain et coordinateurs.",
+    trustedOperators: "Des entreprises de nettoyage et équipes facilities nous font confiance.",
     trustedByEyebrow: "Conçu pour de vraies opérations de nettoyage",
     trustedByHeading: "Les opérateurs des grands groupes de facilities nous font confiance",
     trustedByBody:
@@ -280,7 +280,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   de: {
     reviewOnCapterra: "auf Capterra",
     reviewOnG2: "auf G2 Crowd",
-    trustedOperators: "Vertraut von {count} Field-Operatoren und Koordinatoren.",
+    trustedOperators: "Reinigungsunternehmen und Facility-Teams vertrauen auf TidyFlow.",
     trustedByEyebrow: "Für echte Reinigungsbetriebe gebaut",
     trustedByHeading: "Betreiber führender Facility-Unternehmen vertrauen TidyFlow",
     trustedByBody:
@@ -327,7 +327,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   pl: {
     reviewOnCapterra: "na Capterra",
     reviewOnG2: "na G2 Crowd",
-    trustedOperators: "Zaufanie {count} operatorów terenowych i koordynatorów.",
+    trustedOperators: "Firmy sprzątające i zespoły facilities ufają TidyFlow.",
     trustedByEyebrow: "Stworzone do prawdziwych operacji sprzątania",
     trustedByHeading: "Operatorzy w wiodących firmach facilities ufają TidyFlow",
     trustedByBody:
@@ -374,7 +374,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   no: {
     reviewOnCapterra: "på Capterra",
     reviewOnG2: "på G2 Crowd",
-    trustedOperators: "Stolt på av {count} feltoperatører og koordinatorer.",
+    trustedOperators: "Rengjøringsbedrifter og facility-team stoler på TidyFlow.",
     trustedByEyebrow: "Bygget for ekte rengjøringsdrift",
     trustedByHeading: "Operatører i ledende facilities-selskaper stoler på TidyFlow",
     trustedByBody:
@@ -421,7 +421,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   sv: {
     reviewOnCapterra: "på Capterra",
     reviewOnG2: "på G2 Crowd",
-    trustedOperators: "Betrott av {count} fältoperatörer och koordinatörer.",
+    trustedOperators: "Städföretag och facility-team litar på TidyFlow.",
     trustedByEyebrow: "Byggt för riktig städdrift",
     trustedByHeading: "Operatörer i ledande facilities-företag litar på TidyFlow",
     trustedByBody:
@@ -468,7 +468,7 @@ export const homeStripI18n: Record<string, Record<string, string>> = {
   it: {
     reviewOnCapterra: "su Capterra",
     reviewOnG2: "su G2 Crowd",
-    trustedOperators: "Scelto da {count} operatori sul campo e coordinatori.",
+    trustedOperators: "Imprese di pulizie e team facility si affidano a TidyFlow.",
     trustedByEyebrow: "Pensato per operazioni di pulizia reali",
     trustedByHeading: "Gli operatori delle principali imprese di facilities si affidano a TidyFlow",
     trustedByBody:

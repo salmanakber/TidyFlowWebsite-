@@ -9,7 +9,7 @@ export const seoLocales: Record<string, Record<SeoPage, SeoMeta>> = {
     home: {
       title: "TidyFlow — Best Cleaning Company Software | Free Trial $25/mo",
       description:
-        "TidyFlow cleaning company software: web dashboard + offline app, GPS clock-in, checklists, photo proof, and payroll. Rated 4.8/5. Start your free 14-day trial.",
+        "TidyFlow cleaning company software: web dashboard + offline app, GPS clock-in, checklists, photo proof, and payroll. Start your free 14-day trial.",
       keywords: homeKw.en,
       canonicalPath: "/",
     },

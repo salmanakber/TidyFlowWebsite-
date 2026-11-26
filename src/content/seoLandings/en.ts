@@ -4,7 +4,7 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   "cleaning-company-software": {
     seoTitle: "Best Cleaning Company Software — Free Trial $25/mo | TidyFlow",
     seoDescription:
-      "Best cleaning company software for scheduling, GPS clock-in, checklists, photo proof, and payroll. Web + offline app. Rated 4.8/5. Start a free 14-day trial.",
+      "Best cleaning company software for scheduling, GPS clock-in, checklists, photo proof, and payroll. Web + offline app. Start a free 14-day trial.",
     keywords:
       "cleaning company software, best cleaning company software, software for cleaning companies, cleaning company management software, best software for cleaning business, cleaning business platform, janitorial operations software, field cleaning app, cleaning dispatch software, TidyFlow",
     eyebrow: "Cleaning company software",
@@ -261,7 +261,7 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   "commercial-cleaning-software": {
     seoTitle: "Best Commercial Cleaning Software — Free Trial | TidyFlow",
     seoDescription:
-      "Best commercial cleaning software for multi-site contracts: schedules, GPS proof, checklists, photo QC, and payroll. Rated 4.8/5. Start a free 14-day trial.",
+      "Best commercial cleaning software for multi-site contracts: schedules, GPS proof, checklists, photo QC, and payroll. Start a free 14-day trial.",
     keywords:
       "best commercial cleaning software, commercial cleaning software, commercial cleaning management software, commercial cleaning business software, office cleaning software, facility cleaning software, multi-site cleaning software, commercial cleaning scheduling software, TidyFlow",
     eyebrow: "Commercial cleaning software",
@@ -870,7 +870,7 @@ export const SEO_LANDING_EN: Record<SeoLandingSlug, SeoLandingCopy> = {
   "cleaning-business-software": {
     seoTitle: "Best Cleaning Business Software — From $25/mo | TidyFlow",
     seoDescription:
-      "Best cleaning business software for owners scaling teams: scheduling, GPS proof, payroll, client reports. Rated 4.8/5. Free 14-day trial from $25/mo.",
+      "Best cleaning business software for owners scaling teams: scheduling, GPS proof, payroll, client reports. Free 14-day trial from $25/mo.",
     keywords:
       "cleaning business software, best cleaning business software, best software for cleaning business, best apps for cleaning business, software for cleaning business, small cleaning business software, cleaning business management software, grow cleaning company software, TidyFlow",
     eyebrow: "Cleaning business software",
